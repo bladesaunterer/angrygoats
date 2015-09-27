@@ -5,6 +5,7 @@ public class DoorControl : MonoBehaviour {
 	
 	public GameObject goalDoor;
 	public GameObject goalRoom;
+    public bool canSend = true;
 
 	// Use this for initialization
 	void Start () {
