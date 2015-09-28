@@ -1,33 +1,34 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-[System.Serializable]
-public class Boundary
-{
-    public float xMin, xMax, zMin, zMax;
-}
-
 public class PlayerMovement : MonoBehaviour
 {
-    public float speed;
-    public float tilt;
-    public Boundary boundary;
 
-    void FixedUpdate ()
+    public float speed = 6.0F;
+    public float gravity = 20.0F;
+
+    private Vector3 moveDirection = Vector3.zero;
+    public CharacterController controller;
+
+    void Start()
     {
-        float moveHorizontal = Input.GetAxis ("Horizontal");
-        float moveVertical = Input.GetAxis ("Vertical");
+        // Store reference to attached component
+        controller = GetComponent<CharacterController>();
+    }
 
-        Vector3 movement = new Vector3 (moveHorizontal, 0.0f, moveVertical);
-        GetComponent<Rigidbody>().velocity = movement * speed;
-
-        GetComponent<Rigidbody>().position = new Vector3 
-        (
-            Mathf.Clamp (GetComponent<Rigidbody>().position.x, boundary.xMin, boundary.xMax), 
-            0.0f, 
-            Mathf.Clamp (GetComponent<Rigidbody>().position.z, boundary.zMin, boundary.zMax)
-        );
-
-        GetComponent<Rigidbody>().rotation = Quaternion.Euler (0.0f, 0.0f, GetComponent<Rigidbody>().velocity.x * -tilt);
+    void Update()
+    {
+        // Character is on ground (built-in functionality of Character Controller)
+        if (controller.isGrounded)
+        {
+            // Use input up and down for direction, multiplied by speed
+            moveDirection = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
+            moveDirection = transform.TransformDirection(moveDirection);
+            moveDirection *= speed;
+        }
+        // Apply gravity manually.
+        moveDirection.y -= gravity * Time.deltaTime;
+        // Move Character Controller
+        controller.Move(moveDirection * Time.deltaTime);
     }
 }
