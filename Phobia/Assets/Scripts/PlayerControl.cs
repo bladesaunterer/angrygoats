@@ -1,30 +1,30 @@
 ﻿using UnityEngine;
 using UnityEngine.Networking;
 
-public class PlayerControl2 : NetworkBehaviour
+public class PlayerControl : NetworkBehaviour
 {
 	private const float DOOR_JUMP = 2;
 
 	public float speed = 6f;            // The speed that the player will move at.
-	public Transform mainCameraTransform;
 
 
-	Vector3 movement;                   // The vector to store the direction of the player's movement.
-	Vector3 cameraPosition = new Vector3 (0, 26, -17);
-	Rigidbody playerRigidbody;          // Reference to the player's rigidbody.
-    int floorMask;                      // A layer mask so that a ray can be cast just at gameobjects on the floor layer.
-    float camRayLength = 100f;          // The length of the ray from the camera into the scene.
+    private Vector3 movement;                   // The vector to store the direction of the player's movement.
+    private Vector3 cameraPosition = new Vector3 (0, 26, -17);
+
+    private int floorMask;                      // A layer mask so that a ray can be cast just at gameobjects on the floor layer.
+    private float camRayLength = 100f;          // The length of the ray from the camera into the scene.
+
+    private Transform mainCameraTransform;
 
     void Awake ()
 	{
-		// Set up references.
-		playerRigidbody = GetComponent <Rigidbody> ();
-	}
+        this.mainCameraTransform = Camera.main.GetComponentInParent<Transform>();
+    }
 
 
     void FixedUpdate()
     {
-        if (this.GetComponentInParent<NetworkIdentity>().isLocalPlayer)
+        if (IsMine())
         {
             // Store the input axes.
             float h = Input.GetAxisRaw("Horizontal");
@@ -85,17 +85,16 @@ public class PlayerControl2 : NetworkBehaviour
 		if (other.gameObject.CompareTag("Door"))
 		{
             DoorControl doorMono = other.gameObject.GetComponent<DoorControl>();
-            //doorMono.canSend = false;
             Debug.Log("Door fired: " + doorMono.gameObject.GetInstanceID());
             Vector3 goalPos = doorMono.goalDoor.transform.position + doorMono.goalDoor.transform.forward * DOOR_JUMP;
-            this.transform.position = goalPos;
-            GetComponent<NetworkTransform>().InvokeSyncEvent(0, null);
             goalPos.y = 0;
-            if (GetComponent<NetworkIdentity>().isLocalPlayer) {
+            this.transform.position = goalPos;
+            if (IsLocalPlayer()) {
+                GetComponent<NetworkTransform>().InvokeSyncEvent(0, null);
+            }
+            if (IsMine()) {
                 mainCameraTransform.position = (doorMono.goalRoom.transform.position) + cameraPosition;
             }
-
-            //doorMono.goalDoor.GetComponent<DoorControl>().canSend = true;
 		}
 	}
 
@@ -107,6 +106,15 @@ public class PlayerControl2 : NetworkBehaviour
     override public void OnStartLocalPlayer()
     {
         Debug.Log("started local player");
-        this.mainCameraTransform = Camera.main.GetComponentInParent<Transform>();
+    }
+
+    public bool IsMine()
+    {
+        return GetComponentInParent<NetworkIdentity>() == null || this.GetComponentInParent<NetworkIdentity>().isLocalPlayer;
+    }
+
+    public bool IsLocalPlayer()
+    {
+        return GetComponentInParent<NetworkIdentity>() != null && this.GetComponentInParent<NetworkIdentity>().isLocalPlayer;
     }
 }
