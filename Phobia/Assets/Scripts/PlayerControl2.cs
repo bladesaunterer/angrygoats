@@ -8,6 +8,11 @@ public class PlayerControl2 : NetworkBehaviour
 	public float speed = 6f;            // The speed that the player will move at.
 	public Transform mainCameraTransform;
 
+	public GameObject shot;
+	public Transform shotSpawn;
+	public float fireRate;
+	
+	private float nextFire;
 
 	Vector3 movement;                   // The vector to store the direction of the player's movement.
 	Vector3 cameraPosition = new Vector3 (0, 26, -17);
@@ -21,6 +26,13 @@ public class PlayerControl2 : NetworkBehaviour
 		playerRigidbody = GetComponent <Rigidbody> ();
 	}
 
+	void Update(){
+		if (Input.GetKeyDown(KeyCode.K) && Time.time > nextFire)
+		{
+			nextFire = Time.time + fireRate;
+			Instantiate(shot, shotSpawn.position, shotSpawn.rotation);
+		}
+	}
 
     void FixedUpdate()
     {
