@@ -11,5 +11,11 @@ public class BoltMover : MonoBehaviour {
 		rb = GetComponent<Rigidbody> ();
 		rb.velocity = transform.forward * speed;
 	}
-	
+
+	void OnTriggerEnter(Collider other)
+	{
+		if (other.gameObject.CompareTag ("Door") || other.gameObject.CompareTag ("Wall")) {
+			Destroy(gameObject);
+		}
+	}
 }

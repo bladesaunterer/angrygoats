@@ -63,9 +63,12 @@ public class PlayerControl2 : NetworkBehaviour
 		playerRigidbody.MovePosition (transform.position + movement);
 
 		//Rotate the player
-		Rotate (h, v);
+		if (h != 0f || v != 0f) {
+			Rotate (h, v);
+		}
 	}
 
+	//This method rotates player based on keyboard input
 	void Rotate(float h, float v){
 		Vector3 targetDirection = new Vector3 (h, 0f, v);
 		Quaternion targetRotation = Quaternion.LookRotation (targetDirection, Vector3.up);
@@ -73,6 +76,7 @@ public class PlayerControl2 : NetworkBehaviour
 		playerRigidbody.MoveRotation (newRotation);
 	}
 
+	//This method rotates the player based on 
 	//Dean says to not delete this method
     void Turning()
     {
