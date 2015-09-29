@@ -47,12 +47,10 @@ public class PlayerControl2 : NetworkBehaviour
             // Move the player around the scene.
             Move(h, v);
 
-            // Turn the player to face the mouse cursor.
-            Turning();
         }
 	}
 
-
+	//This will also attempt to rotate the player 
 	void Move (float h, float v)
 	{
 		// Set the movement vector based on the axis input.
@@ -62,10 +60,20 @@ public class PlayerControl2 : NetworkBehaviour
 		movement = movement.normalized * speed * Time.deltaTime;
 
         // Move the player to it's current position plus the movement.
-        GetComponent<Rigidbody>().MovePosition (transform.position + movement);
+		playerRigidbody.MovePosition (transform.position + movement);
+
+		//Rotate the player
+		Rotate (h, v);
 	}
 
+	void Rotate(float h, float v){
+		Vector3 targetDirection = new Vector3 (h, 0f, v);
+		Quaternion targetRotation = Quaternion.LookRotation (targetDirection, Vector3.up);
+		Quaternion newRotation = Quaternion.Lerp (playerRigidbody.rotation, targetRotation, 15f * Time.deltaTime);
+		playerRigidbody.MoveRotation (newRotation);
+	}
 
+	//Dean says to not delete this method
     void Turning()
     {
         // Create a ray from the mouse cursor on screen in the direction of the camera.
