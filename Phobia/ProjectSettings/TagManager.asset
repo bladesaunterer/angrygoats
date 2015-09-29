@@ -6,6 +6,7 @@ TagManager:
   tags:
   - NonMainCamera
   - Door
+  - DeathFloor
   layers:
   - Default
   - TransparentFX

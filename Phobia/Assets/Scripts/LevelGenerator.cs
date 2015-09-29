@@ -3,7 +3,8 @@ using System.Collections.Generic;
 
 public class LevelGenerator : MonoBehaviour {
 
-    public List<GameObject> roomPrefabs;
+    public List<GameObject> floorPrefabs;
+    public GameObject wallPrefab;
     public int roomsToSpawn;
     List<Room> rooms = new List<Room>();
 
@@ -12,19 +13,21 @@ public class LevelGenerator : MonoBehaviour {
 
         {
             Room thisRoom = new Room(this);
-            thisRoom.Objecto = roomPrefabs[Random.Range(0, roomPrefabs.Count)];
+            thisRoom.Floor = floorPrefabs[Random.Range(0, floorPrefabs.Count)];
+            thisRoom.Walls = wallPrefab;
             rooms.Add(thisRoom);
-            thisRoom.Objecto.name = "Room " + 0;
-            thisRoom.Objecto = (GameObject)Instantiate(thisRoom.Objecto, new Vector3(0, 0, 0), Quaternion.identity);
+            thisRoom.Walls.name = "Room " + 0;
+            thisRoom.Walls = (GameObject)Instantiate(thisRoom.Walls, new Vector3(0, 0, 0), Quaternion.identity);
+            thisRoom.Walls = (GameObject)Instantiate(thisRoom.Walls, new Vector3(0, 0, 0), Quaternion.identity);
             thisRoom.Position = new Vector2(0,0);
         }
 
         for (int i = 1; i < roomsToSpawn; i++)
         {
             Room thisRoom = new Room(this);
-            thisRoom.Objecto = roomPrefabs[Random.Range(0, roomPrefabs.Count)];
+            thisRoom.Walls = floorPrefabs[Random.Range(0, floorPrefabs.Count)];
 
-            thisRoom.Objecto.name = "Room " + i;
+            thisRoom.Walls.name = "Room " + i;
 
             Room adjRoom;
 
@@ -35,7 +38,7 @@ public class LevelGenerator : MonoBehaviour {
 
             adjRoom.SetAdj(adjRoom.randomEmpty(), thisRoom);
 
-            thisRoom.Objecto = (GameObject)Instantiate(thisRoom.Objecto, new Vector3(44 * thisRoom.Position.x, 0, 30 * thisRoom.Position.y), Quaternion.identity);
+            thisRoom.Walls = (GameObject)Instantiate(thisRoom.Walls, new Vector3(44 * thisRoom.Position.x, 0, 30 * thisRoom.Position.y), Quaternion.identity);
 
             rooms.Add(thisRoom);
         }
@@ -54,7 +57,8 @@ public class LevelGenerator : MonoBehaviour {
     class Room
     {
         public LevelGenerator parent;
-        public GameObject Objecto { get; set; }
+        public GameObject Walls { get; set; }
+        public GameObject Floor { get; set; }
         public Room[] adjRooms = new Room[4];
         public Vector2 Position { get; set; }
 
@@ -68,9 +72,9 @@ public class LevelGenerator : MonoBehaviour {
 
         public bool IsNextToEmpty()
         {
-            foreach (Room r in adjRooms)
+            for (int index = 0; index < 4; index++)
             {
-                if (r == null)
+                if (parent.IsEmpty(Position+vectors[index]))
                 {
                     return true;
                 }
@@ -90,16 +94,16 @@ public class LevelGenerator : MonoBehaviour {
             for (int i = 0; i < 4; i++)
             {
                 if (adjRooms[i] != null) {
-                    GameObject thisDoor = GameObject.Find(Objecto.name + "/Doors/" + directions[i]);
-                    GameObject adjDoor = GameObject.Find(adjRooms[i].Objecto.name + "/Doors/" + directions[(i + 2) % 4]);
+                    GameObject thisDoor = GameObject.Find(Walls.name + "/Doors/" + directions[i]);
+                    GameObject adjDoor = GameObject.Find(adjRooms[i].Walls.name + "/Doors/" + directions[(i + 2) % 4]);
 
                     thisDoor.GetComponent<DoorControl>().goalDoor = adjDoor;
-                    thisDoor.GetComponent<DoorControl>().goalRoom = adjRooms[i].Objecto;
-                    GameObject.Find(Objecto.name + "/DoorBlockers/" + directions[i]).SetActive(false);
+                    thisDoor.GetComponent<DoorControl>().goalRoom = adjRooms[i].Walls;
+                    GameObject.Find(Walls.name + "/DoorBlockers/" + directions[i]).SetActive(false);
 
                     adjDoor.GetComponent<DoorControl>().goalDoor = thisDoor;
-                    adjDoor.GetComponent<DoorControl>().goalRoom = Objecto;
-                    GameObject.Find(adjRooms[i].Objecto.name + "/DoorBlockers/" + directions[(i + 2) % 4]).SetActive(false);
+                    adjDoor.GetComponent<DoorControl>().goalRoom = Walls;
+                    GameObject.Find(adjRooms[i].Walls.name + "/DoorBlockers/" + directions[(i + 2) % 4]).SetActive(false);
                 }
             }
         }
