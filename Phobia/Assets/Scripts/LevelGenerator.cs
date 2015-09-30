@@ -68,9 +68,9 @@ public class LevelGenerator : MonoBehaviour {
 
         public bool IsNextToEmpty()
         {
-            foreach (Room r in adjRooms)
+            for (int index = 0; index < 4; index++)
             {
-                if (r == null)
+                if (parent.IsEmpty(Position+vectors[index]))
                 {
                     return true;
                 }
