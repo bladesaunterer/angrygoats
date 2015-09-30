@@ -7,6 +7,11 @@ public class PlayerControl : NetworkBehaviour
 
 	public float speed = 6f;            // The speed that the player will move at.
 
+	public GameObject shot;
+	public Transform shotSpawn;
+	public float fireRate;
+	
+	private float nextFire;
 
     private Vector3 movement;                   // The vector to store the direction of the player's movement.
     private Vector3 cameraPosition = new Vector3 (0, 26, -17);
@@ -21,6 +26,13 @@ public class PlayerControl : NetworkBehaviour
         this.mainCameraTransform = Camera.main.GetComponentInParent<Transform>();
     }
 
+	void Update(){
+		if (Input.GetKeyDown(KeyCode.K) && Time.time > nextFire)
+		{
+			nextFire = Time.time + fireRate;
+			Instantiate(shot, shotSpawn.position, shotSpawn.rotation);
+		}
+	}
 
     void FixedUpdate()
     {
@@ -35,12 +47,10 @@ public class PlayerControl : NetworkBehaviour
             // Move the player around the scene.
             Move(h, v);
 
-            // Turn the player to face the mouse cursor.
-            Turning();
         }
 	}
 
-
+	//This will also attempt to rotate the player 
 	void Move (float h, float v)
 	{
 		// Set the movement vector based on the axis input.
@@ -50,10 +60,24 @@ public class PlayerControl : NetworkBehaviour
 		movement = movement.normalized * speed * Time.deltaTime;
 
         // Move the player to it's current position plus the movement.
-        GetComponent<Rigidbody>().MovePosition (transform.position + movement);
+		playerRigidbody.MovePosition (transform.position + movement);
+
+		//Rotate the player
+		if (h != 0f || v != 0f) {
+			Rotate (h, v);
+		}
 	}
 
+	//This method rotates player based on keyboard input
+	void Rotate(float h, float v){
+		Vector3 targetDirection = new Vector3 (h, 0f, v);
+		Quaternion targetRotation = Quaternion.LookRotation (targetDirection, Vector3.up);
+		Quaternion newRotation = Quaternion.Lerp (playerRigidbody.rotation, targetRotation, 15f * Time.deltaTime);
+		playerRigidbody.MoveRotation (newRotation);
+	}
 
+	//This method rotates the player based on 
+	//Dean says to not delete this method
     void Turning()
     {
         // Create a ray from the mouse cursor on screen in the direction of the camera.
