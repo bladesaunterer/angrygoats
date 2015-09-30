@@ -60,7 +60,7 @@ public class PlayerControl : NetworkBehaviour
 		movement = movement.normalized * speed * Time.deltaTime;
 
         // Move the player to it's current position plus the movement.
-		playerRigidbody.MovePosition (transform.position + movement);
+		GetComponent<Rigidbody>().MovePosition (transform.position + movement);
 
 		//Rotate the player
 		if (h != 0f || v != 0f) {
@@ -72,8 +72,8 @@ public class PlayerControl : NetworkBehaviour
 	void Rotate(float h, float v){
 		Vector3 targetDirection = new Vector3 (h, 0f, v);
 		Quaternion targetRotation = Quaternion.LookRotation (targetDirection, Vector3.up);
-		Quaternion newRotation = Quaternion.Lerp (playerRigidbody.rotation, targetRotation, 15f * Time.deltaTime);
-		playerRigidbody.MoveRotation (newRotation);
+		Quaternion newRotation = Quaternion.Lerp (GetComponent<Rigidbody>().rotation, targetRotation, 15f * Time.deltaTime);
+        GetComponent<Rigidbody>().MoveRotation (newRotation);
 	}
 
 	//This method rotates the player based on 
