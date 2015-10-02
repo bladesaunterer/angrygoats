@@ -7,6 +7,9 @@ public class LevelGenerator : MonoBehaviour {
     public GameObject wallPrefab;
     public int roomsToSpawn;
     List<Room> rooms = new List<Room>();
+	
+	private const int HORIZ_TILING = 50;
+	private const int VERT_TILING = 40;
 
     // Use this for initialization
     void Start () {
@@ -16,18 +19,18 @@ public class LevelGenerator : MonoBehaviour {
             thisRoom.Floor = floorPrefabs[Random.Range(0, floorPrefabs.Count)];
             thisRoom.Walls = wallPrefab;
             rooms.Add(thisRoom);
-            thisRoom.Walls.name = "Room " + 0;
             thisRoom.Walls = (GameObject)Instantiate(thisRoom.Walls, new Vector3(0, 0, 0), Quaternion.identity);
-            thisRoom.Walls = (GameObject)Instantiate(thisRoom.Walls, new Vector3(0, 0, 0), Quaternion.identity);
+			thisRoom.Floor = (GameObject)Instantiate(thisRoom.Floor, new Vector3(0, 0, 0), Quaternion.identity);
+			thisRoom.Walls.name = "Room " + 0;
             thisRoom.Position = new Vector2(0,0);
         }
 
         for (int i = 1; i < roomsToSpawn; i++)
         {
             Room thisRoom = new Room(this);
-            thisRoom.Walls = floorPrefabs[Random.Range(0, floorPrefabs.Count)];
+            thisRoom.Floor = floorPrefabs[Random.Range(0, floorPrefabs.Count)];
+            thisRoom.Walls = wallPrefab;
 
-            thisRoom.Walls.name = "Room " + i;
 
             Room adjRoom;
 
@@ -38,7 +41,9 @@ public class LevelGenerator : MonoBehaviour {
 
             adjRoom.SetAdj(adjRoom.randomEmpty(), thisRoom);
 
-            thisRoom.Walls = (GameObject)Instantiate(thisRoom.Walls, new Vector3(44 * thisRoom.Position.x, 0, 30 * thisRoom.Position.y), Quaternion.identity);
+			thisRoom.Walls = (GameObject)Instantiate(thisRoom.Walls, new Vector3(HORIZ_TILING * thisRoom.Position.x, 0, VERT_TILING * thisRoom.Position.y), Quaternion.identity);
+			thisRoom.Floor = (GameObject)Instantiate(thisRoom.Floor, new Vector3(HORIZ_TILING * thisRoom.Position.x, 0, VERT_TILING * thisRoom.Position.y), Quaternion.identity);
+			thisRoom.Walls.name = "Room " + i;
 
             rooms.Add(thisRoom);
         }
