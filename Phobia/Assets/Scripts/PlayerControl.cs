@@ -7,9 +7,9 @@ public class PlayerControl : MonoBehaviour
 
 	public float speed = 6f;            // The speed that the player will move at.
 
-	public GameObject shot;
-	public Transform shotSpawn;
-	public float fireRate;
+	public GameObject shot;				// The special attack
+	public Transform shotSpawn;			// Where the special attack will spwan 
+	public float fireRate;				
 	
 	private float nextFire;
 
