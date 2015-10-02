@@ -9,9 +9,13 @@ public class PlayerControl : MonoBehaviour
 
 	public GameObject shot;				// The special attack
 	public Transform shotSpawn;			// Where the special attack will spwan 
-	public float fireRate;				
-	
-	private float nextFire;
+
+	public float cooldown;				// How much cool down
+	public float regen;					// Regen of the cooldown per second 
+	public float cost;					// How much each special attack costs
+
+	//public float fireRate;				
+	private float nextTime;
 
     private Vector3 movement;                   // The vector to store the direction of the player's movement.
     private Vector3 cameraPosition = new Vector3 (0, 26, -17);
@@ -27,9 +31,17 @@ public class PlayerControl : MonoBehaviour
     }
 
 	void Update(){
-		if (Input.GetKeyDown(KeyCode.K) && Time.time > nextFire)
+		//Updates every second
+		if (Time.time > nextTime) {
+			nextTime = Time.time + 1f;
+			if (cooldown != 100f ){
+				cooldown += regen;
+			}
+		}
+		if (Input.GetKeyDown(KeyCode.K) && cooldown > cost)
 		{
-			nextFire = Time.time + fireRate;
+			//nextFire = Time.time + fireRate;
+			cooldown -= cost;
 			Instantiate(shot, shotSpawn.position, shotSpawn.rotation);
 		}
 	}
