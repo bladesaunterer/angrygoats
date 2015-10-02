@@ -250,7 +250,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 417996, guid: ade1c0a4e3e2e2140b31697064dcd000, type: 2}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 2063540, guid: ade1c0a4e3e2e2140b31697064dcd000, type: 2}
       propertyPath: m_ClearFlags
@@ -358,9 +358,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 573315f148d13db4ba3d9729ceb72f7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  floorPrefabs: []
-  wallPrefab: {fileID: 0}
-  roomsToSpawn: 30
+  roomPrefabs:
+  - {fileID: 130876, guid: 5c54b116728811a4683b1cc3c10ba2cf, type: 2}
+  roomsToSpawn: 20
 --- !u!4 &1876287590
 Transform:
   m_ObjectHideFlags: 0
@@ -411,6 +411,10 @@ Prefab:
     - target: {fileID: 478908, guid: 00f0b8ac4c02bb243a76e82912a80a77, type: 2}
       propertyPath: m_RootOrder
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 454772, guid: 00f0b8ac4c02bb243a76e82912a80a77, type: 2}
+      propertyPath: m_RootOrder
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 00f0b8ac4c02bb243a76e82912a80a77, type: 2}
