@@ -209,7 +209,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 417996, guid: ade1c0a4e3e2e2140b31697064dcd000, type: 2}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ade1c0a4e3e2e2140b31697064dcd000, type: 2}
@@ -302,8 +302,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   roomPrefabs:
-  - {fileID: 145330, guid: cfa7dd878532f50458a49eccad9e0072, type: 2}
-  roomsToSpawn: 15
+  - {fileID: 130876, guid: 5c54b116728811a4683b1cc3c10ba2cf, type: 2}
+  roomsToSpawn: 20
 --- !u!4 &1876287590
 Transform:
   m_ObjectHideFlags: 0
@@ -354,6 +354,10 @@ Prefab:
     - target: {fileID: 478908, guid: 00f0b8ac4c02bb243a76e82912a80a77, type: 2}
       propertyPath: m_RootOrder
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 454772, guid: 00f0b8ac4c02bb243a76e82912a80a77, type: 2}
+      propertyPath: m_RootOrder
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 00f0b8ac4c02bb243a76e82912a80a77, type: 2}

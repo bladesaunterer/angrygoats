@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.Networking;
 
-public class PlayerControl : NetworkBehaviour
+public class PlayerControl : MonoBehaviour
 {
 	private const float DOOR_JUMP = 2;
 
@@ -77,7 +77,7 @@ public class PlayerControl : NetworkBehaviour
 	}
 
 	//This method rotates the player based on 
-	//Dean says to not delete this method
+	//Dean says to not delete this method. Not used, but is useful
     void Turning()
     {
         // Create a ray from the mouse cursor on screen in the direction of the camera.
@@ -121,16 +121,6 @@ public class PlayerControl : NetworkBehaviour
             }
 		}
 	}
-
-    override public void OnStartClient()
-    {
-        Debug.Log("started client");
-    }
-
-    override public void OnStartLocalPlayer()
-    {
-        Debug.Log("started local player");
-    }
 
     public bool IsMine()
     {
