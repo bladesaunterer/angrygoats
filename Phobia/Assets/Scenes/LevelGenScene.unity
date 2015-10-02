@@ -359,7 +359,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   roomPrefabs:
-  - {fileID: 130876, guid: 5c54b116728811a4683b1cc3c10ba2cf, type: 2}
+  - {fileID: 162154, guid: cfa7dd878532f50458a49eccad9e0072, type: 2}
   roomsToSpawn: 20
 --- !u!4 &1876287590
 Transform:
