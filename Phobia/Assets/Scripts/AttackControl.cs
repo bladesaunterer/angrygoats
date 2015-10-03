@@ -8,11 +8,8 @@ public class AttackControl : MonoBehaviour {
 	public float attackSpeed;
 
 	void Start(){
-		rb = GetComponent<Rigidbody> ();
 		Destroy(gameObject, meleeTimeout);
 	}
-
-
 
 	void OnTriggerEnter(Collider other)
 	{

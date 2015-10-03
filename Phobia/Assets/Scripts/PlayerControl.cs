@@ -18,7 +18,12 @@ public class PlayerControl : MonoBehaviour
 
 	public Slider healthSlider;			// UI slider that represents the health
 	public float health;				// Health of the player
-				
+			
+	public GameObject meleeAttack;
+	public Transform meleeSpawn;
+	public float meleeRate;				
+	private float nextMelee;
+
 	private float nextTime;
 
     private Vector3 movement;                   // The vector to store the direction of the player's movement.
@@ -48,6 +53,10 @@ public class PlayerControl : MonoBehaviour
 			cooldown -= cost;
 			//UpdateCoolDownSlider();
 			Instantiate(shot, shotSpawn.position, shotSpawn.rotation);
+		}else if( Input.GetKeyDown(KeyCode.J) && Time.time > nextMelee)
+		{
+			nextMelee = Time.time + meleeRate;
+			Instantiate(meleeAttack, meleeSpawn.position, meleeSpawn.rotation);
 		}
 	}
 
