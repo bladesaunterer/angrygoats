@@ -137,16 +137,17 @@ public class PlayerControl : MonoBehaviour
                 mainCameraTransform.position = (doorMono.goalRoom.transform.position) + cameraPosition;
             }
 		}
-		/*if (other.gameObject.CompareTag ("Enemy")) {
-			health -= 10f;
-			healthSlider.value = health;
-		} */
 	}
-
+	
 	void UpdateCoolDownSlider(){
 		cooldownSlider.value = cooldown;
 	}
 	
+	public void TakeDamage (float damage){
+		health = + damage;
+		//healthSlider.value = health;
+	}
+
 
     public bool IsMine()
     {
