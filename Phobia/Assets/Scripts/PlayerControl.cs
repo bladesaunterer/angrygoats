@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.Networking;
 
 public class PlayerControl : MonoBehaviour
@@ -9,14 +10,28 @@ public class PlayerControl : MonoBehaviour
 	public float webSlowFactor = 0.5f;
 	private bool inWeb = false;
 
-	public GameObject shot;
-	public Transform shotSpawn;
 	public float fireRate;
-	
-	private float nextFire;
+	public GameObject shot;				// The special attack
+	public Transform shotSpawn;			// Where the special attack will spwan 
+
+	public Slider cooldownSlider;		// UI slider that represents cooldown
+	public float cooldown;				// How much cool down
+	public float regen;					// Regen of the cooldown per second 
+	public float cost;					// How much each special attack costs
+
+	public Slider healthSlider;			// UI slider that represents the health
+	public float health;				// Health of the player
+			
+	public GameObject meleeAttack;
+	public Transform meleeSpawn;
+	public float meleeRate;				
+	private float nextMelee;
+
+	private float nextTime;
 
     private Vector3 movement;                   // The vector to store the direction of the player's movement.
-    private Vector3 cameraPosition = new Vector3 (0, 30, -17);
+    private Vector3 cameraPosition = new Vector3 (0, 26, -17);
+    // private Vector3 cameraPosition = new Vector3(0, 30, -17);
 
     private int floorMask;                      // A layer mask so that a ray can be cast just at gameobjects on the floor layer.
     private float camRayLength = 100f;          // The length of the ray from the camera into the scene.
@@ -29,10 +44,23 @@ public class PlayerControl : MonoBehaviour
     }
 
 	void Update(){
-		if (Input.GetKeyDown(KeyCode.K) && Time.time > nextFire)
+		//Updates every second
+		if (Time.time > nextTime) {
+			nextTime = Time.time + 1f;
+			if (cooldown != 100f ){
+				cooldown += regen;
+			}
+			//UpdateCoolDownSlider();
+		}
+		if (Input.GetKeyDown(KeyCode.K) && cooldown >= cost)
 		{
-			nextFire = Time.time + fireRate;
+			cooldown -= cost;
+			//UpdateCoolDownSlider();
 			Instantiate(shot, shotSpawn.position, shotSpawn.rotation);
+		}else if( Input.GetKeyDown(KeyCode.J) && Time.time > nextMelee)
+		{
+			nextMelee = Time.time + meleeRate;
+			Instantiate(meleeAttack, meleeSpawn.position, meleeSpawn.rotation);
 		}
 	}
 
@@ -59,6 +87,7 @@ public class PlayerControl : MonoBehaviour
 		movement.Set (h, 0f, v);
 		
 		// Normalise the movement vector and make it proportional to the speed per second.
+
 		float moveSpeed = speed;
 		if (inWeb) {
 			moveSpeed*=webSlowFactor;
@@ -115,7 +144,6 @@ public class PlayerControl : MonoBehaviour
 		if (other.gameObject.CompareTag("Door"))
 		{
             DoorControl doorMono = other.gameObject.GetComponent<DoorControl>();
-
             Debug.Log("Door fired: " + doorMono.gameObject.GetInstanceID());
             Vector3 goalPos = doorMono.goalDoor.transform.position + doorMono.goalDoor.transform.forward * DOOR_JUMP;
             goalPos.y = 0;
@@ -137,9 +165,24 @@ public class PlayerControl : MonoBehaviour
 
 	void OnTriggerExit(Collider other)
 	{
-		if (other.gameObject.CompareTag ("Web")) {
+		if (other.gameObject.CompareTag ("Web"))
+        {
 			inWeb = false;
 		}
+
+        //if (IsMine()) {
+        //        mainCameraTransform.position = (doorMono.goalRoom.transform.position) + cameraPosition;
+        //}
+
+	}
+	
+	void UpdateCoolDownSlider(){
+		cooldownSlider.value = cooldown;
+	}
+	
+	public void TakeDamage (float damage){
+		health = + damage;
+		//healthSlider.value = health;
 	}
 
     public bool IsMine()
