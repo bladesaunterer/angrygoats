@@ -8,8 +8,8 @@ public class LevelGenerator : MonoBehaviour {
     public int roomsToSpawn;
     List<Room> rooms = new List<Room>();
 	
-	private const int HORIZ_TILING = 50;
-	private const int VERT_TILING = 40;
+	private const int HORIZ_TILING = 100;
+	private const int VERT_TILING = 80;
 
     // Use this for initialization
     void Start () {
@@ -23,6 +23,9 @@ public class LevelGenerator : MonoBehaviour {
 			thisRoom.Floor = (GameObject)Instantiate(thisRoom.Floor, new Vector3(0, 0, 0), Quaternion.identity);
 			thisRoom.Walls.name = "Room " + 0;
             thisRoom.Position = new Vector2(0,0);
+
+			thisRoom.Walls.transform.Find("Lights").gameObject.SetActive(true);
+			//GameObject.Find(thisRoom.Walls.name + "/Lights").SetActive(true);
         }
 
         for (int i = 1; i < roomsToSpawn; i++)
@@ -103,11 +106,9 @@ public class LevelGenerator : MonoBehaviour {
                     GameObject adjDoor = GameObject.Find(adjRooms[i].Walls.name + "/Doors/" + directions[(i + 2) % 4]);
 
                     thisDoor.GetComponent<DoorControl>().goalDoor = adjDoor;
-                    thisDoor.GetComponent<DoorControl>().goalRoom = adjRooms[i].Walls;
                     GameObject.Find(Walls.name + "/DoorBlockers/" + directions[i]).SetActive(false);
 
                     adjDoor.GetComponent<DoorControl>().goalDoor = thisDoor;
-                    adjDoor.GetComponent<DoorControl>().goalRoom = Walls;
                     GameObject.Find(adjRooms[i].Walls.name + "/DoorBlockers/" + directions[(i + 2) % 4]).SetActive(false);
                 }
             }

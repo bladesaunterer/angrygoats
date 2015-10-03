@@ -16,7 +16,7 @@ public class PlayerControl : MonoBehaviour
 	private float nextFire;
 
     private Vector3 movement;                   // The vector to store the direction of the player's movement.
-    private Vector3 cameraPosition = new Vector3 (0, 26, -17);
+    private Vector3 cameraPosition = new Vector3 (0, 30, -19);
 
     private int floorMask;                      // A layer mask so that a ray can be cast just at gameobjects on the floor layer.
     private float camRayLength = 100f;          // The length of the ray from the camera into the scene.
@@ -115,6 +115,7 @@ public class PlayerControl : MonoBehaviour
 		if (other.gameObject.CompareTag("Door"))
 		{
             DoorControl doorMono = other.gameObject.GetComponent<DoorControl>();
+
             Debug.Log("Door fired: " + doorMono.gameObject.GetInstanceID());
             Vector3 goalPos = doorMono.goalDoor.transform.position + doorMono.goalDoor.transform.forward * DOOR_JUMP;
             goalPos.y = 0;
@@ -122,9 +123,11 @@ public class PlayerControl : MonoBehaviour
             if (IsLocalPlayer()) {
                 GetComponent<NetworkTransform>().InvokeSyncEvent(0, null);
             }
+			doorMono.goalDoor.GetComponent<DoorControl>().ownRoom.transform.Find("Lights").gameObject.SetActive(true);
             if (IsMine()) {
-                mainCameraTransform.position = (doorMono.goalRoom.transform.position) + cameraPosition;
-            }
+                mainCameraTransform.position = (doorMono.goalDoor.GetComponent<DoorControl>().ownRoom.transform.position) + cameraPosition;
+			}
+			doorMono.ownRoom.transform.Find("Lights").gameObject.SetActive(false);
 		}
 		else if (other.gameObject.CompareTag("Web"))
 		{

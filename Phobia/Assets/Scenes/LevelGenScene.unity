@@ -189,7 +189,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 417996, guid: ade1c0a4e3e2e2140b31697064dcd000, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -20
+      value: -19
       objectReference: {fileID: 0}
     - target: {fileID: 417996, guid: ade1c0a4e3e2e2140b31697064dcd000, type: 2}
       propertyPath: m_LocalRotation.x
@@ -322,7 +322,7 @@ MonoBehaviour:
   - {fileID: 104736, guid: 489e37e3152f71e4ba8a2aa6196fb154, type: 2}
   - {fileID: 130984, guid: 2c9fe9985a25daf4199649d2e4db68e7, type: 2}
   - {fileID: 177274, guid: a5299e8679a4d6b42a3201a72c1e2b1b, type: 2}
-  wallPrefab: {fileID: 107950, guid: 85b28bfc6066b9c4a9048960b5d56901, type: 2}
+  wallPrefab: {fileID: 187194, guid: 85b28bfc6066b9c4a9048960b5d56901, type: 2}
   roomsToSpawn: 20
 --- !u!4 &1876287590
 Transform:

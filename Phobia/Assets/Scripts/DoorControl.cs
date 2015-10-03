@@ -4,7 +4,7 @@ using System.Collections;
 public class DoorControl : MonoBehaviour {
 	
 	public GameObject goalDoor;
-	public GameObject goalRoom;
+	public GameObject ownRoom;
     public bool canSend = true;
 
 	// Use this for initialization
