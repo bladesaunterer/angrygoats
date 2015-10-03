@@ -29,15 +29,15 @@ public class EnemyHealth : MonoBehaviour
 		currentHealth = startingHealth;
 	}
 
-	void Update ()
-	{
-		// If the enemy should be sinking...
-		if(isSinking)
-		{
-			// ... move the enemy down by the sinkSpeed per second.
-			transform.Translate (-Vector3.up * sinkSpeed * Time.deltaTime);
-		}
-	}
+//	void Update ()
+//	{
+//		// If the enemy should be sinking...
+//		if(isSinking)
+//		{
+//			// ... move the enemy down by the sinkSpeed per second.
+//			transform.Translate (-Vector3.up * sinkSpeed * Time.deltaTime);
+//		}
+//	}
 	
 	
 	public void TakeDamage (int amount)
