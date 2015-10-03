@@ -37,6 +37,7 @@ public class PlayerControl : MonoBehaviour
     void Awake ()
 	{
         this.mainCameraTransform = Camera.main.GetComponentInParent<Transform>();
+		health = 100;
     }
 
 	void Update(){
@@ -153,7 +154,7 @@ public class PlayerControl : MonoBehaviour
 	}
 	
 	public void TakeDamage (float damage){
-		health = + damage;
+		health -= damage;
 		//healthSlider.value = health;
 	}
 

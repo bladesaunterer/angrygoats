@@ -15,6 +15,7 @@ GameObject:
   - 195: {fileID: 19580552}
   - 114: {fileID: 11490894}
   - 114: {fileID: 11439026}
+  - 114: {fileID: 11492092}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -118,6 +119,17 @@ MonoBehaviour:
   currentHealth: 0
   sinkSpeed: 0
   scoreValue: 10
+--- !u!114 &11492092
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 126870}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b06e5f615efae2e49bf7f67d61f9ce93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!195 &19580552
 NavMeshAgent:
   m_ObjectHideFlags: 1

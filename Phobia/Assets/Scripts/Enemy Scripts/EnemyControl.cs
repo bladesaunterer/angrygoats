@@ -17,8 +17,7 @@ public class EnemyControl : MonoBehaviour {
 		//enemyHealth = GetComponent<EnemyHealth>();
 		nav = GetComponent<NavMeshAgent>();
 	}
-	
-	
+
 	void Update()
 	{
 		// If the enemy and the player have health left...
@@ -32,6 +31,13 @@ public class EnemyControl : MonoBehaviour {
 		//{
 		// ... disable the nav mesh agent.
 		//    nav.enabled = false;
+		//}
+	}
+
+	void OnCollisionEnter(Collision other)
+	{
+		//if (other.gameObject.CompareTag ("Player")) {
+			HealthControl.dealDamageToPlayer(other.gameObject);
 		//}
 	}
 }
