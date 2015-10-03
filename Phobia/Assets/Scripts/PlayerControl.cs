@@ -6,6 +6,8 @@ public class PlayerControl : MonoBehaviour
 	private const float DOOR_JUMP = 2;
 
 	public float speed = 6f;            // The speed that the player will move at.
+	public float webSlowFactor = 0.5f;
+	private bool inWeb = false;
 
 	public GameObject shot;
 	public Transform shotSpawn;
@@ -57,7 +59,11 @@ public class PlayerControl : MonoBehaviour
 		movement.Set (h, 0f, v);
 		
 		// Normalise the movement vector and make it proportional to the speed per second.
-		movement = movement.normalized * speed * Time.deltaTime;
+		float moveSpeed = speed;
+		if (inWeb) {
+			moveSpeed*=webSlowFactor;
+		}
+		movement = movement.normalized * moveSpeed * Time.deltaTime;
 
         // Move the player to it's current position plus the movement.
 		GetComponent<Rigidbody>().MovePosition (transform.position + movement);
@@ -119,6 +125,17 @@ public class PlayerControl : MonoBehaviour
             if (IsMine()) {
                 mainCameraTransform.position = (doorMono.goalRoom.transform.position) + cameraPosition;
             }
+		}
+		else if (other.gameObject.CompareTag("Web"))
+		{
+			inWeb = true;
+		}
+	}
+
+	void OnTriggerExit(Collider other)
+	{
+		if (other.gameObject.CompareTag ("Web")) {
+			inWeb = false;
 		}
 	}
 

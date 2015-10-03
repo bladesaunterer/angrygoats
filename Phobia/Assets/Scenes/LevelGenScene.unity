@@ -318,9 +318,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   floorPrefabs:
-  - {fileID: 111472, guid: eddd85f44055e014ca70df10bf8b4abd, type: 2}
-  - {fileID: 193860, guid: 489e37e3152f71e4ba8a2aa6196fb154, type: 2}
-  - {fileID: 146514, guid: 2c9fe9985a25daf4199649d2e4db68e7, type: 2}
+  - {fileID: 163598, guid: eddd85f44055e014ca70df10bf8b4abd, type: 2}
+  - {fileID: 104736, guid: 489e37e3152f71e4ba8a2aa6196fb154, type: 2}
+  - {fileID: 130984, guid: 2c9fe9985a25daf4199649d2e4db68e7, type: 2}
+  - {fileID: 177274, guid: a5299e8679a4d6b42a3201a72c1e2b1b, type: 2}
   wallPrefab: {fileID: 107950, guid: 85b28bfc6066b9c4a9048960b5d56901, type: 2}
   roomsToSpawn: 20
 --- !u!4 &1876287590
