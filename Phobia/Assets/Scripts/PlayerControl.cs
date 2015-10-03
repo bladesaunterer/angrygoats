@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.Networking;
 
 public class PlayerControl : MonoBehaviour
@@ -10,11 +11,14 @@ public class PlayerControl : MonoBehaviour
 	public GameObject shot;				// The special attack
 	public Transform shotSpawn;			// Where the special attack will spwan 
 
+	public Slider cooldownSlider;		// UI slider that represents cooldown
 	public float cooldown;				// How much cool down
 	public float regen;					// Regen of the cooldown per second 
 	public float cost;					// How much each special attack costs
 
-	//public float fireRate;				
+	public Slider healthSlider;			// UI slider that represents the health
+	public float health;				// Health of the player
+				
 	private float nextTime;
 
     private Vector3 movement;                   // The vector to store the direction of the player's movement.
@@ -37,11 +41,12 @@ public class PlayerControl : MonoBehaviour
 			if (cooldown != 100f ){
 				cooldown += regen;
 			}
+			//UpdateCoolDownSlider();
 		}
-		if (Input.GetKeyDown(KeyCode.K) && cooldown > cost)
+		if (Input.GetKeyDown(KeyCode.K) && cooldown >= cost)
 		{
-			//nextFire = Time.time + fireRate;
 			cooldown -= cost;
+			//UpdateCoolDownSlider();
 			Instantiate(shot, shotSpawn.position, shotSpawn.rotation);
 		}
 	}
@@ -132,7 +137,16 @@ public class PlayerControl : MonoBehaviour
                 mainCameraTransform.position = (doorMono.goalRoom.transform.position) + cameraPosition;
             }
 		}
+		/*if (other.gameObject.CompareTag ("Enemy")) {
+			health -= 10f;
+			healthSlider.value = health;
+		} */
 	}
+
+	void UpdateCoolDownSlider(){
+		cooldownSlider.value = cooldown;
+	}
+	
 
     public bool IsMine()
     {
