@@ -13,3 +13,13 @@ EditorBuildSettings:
     path: Assets/Scenes/OfflineExampleLevel.unity
   - enabled: 1
     path: Assets/Scenes/LevelGenScene.unity
+  - enabled: 1
+    path: Assets/Scenes/SettingsMenu.unity
+  - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+  - enabled: 1
+    path: Assets/Scenes/LevelGenScene.unity
+  - enabled: 0
+    path: Assets/Scenes/MainMenu.unity
+  - enabled: 1
+    path: Assets/Scenes/LevelSelectMenu.unity
