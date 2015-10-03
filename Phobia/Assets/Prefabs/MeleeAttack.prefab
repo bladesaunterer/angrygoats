@@ -117,7 +117,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70f3a3faf62a1e64e959d371d1806ed9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  meleeTimeout: 2
+  meleeTimeout: .100000001
   attackSpeed: 0
 --- !u!135 &13503754
 SphereCollider:
@@ -140,7 +140,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 0}
       propertyPath: meleeTimeout
-      value: 2
+      value: .100000001
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
