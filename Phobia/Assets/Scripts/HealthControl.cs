@@ -28,7 +28,7 @@ public static class HealthControl {
 		// If the EnemyHealth component exist...
 		if (playerHealth != null)
 		{
-			playerHealth.TakeDamage(40);
+			playerHealth.TakeDamage(8);
 		}
 	}
 }
