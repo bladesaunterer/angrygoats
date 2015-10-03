@@ -12,7 +12,7 @@ GameObject:
   - 114: {fileID: 11496232}
   m_Layer: 0
   m_Name: Bolt
-  m_TagString: Special
+  m_TagString: SpecialAttack
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -139,7 +139,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 0}
       propertyPath: m_TagString
-      value: Special
+      value: SpecialAttack
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
