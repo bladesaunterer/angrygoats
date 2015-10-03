@@ -106,10 +106,10 @@ public class LevelGenerator : MonoBehaviour {
                     GameObject adjDoor = GameObject.Find(adjRooms[i].Walls.name + "/Doors/" + directions[(i + 2) % 4]);
 
                     thisDoor.GetComponent<DoorControl>().goalDoor = adjDoor;
-                    GameObject.Find(Walls.name + "/DoorBlockers/" + directions[i]).SetActive(false);
+                    GameObject.Find(Walls.name + "/Door Blockers/" + directions[i]).SetActive(false);
 
                     adjDoor.GetComponent<DoorControl>().goalDoor = thisDoor;
-                    GameObject.Find(adjRooms[i].Walls.name + "/DoorBlockers/" + directions[(i + 2) % 4]).SetActive(false);
+                    GameObject.Find(adjRooms[i].Walls.name + "/Door Blockers/" + directions[(i + 2) % 4]).SetActive(false);
                 }
             }
         }

@@ -217,15 +217,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 2063540, guid: ade1c0a4e3e2e2140b31697064dcd000, type: 2}
       propertyPath: m_BackGroundColor.r
-      value: .0862745121
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2063540, guid: ade1c0a4e3e2e2140b31697064dcd000, type: 2}
       propertyPath: m_BackGroundColor.g
-      value: .0862745121
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2063540, guid: ade1c0a4e3e2e2140b31697064dcd000, type: 2}
       propertyPath: m_BackGroundColor.b
-      value: .0784313753
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ade1c0a4e3e2e2140b31697064dcd000, type: 2}
@@ -318,11 +318,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   floorPrefabs:
-  - {fileID: 163598, guid: eddd85f44055e014ca70df10bf8b4abd, type: 2}
-  - {fileID: 104736, guid: 489e37e3152f71e4ba8a2aa6196fb154, type: 2}
-  - {fileID: 130984, guid: 2c9fe9985a25daf4199649d2e4db68e7, type: 2}
-  - {fileID: 177274, guid: a5299e8679a4d6b42a3201a72c1e2b1b, type: 2}
-  wallPrefab: {fileID: 187194, guid: 85b28bfc6066b9c4a9048960b5d56901, type: 2}
+  - {fileID: 138178, guid: 430aee4e7c8dacd4b856612a7317ce83, type: 2}
+  wallPrefab: {fileID: 191066, guid: d35c4f618bababb4a8c66065d625ad85, type: 2}
   roomsToSpawn: 20
 --- !u!4 &1876287590
 Transform:
@@ -381,6 +378,10 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 454772, guid: 00f0b8ac4c02bb243a76e82912a80a77, type: 2}
       propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 454772, guid: 00f0b8ac4c02bb243a76e82912a80a77, type: 2}
+      propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
