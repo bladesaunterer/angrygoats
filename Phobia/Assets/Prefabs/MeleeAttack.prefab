@@ -11,8 +11,8 @@ GameObject:
   - 54: {fileID: 5422622}
   - 114: {fileID: 11496232}
   m_Layer: 0
-  m_Name: Bolt
-  m_TagString: SpecialAttack
+  m_Name: MeleeAttack
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -114,10 +114,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 139214}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 58babf209d41cb54b971eb2481d5d5c9, type: 3}
+  m_Script: {fileID: 11500000, guid: 70f3a3faf62a1e64e959d371d1806ed9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
+  meleeTimeout: .100000001
+  attackSpeed: 0
 --- !u!135 &13503754
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -138,8 +139,8 @@ Prefab:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 0}
-      propertyPath: m_TagString
-      value: SpecialAttack
+      propertyPath: meleeTimeout
+      value: .100000001
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

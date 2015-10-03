@@ -1,15 +1,14 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class BoltMover : MonoBehaviour {
-    
-    public float speed;
+public class AttackControl : MonoBehaviour {
 
 	private Rigidbody rb;
+	public  float meleeTimeout;
+	public float attackSpeed;
 
 	void Start(){
-		rb = GetComponent<Rigidbody> ();
-		rb.velocity = transform.forward * speed;
+		Destroy(gameObject, meleeTimeout);
 	}
 
 	void OnTriggerEnter(Collider other)
@@ -18,6 +17,6 @@ public class BoltMover : MonoBehaviour {
 			Destroy(gameObject);
 
 			HealthControl.dealDamageToEnemy(other.gameObject);
-		}
+		} 
 	}
 }
