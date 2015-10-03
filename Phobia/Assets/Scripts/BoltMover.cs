@@ -14,8 +14,18 @@ public class BoltMover : MonoBehaviour {
 
 	void OnTriggerEnter(Collider other)
 	{
-		if (other.gameObject.CompareTag ("Door") || other.gameObject.CompareTag ("Wall")) {
+		if (other.gameObject.CompareTag ("Door") || other.gameObject.CompareTag ("Wall") || other.gameObject.CompareTag ("Enemy")) {
 			Destroy(gameObject);
+
+			// Try and find an EnemyHealth script on the gameobject hit.
+			EnemyHealth enemyHealth = other.gameObject.GetComponent <EnemyHealth> ();
+			
+			// If the EnemyHealth component exist...
+			if(enemyHealth != null)
+			{
+				// ... the enemy should take damage.
+				enemyHealth.TakeDamage (50);
+			}
 		}
 	}
 }
