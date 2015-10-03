@@ -16,7 +16,7 @@ public class PlayerControl : MonoBehaviour
 	private float nextFire;
 
     private Vector3 movement;                   // The vector to store the direction of the player's movement.
-    private Vector3 cameraPosition = new Vector3 (0, 30, -19);
+    private Vector3 cameraPosition = new Vector3 (0, 30, -17);
 
     private int floorMask;                      // A layer mask so that a ray can be cast just at gameobjects on the floor layer.
     private float camRayLength = 100f;          // The length of the ray from the camera into the scene.

@@ -87,6 +87,48 @@ NavMeshSettings:
 --- !u!127 &5
 LevelGameManager:
   m_ObjectHideFlags: 0
+--- !u!1001 &182005722
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 415584, guid: 88fdb93fd998ee0489870cb48ef674c3, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 415584, guid: 88fdb93fd998ee0489870cb48ef674c3, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 415584, guid: 88fdb93fd998ee0489870cb48ef674c3, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -17
+      objectReference: {fileID: 0}
+    - target: {fileID: 415584, guid: 88fdb93fd998ee0489870cb48ef674c3, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: .50000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 415584, guid: 88fdb93fd998ee0489870cb48ef674c3, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 415584, guid: 88fdb93fd998ee0489870cb48ef674c3, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 415584, guid: 88fdb93fd998ee0489870cb48ef674c3, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: .866025388
+      objectReference: {fileID: 0}
+    - target: {fileID: 415584, guid: 88fdb93fd998ee0489870cb48ef674c3, type: 2}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 88fdb93fd998ee0489870cb48ef674c3, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &315393682
 GameObject:
   m_ObjectHideFlags: 0
@@ -172,64 +214,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!1001 &505445422
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 417996, guid: ade1c0a4e3e2e2140b31697064dcd000, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 417996, guid: ade1c0a4e3e2e2140b31697064dcd000, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 417996, guid: ade1c0a4e3e2e2140b31697064dcd000, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: -19
-      objectReference: {fileID: 0}
-    - target: {fileID: 417996, guid: ade1c0a4e3e2e2140b31697064dcd000, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: .50000006
-      objectReference: {fileID: 0}
-    - target: {fileID: 417996, guid: ade1c0a4e3e2e2140b31697064dcd000, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 417996, guid: ade1c0a4e3e2e2140b31697064dcd000, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 417996, guid: ade1c0a4e3e2e2140b31697064dcd000, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: .866025388
-      objectReference: {fileID: 0}
-    - target: {fileID: 417996, guid: ade1c0a4e3e2e2140b31697064dcd000, type: 2}
-      propertyPath: m_RootOrder
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 2063540, guid: ade1c0a4e3e2e2140b31697064dcd000, type: 2}
-      propertyPath: m_ClearFlags
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2063540, guid: ade1c0a4e3e2e2140b31697064dcd000, type: 2}
-      propertyPath: m_BackGroundColor.r
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2063540, guid: ade1c0a4e3e2e2140b31697064dcd000, type: 2}
-      propertyPath: m_BackGroundColor.g
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2063540, guid: ade1c0a4e3e2e2140b31697064dcd000, type: 2}
-      propertyPath: m_BackGroundColor.b
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: ade1c0a4e3e2e2140b31697064dcd000, type: 2}
-  m_IsPrefabParent: 0
 --- !u!1 &1011740309
 GameObject:
   m_ObjectHideFlags: 0
@@ -318,8 +302,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   floorPrefabs:
-  - {fileID: 138178, guid: 430aee4e7c8dacd4b856612a7317ce83, type: 2}
-  wallPrefab: {fileID: 191066, guid: d35c4f618bababb4a8c66065d625ad85, type: 2}
+  - {fileID: 105500, guid: 430aee4e7c8dacd4b856612a7317ce83, type: 2}
+  wallPrefab: {fileID: 104770, guid: d35c4f618bababb4a8c66065d625ad85, type: 2}
   roomsToSpawn: 20
 --- !u!4 &1876287590
 Transform:
