@@ -7,7 +7,10 @@ public class PlayerControl : MonoBehaviour
 	private const float DOOR_JUMP = 2;
 
 	public float speed = 6f;            // The speed that the player will move at.
+	public float webSlowFactor = 0.5f;
+	private bool inWeb = false;
 
+	public float fireRate;
 	public GameObject shot;				// The special attack
 	public Transform shotSpawn;			// Where the special attack will spwan 
 
@@ -24,7 +27,8 @@ public class PlayerControl : MonoBehaviour
 	private float nextTime;
 
     private Vector3 movement;                   // The vector to store the direction of the player's movement.
-    private Vector3 cameraPosition = new Vector3 (0, 26, -17);
+    private Vector3 cameraPosition = new Vector3 (0, 30, -17);
+    // private Vector3 cameraPosition = new Vector3(0, 30, -17);
 
     private int floorMask;                      // A layer mask so that a ray can be cast just at gameobjects on the floor layer.
     private float camRayLength = 100f;          // The length of the ray from the camera into the scene.
@@ -80,7 +84,12 @@ public class PlayerControl : MonoBehaviour
 		movement.Set (h, 0f, v);
 		
 		// Normalise the movement vector and make it proportional to the speed per second.
-		movement = movement.normalized * speed * Time.deltaTime;
+
+		float moveSpeed = speed;
+		if (inWeb) {
+			moveSpeed*=webSlowFactor;
+		}
+		movement = movement.normalized * moveSpeed * Time.deltaTime;
 
         // Move the player to it's current position plus the movement.
 		GetComponent<Rigidbody>().MovePosition (transform.position + movement);
@@ -139,14 +148,38 @@ public class PlayerControl : MonoBehaviour
             if (IsLocalPlayer()) {
                 GetComponent<NetworkTransform>().InvokeSyncEvent(0, null);
             }
+			doorMono.goalDoor.GetComponent<DoorControl>().ownRoom.transform.Find("Lights").gameObject.SetActive(true);
             if (IsMine()) {
-                mainCameraTransform.position = (doorMono.goalRoom.transform.position) + cameraPosition;
-            }
+                mainCameraTransform.position = (doorMono.goalDoor.GetComponent<DoorControl>().ownRoom.transform.position) + cameraPosition;
+			}
+			doorMono.ownRoom.transform.Find("Lights").gameObject.SetActive(false);
 		}
+		else if (other.gameObject.CompareTag("Web"))
+		{
+			inWeb = true;
+		}
+	}
+
+	void OnTriggerExit(Collider other)
+	{
+		if (other.gameObject.CompareTag ("Web"))
+        {
+			inWeb = false;
+		}
+
+        //if (IsMine()) {
+        //        mainCameraTransform.position = (doorMono.goalRoom.transform.position) + cameraPosition;
+        //}
+
 	}
 	
 	void UpdateCoolDownSlider(){
 		cooldownSlider.value = cooldown;
+	}
+	
+	public void TakeDamage (float damage){
+		health = + damage;
+		//healthSlider.value = health;
 	}
 
     public bool IsMine()
