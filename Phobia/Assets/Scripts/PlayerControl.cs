@@ -18,7 +18,11 @@ public class PlayerControl : MonoBehaviour
 	public float cooldown;				// How much cool down
 	public float regen;					// Regen of the cooldown per second 
 	public float cost;					// How much each special attack costs
-			
+
+
+	public Slider healthSlider;			// UI slider that represents the health
+	public float health;				// Health of the player
+	
 	public GameObject meleeAttack;
 	public Transform meleeSpawn;
 	public float meleeRate;				
