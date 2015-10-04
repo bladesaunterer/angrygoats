@@ -65,7 +65,13 @@ public class LevelGenerator : MonoBehaviour {
 			
 			chosenRoom.AddEnemy();
 		}
-	}
+
+
+
+
+        AstarPath.active.Scan();
+
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -165,8 +171,11 @@ public class LevelGenerator : MonoBehaviour {
 				chosenCell = cells[Random.Range(0, cells.Count)];
 			} while(enemyCells.Contains(chosenCell));
 			enemyCells.Add(chosenCell);
-			
-			Instantiate(parent.enemy, (chosenCell.transform.position + new Vector3(0, 1, 0)), Quaternion.identity);
-		}
+
+            GameObject thisEnemy = (GameObject)Instantiate(parent.enemy, (chosenCell.transform.position + new Vector3(0, 1, 0)), Quaternion.identity);
+
+            thisEnemy.GetComponent<AIPath>().target = GameObject.FindWithTag("Player").transform;
+
+        }
     }
 }
