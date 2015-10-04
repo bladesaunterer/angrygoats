@@ -3,9 +3,13 @@ using System.Collections.Generic;
 
 public class LevelGenerator : MonoBehaviour {
     
-    public List<GameObject> floorPrefabs;
+    public int roomsToSpawn = 20;
     public GameObject wallPrefab;
-    public int roomsToSpawn;
+	public List<GameObject> floorPrefabs;
+    public int totalEnemies = 60;
+	public int maxEnemiesPerRoom = 6;
+	public GameObject enemy;
+	
     List<Room> rooms = new List<Room>();
 	
 	private const int HORIZ_TILING = 100;
@@ -49,8 +53,25 @@ public class LevelGenerator : MonoBehaviour {
 
         foreach(Room room in rooms) {
             room.LinkDoors();
+			room.PopulateCells();
         }
-	}
+		for (int i = 0; i < totalEnemies; i++) {
+			
+			Room chosenRoom;
+			
+			do {
+				chosenRoom = rooms[Random.Range(0, rooms.Count)];
+			} while (chosenRoom.enemyCells.Count >= maxEnemiesPerRoom);
+			
+			chosenRoom.AddEnemy();
+		}
+
+
+
+
+        AstarPath.active.Scan();
+
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -74,6 +95,8 @@ public class LevelGenerator : MonoBehaviour {
         public GameObject Floor { get; set; }
         public Room[] adjRooms = new Room[4];
         public Vector2 Position { get; set; }
+		public List<GameObject> enemyCells = new List<GameObject>();
+		public List<GameObject> cells = new List<GameObject>();
 
         private string[] directions = {"North Door", "East Door", "South Door", "West Door" };
         private Vector2[] vectors = { new Vector2(0, 1), new Vector2(1, 0), new Vector2(0, -1), new Vector2(-1, 0)};
@@ -130,6 +153,29 @@ public class LevelGenerator : MonoBehaviour {
                 pos = Random.Range(0, 4);
             } while (!parent.IsEmpty(Position+vectors[pos]));
             return pos;
+        }
+		
+		public void PopulateCells() {
+			foreach (Transform child in Floor.transform) {
+				foreach(Transform grandChild in child) {
+					cells.Add(grandChild.gameObject);
+				}
+			}
+			Debug.Log("" + cells.Count);
+		}
+		
+		public void AddEnemy() {
+			
+			GameObject chosenCell;
+			do {
+				chosenCell = cells[Random.Range(0, cells.Count)];
+			} while(enemyCells.Contains(chosenCell));
+			enemyCells.Add(chosenCell);
+
+            GameObject thisEnemy = (GameObject)Instantiate(parent.enemy, (chosenCell.transform.position + new Vector3(0, 1, 0)), Quaternion.identity);
+
+            thisEnemy.GetComponent<AIPath>().target = GameObject.FindWithTag("Player").transform;
+
         }
     }
 }

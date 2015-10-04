@@ -84,7 +84,7 @@ NavMeshSettings:
     minRegionArea: 2
     cellSize: .166666672
     manualCellSize: 0
-  m_NavMeshData: {fileID: 0}
+  m_NavMeshData: {fileID: 23800000, guid: ab81f9db15727a04d85e04fa3d57ace4, type: 2}
 --- !u!20 &53703026 stripped
 Camera:
   m_PrefabParentObject: {fileID: 2000670, guid: 88fdb93fd998ee0489870cb48ef674c3,
@@ -2032,6 +2032,122 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1625148584}
+--- !u!1 &1742255550
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1742255552}
+  - 114: {fileID: 1742255551}
+  m_Layer: 0
+  m_Name: AStar
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1742255551
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1742255550}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78396926cbbfc4ac3b48fc5fc34a87d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  astarData:
+    dataString: UEsDBBQAAAgIAABoIeyiRMe+5gEAAMcDAAALACQAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFdUl1v2kAQ/CvVPTuRoRAa3lJISKS0QSFVnxd7jVec76z7KB8R/717Z2NwXix5Z3Z2dvY+xcZTLqaf4h9Ij2IqRtlo/B3SIRTp5B7T8Q0MEddQDPLJfTq5y0filAiwNWbuHRxpMR0kgqyu0BnKHtRGskqaCK+o0KZ6zDc409ZZMS1AWkyE0S70qTB0H6mH+D3yl6UzVA5ND7xJbwcd7lUmoaoxX9ERW9q44Y0CrnSODcQ9mZaSbDvMHeqw4Axq69lkInICdh2GMbVE2pROTIdXXW9FYdFFGwYOczK8dBQTP7UrWaECu70KL8xvdH71geH4jqHC6Oq5HTNIWdSVlG3f4ZCBdV0+18X5tUOvdiC3sJb4t0T1Wy+M9opv54znNm9xOO9EuhVmJWbbM6fx1iv5uhf1OedT2G0/k1St+fd2dPl92JONPC6spA6RDn4kAg3n/sJW421t1ONasPDH4gdsLg+gLT+RsY6BKAbe6VdS24Wh/MI8V+dk3StVFHPjE4c11tobZorHmCdv7N1MG4Wh2KxWowLpDkue5vrH/IJ0877UnyBzusm+Rdrn3afHYsdN0z6w1Lv2fqRYFeSyAaMRjk+d7So+Ne8TEvi2MFCH95Ub2C3oWOluKVKFXmUGUb3F3mjl9B9QSwMEFAAACAgAAGgh7N0KA5DiAQAAxwMAAAsAJABncmFwaDEuanNvbgoAIAAAAAAAAQAYAACAPtXesZ0BAIA+1d6xnQEAgD7V3rGdAV1Sy27bMBD8lYJnJ5Ady6l9S+3ELZA2RtyiZ4paWQtRpMBH/Qj8711Simz5IoA7szs7s/pgO485W3ywf1x6YAuWp2KSTUU2KR4LeMjnd2n+8HWWpUWSZIl4nM/YecS4bUC4d+5Qs8V4xNDqGpxB8aR2kqYkI+YVFtrUz/kOlto6yxYFlxZGzGgX+lQQPUTqMX5P9KXRApQD04Hj5Bb2SkheN5Bv8QQdK21J04ArnUML0VpCS4m203LHJvhb8sZ62nHEcuS0dNAiagm4Kx1bTK663orCgovqhh9XaMhzHMa+aVfShJrb6iq7oN/O+TkEJumMoMLo+nsnE425EkX1zo+CW9fHc11cXW/o1Z7LimcS/pagfum10V7R6Zzx1OYtTFb9kN7CsgRRfXLa3QYl3wzOMO5yPgdvh6XEOqPn/fTyfDqgjTwqbKUOkc6pFwzl/oNWjae1cR7Vwgp/LPzmu8v9u/ILGusIiMO4d/oVVbU2mF+Yn9UVWveKNcbc6MTBRqa9ISZ7jnmSY++W2igIxdZaA4pLd9yQmhse8wbp9W7qL1w43WbfId3fPaTHYs9NkiGw0fvufqhoKpebFoyLUHwXdUW3JkMhgi9rw5vwg+WG79d4qnXvClWht8IAqLdL8/k/UEsDBBQAAAgIAABoIewTxsLH4QEAAMYDAAALACQAZ3JhcGgyLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFtUl1v2kAQ/CvVPdMKEE6AtxQSWiltUGjV5+W8xivOd9Z9lI+I/969s2Nw1BdLtzM7szvrN7ELlIv5m/gLKqCYC8jz6f1kliMUI8DJ9PMIZJbdze5hiFmW5VNxGQhwNUr/Cp6MmI8Ggpyp0FuSD3qnWGU4EEFTYWz1mO9wYZx3Yl6AcjgQ1vjYp6PpMVFP6XvmL0tL1B7tf8BpRIOWCqoa8w2dsSVlDWsScW1ybCCeShqlyLVW/lTH9RZQu8AjDkROwDNHK6aWSLvSi/n4puulKBz6ZG/htCTLKycx8dX4khUqcPub6KJ/o/OjD4yzO4YKa6pvrc1oyKK+JLl/hZME57t0bovL2wmDPoDaw1bhnxL1T7OyJmi+nLeB24LD8bIT6VZYlCj375xmtl4p1L2gR+0VLnG340JRteXnl8n1+XAkl3hc2CgTI51xL1rO/TuPmi7rkh7X4gi/Hf6C3fX8bfmJrPMMJDEI3jyT3q8s5Vfme3VJzj9TRSk3PnFcY2uCZaZ4THnyxsEvjNUYi81qNWpQ/rRmN98/5gek8/tQfwLpTZN9i7Q/d5+eih13OOwDa3No70eaVUGtGzANwvFd3TXfmheKEXxaWajjD5ZbOKzoXJluK9KF2UiLqF+uzZd/UEsDBBQAAAgIAABoIewQQA7E4wEAAMgDAAALACQAZ3JhcGgzLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFdUstu2zAQ/JWCZ6eQZDtudEvtxC2QNkacomeaWlkLU6TAR/0I/O9dUops+SJAO7M7O7P8YFuPBcs/2D8uPbCcZdnkWyqS+ySFbDxJ+V02nRUzyKYiyR7GYz5j5xHjtgHh3rhDzfJ0xNDqGpxB8ai2kqYkI+YVltrUT8UW5to6y/KSSwsjZrQLfSqIHiL1GL8n+tJoAcqB6cC7NLnFvRKS1w0UazxBR5u2pEnAlS6ghWgvoaVE24m5YxMMznljPS05YgVy2jqIEbUC3FaO5dlV12tZWnBR3fDjAg2ZjsPYd+0qmlBzu7sKL+i3c34NgWx6T1BpdP2jk4nGXIVi98aPglvX53NdXFxv6NWeyx3fSPhbgfqtl0Z7RbdzxlObt5At+iG9hXkFYvfJaXcblHwzuEPa5XwO3g5zifWGfr9OLr+PB7SRR4W11CHSB+oFQ7n/pFXjbW2cR7Wwwh8L73x7eQBd+RmNdQTEYdw7/YJqtzRYXJif1QVa94I1xtzoxMHGRntDTPYU8yTH3s21URCKrbUGFJfuuCI1NzzmDdLr3dSfuXC6zb5Duuc9pMdiz02SIbDS++5+qGgql6sWjItQfBd1RbcmQyGCL0vDm/DACsP3SzzVuneFqtRrYQDU66X5/B9QSwMEFAAACAgAAGgh7BP3njniAQAAxwMAAAsAJABncmFwaDQuanNvbgoAIAAAAAAAAQAYAACAPtXesZ0BAIA+1d6xnQEAgD7V3rGdAW1SXW/bMAz8K4Oe0yEx3CzNW5e02YBuDdoNe2ZkOiYiS4Y+lo8i/32U7DpxsRcD4h3vyKPfxDZQIeZv4i+ogGIuNjjN8qmEEosMALObL/lMwhRQ3uVFvpEzcR4JcA1K/wKejJhPRoKcqdFbkvd6q1hlPBJBU2ls/VBscWGcd2JegnI4Etb42Kej6SFRj+l74i9LS9Qe7X/Am1mEg5YK6gaLVzphx7ptaXnEtSmwhXgsaZQi13n5YxP3W0DjAs84EgUBDx29mFohbSsv5tlV13NZOvTJ38JxSZZ3TmLiq/EVK9TgdlfZRf9W58cQyG6nDJXW1N86m8mYRX1FcvcCRwnO9/FcF5fXEwa9B7WDjcI/FeqfZmVN0Hw6bwO3BYfZshfpV1hUKHfvnHa2QSk0g6Qn3RnOcbfDQlG94efn/PK8P5BLPC68KhMjveNetJz7dx41ndYlPa7FEX47/AXby/278iNZ5xlIYhC8eSK9W1kqLsz36pKcf6KaUm584rjGxgTLTPGQ8uSNg18YqzEW29Ua1KD8cc1ufnjMD0jv96H+CNKbNvsO6f7uIT0Ve+54PATWZt/djzSrglq3YBqE47u4a741LxQj+LSy0MQfrLCwX9GpNv1WpEvzKi2ifr40n/8BUEsDBBQAAAgAAABoIewef112MgAAADIAAAASACQAZ3JhcGgwX2VkaXRvci5qc29uCgAgAAAAAAABABgAAIA+1d6xnQEAgD7V3rGdAQCAPtXesZ0BeyJsb2NrZWQiOnRydWUsInNob3dFeHRyYSI6ZmFsc2UsInBpdm90IjoiQ2VudGVyIn1QSwMEFAAACAAAAGgh7B5/XXYyAAAAMgAAABIAJABncmFwaDFfZWRpdG9yLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQF7ImxvY2tlZCI6dHJ1ZSwic2hvd0V4dHJhIjpmYWxzZSwicGl2b3QiOiJDZW50ZXIifVBLAwQUAAAIAAAAaCHsHn9ddjIAAAAyAAAAEgAkAGdyYXBoMl9lZGl0b3IuanNvbgoAIAAAAAAAAQAYAACAPtXesZ0BAIA+1d6xnQEAgD7V3rGdAXsibG9ja2VkIjp0cnVlLCJzaG93RXh0cmEiOmZhbHNlLCJwaXZvdCI6IkNlbnRlciJ9UEsDBBQAAAgAAABoIewef112MgAAADIAAAASACQAZ3JhcGgzX2VkaXRvci5qc29uCgAgAAAAAAABABgAAIA+1d6xnQEAgD7V3rGdAQCAPtXesZ0BeyJsb2NrZWQiOnRydWUsInNob3dFeHRyYSI6ZmFsc2UsInBpdm90IjoiQ2VudGVyIn1QSwMEFAAACAAAAGgh7B5/XXYyAAAAMgAAABIAJABncmFwaDRfZWRpdG9yLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQF7ImxvY2tlZCI6dHJ1ZSwic2hvd0V4dHJhIjpmYWxzZSwicGl2b3QiOiJDZW50ZXIifVBLAwQUAAAICAAAaCHs6RHJONoAAAB7AQAACQAkAG1ldGEuanNvbgoAIAAAAAAAAQAYAACAPtXesZ0BAIA+1d6xnQEAgD7V3rGdAbWPvW7DMAyE30VzbNCUKEpZM2QruhcZKJFKPNQO8lOgKPrulYu+QsHlQHx3uPtyH3a7z+vi9s6PPAa3c+ebXC93t6cun7N29eZCDeQFUBpwNqBB0KxIm5QzcNTNp1SxhFqwcTOveSD1KRZqAAUq59gZUU0cslq3ioU0TFKJYmYBIyJNnUEMaaoQYTL0YZIBiZUNqQJm74U7UyxiiFWaKYoYDhxSlShWc9BQanKnnXt8Xu1F3u13was8Lm1edF7O4/E263Fb2ZP+999bLKvaYX0uj60G7P7u9P0DUEsBAi0AFAAACAgAAGgh7KJEx77mAQAAxwMAAAsAJAAAAAAAAAAAAAAAAAAAAGdyYXBoMC5qc29uCgAgAAAAAAABABgAAIA+1d6xnQEAgD7V3rGdAQCAPtXesZ0BUEsBAi0AFAAACAgAAGgh7N0KA5DiAQAAxwMAAAsAJAAAAAAAAAAAAAAAMwIAAGdyYXBoMS5qc29uCgAgAAAAAAABABgAAIA+1d6xnQEAgD7V3rGdAQCAPtXesZ0BUEsBAi0AFAAACAgAAGgh7BPGwsfhAQAAxgMAAAsAJAAAAAAAAAAAAAAAYgQAAGdyYXBoMi5qc29uCgAgAAAAAAABABgAAIA+1d6xnQEAgD7V3rGdAQCAPtXesZ0BUEsBAi0AFAAACAgAAGgh7BBADsTjAQAAyAMAAAsAJAAAAAAAAAAAAAAAkAYAAGdyYXBoMy5qc29uCgAgAAAAAAABABgAAIA+1d6xnQEAgD7V3rGdAQCAPtXesZ0BUEsBAi0AFAAACAgAAGgh7BP3njniAQAAxwMAAAsAJAAAAAAAAAAAAAAAwAgAAGdyYXBoNC5qc29uCgAgAAAAAAABABgAAIA+1d6xnQEAgD7V3rGdAQCAPtXesZ0BUEsBAi0AFAAACAAAAGgh7B5/XXYyAAAAMgAAABIAJAAAAAAAAAAAAAAA7woAAGdyYXBoMF9lZGl0b3IuanNvbgoAIAAAAAAAAQAYAACAPtXesZ0BAIA+1d6xnQEAgD7V3rGdAVBLAQItABQAAAgAAABoIewef112MgAAADIAAAASACQAAAAAAAAAAAAAAHULAABncmFwaDFfZWRpdG9yLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFQSwECLQAUAAAIAAAAaCHsHn9ddjIAAAAyAAAAEgAkAAAAAAAAAAAAAAD7CwAAZ3JhcGgyX2VkaXRvci5qc29uCgAgAAAAAAABABgAAIA+1d6xnQEAgD7V3rGdAQCAPtXesZ0BUEsBAi0AFAAACAAAAGgh7B5/XXYyAAAAMgAAABIAJAAAAAAAAAAAAAAAgQwAAGdyYXBoM19lZGl0b3IuanNvbgoAIAAAAAAAAQAYAACAPtXesZ0BAIA+1d6xnQEAgD7V3rGdAVBLAQItABQAAAgAAABoIewef112MgAAADIAAAASACQAAAAAAAAAAAAAAAcNAABncmFwaDRfZWRpdG9yLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFQSwECLQAUAAAICAAAaCHs6RHJONoAAAB7AQAACQAkAAAAAAAAAAAAAACNDQAAbWV0YS5qc29uCgAgAAAAAAABABgAAIA+1d6xnQEAgD7V3rGdAQCAPtXesZ0BUEsFBgAAAAALAAsAIAQAALIOAAAAAA==
+    upgradeData: 
+    data_backup: 
+    file_cachedStartup: {fileID: 0}
+    data_cachedStartup: 
+    cacheStartup: 0
+  showNavGraphs: 1
+  showUnwalkableNodes: 1
+  debugMode: 0
+  debugFloor: 0
+  debugRoof: 1
+  manualDebugFloorRoof: 0
+  showSearchTree: 0
+  unwalkableNodeDebugSize: .300000012
+  logPathResults: 1
+  maxNearestNodeDistance: 100
+  scanOnStartup: 1
+  fullGetNearestSearch: 0
+  prioritizeGraphs: 0
+  prioritizeGraphsLimit: 1
+  colorSettings:
+    _NodeConnection: {r: 1, g: 1, b: 1, a: .899999976}
+    _UnwalkableNode: {r: 1, g: 0, b: 0, a: .5}
+    _BoundsHandles: {r: .289999992, g: .453999996, b: .740999997, a: .899999976}
+    _ConnectionLowLerp: {r: 0, g: 1, b: 0, a: .5}
+    _ConnectionHighLerp: {r: 1, g: 0, b: 0, a: .5}
+    _MeshEdgeColor: {r: 0, g: 0, b: 0, a: .5}
+    _MeshColor: {r: .125, g: .68599999, b: 0, a: .189999998}
+    _AreaColors: []
+  tagNames:
+  - Basic Ground
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  - 7
+  - 8
+  - 9
+  - 10
+  - 11
+  - 12
+  - 13
+  - 14
+  - 15
+  - 16
+  - 17
+  - 18
+  - 19
+  - 20
+  - 21
+  - 22
+  - 23
+  - 24
+  - 25
+  - 26
+  - 27
+  - 28
+  - 29
+  - 30
+  - 31
+  heuristic: 2
+  heuristicScale: 1
+  threadCount: -2
+  maxFrameTime: 10
+  minAreaSize: 0
+  limitGraphUpdates: 1
+  maxGraphUpdateFreq: .25
+  euclideanEmbedding:
+    mode: 0
+    seed: 0
+    pivotPointRoot: {fileID: 0}
+    spreadOutCount: 1
+  showGraphs: 1
+  lastUniqueAreaIndex: 0
+--- !u!4 &1742255552
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1742255550}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.33576775, y: 4.22161865, z: -5.29093742}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
 --- !u!1001 &1772248617
 Prefab:
   m_ObjectHideFlags: 0
@@ -2216,6 +2332,10 @@ Prefab:
       propertyPath: cooldownSlider
       value: 
       objectReference: {fileID: 714714663}
+    - target: {fileID: 492170, guid: 4ca13b5319b30ae46a4f53a8b7d41dae, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4ca13b5319b30ae46a4f53a8b7d41dae, type: 2}
   m_IsPrefabParent: 0
@@ -2246,10 +2366,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 573315f148d13db4ba3d9729ceb72f7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  roomsToSpawn: 10
+  wallPrefab: {fileID: 104770, guid: d35c4f618bababb4a8c66065d625ad85, type: 2}
   floorPrefabs:
   - {fileID: 105500, guid: 430aee4e7c8dacd4b856612a7317ce83, type: 2}
-  wallPrefab: {fileID: 104770, guid: d35c4f618bababb4a8c66065d625ad85, type: 2}
-  roomsToSpawn: 10
+  totalEnemies: 30
+  maxEnemiesPerRoom: 6
+  enemy: {fileID: 113690, guid: e4d450b22770158408d6a460b5c9bc71, type: 2}
 --- !u!4 &1876287590
 Transform:
   m_ObjectHideFlags: 0
