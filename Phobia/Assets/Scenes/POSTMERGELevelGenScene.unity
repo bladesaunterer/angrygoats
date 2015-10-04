@@ -2336,6 +2336,10 @@ Prefab:
       propertyPath: m_LocalPosition.y
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 11404752, guid: 4ca13b5319b30ae46a4f53a8b7d41dae, type: 2}
+      propertyPath: healthSlider
+      value: 
+      objectReference: {fileID: 1797975217}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4ca13b5319b30ae46a4f53a8b7d41dae, type: 2}
   m_IsPrefabParent: 0
