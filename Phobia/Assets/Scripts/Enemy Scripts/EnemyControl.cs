@@ -18,7 +18,7 @@ public class EnemyControl : MonoBehaviour {
 		nav = GetComponent<NavMeshAgent>();
 	}
 
-	void LateUpdate()
+	void Update()
 	{
 		// If the enemy and the player have health left...
 		//if (enemyHealth.currentHealth > 0 && playerHealth.currentHealth > 0)

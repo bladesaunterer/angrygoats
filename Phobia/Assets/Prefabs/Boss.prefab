@@ -14,10 +14,10 @@ GameObject:
   - 54: {fileID: 5426116}
   - 195: {fileID: 19543088}
   - 114: {fileID: 11431946}
-  - 114: {fileID: 11439244}
+  - 114: {fileID: 11483862}
   m_Layer: 0
   m_Name: Boss
-  m_TagString: Enemy
+  m_TagString: Boss
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -107,7 +107,7 @@ MonoBehaviour:
   currentHealth: 0
   sinkSpeed: 0
   scoreValue: 10
---- !u!114 &11439244
+--- !u!114 &11483862
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -115,7 +115,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 131414}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7e5ab527ca41f5543859580f8b9be59d, type: 3}
+  m_Script: {fileID: 11500000, guid: 9c5ebac3147deb94b881c60011685c4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!195 &19543088
@@ -144,7 +144,11 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: m_TagString
+      value: Boss
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 131414}

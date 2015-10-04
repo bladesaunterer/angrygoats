@@ -14,7 +14,7 @@ public class BossControl : MonoBehaviour {
 		nav = GetComponent<NavMeshAgent>();
 	}
 	
-	void LateUpdate()
+	void Update()
 	{
 		// Move to player's position.
 		if (player != null) {
