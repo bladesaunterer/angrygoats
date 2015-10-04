@@ -1,17 +1,30 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.Networking;
 
-public class PlayerControl : NetworkBehaviour
+public class PlayerControl : MonoBehaviour
 {
 	private const float DOOR_JUMP = 2;
 
 	public float speed = 6f;            // The speed that the player will move at.
 
-	public GameObject shot;
-	public Transform shotSpawn;
-	public float fireRate;
-	
-	private float nextFire;
+	public GameObject shot;				// The special attack
+	public Transform shotSpawn;			// Where the special attack will spwan 
+
+	public Slider cooldownSlider;		// UI slider that represents cooldown
+	public float cooldown;				// How much cool down
+	public float regen;					// Regen of the cooldown per second 
+	public float cost;					// How much each special attack costs
+
+	public Slider healthSlider;			// UI slider that represents the health
+	public float health;				// Health of the player
+			
+	public GameObject meleeAttack;
+	public Transform meleeSpawn;
+	public float meleeRate;				
+	private float nextMelee;
+
+	private float nextTime;
 
     private Vector3 movement;                   // The vector to store the direction of the player's movement.
     private Vector3 cameraPosition = new Vector3 (0, 26, -17);
@@ -27,10 +40,23 @@ public class PlayerControl : NetworkBehaviour
     }
 
 	void Update(){
-		if (Input.GetKeyDown(KeyCode.K) && Time.time > nextFire)
+		//Updates every second
+		if (Time.time > nextTime) {
+			nextTime = Time.time + 1f;
+			if (cooldown != 100f ){
+				cooldown += regen;
+			}
+			//UpdateCoolDownSlider();
+		}
+		if (Input.GetKeyDown(KeyCode.K) && cooldown >= cost)
 		{
-			nextFire = Time.time + fireRate;
+			cooldown -= cost;
+			//UpdateCoolDownSlider();
 			Instantiate(shot, shotSpawn.position, shotSpawn.rotation);
+		}else if( Input.GetKeyDown(KeyCode.J) && Time.time > nextMelee)
+		{
+			nextMelee = Time.time + meleeRate;
+			Instantiate(meleeAttack, meleeSpawn.position, meleeSpawn.rotation);
 		}
 	}
 
@@ -77,7 +103,7 @@ public class PlayerControl : NetworkBehaviour
 	}
 
 	//This method rotates the player based on 
-	//Dean says to not delete this method
+	//Dean says to not delete this method. Not used, but is useful
     void Turning()
     {
         // Create a ray from the mouse cursor on screen in the direction of the camera.
@@ -121,16 +147,16 @@ public class PlayerControl : NetworkBehaviour
             }
 		}
 	}
+	
+	void UpdateCoolDownSlider(){
+		cooldownSlider.value = cooldown;
+	}
+	
+	public void TakeDamage (float damage){
+		health = + damage;
+		//healthSlider.value = health;
+	}
 
-    override public void OnStartClient()
-    {
-        Debug.Log("started client");
-    }
-
-    override public void OnStartLocalPlayer()
-    {
-        Debug.Log("started local player");
-    }
 
     public bool IsMine()
     {

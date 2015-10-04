@@ -14,8 +14,10 @@ public class BoltMover : MonoBehaviour {
 
 	void OnTriggerEnter(Collider other)
 	{
-		if (other.gameObject.CompareTag ("Door") || other.gameObject.CompareTag ("Wall")) {
+		if (other.gameObject.CompareTag ("Door") || other.gameObject.CompareTag ("Wall") || other.gameObject.CompareTag ("Enemy")) {
 			Destroy(gameObject);
+
+			HealthControl.dealDamageToEnemy(other.gameObject);
 		}
 	}
 }

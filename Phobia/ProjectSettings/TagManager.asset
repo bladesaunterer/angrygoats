@@ -6,6 +6,8 @@ TagManager:
   tags:
   - NonMainCamera
   - Door
+  - Wall
+  - SpecialAttack
   layers:
   - Default
   - TransparentFX
