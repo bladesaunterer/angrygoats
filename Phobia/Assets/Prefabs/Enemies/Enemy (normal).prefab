@@ -16,6 +16,7 @@ GameObject:
   - 114: {fileID: 11497046}
   - 65: {fileID: 6537382}
   - 114: {fileID: 11459830}
+  - 114: {fileID: 11405432}
   m_Layer: 0
   m_Name: Enemy (normal)
   m_TagString: Enemy
@@ -106,6 +107,17 @@ MonoBehaviour:
     tagsChange: -1
     tagsSet: -1
   tagPenalties: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+--- !u!114 &11405432
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 113690}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79b5bb1291c8aa24e981e15bedd8f4a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &11459830
 MonoBehaviour:
   m_ObjectHideFlags: 1
