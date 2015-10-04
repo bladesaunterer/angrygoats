@@ -8,6 +8,9 @@ TagManager:
   - Door
   - Wall
   - SpecialAttack
+  - Enemy
+  - MeleeAttack
+  - Boss
   layers:
   - Default
   - TransparentFX

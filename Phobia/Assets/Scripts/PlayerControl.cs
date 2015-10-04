@@ -15,9 +15,6 @@ public class PlayerControl : MonoBehaviour
 	public float cooldown;				// How much cool down
 	public float regen;					// Regen of the cooldown per second 
 	public float cost;					// How much each special attack costs
-
-	public Slider healthSlider;			// UI slider that represents the health
-	public float health;				// Health of the player
 			
 	public GameObject meleeAttack;
 	public Transform meleeSpawn;
@@ -46,12 +43,12 @@ public class PlayerControl : MonoBehaviour
 			if (cooldown != 100f ){
 				cooldown += regen;
 			}
-			//UpdateCoolDownSlider();
+			UpdateCoolDownSlider();
 		}
 		if (Input.GetKeyDown(KeyCode.K) && cooldown >= cost)
 		{
 			cooldown -= cost;
-			//UpdateCoolDownSlider();
+			UpdateCoolDownSlider();
 			Instantiate(shot, shotSpawn.position, shotSpawn.rotation);
 		}else if( Input.GetKeyDown(KeyCode.J) && Time.time > nextMelee)
 		{
@@ -151,12 +148,6 @@ public class PlayerControl : MonoBehaviour
 	void UpdateCoolDownSlider(){
 		cooldownSlider.value = cooldown;
 	}
-	
-	public void TakeDamage (float damage){
-		health = + damage;
-		//healthSlider.value = health;
-	}
-
 
     public bool IsMine()
     {
