@@ -39,7 +39,7 @@ public class EnemyControl : MonoBehaviour {
 	void OnCollisionEnter(Collision other)
 	{
 		//if (other.gameObject.CompareTag ("Player")) {
-			HealthControl.dealDamageToPlayer(other.gameObject);
+			HealthControl.dealDamageToPlayer(other.gameObject, 8);
 		//}
 	}
 }

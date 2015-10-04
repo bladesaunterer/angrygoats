@@ -10,6 +10,7 @@ TagManager:
   - SpecialAttack
   - Enemy
   - MeleeAttack
+  - Boss
   layers:
   - Default
   - TransparentFX
