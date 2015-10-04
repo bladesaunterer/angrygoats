@@ -71,7 +71,7 @@ public class EnemyHealth : MonoBehaviour
             if (this.tag == "Enemy")
             {
 
-                TEMPScoreScript.Instance.IncrementScore(10);
+                //TEMPScoreScript.Instance.IncrementScore(10);
             }
 
             //Death ();

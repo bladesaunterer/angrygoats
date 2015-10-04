@@ -188,7 +188,7 @@ public class PlayerControl : MonoBehaviour
 
     void UpdateCoolDownSlider()
     {
-        //cooldownSlider.value = cooldown;
+        cooldownSlider.value = cooldown;
     }
 
     public void TakeDamage(float damage)

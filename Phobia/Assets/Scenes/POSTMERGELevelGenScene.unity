@@ -965,6 +965,48 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db78bddf230d05f41b34d4d9ac5c43aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1001 &751346395
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 439206, guid: e4d450b22770158408d6a460b5c9bc71, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 6.46000004
+      objectReference: {fileID: 0}
+    - target: {fileID: 439206, guid: e4d450b22770158408d6a460b5c9bc71, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 2.53999996
+      objectReference: {fileID: 0}
+    - target: {fileID: 439206, guid: e4d450b22770158408d6a460b5c9bc71, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: .600000024
+      objectReference: {fileID: 0}
+    - target: {fileID: 439206, guid: e4d450b22770158408d6a460b5c9bc71, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 439206, guid: e4d450b22770158408d6a460b5c9bc71, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 439206, guid: e4d450b22770158408d6a460b5c9bc71, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 439206, guid: e4d450b22770158408d6a460b5c9bc71, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 439206, guid: e4d450b22770158408d6a460b5c9bc71, type: 2}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: e4d450b22770158408d6a460b5c9bc71, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &780407368
 GameObject:
   m_ObjectHideFlags: 0
@@ -2336,6 +2378,10 @@ Prefab:
       propertyPath: m_LocalPosition.y
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5446836, guid: 4ca13b5319b30ae46a4f53a8b7d41dae, type: 2}
+      propertyPath: m_CollisionDetection
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4ca13b5319b30ae46a4f53a8b7d41dae, type: 2}
   m_IsPrefabParent: 0
@@ -2367,10 +2413,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   roomsToSpawn: 10
-  wallPrefab: {fileID: 104770, guid: d35c4f618bababb4a8c66065d625ad85, type: 2}
+  wallPrefab: {fileID: 194384, guid: d35c4f618bababb4a8c66065d625ad85, type: 2}
   floorPrefabs:
   - {fileID: 105500, guid: 430aee4e7c8dacd4b856612a7317ce83, type: 2}
-  totalEnemies: 30
+  totalEnemies: 0
   maxEnemiesPerRoom: 6
   enemy: {fileID: 113690, guid: e4d450b22770158408d6a460b5c9bc71, type: 2}
 --- !u!4 &1876287590
