@@ -2,29 +2,34 @@
 using System.Collections.Generic;
 
 public class LevelGenerator : MonoBehaviour {
-
-    public List<GameObject> roomPrefabs;
+    
+    public List<GameObject> floorPrefabs;
+    public GameObject wallPrefab;
     public int roomsToSpawn;
     List<Room> rooms = new List<Room>();
-
-    // Use this for initialization
+	
+	private const int HORIZ_TILING = 100;
+	private const int VERT_TILING = 80;
+    
     void Start () {
-
         {
             Room thisRoom = new Room(this);
-            thisRoom.Objecto = roomPrefabs[Random.Range(0, roomPrefabs.Count)];
+            thisRoom.Floor = floorPrefabs[Random.Range(0, floorPrefabs.Count)]; // pick random floor
+            thisRoom.Walls = wallPrefab; // walls always come as part of the standard template
             rooms.Add(thisRoom);
-            thisRoom.Objecto.name = "Room " + 0;
-            thisRoom.Objecto = (GameObject)Instantiate(thisRoom.Objecto, new Vector3(0, 0, 0), Quaternion.identity);
+            thisRoom.Walls = (GameObject)Instantiate(thisRoom.Walls, new Vector3(0, 0, 0), Quaternion.identity); // actually put it in the world
+			thisRoom.Floor = (GameObject)Instantiate(thisRoom.Floor, new Vector3(0, 0, 0), Quaternion.identity);
+			thisRoom.Walls.name = "Room " + 0;
             thisRoom.Position = new Vector2(0,0);
+
+			thisRoom.Walls.transform.Find("Lights").gameObject.SetActive(true);
         }
 
-        for (int i = 1; i < roomsToSpawn; i++)
-        {
+        for (int i = 1; i < roomsToSpawn; i++) {
             Room thisRoom = new Room(this);
-            thisRoom.Objecto = roomPrefabs[Random.Range(0, roomPrefabs.Count)];
+            thisRoom.Floor = floorPrefabs[Random.Range(0, floorPrefabs.Count)];
+            thisRoom.Walls = wallPrefab;
 
-            thisRoom.Objecto.name = "Room " + i;
 
             Room adjRoom;
 
@@ -35,100 +40,96 @@ public class LevelGenerator : MonoBehaviour {
 
             adjRoom.SetAdj(adjRoom.randomEmpty(), thisRoom);
 
-            thisRoom.Objecto = (GameObject)Instantiate(thisRoom.Objecto, new Vector3(44 * thisRoom.Position.x, 0, 30 * thisRoom.Position.y), Quaternion.identity);
+			thisRoom.Walls = (GameObject)Instantiate(thisRoom.Walls, new Vector3(HORIZ_TILING * thisRoom.Position.x, 0, VERT_TILING * thisRoom.Position.y), Quaternion.identity);
+			thisRoom.Floor = (GameObject)Instantiate(thisRoom.Floor, new Vector3(HORIZ_TILING * thisRoom.Position.x, 0, VERT_TILING * thisRoom.Position.y), Quaternion.identity);
+			thisRoom.Walls.name = "Room " + i;
 
             rooms.Add(thisRoom);
         }
 
-        foreach(Room room in rooms)
-        {
+        foreach(Room room in rooms) {
             room.LinkDoors();
         }
 	}
 	
 	// Update is called once per frame
 	void Update () {
-	
-	}
 
-    class Room
-    {
+    }
+
+
+    // does there exist a room in the location given?
+    public bool IsEmpty(Vector2 pos) {
+        foreach (Room room in rooms) {
+            if (room.Position == pos) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    class Room {
         public LevelGenerator parent;
-        public GameObject Objecto { get; set; }
+        public GameObject Walls { get; set; }
+        public GameObject Floor { get; set; }
         public Room[] adjRooms = new Room[4];
         public Vector2 Position { get; set; }
 
         private string[] directions = {"North Door", "East Door", "South Door", "West Door" };
         private Vector2[] vectors = { new Vector2(0, 1), new Vector2(1, 0), new Vector2(0, -1), new Vector2(-1, 0)};
 
-        public Room(LevelGenerator levelGenerator)
-        {
+        public Room(LevelGenerator levelGenerator) {
             this.parent = levelGenerator;
         }
 
-        public bool IsNextToEmpty()
-        {
-            for (int index = 0; index < 4; index++)
-            {
-                if (parent.IsEmpty(Position+vectors[index]))
-                {
+        // does this room have an adjacent place for a room that is not occupied by a room already
+        public bool IsNextToEmpty() {
+            for (int index = 0; index < 4; index++) {
+                if (parent.IsEmpty(Position+vectors[index])) {
                     return true;
                 }
             }
             return false;
         }
 
-        public void SetAdj(int adjPos, Room adjRoom)
-        {
+        // Set up the bidirectional relationship between to rooms that will later ensure the doors are linked
+        public void SetAdj(int adjPos, Room adjRoom) {
             adjRooms[adjPos] = adjRoom;
 
             adjRoom.Position = Position + vectors[adjPos];
         }
 
-        public void LinkDoors()
-        {
-            for (int i = 0; i < 4; i++)
-            {
+        // Open and link the doors between the appropriate rooms
+        public void LinkDoors() {
+
+            for (int i = 0; i < 4; i++) {
                 if (adjRooms[i] != null) {
-                    GameObject thisDoor = GameObject.Find(Objecto.name + "/Doors/" + directions[i]);
-                    GameObject adjDoor = GameObject.Find(adjRooms[i].Objecto.name + "/Doors/" + directions[(i + 2) % 4]);
+                    // find the game object
+                    GameObject thisDoor = Walls.transform.Find("Doors/" + directions[i]).gameObject;
+                    GameObject adjDoor = adjRooms[i].Walls.transform.Find("Doors/" + directions[(i + 2) % 4]).gameObject;
 
-                    thisDoor.GetComponent<DoorControl>().goalDoor = adjDoor;
-                    thisDoor.GetComponent<DoorControl>().goalRoom = adjRooms[i].Objecto;
-                    GameObject.Find(Objecto.name + "/DoorBlockers/" + directions[i]).SetActive(false);
+                    thisDoor.GetComponent<DoorControl>().goalDoor = adjDoor; // link the goal
+                    Walls.transform.Find("Door Blockers/" + directions[i]).gameObject.SetActive(false); // disable the blocker
 
+                    // and do the reverse
                     adjDoor.GetComponent<DoorControl>().goalDoor = thisDoor;
-                    adjDoor.GetComponent<DoorControl>().goalRoom = Objecto;
-                    GameObject.Find(adjRooms[i].Objecto.name + "/DoorBlockers/" + directions[(i + 2) % 4]).SetActive(false);
+                    adjRooms[i].Walls.transform.Find("Door Blockers/" + directions[(i + 2) % 4]).gameObject.SetActive(false);
                 }
             }
         }
 
-        public int randomEmpty()
-        {
-            if (!IsNextToEmpty())
-            {
+        // returns: 0-3  signalling a direction which can give an empty room
+        //          -1   if no such direction exists
+        public int randomEmpty() {
+            if (!IsNextToEmpty()) {
                 return -1;
             }
 
             int pos;
-            do
-            {
+            do {
                 pos = Random.Range(0, 4);
             } while (!parent.IsEmpty(Position+vectors[pos]));
             return pos;
         }
-    }
-
-    public bool IsEmpty(Vector2 pos)
-    {
-        foreach (Room room in rooms)
-        {
-            if (room.Position == pos)
-            {
-                return false;
-            }
-        }
-        return true;
     }
 }

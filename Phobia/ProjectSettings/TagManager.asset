@@ -7,7 +7,12 @@ TagManager:
   - NonMainCamera
   - Door
   - Wall
+  - DeathFloor
+  - Web
   - SpecialAttack
+  - Enemy
+  - MeleeAttack
+  - Boss
   layers:
   - Default
   - TransparentFX

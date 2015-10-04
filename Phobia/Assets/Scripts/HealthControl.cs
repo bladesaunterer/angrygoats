@@ -19,4 +19,16 @@ public static class HealthControl {
 			}
 		}
 	}
+
+	public static void dealDamageToPlayer (GameObject other, int damage) {
+		
+		// Try and find an EnemyHealth script on the gameobject hit.
+		PlayerHealth playerHealth = other.gameObject.GetComponent <PlayerHealth> ();
+		
+		// If the EnemyHealth component exist...
+		if (playerHealth != null)
+		{
+			playerHealth.TakeDamage(damage);
+		}
+	}
 }

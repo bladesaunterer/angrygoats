@@ -13,7 +13,10 @@ public class AttackControl : MonoBehaviour {
 
 	void OnTriggerEnter(Collider other)
 	{
-		if (other.gameObject.CompareTag ("Door") || other.gameObject.CompareTag ("Wall") || other.gameObject.CompareTag ("Enemy")) {
+		if (other.gameObject.CompareTag ("Door") 
+		    || other.gameObject.CompareTag ("Wall")
+		    || other.gameObject.CompareTag ("Enemy")
+		    || other.gameObject.CompareTag ("Boss")) {
 			Destroy(gameObject);
 
 			HealthControl.dealDamageToEnemy(other.gameObject);

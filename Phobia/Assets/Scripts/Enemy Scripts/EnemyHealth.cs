@@ -42,12 +42,12 @@ public class EnemyHealth : MonoBehaviour
 	
 	public void TakeDamage (int amount)
 	{
-		// If the enemy is dead...
-		if (isDead) {
-			// ... no need to take damage so exit the function.
-			Destroy (gameObject);
-			return;
-		}
+//		// If the enemy is dead...
+//		if (isDead) {
+//			// ... no need to take damage so exit the function.
+//			Destroy (gameObject);
+//			return;
+//		}
 		
 		// Play the hurt sound effect.
 		//enemyAudio.Play ();
@@ -65,26 +65,27 @@ public class EnemyHealth : MonoBehaviour
 		if(currentHealth <= 0)
 		{
 			// ... the enemy is dead.
-			Death ();
+			Destroy (gameObject);
+			//Death ();
 		}
 	}
 	
 	
-	void Death ()
-	{
-		// The enemy is dead.
-		isDead = true;
-		
-		// Turn the collider into a trigger so shots can pass through it.
-		//capsuleCollider.isTrigger = true;
-		
-		// Tell the animator that the enemy is dead.
-		//anim.SetTrigger ("Dead");
-		
-		// Change the audio clip of the audio source to the death clip and play it (this will stop the hurt clip playing).
-		//enemyAudio.clip = deathClip;
-		//enemyAudio.Play ();
-	}
+//	void Death ()
+//	{
+//		// The enemy is dead.
+//		isDead = true;
+//		
+//		// Turn the collider into a trigger so shots can pass through it.
+//		//capsuleCollider.isTrigger = true;
+//		
+//		// Tell the animator that the enemy is dead.
+//		//anim.SetTrigger ("Dead");
+//		
+//		// Change the audio clip of the audio source to the death clip and play it (this will stop the hurt clip playing).
+//		//enemyAudio.clip = deathClip;
+//		//enemyAudio.Play ();
+//	}
 	
 	
 //	public void StartSinking ()
