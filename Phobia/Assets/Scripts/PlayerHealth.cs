@@ -17,7 +17,7 @@ public class PlayerHealth : MonoBehaviour
 	{		
 		// Reduce the current health by the amount of damage sustained.
 		currentHealth -= amount;
-		healthSlider.value = currentHealth;
+		//healthSlider.value = currentHealth;
 		
 		// If the current health is less than or equal to zero...
 		if(currentHealth <= 0)
