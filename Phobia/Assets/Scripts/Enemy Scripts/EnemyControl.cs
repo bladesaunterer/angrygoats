@@ -42,4 +42,19 @@ public class EnemyControl : MonoBehaviour {
 			HealthControl.dealDamageToPlayer(other.gameObject, 8);
 		//}
 	}
+
+
+
+
+
+
+    void onDestroy()
+    {
+        Debug.Log("Enemy Destroyed!");
+        if (this.tag == "Enemy")
+        {
+            
+            TEMPScoreScript.Instance.IncrementScore(10);
+        }
+    }
 }
