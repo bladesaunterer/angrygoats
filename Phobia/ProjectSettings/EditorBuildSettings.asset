@@ -23,13 +23,13 @@ EditorBuildSettings:
     path: Assets/Scenes/Multiplayer/OnlineExampleLevel.unity
   - enabled: 1
     path: Assets/Scenes/Multiplayer/OnlineStart.unity
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/opening_scene.unity
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/player_test_scene.unity
   - enabled: 1
     path: Assets/Scenes/MasterCopy/LevelScene.unity
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/PREMERGELevelGenScene.unity
   - enabled: 1
     path: Assets/Scenes/MasterCopy/SettingsScene.unity
