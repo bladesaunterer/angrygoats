@@ -1,6 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+/**
+ * 
+ * Class which handles torch lighting in level rooms.
+ * 
+ **/
 public class TorchScript : MonoBehaviour {
 	
 	private float timeTillChange = 0f;

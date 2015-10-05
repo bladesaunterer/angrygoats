@@ -2,26 +2,27 @@
 using UnityEngine.UI;
 using UnityEngine.Networking;
 
+/**
+ * 
+ * Class which handles player control (abilities) logic.
+ * 
+ **/
 public class PlayerControl : MonoBehaviour
 {
     private const float DOOR_JUMP = 2;
 
-    public float speed = 6f;            // The speed that the player will move at.
+    public float speed = 6f;            // Player movement speed.
     public float webSlowFactor = 0.5f;
     private bool inWeb = false;
 
     public float fireRate;
-    public GameObject shot;             // The special attack
-    public Transform shotSpawn;         // Where the special attack will spwan 
+    public GameObject shot;             // The special attack object.
+    public Transform shotSpawn;         // Location where the special attack will spawn. 
 
-    public Slider cooldownSlider;       // UI slider that represents cooldown
-    public float cooldown;              // How much cool down
-    public float regen;                 // Regen of the cooldown per second 
-    public float cost;                  // How much each special attack costs
-
-
-    public Slider healthSlider;         // UI slider that represents the health
-    public float health;                // Health of the player
+    public Slider cooldownSlider;       // UI slider that represents cooldown.
+    public float cooldown;              // Initial cooldown value.
+    public float regen;                 // Regen of the cooldown per second. 
+    public float cost;                  // How much each special attack costs.
 
     public GameObject meleeAttack;
     public Transform meleeSpawn;
@@ -32,7 +33,6 @@ public class PlayerControl : MonoBehaviour
 
     private Vector3 movement;                   // The vector to store the direction of the player's movement.
     private Vector3 cameraPosition = new Vector3(0, 30, -17);
-    // private Vector3 cameraPosition = new Vector3(0, 30, -17);
 
     private int floorMask;                      // A layer mask so that a ray can be cast just at gameobjects on the floor layer.
     private float camRayLength = 100f;          // The length of the ray from the camera into the scene.
@@ -183,21 +183,13 @@ public class PlayerControl : MonoBehaviour
         //if (IsMine()) {
         //        mainCameraTransform.position = (doorMono.goalRoom.transform.position) + cameraPosition;
         //}
-
-
     }
 
     void UpdateCoolDownSlider()
     {
+		// Update cooldown slider with current cooldown value.
         cooldownSlider.value = cooldown;
     }
-
-    public void TakeDamage(float damage)
-    {
-        health = +damage;
-        //healthSlider.value = health;
-    }
-
 
     public bool IsMine()
     {

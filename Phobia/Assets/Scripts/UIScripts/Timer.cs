@@ -1,6 +1,11 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
+/**
+ * 
+ * Class which handles timer logic on UI.
+ * 
+ **/
 public class Timer : MonoBehaviour {
 
     Text timerUI;
@@ -9,6 +14,7 @@ public class Timer : MonoBehaviour {
 
     void Start()
     {
+		// Get UI component and set 'isStarted' boolean to true.
         timerUI = GetComponent<UnityEngine.UI.Text>();
         isStarted = true;
     }
@@ -17,6 +23,7 @@ public class Timer : MonoBehaviour {
     {
         if (isStarted)
         {
+			// Increment time and update the corresponding UI text.
             timer += Time.deltaTime;
             timerUI.text = formattedTime();
         }
@@ -24,6 +31,7 @@ public class Timer : MonoBehaviour {
 
     private string formattedTime()
     {
+		// Format time into presentable format to put in timer UI.
         int minutes = Mathf.FloorToInt(timer / 60F);
         int seconds = Mathf.FloorToInt(timer - minutes * 60);
         return string.Format("{00:00}:{01:00}", minutes, seconds);
@@ -31,6 +39,7 @@ public class Timer : MonoBehaviour {
 
     public void onFinished()
     {
+		// Set 'isStarted' boolean to false when finished.
         isStarted = false;
     }
 }

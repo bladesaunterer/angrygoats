@@ -1,6 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+/**
+ * 
+ * Class which handles the player's movement logic.
+ * 
+ **/
 public class PlayerMovement : MonoBehaviour
 {
 

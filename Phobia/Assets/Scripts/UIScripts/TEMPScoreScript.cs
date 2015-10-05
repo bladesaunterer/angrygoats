@@ -2,6 +2,11 @@
 using System.Collections;
 using UnityEngine.UI;
 
+/**
+ * 
+ * Singleton class which handles scoring logic on UI.
+ * 
+ **/
 public class TEMPScoreScript : MonoBehaviour
 {
 
@@ -9,6 +14,7 @@ public class TEMPScoreScript : MonoBehaviour
     public static int pointsCounter;
     public Text currentScore;
 
+	// Singleton method for getting instance of TEMPScoreScript.
     public static TEMPScoreScript Instance
     {
         get
@@ -47,11 +53,12 @@ public class TEMPScoreScript : MonoBehaviour
 
     public void IncrementScore(int points)
     {
+		// Increments score and sets text on UI.
         pointsCounter += points;
         SetCountText(pointsCounter, currentScore);
     }
 
-    // Updates the players score
+    // Method which updates the player's score on the UI.
     public void SetCountText(int value, Text gText)
     {
         if (value < 10)

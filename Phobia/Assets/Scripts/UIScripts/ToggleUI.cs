@@ -1,6 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+/**
+ * 
+ * Temporary class which shows pop-up windows
+ * for the win and death screens. Necessary as 
+ * logic hasn't been implemented yet.
+ * 
+ **/
 public class ToggleUI : MonoBehaviour {
 	
 	public GameObject dead; // Assign in inspector
