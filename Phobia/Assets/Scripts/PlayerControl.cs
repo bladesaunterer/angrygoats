@@ -184,11 +184,12 @@ public class PlayerControl : MonoBehaviour
         //        mainCameraTransform.position = (doorMono.goalRoom.transform.position) + cameraPosition;
         //}
 
+
     }
 
     void UpdateCoolDownSlider()
     {
-        //cooldownSlider.value = cooldown;
+        cooldownSlider.value = cooldown;
     }
 
     public void TakeDamage(float damage)
@@ -196,6 +197,7 @@ public class PlayerControl : MonoBehaviour
         health = +damage;
         //healthSlider.value = health;
     }
+
 
     public bool IsMine()
     {
