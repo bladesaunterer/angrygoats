@@ -6,7 +6,7 @@ all information about the project can be found on the wiki.
 
 To play the game go to our drive here.  
 [Prototype build](https://drive.google.com/open?id=0Byzfbk2nNbD1d0UwVnBlWWprVFE)  
-Download the four files, open builds.html in a browser  
+Download the four files, open Prototype.html in a browser  
 Note you can't use chrome  
 
 To access the code use github.  
