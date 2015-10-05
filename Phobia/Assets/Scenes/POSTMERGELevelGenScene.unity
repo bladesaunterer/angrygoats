@@ -513,6 +513,14 @@ Prefab:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 53703026}
+    - target: {fileID: 11432846, guid: f13e57e09732f7e43a81e43ff72dfbb0, type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: POSTMERGELevelGenScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 11433854, guid: f13e57e09732f7e43a81e43ff72dfbb0, type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: POSTMERGELevelGenScene
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f13e57e09732f7e43a81e43ff72dfbb0, type: 2}
   m_IsPrefabParent: 0
