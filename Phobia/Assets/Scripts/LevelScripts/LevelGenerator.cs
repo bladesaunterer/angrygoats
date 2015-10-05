@@ -1,6 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
 
+/**
+ * 
+ * Class which handles random level generation.
+ * 
+ **/
 public class LevelGenerator : MonoBehaviour {
     
     public int roomsToSpawn = 20;
