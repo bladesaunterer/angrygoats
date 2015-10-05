@@ -9,7 +9,9 @@ public class LevelGenerator : MonoBehaviour {
     public int totalEnemies = 60;
 	public int maxEnemiesPerRoom = 6;
 	public GameObject enemy;
-	
+    public GameObject bossFloor;
+    public GameObject boss;
+
     List<Room> rooms = new List<Room>();
 	
 	private const int HORIZ_TILING = 100;
@@ -30,25 +32,58 @@ public class LevelGenerator : MonoBehaviour {
         }
 
         for (int i = 1; i < roomsToSpawn; i++) {
-            Room thisRoom = new Room(this);
-            thisRoom.Floor = floorPrefabs[Random.Range(0, floorPrefabs.Count)];
-            thisRoom.Walls = wallPrefab;
+
+            // BOSS ROOM
+            if (i == roomsToSpawn-1)
+            {
+                Room thisRoom = new Room(this);
+                thisRoom.Floor = bossFloor;
+                thisRoom.Walls = wallPrefab;
+
+                Room adjRoom;
+
+                do
+                {
+                    adjRoom = rooms[Random.Range(0, rooms.Count)];
+                } while (!adjRoom.IsNextToEmpty());
 
 
-            Room adjRoom;
+                adjRoom.SetAdj(adjRoom.randomEmpty(), thisRoom);
 
-            do {
-                adjRoom = rooms[Random.Range(0, rooms.Count)];
-            } while (!adjRoom.IsNextToEmpty());
+                thisRoom.Walls = (GameObject)Instantiate(thisRoom.Walls, new Vector3(HORIZ_TILING * thisRoom.Position.x, 0, VERT_TILING * thisRoom.Position.y), Quaternion.identity);
+                thisRoom.Floor = (GameObject)Instantiate(thisRoom.Floor, new Vector3(HORIZ_TILING * thisRoom.Position.x, 0, VERT_TILING * thisRoom.Position.y), Quaternion.identity);
+                thisRoom.Walls.name = "Boss Room";
+
+                rooms.Add(thisRoom);
+
+                boss =  (GameObject)Instantiate(boss, new Vector3(HORIZ_TILING * thisRoom.Position.x, 4, VERT_TILING * thisRoom.Position.y), Quaternion.identity);
+                boss.GetComponent<AIPath>().target = GameObject.FindWithTag("Player").transform;
+            }
+            else
+            {
 
 
-            adjRoom.SetAdj(adjRoom.randomEmpty(), thisRoom);
+                Room thisRoom = new Room(this);
+                thisRoom.Floor = floorPrefabs[Random.Range(0, floorPrefabs.Count)];
+                thisRoom.Walls = wallPrefab;
 
-			thisRoom.Walls = (GameObject)Instantiate(thisRoom.Walls, new Vector3(HORIZ_TILING * thisRoom.Position.x, 0, VERT_TILING * thisRoom.Position.y), Quaternion.identity);
-			thisRoom.Floor = (GameObject)Instantiate(thisRoom.Floor, new Vector3(HORIZ_TILING * thisRoom.Position.x, 0, VERT_TILING * thisRoom.Position.y), Quaternion.identity);
-			thisRoom.Walls.name = "Room " + i;
 
-            rooms.Add(thisRoom);
+                Room adjRoom;
+
+                do
+                {
+                    adjRoom = rooms[Random.Range(0, rooms.Count)];
+                } while (!adjRoom.IsNextToEmpty());
+
+
+                adjRoom.SetAdj(adjRoom.randomEmpty(), thisRoom);
+
+                thisRoom.Walls = (GameObject)Instantiate(thisRoom.Walls, new Vector3(HORIZ_TILING * thisRoom.Position.x, 0, VERT_TILING * thisRoom.Position.y), Quaternion.identity);
+                thisRoom.Floor = (GameObject)Instantiate(thisRoom.Floor, new Vector3(HORIZ_TILING * thisRoom.Position.x, 0, VERT_TILING * thisRoom.Position.y), Quaternion.identity);
+                thisRoom.Walls.name = "Room " + i;
+
+                rooms.Add(thisRoom);
+            }
         }
 
         foreach(Room room in rooms) {
