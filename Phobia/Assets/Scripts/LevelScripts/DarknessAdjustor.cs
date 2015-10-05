@@ -1,9 +1,12 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
-
-
 using System.Collections;
 
+/**
+ * 
+ * Class which adds a darkness overlay to level.
+ * 
+ **/
 public class DarknessAdjustor : MonoBehaviour {
 
     public RawImage darkness;
