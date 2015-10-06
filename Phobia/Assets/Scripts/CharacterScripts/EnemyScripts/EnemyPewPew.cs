@@ -8,7 +8,7 @@ public class EnemyPewPew : MonoBehaviour {
 	public Transform shotSpawn2;
 	public Transform shotSpawn3;
 	float timer;
-	private float timeBetweenAttacks = 1f;
+	private float timeBetweenAttacks = 0.5f;
 	// Use this for initialization
 	void Start () {
 	

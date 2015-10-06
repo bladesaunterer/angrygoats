@@ -4,7 +4,7 @@ using System.Collections;
 public class EnemyBolt : MonoBehaviour {
 
 		public float speed;
-		
+		public GameObject enemy;
 		private Rigidbody rb;
 		
 		void Start(){
@@ -18,7 +18,7 @@ public class EnemyBolt : MonoBehaviour {
 		{
 			if (other.gameObject.CompareTag ("Door") 
 			    || other.gameObject.CompareTag ("Wall") 
-			    || other.gameObject.CompareTag ("Enemy") 
+		    || (other.gameObject.CompareTag ("Enemy") && (enemy != other.gameObject)) 
 		    || other.gameObject.CompareTag ("Boss") || other.gameObject.CompareTag ("Player")) {
 				
 				// Destroy bolt on contact.
