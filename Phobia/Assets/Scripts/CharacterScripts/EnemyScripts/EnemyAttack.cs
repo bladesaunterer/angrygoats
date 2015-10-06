@@ -8,12 +8,16 @@ using System.Collections;
  **/
 public class EnemyAttack : MonoBehaviour
 {
+    void OnCollisionEnter(Collision other)
+    {
+        // When colliding with player, damage the player.
+        HealthControl.dealDamageToPlayer(other.gameObject, 8);
+    }
+
 	void OnTriggerEnter (Collider other)
 	{
-		// If the entering collider is the player...
-		Debug.Log("DO THE DMGS!");
-		other.gameObject.GetComponent(PlayerHealth);
-		PlayerHealth.TakeDamage(8);
+		// When colliding with player, damage the player.
+		HealthControl.dealDamageToPlayer(other.gameObject, 100);
 	}
 
 	void onDestroy()
