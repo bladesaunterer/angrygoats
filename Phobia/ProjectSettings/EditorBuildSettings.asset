@@ -12,7 +12,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MasterCopy/LevelScene.unity
   - enabled: 1
-    path: Assets/Scenes/PersonalScenes/ChesterScene.unity
+    path: Assets/Scenes/PersonalScenes/Chester/ChesterScene.unity
   - enabled: 1
     path: Assets/Scenes/MasterCopy/LevelSelectScene.unity
   - enabled: 1
