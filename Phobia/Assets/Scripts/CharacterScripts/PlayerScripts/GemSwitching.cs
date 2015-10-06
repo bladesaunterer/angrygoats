@@ -4,18 +4,23 @@ using System.Collections;
 public class GemSwitching : MonoBehaviour
 {
 
+	private GameObject spawn;
 	private GameObject gemOne;
 	private GameObject gemTwo;
 	private Gem currentGem;
 
-
 	void Awake ()
 	{
+
 	
+		spawn = GameObject.FindGameObjectWithTag ("SpecialAttack");
 		gemOne = GameObject.FindGameObjectWithTag (GemSelection.Instance.gemOne.ToString ());
 		gemTwo = GameObject.FindGameObjectWithTag (GemSelection.Instance.gemTwo.ToString ());
+		foreach (Transform child in spawn.transform) {
+			child.gameObject.SetActive(false);
+		}
 		gemOne.SetActive (true);
-		gemTwo.SetActive (false);
+		
 		//current selection starts with gemOne
 		currentGem = GemSelection.Instance.gemOne;
 
