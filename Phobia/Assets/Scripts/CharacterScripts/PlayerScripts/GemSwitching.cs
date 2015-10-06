@@ -7,13 +7,13 @@ public class GemSwitching : MonoBehaviour
 	private GameObject gemOne;
 	private GameObject gemTwo;
 
+	public GameObject currentSelectedGem;
 
 	void Awake ()
 	{
 		gemOne = GameObject.FindGameObjectWithTag ("GemOne");
 		gemTwo = GameObject.FindGameObjectWithTag ("GemTwo");
-		gemOne.SetActive (true);
-		gemTwo.SetActive (false);
+		currentSelectedGem = gemOne;
 	}
 	
 	// Update is called once per frame

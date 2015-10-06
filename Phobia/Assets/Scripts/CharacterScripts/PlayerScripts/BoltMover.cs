@@ -10,6 +10,8 @@ public class BoltMover : MonoBehaviour {
     
     public float speed;
 
+	private Gem gem;
+
 	private Rigidbody rb;
 
 	void Start(){
@@ -17,6 +19,7 @@ public class BoltMover : MonoBehaviour {
 		// Get rigidbody and set bolt's velocity.
 		rb = GetComponent<Rigidbody> ();
 		rb.velocity = transform.forward * speed;
+
 	}
 
 	void OnTriggerEnter(Collider other)
