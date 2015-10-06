@@ -10,7 +10,7 @@ public class EnemyAttack : MonoBehaviour
 {
 	private bool playerInRange;
 	private GameObject play;
-	private float timeBetweenAttacks = 0.5f;
+	private float timeBetweenAttacks = 0.25f;
 	float timer;
 
 	void Awake ()
