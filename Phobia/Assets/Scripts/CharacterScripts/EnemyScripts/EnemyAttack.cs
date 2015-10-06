@@ -8,8 +8,10 @@ using System.Collections;
  **/
 public class EnemyAttack : MonoBehaviour
 {
-	bool playerInRange;
-	GameObject play;
+	private bool playerInRange;
+	private GameObject play;
+	private float timeBetweenAttacks = 0.5f;
+	float timer;
 
 	void Awake ()
 	{
@@ -36,7 +38,8 @@ public class EnemyAttack : MonoBehaviour
 	}
 
 	void Update(){
-		if (playerInRange)
+		timer += Time.deltaTime;
+		if(timer >= timeBetweenAttacks && playerInRange)
 		{
 			Attack (play);
 		}
@@ -44,8 +47,9 @@ public class EnemyAttack : MonoBehaviour
 
 	void Attack(GameObject other)
 	{
+		timer = 0f;
 			if (other != null) {
-			HealthControl.dealDamageToPlayer (other, 1);
+			HealthControl.dealDamageToPlayer (other, 8);
 		}
 
 	}
