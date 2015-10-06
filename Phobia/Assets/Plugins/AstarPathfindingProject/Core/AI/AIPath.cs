@@ -151,7 +151,6 @@ public class AIPath : MonoBehaviour {
 	  * */
 	protected virtual void Awake () {
 		seeker = GetComponent<Seeker>();
-
 		//This is a simple optimization, cache the transform component lookup
 		tr = transform;
 
