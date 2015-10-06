@@ -317,7 +317,8 @@ public class AIPath : MonoBehaviour {
 		return tr.position;
 	}
 
-	public virtual void Update () {
+    // Dean changed from "Update" to "FixedUpdate"
+	public virtual void FixedUpdate () {
 
 		if (!canMove) { return; }
         

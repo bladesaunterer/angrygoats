@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
+using Pathfinding;
 
 /**
  * 
@@ -16,6 +17,9 @@ public class LevelGenerator : MonoBehaviour {
 	public GameObject enemy;
     public GameObject bossFloor;
     public GameObject boss;
+    public GameObject trash;
+	
+	public GameObject AStar;
 
     List<Room> rooms = new List<Room>();
 	
@@ -96,7 +100,7 @@ public class LevelGenerator : MonoBehaviour {
 		
 		// link rooms
 		
-		for (int i = 0; i < roomsToSpawn*10; i++) {
+		for (int i = 0; i < roomsToSpawn*4; i++) {
 			chosenRoom = rooms[Random.Range(0, rooms.Count)];
 			
 			int chosen = chosenRoom.RandomNotEmpty();
@@ -110,8 +114,10 @@ public class LevelGenerator : MonoBehaviour {
         foreach(Room room in rooms) {
             room.LinkDoors();
 			room.PopulateCells();
+			room.AddGraph();
         }
-		
+
+        AstarPath.active.Scan();
 		
 		// populate rooms
 		
@@ -123,9 +129,6 @@ public class LevelGenerator : MonoBehaviour {
 			
 			chosenRoom.AddEnemy();
 		}
-
-        AstarPath.active.Scan();
-
     }
 	
 	// Update is called once per frame
@@ -204,6 +207,8 @@ public class LevelGenerator : MonoBehaviour {
                     // and do the reverse
                     adjDoor.GetComponent<DoorControl>().goalDoor = thisDoor;
                     adjRooms[i].Walls.transform.Find("Door Blockers/" + directions[(i + 2) % 4]).gameObject.SetActive(false);
+					
+					GameObject.Instantiate(parent.trash, new Vector3( LevelGenerator.HORIZ_TILING *(Position.x + adjRooms[i].Position.x)/2, 0, LevelGenerator.VERT_TILING *(Position.y + adjRooms[i].Position.y)/2), Quaternion.identity);
                 }
             }
         }
@@ -241,6 +246,18 @@ public class LevelGenerator : MonoBehaviour {
 			Debug.Log("" + cells.Count);
 		}
 		
+		public void AddGraph() {
+			AstarData data = AstarPath.active.astarData;
+			// This creates a Grid Graph
+			GridGraph gg = data.AddGraph(typeof(GridGraph)) as GridGraph;
+			// Setup a grid graph with some values
+			gg.width = 50;
+			gg.depth = 40;
+			gg.center = new Vector3(HORIZ_TILING * Position.x, 0, VERT_TILING * Position.y);
+			// Updates internal size from the above values
+			gg.UpdateSizeFromWidthDepth();
+		}
+		
 		public void AddEnemy() {
 			
 			GameObject chosenCell;
@@ -249,7 +266,7 @@ public class LevelGenerator : MonoBehaviour {
 			} while(enemyCells.Contains(chosenCell));
 			enemyCells.Add(chosenCell);
 
-            GameObject thisEnemy = (GameObject)Instantiate(parent.enemy, (chosenCell.transform.position + new Vector3(0, 1, 0)), Quaternion.identity);
+            GameObject thisEnemy = (GameObject)Instantiate(parent.enemy, (chosenCell.transform.position + new Vector3(0, 4, 0)), Quaternion.identity);
 
             thisEnemy.GetComponent<AIPath>().target = GameObject.FindWithTag("Player").transform;
 
