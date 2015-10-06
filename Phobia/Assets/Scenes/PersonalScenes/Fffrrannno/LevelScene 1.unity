@@ -319,19 +319,19 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22434274, guid: f13e57e09732f7e43a81e43ff72dfbb0, type: 2}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 22434274, guid: f13e57e09732f7e43a81e43ff72dfbb0, type: 2}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 22459780, guid: f13e57e09732f7e43a81e43ff72dfbb0, type: 2}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 22459780, guid: f13e57e09732f7e43a81e43ff72dfbb0, type: 2}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 22308736, guid: f13e57e09732f7e43a81e43ff72dfbb0, type: 2}
       propertyPath: m_Camera
@@ -373,7 +373,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 439206, guid: e4d450b22770158408d6a460b5c9bc71, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 3.56988192
+      value: .170000002
       objectReference: {fileID: 0}
     - target: {fileID: 439206, guid: e4d450b22770158408d6a460b5c9bc71, type: 2}
       propertyPath: m_LocalRotation.x
@@ -399,6 +399,18 @@ Prefab:
       propertyPath: target
       value: 
       objectReference: {fileID: 1532231902}
+    - target: {fileID: 11497046, guid: e4d450b22770158408d6a460b5c9bc71, type: 2}
+      propertyPath: speed
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 11497046, guid: e4d450b22770158408d6a460b5c9bc71, type: 2}
+      propertyPath: repathRate
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 11497046, guid: e4d450b22770158408d6a460b5c9bc71, type: 2}
+      propertyPath: turningSpeed
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e4d450b22770158408d6a460b5c9bc71, type: 2}
   m_IsPrefabParent: 0
@@ -657,3 +669,18 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4ca13b5319b30ae46a4f53a8b7d41dae, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1826944354 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 113690, guid: e4d450b22770158408d6a460b5c9bc71, type: 2}
+  m_PrefabInternal: {fileID: 1432232999}
+--- !u!114 &1826944366
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1826944354}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1b48e24394b7804a8f2d04ee023dcdd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
