@@ -467,14 +467,4 @@ public class AIPath : MonoBehaviour {
 		offset = Mathf.Clamp (offset+closest,0.0F,1.0F);
 		return (b-a)*offset + a;
 	}
-
-
-
-
-    void OnCollisionEnter(Collision other)
-    {
-        //if (other.gameObject.CompareTag ("Player")) {
-        //HealthControl.dealDamageToPlayer(other.gameObject, 8);
-        //}
-    }
 }
