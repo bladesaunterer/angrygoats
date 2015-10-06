@@ -8,9 +8,7 @@ public enum Gem
 	Red,
 	Green,
 	Black,
-	White,
-	GemOne,
-	GemTwo
+	White
 }
 //Code for if to string causes problems
 //public sealed class Gem

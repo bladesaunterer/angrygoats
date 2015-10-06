@@ -8,12 +8,14 @@ public class GemSwitching : MonoBehaviour
 	private GameObject gemOne;
 	private GameObject gemTwo;
 	private Gem currentGem;
+	private GemSelection GemSelection = new GemSelection ();
 
 
 	void Awake ()
 	{
-		PlayerPrefs.SetString (Gem.GemOne.ToString (), Gem.Yellow.ToString ());
-		PlayerPrefs.SetString (Gem.GemTwo.ToString (), Gem.Blue.ToString ());
+		GemSelection.selectGems (Gem.Red, Gem.Green);
+//		PlayerPrefs.SetString (Gem.GemOne.ToString (), Gem.Yellow.ToString ());
+//		PlayerPrefs.SetString (Gem.GemTwo.ToString (), Gem.Blue.ToString ());
 	
 		spawn = GameObject.FindGameObjectWithTag ("SpecialAttack");
 		//Debug.Log (gem.gemOne.ToString ());
@@ -25,7 +27,7 @@ public class GemSwitching : MonoBehaviour
 		gemOne.SetActive (true);
 		
 		//current selection starts with gemOne
-		//currentGem = PlayerPrefs.GetString ("GemOne");
+		currentGem = GemSelection.GetGemOne ();
 
 	}
 	
@@ -42,11 +44,11 @@ public class GemSwitching : MonoBehaviour
 		if (gemOne.gameObject.activeSelf) {
 			gemOne.SetActive (false);
 			gemTwo.SetActive (true);
-//			currentGem = Gem.GemTwo;
+			currentGem = GemSelection.GetGemTwo ();
 		} else {
 			gemOne.SetActive (true);
 			gemTwo.SetActive (false);
-//			currentGem = (Gem)PlayerPrefs.GetString ("GemTwo");
+			currentGem = GemSelection.GetGemTwo ();
 		}
 	}
 
