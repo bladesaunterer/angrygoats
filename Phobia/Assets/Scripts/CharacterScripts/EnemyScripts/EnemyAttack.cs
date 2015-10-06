@@ -8,16 +8,46 @@ using System.Collections;
  **/
 public class EnemyAttack : MonoBehaviour
 {
-    void OnCollisionEnter(Collision other)
-    {
-        // When colliding with player, damage the player.
-        HealthControl.dealDamageToPlayer(other.gameObject, 8);
-    }
+	bool playerInRange;
+	GameObject play;
 
+	void Awake ()
+	{
+		playerInRange = false;
+	}
 	void OnTriggerEnter (Collider other)
 	{
 		// When colliding with player, damage the player.
-		HealthControl.dealDamageToPlayer(other.gameObject, 100);
+		if (play == null) {
+			if (other.gameObject.CompareTag("Player")){
+			    play = other.gameObject;
+			}
+		}
+		if (other.gameObject.CompareTag ("Player")) {
+			playerInRange = true;
+		}
+	}
+
+	void OnTriggerExit (Collider other)
+	{
+		if (other.gameObject.CompareTag ("Player")) {
+			playerInRange = false;
+		}
+	}
+
+	void Update(){
+		if (playerInRange)
+		{
+			Attack (play);
+		}
+	}
+
+	void Attack(GameObject other)
+	{
+			if (other != null) {
+			HealthControl.dealDamageToPlayer (other, 1);
+		}
+
 	}
 
 	void onDestroy()
