@@ -4,6 +4,7 @@ using System.Collections;
 public class GemSwitching : MonoBehaviour
 {
 
+	private GameObject spawn;
 	private GameObject gemOne;
 	private GameObject gemTwo;
 
@@ -11,9 +12,13 @@ public class GemSwitching : MonoBehaviour
 
 	void Awake ()
 	{
-		gemOne = GameObject.FindGameObjectWithTag ("GemOne");
-		gemTwo = GameObject.FindGameObjectWithTag ("GemTwo");
-		currentSelectedGem = gemOne;
+		spawn = GameObject.FindGameObjectWithTag ("SpecialAttack");
+		gemOne = GameObject.FindGameObjectWithTag ("Red");
+		gemTwo = GameObject.FindGameObjectWithTag ("Yellow");
+		foreach (Transform child in spawn.transform) {
+			child.gameObject.SetActive(false);
+		}
+		gemOne.SetActive (true);
 	}
 	
 	// Update is called once per frame
