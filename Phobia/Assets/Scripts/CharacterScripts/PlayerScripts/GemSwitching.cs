@@ -8,21 +8,27 @@ public class GemSwitching : MonoBehaviour
 	private GameObject gemOne;
 	private GameObject gemTwo;
 	private Gem currentGem;
+	GemSelection gem;
 
 	void Awake ()
 	{
 
+		gem = new GemSelection ();
+		gem.selectGems (Gem.Black, Gem.Blue);
+		PlayerPrefs.SetString ("gemOne", Gem.Blue.ToString ());
+		PlayerPrefs.SetString ("gemTwo", Gem.Green.ToString ());
 	
 		spawn = GameObject.FindGameObjectWithTag ("SpecialAttack");
-		gemOne = GameObject.FindGameObjectWithTag (GemSelection.Instance.gemOne.ToString ());
-		gemTwo = GameObject.FindGameObjectWithTag (GemSelection.Instance.gemTwo.ToString ());
+		Debug.Log (gem.gemOne.ToString ());
+		gemOne = GameObject.FindGameObjectWithTag (PlayerPrefs.GetString ("gemOne"));
+		gemTwo = GameObject.FindGameObjectWithTag (PlayerPrefs.GetString ("gemTwo"));
 		foreach (Transform child in spawn.transform) {
-			child.gameObject.SetActive(false);
+			child.gameObject.SetActive (false);
 		}
 		gemOne.SetActive (true);
 		
 		//current selection starts with gemOne
-		currentGem = GemSelection.Instance.gemOne;
+		currentGem = gem.gemOne;
 
 	}
 	
@@ -39,11 +45,11 @@ public class GemSwitching : MonoBehaviour
 		if (gemOne.gameObject.activeSelf) {
 			gemOne.SetActive (false);
 			gemTwo.SetActive (true);
-			currentGem = GemSelection.Instance.gemTwo;
+			currentGem = gem.gemTwo;
 		} else {
 			gemOne.SetActive (true);
 			gemTwo.SetActive (false);
-			currentGem = GemSelection.Instance.gemOne;
+			currentGem = gem.gemOne;
 		}
 	}
 
