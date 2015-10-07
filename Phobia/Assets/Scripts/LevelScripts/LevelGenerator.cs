@@ -12,6 +12,7 @@ public class LevelGenerator : MonoBehaviour {
     
     public int roomsToSpawn = 20;
     public GameObject wallPrefab;
+	public GameObject startPrefab;
 	public List<GameObject> floorPrefabs;
 	
     public int totalEnemies = 60;
@@ -21,6 +22,10 @@ public class LevelGenerator : MonoBehaviour {
     public GameObject boss;
 	
     public GameObject trash;
+	
+	public int minWebs;
+	public int maxWebs;
+	public GameObject web;
 
 	Dictionary<Vector2,Room> roomsDict = new Dictionary<Vector2,Room>();
     
@@ -34,7 +39,7 @@ public class LevelGenerator : MonoBehaviour {
 		// Start room
 		
 		thisRoom = new Room(this);
-		thisRoom.Floor = floorPrefabs[Random.Range(0, floorPrefabs.Count)]; // pick random floor
+		thisRoom.Floor = startPrefab; // pick random floor
 		thisRoom.Walls = wallPrefab; // walls always come as part of the standard template
 		thisRoom.Index = new Vector2(0,0);
 		//rooms.Add(thisRoom);
@@ -43,6 +48,7 @@ public class LevelGenerator : MonoBehaviour {
 		thisRoom.Instantiate(); // actually put it in the world
 		thisRoom.Walls.name = "Room " + 0;
 		thisRoom.spawnEnemies = false;
+		thisRoom.spawnWebs = false;
 
 		thisRoom.Walls.transform.Find("Lights").gameObject.SetActive(true);
 		
@@ -114,6 +120,9 @@ public class LevelGenerator : MonoBehaviour {
             room.LinkDoors();
 			room.PopulateCells();
 			room.AddGraph();
+			if (room.spawnWebs) {
+				room.AddWebs(Random.Range(minWebs, maxWebs));
+			}
         }
 
         AstarPath.active.Scan();
@@ -165,8 +174,6 @@ public class LevelGenerator : MonoBehaviour {
 		
         public GameObject Walls { get; set; }
         public GameObject Floor { get; set; }
-		public bool spawnEnemies = true;
-        public Room[] adjRooms = new Room[4];
 		
         public Vector2 Index { get; set; }
         public Vector3 Position {
@@ -174,9 +181,14 @@ public class LevelGenerator : MonoBehaviour {
 				return new Vector3(HORIZ_TILING * Index.x, 0, VERT_TILING * Index.y);
 			}
 		}
+        public Room[] adjRooms = new Room[4];
 		
-		public List<GameObject> enemyCells = new List<GameObject>();
+		public bool spawnWebs = true;
+		public bool spawnEnemies = true;
+		
 		public List<GameObject> cells = new List<GameObject>();
+		public List<GameObject> enemyCells = new List<GameObject>();
+		public List<GameObject> webCells = new List<GameObject>();
 
         public Room(LevelGenerator levelGenerator) {
             this.parent = levelGenerator;
@@ -283,6 +295,19 @@ public class LevelGenerator : MonoBehaviour {
 
             thisEnemy.GetComponent<AIPath>().target = GameObject.FindWithTag("Player").transform;
 
+        }
+		
+		public void AddWebs(int amount) {
+			
+			for (int i = 0; i < amount; i++) {
+				GameObject chosenCell;
+				do {
+					chosenCell = cells[Random.Range(0, cells.Count)];
+				} while(webCells.Contains(chosenCell));
+				webCells.Add(chosenCell);
+
+				GameObject thisWeb = (GameObject)GameObject.Instantiate(parent.web, (chosenCell.transform.position + new Vector3(0, 1.1f, 0)), Quaternion.identity);
+			}
         }
     }
 }

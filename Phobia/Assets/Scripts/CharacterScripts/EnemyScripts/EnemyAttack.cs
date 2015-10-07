@@ -6,23 +6,24 @@ using System.Collections;
  * Class which handles enemy attack logic.
  * 
  **/
-public class EnemyAttack : MonoBehaviour
-{
+public class EnemyAttack : MonoBehaviour {
+
+	public int damage = 8;
+
+
 	private bool playerInRange;
-	private GameObject play;
+	private GameObject player;
 	private float timeBetweenAttacks = 0.25f;
 	float timer;
 
-	void Awake ()
-	{
+	void Awake () {
 		playerInRange = false;
 	}
-	void OnTriggerEnter (Collider other)
-	{
+	void OnTriggerEnter (Collider other) {
 		// When colliding with player, damage the player.
-		if (play == null) {
+		if (player == null) {
 			if (other.gameObject.CompareTag("Player")){
-			    play = other.gameObject;
+			    player = other.gameObject;
 			}
 		}
 		if (other.gameObject.CompareTag ("Player")) {
@@ -30,35 +31,31 @@ public class EnemyAttack : MonoBehaviour
 		}
 	}
 
-	void OnTriggerExit (Collider other)
-	{
+	void OnTriggerExit (Collider other) {
 		if (other.gameObject.CompareTag ("Player")) {
 			playerInRange = false;
 		}
 	}
 
-	void Update(){
+	void Update() {
 		timer += Time.deltaTime;
 		if(timer >= timeBetweenAttacks && playerInRange)
 		{
-			Attack (play);
+			Attack (player);
 		}
 	}
 
-	void Attack(GameObject other)
-	{
+	void Attack(GameObject other) {
 		timer = 0f;
 			if (other != null) {
-			HealthControl.dealDamageToPlayer (other, 8);
+			HealthControl.dealDamageToPlayer (other, damage);
 		}
 
 	}
 
-	void onDestroy()
-    {
+	void onDestroy() {
         Debug.Log("Enemy Destroyed!");
-        if (this.tag == "Enemy")
-        {
+        if (this.tag == "Enemy") {
 			// When enemy destroyed, increment score.
             TEMPScoreScript.Instance.IncrementScore(10);
         }

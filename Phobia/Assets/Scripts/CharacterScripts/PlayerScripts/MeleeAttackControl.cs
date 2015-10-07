@@ -10,7 +10,8 @@ public class MeleeAttackControl : MonoBehaviour {
 
 	private Rigidbody rb;
 	public  float meleeTimeout;
-	public float attackSpeed;
+	public int attackDamage;
+	public int knockback;
 
 	void Start(){
 
@@ -23,13 +24,17 @@ public class MeleeAttackControl : MonoBehaviour {
 		if (other.gameObject.CompareTag ("Door") 
 		    || other.gameObject.CompareTag ("Wall")
 		    || other.gameObject.CompareTag ("Enemy")
-		    || other.gameObject.CompareTag ("Boss")) {
+		    || other.gameObject.CompareTag ("Boss")
+		    || other.gameObject.CompareTag ("Ball")) {
 
 			// Destroy bolt on contact.
 			Destroy(gameObject);
 
 			// If bolt hits an enemy, deal damage to that enemy.
-			HealthControl.dealDamageToEnemy(other.gameObject);
+			HealthControl.dealDamageToEnemy(other.gameObject, attackDamage);
+			if (other.gameObject.GetComponent<Rigidbody>() != null) {
+				other.gameObject.GetComponent<Rigidbody>().AddForce(gameObject.transform.forward*knockback);
+			}
 		} 
 	}
 }

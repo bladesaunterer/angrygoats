@@ -9,6 +9,7 @@ using System.Collections;
 public class BoltMover : MonoBehaviour {
     
     public float speed;
+	public int damage;
 
 	private Rigidbody rb;
 
@@ -30,7 +31,7 @@ public class BoltMover : MonoBehaviour {
 			Destroy(gameObject);
 
 			// If bolt hits an enemy, deal damage to that enemy.
-			HealthControl.dealDamageToEnemy(other.gameObject);
+			HealthControl.dealDamageToEnemy(other.gameObject, damage);
 		}
 	}
 }
