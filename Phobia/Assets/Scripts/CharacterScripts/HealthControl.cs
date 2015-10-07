@@ -32,10 +32,12 @@ public static class HealthControl {
 		PlayerHealth playerHealth = other.gameObject.GetComponent <PlayerHealth> ();
 		
 		// If the PlayerHealth component exist...
-		if (playerHealth != null)
-		{
+		if (playerHealth != null) {
+			Debug.Log ("Player has health!");
 			// ... the player should take damage.
-			playerHealth.TakeDamage(damage);
+			playerHealth.TakeDamage (damage);
+		} else {
+			Debug.Log ("HAHAHAHA!");
 		}
 	}
 	

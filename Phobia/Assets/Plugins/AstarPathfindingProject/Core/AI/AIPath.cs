@@ -151,7 +151,6 @@ public class AIPath : MonoBehaviour {
 	  * */
 	protected virtual void Awake () {
 		seeker = GetComponent<Seeker>();
-
 		//This is a simple optimization, cache the transform component lookup
 		tr = transform;
 
@@ -317,7 +316,8 @@ public class AIPath : MonoBehaviour {
 		return tr.position;
 	}
 
-	public virtual void Update () {
+    // Dean changed from "Update" to "FixedUpdate"
+	public virtual void FixedUpdate () {
 
 		if (!canMove) { return; }
         
@@ -468,14 +468,4 @@ public class AIPath : MonoBehaviour {
 		offset = Mathf.Clamp (offset+closest,0.0F,1.0F);
 		return (b-a)*offset + a;
 	}
-
-
-
-
-    void OnCollisionEnter(Collision other)
-    {
-        //if (other.gameObject.CompareTag ("Player")) {
-        //HealthControl.dealDamageToPlayer(other.gameObject, 8);
-        //}
-    }
 }
