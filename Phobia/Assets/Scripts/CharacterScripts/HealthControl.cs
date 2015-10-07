@@ -38,4 +38,5 @@ public static class HealthControl {
 			playerHealth.TakeDamage(damage);
 		}
 	}
+	
 }

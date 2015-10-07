@@ -14,23 +14,22 @@ public class GemSwitching : MonoBehaviour
 	void Awake ()
 	{
 		GemSelection.selectGems (Gem.Red, Gem.Green);
-//		PlayerPrefs.SetString (Gem.GemOne.ToString (), Gem.Yellow.ToString ());
-//		PlayerPrefs.SetString (Gem.GemTwo.ToString (), Gem.Blue.ToString ());
-	
+
 		spawn = GameObject.FindGameObjectWithTag ("SpecialAttack");
-		//Debug.Log (gem.gemOne.ToString ());
-		gemOne = GameObject.FindGameObjectWithTag (PlayerPrefs.GetString ("GemOne"));
-		gemTwo = GameObject.FindGameObjectWithTag (PlayerPrefs.GetString ("GemTwo"));
+		gemOne = GameObject.FindGameObjectWithTag (GemSelection.GetGemOne ().ToString ());
+		gemTwo = GameObject.FindGameObjectWithTag (GemSelection.GetGemTwo ().ToString ());
+
 		foreach (Transform child in spawn.transform) {
 			child.gameObject.SetActive (false);
 		}
 		gemOne.SetActive (true);
 		
 		//current selection starts with gemOne
-		currentGem = GemSelection.GetGemOne ();
+		GemSelection.SetCurrentGem (GemSelection.GetGemOne ());
 
 	}
 	
+
 	// Update is called once per frame
 	void Update ()
 	{
@@ -44,11 +43,11 @@ public class GemSwitching : MonoBehaviour
 		if (gemOne.gameObject.activeSelf) {
 			gemOne.SetActive (false);
 			gemTwo.SetActive (true);
-			currentGem = GemSelection.GetGemTwo ();
+			GemSelection.SetCurrentGem (GemSelection.GetGemTwo ());
 		} else {
 			gemOne.SetActive (true);
 			gemTwo.SetActive (false);
-			currentGem = GemSelection.GetGemTwo ();
+			GemSelection.SetCurrentGem (GemSelection.GetGemOne ());
 		}
 	}
 

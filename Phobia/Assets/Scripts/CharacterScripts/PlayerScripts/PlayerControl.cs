@@ -14,15 +14,13 @@ public class PlayerControl : MonoBehaviour
     public float speed = 6f;            // Player movement speed.
     public float webSlowFactor = 0.5f;
     private bool inWeb = false;
-
-    public float fireRate;
+	
     public GameObject shot;             // The special attack object.
     public Transform shotSpawn;         // Location where the special attack will spawn. 
 
     public Slider cooldownSlider;       // UI slider that represents cooldown.
-    public float cooldown;              // Initial cooldown value.
-    public float regen;                 // Regen of the cooldown per second. 
-    public float cost;                  // How much each special attack costs.
+    public int cooldown;              // Initial cooldown value.
+	public int regen;                 // Regen of the cooldown per second. 
 
     public GameObject meleeAttack;
     public Transform meleeSpawn;
@@ -56,13 +54,7 @@ public class PlayerControl : MonoBehaviour
             }
             UpdateCoolDownSlider();
         }
-        if (Input.GetKeyDown(KeyCode.K) && cooldown >= cost)
-        {
-            cooldown -= cost;
-            UpdateCoolDownSlider();
-            Instantiate(shot, shotSpawn.position, shotSpawn.rotation);
-        }
-        else if (Input.GetKeyDown(KeyCode.J) && Time.time > nextMelee)
+        if (Input.GetKeyDown(KeyCode.J) && Time.time > nextMelee)
         {
             nextMelee = Time.time + meleeRate;
             Instantiate(meleeAttack, meleeSpawn.position, meleeSpawn.rotation);
@@ -188,8 +180,13 @@ public class PlayerControl : MonoBehaviour
     void UpdateCoolDownSlider()
     {
 		// Update cooldown slider with current cooldown value.
-        cooldownSlider.value = cooldown;
+		cooldownSlider.value = cooldown;
     }
+
+	public void SubtractCooldown(int value){
+		cooldown -= value;
+		UpdateCoolDownSlider();
+	}
 
     public bool IsMine()
     {

@@ -26,6 +26,20 @@ public class GemSelection// : PersistentSingleton<GemSelection>
 		return getEnum (gem);
 	}
 
+	public void SetCurrentGem (Gem gem)
+	{
+		PlayerPrefs.SetString ("CurrentGem", gem.ToString ());
+
+	}
+
+	public Gem GetCurrentGem ()
+	{
+		string gem = PlayerPrefs.GetString ("CurrentGem");
+		return getEnum (gem);
+
+	}
+	                       
+
 	private Gem getEnum (string gem)
 	{
 		switch (gem) {
@@ -46,5 +60,7 @@ public class GemSelection// : PersistentSingleton<GemSelection>
 		}
 
 	}
+
+
 
 }
