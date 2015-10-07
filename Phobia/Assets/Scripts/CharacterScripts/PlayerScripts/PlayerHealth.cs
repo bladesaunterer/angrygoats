@@ -11,6 +11,8 @@ public class PlayerHealth : MonoBehaviour
 	public int startingHealth = 100;            // The amount of health the player starts with.
 	public int currentHealth;                   // The current health the player has.
 	public Slider healthSlider;					// Slider for player's health.
+
+	public int heal = 20;
 	
 	void Awake ()
 	{		
@@ -32,5 +34,19 @@ public class PlayerHealth : MonoBehaviour
 			// ... the player is destroyed.
 			Destroy (gameObject);
 		}
+	}
+
+	public void HealPlayer(){
+		//refund the cooldown
+		if (currentHealth == 100) {
+			PlayerControl playerControl = gameObject.GetComponent<PlayerControl>();
+			playerControl.cooldown += playerControl.cost;
+			playerControl.cooldownSlider.value = playerControl.cooldown;
+		}
+		currentHealth += heal;
+		if (currentHealth > 100) {
+			currentHealth = 100;
+		}
+		healthSlider.value = currentHealth;
 	}
 }

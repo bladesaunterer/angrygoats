@@ -288,19 +288,19 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22434274, guid: f13e57e09732f7e43a81e43ff72dfbb0, type: 2}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22434274, guid: f13e57e09732f7e43a81e43ff72dfbb0, type: 2}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22459780, guid: f13e57e09732f7e43a81e43ff72dfbb0, type: 2}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22459780, guid: f13e57e09732f7e43a81e43ff72dfbb0, type: 2}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f13e57e09732f7e43a81e43ff72dfbb0, type: 2}
@@ -438,6 +438,26 @@ Prefab:
       propertyPath: target
       value: 
       objectReference: {fileID: 89018768}
+    - target: {fileID: 11402338, guid: e4d450b22770158408d6a460b5c9bc71, type: 2}
+      propertyPath: startEndModifier.priority
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11486248, guid: e4d450b22770158408d6a460b5c9bc71, type: 2}
+      propertyPath: priority
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 11486248, guid: e4d450b22770158408d6a460b5c9bc71, type: 2}
+      propertyPath: iterations
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 11486248, guid: e4d450b22770158408d6a460b5c9bc71, type: 2}
+      propertyPath: strength
+      value: .5
+      objectReference: {fileID: 0}
+    - target: {fileID: 11486248, guid: e4d450b22770158408d6a460b5c9bc71, type: 2}
+      propertyPath: maxSegmentLength
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e4d450b22770158408d6a460b5c9bc71, type: 2}
   m_IsPrefabParent: 0
@@ -488,6 +508,14 @@ Prefab:
       propertyPath: cooldownSlider
       value: 
       objectReference: {fileID: 1917031082}
+    - target: {fileID: 147002, guid: 4d850a668baccd84b9d03402afcb4019, type: 2}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: 11488728, guid: 4d850a668baccd84b9d03402afcb4019, type: 2}
+      propertyPath: regen
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4d850a668baccd84b9d03402afcb4019, type: 2}
   m_IsPrefabParent: 0

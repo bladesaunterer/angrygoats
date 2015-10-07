@@ -11,21 +11,15 @@ public class BoltMover : MonoBehaviour
     
 	public float speed;
 
-	private Gem gem;
-
 	private Rigidbody rb;
-
+	
 	private Gem currentGem;
 	private GameObject gemObject;
 
 	public new Renderer renderer;
 	private GemSelection gemSelection = new GemSelection ();
-
-
-
-
-
-
+	
+	private PlayerHealth playerHealth;
 
 	void Start ()
 	{
@@ -39,11 +33,18 @@ public class BoltMover : MonoBehaviour
 		GameObject child = this.transform.GetChild (0).gameObject;
 		child.GetComponent<Renderer> ().materials = gemObject.GetComponent<Renderer> ().materials;
 
-
+		if (currentGem == Gem.Green) {
+			GameObject player = GameObject.FindGameObjectWithTag("Player");
+			Debug.Log(player.name);
+			PlayerHealth playerHealth = player.gameObject.GetComponent <PlayerHealth> ();
+			playerHealth.HealPlayer();
+			Destroy(gameObject);
+		}
 	}
 
 	void OnTriggerEnter (Collider other)
 	{
+
 		if (other.gameObject.CompareTag ("Door") 
 			|| other.gameObject.CompareTag ("Wall") 
 			|| other.gameObject.CompareTag ("Enemy") 
@@ -56,4 +57,5 @@ public class BoltMover : MonoBehaviour
 			HealthControl.dealDamageToEnemy (other.gameObject);
 		}
 	}
+	
 }
