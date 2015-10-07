@@ -9,20 +9,18 @@ using System.Collections;
  **/
 public static class HealthControl {
 	
-	public static void dealDamageToEnemy (GameObject other) {
+	public static void dealDamageToEnemy (GameObject other, int damage) {
 		
 		// Try and find an EnemyHealth script on the gameobject hit.
 		EnemyHealth enemyHealth = other.gameObject.GetComponent <EnemyHealth> ();
 		
-		// If the EnemyHealth component exist...
-		if(enemyHealth != null)
-		{
-			// ... the enemy should take damage, depending on type of attack.
-			if (other.gameObject.CompareTag("SpecialAttack")) {
-				enemyHealth.TakeDamage (50);
-			} else {
-				enemyHealth.TakeDamage (25);
-			}
+		// If the EnemyHealth component exist the enemy should take damage,
+		if (enemyHealth != null) {
+			Debug.Log ("Enemy has health!");
+			// ... the enemy should take damage.
+			enemyHealth.TakeDamage (damage);
+		} else {
+			Debug.Log ("HAHAHAHA!");
 		}
 	}
 
@@ -32,10 +30,12 @@ public static class HealthControl {
 		PlayerHealth playerHealth = other.gameObject.GetComponent <PlayerHealth> ();
 		
 		// If the PlayerHealth component exist...
-		if (playerHealth != null)
-		{
+		if (playerHealth != null) {
+			Debug.Log ("Player has health!");
 			// ... the player should take damage.
-			playerHealth.TakeDamage(damage);
+			playerHealth.TakeDamage (damage);
+		} else {
+			Debug.Log ("HAHAHAHA!");
 		}
 	}
 }

@@ -13,6 +13,8 @@ TagManager:
   - Enemy
   - MeleeAttack
   - Boss
+  - EnemyAttack
+  - Ball
   layers:
   - Default
   - TransparentFX
