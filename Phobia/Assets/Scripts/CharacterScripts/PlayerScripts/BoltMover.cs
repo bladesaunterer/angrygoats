@@ -18,7 +18,7 @@ public class BoltMover : MonoBehaviour
 	private Gem currentGem;
 	private GameObject gemObject;
 
-	public Renderer renderer;
+	public new Renderer renderer;
 	private GemSelection gemSelection = new GemSelection ();
 
 
