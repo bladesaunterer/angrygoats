@@ -33,13 +33,6 @@ public class BoltMover : MonoBehaviour
 		GameObject child = this.transform.GetChild (0).gameObject;
 		child.GetComponent<Renderer> ().materials = gemObject.GetComponent<Renderer> ().materials;
 
-		if (currentGem == Gem.Green) {
-			GameObject player = GameObject.FindGameObjectWithTag("Player");
-			Debug.Log(player.name);
-			PlayerHealth playerHealth = player.gameObject.GetComponent <PlayerHealth> ();
-			playerHealth.HealPlayer();
-			Destroy(gameObject);
-		}
 	}
 
 	void OnTriggerEnter (Collider other)
@@ -54,8 +47,38 @@ public class BoltMover : MonoBehaviour
 			Destroy (gameObject);
 
 			// If bolt hits an enemy, deal damage to that enemy.
-			HealthControl.dealDamageToEnemy (other.gameObject);
+			//HealthControl.dealDamageToEnemy (other.gameObject);
+			switch (currentGem) {
+			case Gem.Red:
+				FireSpell();
+				break;
+			case Gem.Yellow:
+				LightningSpell();
+				break;
+			case Gem.Blue:
+				IceSpell();
+				break;
+			default:
+				AoeSpell();
+				break;
+			}
 		}
+	}
+
+	void FireSpell(){
+
+	}
+
+	void LightningSpell(){
+
+	}
+
+	void IceSpell(){
+
+	}
+
+	void AoeSpell(){
+
 	}
 	
 }
