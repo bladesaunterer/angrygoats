@@ -70,9 +70,7 @@ public class RoomControl : MonoBehaviour {
 	
 	public void PopulateCells() {
 		foreach (Transform child in Floor.transform) {
-			foreach(Transform grandChild in child) {
-				freeCells.Add(grandChild.gameObject);
-			}
+			freeCells.Add(child.gameObject);
 		}
 	}
 	
@@ -105,7 +103,9 @@ public class RoomControl : MonoBehaviour {
 	public void EnemiesGoHome() {
 		
 		foreach (GameObject enemy in enemies) {
-			enemy.GetComponent<AIPath>().target = enemy.GetComponent<EnemyControl>().home;
+			if (enemy != null) {
+				enemy.GetComponent<AIPath>().target = enemy.GetComponent<EnemyControl>().home;
+			}
 		}
 
 	}
@@ -113,19 +113,9 @@ public class RoomControl : MonoBehaviour {
 	public void EnemiesHuntPlayer() {
 		
 		foreach (GameObject enemy in enemies) {
-			if (enemy == null) {
-				throw new System.NullReferenceException();
+			if (enemy != null) {
+				enemy.GetComponent<AIPath>().target = GameObject.FindWithTag("Player").transform;
 			}
-			if (enemy.GetComponent<AIPath>() == null) {
-				throw new System.NullReferenceException();
-			}
-			if (GameObject.FindWithTag("Player") == null) {
-				throw new System.NullReferenceException();
-			}
-			if (GameObject.FindWithTag("Player").transform == null) {
-				throw new System.NullReferenceException();
-			}
-			enemy.GetComponent<AIPath>().target = GameObject.FindWithTag("Player").transform;
 		}
 
 	}

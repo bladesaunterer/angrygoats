@@ -942,16 +942,38 @@ MonoBehaviour:
   roomPrefab: {fileID: 104770, guid: d35c4f618bababb4a8c66065d625ad85, type: 2}
   startPrefab: {fileID: 105500, guid: 430aee4e7c8dacd4b856612a7317ce83, type: 2}
   floorPrefabs:
-  - {fileID: 105500, guid: 430aee4e7c8dacd4b856612a7317ce83, type: 2}
-  - {fileID: 122520, guid: 4344dee71f0a28340bd39f2714a642cc, type: 2}
-  - {fileID: 136880, guid: e143b26e05311ee48b134068eccc85b7, type: 2}
+  - {fileID: 165686, guid: d4ed8bed2bb4c9b4cb89348fa5dc19de, type: 2}
+  - {fileID: 182342, guid: 2bc8fdacb19084b4581902b96ffb5a03, type: 2}
+  - {fileID: 179656, guid: f639c4d9ddebb774fb1ea225f8cc20d7, type: 2}
+  - {fileID: 153352, guid: 10ca60f2c09de6340add739c205feea9, type: 2}
+  - {fileID: 144790, guid: eb23152bba030ea48a59e8d4d5e6ef45, type: 2}
+  - {fileID: 139210, guid: f6fd7dc0a2aecf44f9dcaee8942f2368, type: 2}
+  - {fileID: 158364, guid: 9409cdd3dddad994fb149b4992814f9b, type: 2}
+  - {fileID: 147618, guid: a981ad09b0bba234494e2036b20ec728, type: 2}
+  - {fileID: 110244, guid: 420cb6c2f9d472441bf22082057e752f, type: 2}
+  - {fileID: 138426, guid: e8ea4575c75a1ff4484e2213660c0225, type: 2}
+  - {fileID: 118856, guid: 3f510808ff552db459ced2b205f6bf33, type: 2}
+  - {fileID: 158344, guid: 25cefae5fc7194943ba41000cb8ff38c, type: 2}
+  - {fileID: 130120, guid: e1909f87be201ef4dbed86b7d3e30545, type: 2}
+  - {fileID: 131246, guid: 8c1cd4fbf42658441b158bef81a3a94a, type: 2}
+  - {fileID: 135982, guid: 4591c3376915dce4ca3c2caf32992b1c, type: 2}
+  - {fileID: 113894, guid: 3dfff3a9ccf2b384382c96c4bb977d78, type: 2}
+  - {fileID: 166882, guid: dcbabe3be8aedcc45875b77116f37a18, type: 2}
+  - {fileID: 159814, guid: 2b67380e790dec2449a4afe25716ddea, type: 2}
+  - {fileID: 125488, guid: 8a109102cdc7b364c89e6d3a0786b244, type: 2}
+  - {fileID: 163804, guid: 2de6cf40a7d278646a38322a4f7cef34, type: 2}
+  - {fileID: 109378, guid: ebf75c2512e4f7747935ddcef9212c94, type: 2}
+  - {fileID: 136982, guid: 4d1e725dbe5e2c04b9ce5e0539138913, type: 2}
+  - {fileID: 152356, guid: 97e92f542e96a614dad1399f79dcc040, type: 2}
+  - {fileID: 171838, guid: 6918bb1c8b5b12441af71ddc18c40de1, type: 2}
+  - {fileID: 165700, guid: 686caa2ee423a3e4d9783a0a1d7124e6, type: 2}
   totalEnemies: 60
   maxEnemiesPerRoom: 5
   enemy: {fileID: 192178, guid: 705ff85a9b8f6fb439775453d35c62e2, type: 2}
   bossFloor: {fileID: 195188, guid: 19c7211c44d355846918060f39acbfc4, type: 2}
   boss: {fileID: 174540, guid: baa64ea1ec0a8f044a4cba96facdad77, type: 2}
-  minWebs: 2
-  maxWebs: 5
+  minWebs: 5
+  maxWebs: 10
   web: {fileID: 160458, guid: 705edc7941cc1d04f8ee34a247b4c2bc, type: 2}
   trash: {fileID: 100828, guid: 245990912d851954f9e9c0cff7d8ac74, type: 2}
 --- !u!4 &1876287590

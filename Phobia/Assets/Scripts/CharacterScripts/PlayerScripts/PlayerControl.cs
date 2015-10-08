@@ -12,7 +12,7 @@ public class PlayerControl : MonoBehaviour {
 
     public float speed = 6f;            // Player movement speed.
     public float webSlowFactor = 0.5f;
-    private bool inWeb = false;
+    private int inWeb = 0;
 
     public float fireRate;
     public GameObject shot;             // The special attack object.
@@ -84,7 +84,7 @@ public class PlayerControl : MonoBehaviour {
         // Normalise the movement vector and make it proportional to the speed per second.
 
         float moveSpeed = speed;
-        if (inWeb) {
+        if (inWeb > 0) {
             moveSpeed *= webSlowFactor;
         }
         movement = movement.normalized * moveSpeed * Time.deltaTime;
@@ -152,13 +152,15 @@ public class PlayerControl : MonoBehaviour {
             doorMono.ExitRoom();
         }
         else if (other.gameObject.CompareTag("Web")) {
-            inWeb = true;
+            inWeb++;
         }
     }
 
     void OnTriggerExit(Collider other) {
         if (other.gameObject.CompareTag("Web")) {
-            inWeb = false;
+			if (inWeb > 0) {
+				inWeb--;
+			}
         }
 
         //if (IsMine()) {
