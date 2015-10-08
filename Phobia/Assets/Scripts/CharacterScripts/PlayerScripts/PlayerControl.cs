@@ -7,8 +7,7 @@ using UnityEngine.Networking;
  * Class which handles player control (abilities) logic.
  * 
  **/
-public class PlayerControl : MonoBehaviour
-{
+public class PlayerControl : MonoBehaviour {
     private const float DOOR_JUMP = 2;
 
     public float speed = 6f;            // Player movement speed.
@@ -39,40 +38,32 @@ public class PlayerControl : MonoBehaviour
 
     private Transform mainCameraTransform;
 
-    void Awake()
-    {
+    void Awake() {
         this.mainCameraTransform = Camera.main.GetComponentInParent<Transform>();
     }
 
-    void Update()
-    {
+    void Update() {
         //Updates every second
-        if (Time.time > nextTime)
-        {
+        if (Time.time > nextTime) {
             nextTime = Time.time + 1f;
-            if (cooldown != 100f)
-            {
+            if (cooldown != 100f) {
                 cooldown += regen;
             }
             UpdateCoolDownSlider();
         }
-        if (Input.GetKeyDown(KeyCode.K) && cooldown >= cost)
-        {
+        if (Input.GetKeyDown(KeyCode.K) && cooldown >= cost) {
             cooldown -= cost;
             UpdateCoolDownSlider();
             Instantiate(shot, shotSpawn.position, shotSpawn.rotation);
         }
-        else if (Input.GetKeyDown(KeyCode.J) && Time.time > nextMelee)
-        {
+        else if (Input.GetKeyDown(KeyCode.J) && Time.time > nextMelee) {
             nextMelee = Time.time + meleeRate;
             Instantiate(meleeAttack, meleeSpawn.position, meleeSpawn.rotation);
         }
     }
 
-    void FixedUpdate()
-    {
-        if (IsMine())
-        {
+    void FixedUpdate() {
+        if (IsMine()) {
             // Store the input axes.
             float h = Input.GetAxisRaw("Horizontal");
             float v = Input.GetAxisRaw("Vertical");
@@ -86,16 +77,14 @@ public class PlayerControl : MonoBehaviour
     }
 
     //This will also attempt to rotate the player 
-    void Move(float h, float v)
-    {
+    void Move(float h, float v) {
         // Set the movement vector based on the axis input.
         movement.Set(h, 0f, v);
 
         // Normalise the movement vector and make it proportional to the speed per second.
 
         float moveSpeed = speed;
-        if (inWeb)
-        {
+        if (inWeb) {
             moveSpeed *= webSlowFactor;
         }
         movement = movement.normalized * moveSpeed * Time.deltaTime;
@@ -104,15 +93,13 @@ public class PlayerControl : MonoBehaviour
         GetComponent<Rigidbody>().MovePosition(transform.position + movement);
 
         //Rotate the player
-        if (h != 0f || v != 0f)
-        {
+        if (h != 0f || v != 0f) {
             Rotate(h, v);
         }
     }
 
     //This method rotates player based on keyboard input
-    void Rotate(float h, float v)
-    {
+    void Rotate(float h, float v) {
         Vector3 targetDirection = new Vector3(h, 0f, v);
         Quaternion targetRotation = Quaternion.LookRotation(targetDirection, Vector3.up);
         Quaternion newRotation = Quaternion.Lerp(GetComponent<Rigidbody>().rotation, targetRotation, 15f * Time.deltaTime);
@@ -121,8 +108,7 @@ public class PlayerControl : MonoBehaviour
 
     //This method rotates the player based on 
     //Dean says to not delete this method. Not used, but is useful
-    void Turning()
-    {
+    void Turning() {
         // Create a ray from the mouse cursor on screen in the direction of the camera.
         Ray camRay = Camera.main.ScreenPointToRay(Input.mousePosition);
 
@@ -130,8 +116,7 @@ public class PlayerControl : MonoBehaviour
         RaycastHit floorHit;
 
         // Perform the raycast and if it hits something on the floor layer...
-        if (Physics.Raycast(camRay, out floorHit, camRayLength, floorMask))
-        {
+        if (Physics.Raycast(camRay, out floorHit, camRayLength, floorMask)) {
             // Create a vector from the player to the point on the floor the raycast from the mouse hit.
             Vector3 playerToMouse = floorHit.point - transform.position;
 
@@ -147,36 +132,32 @@ public class PlayerControl : MonoBehaviour
     }
 
 
-    void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.CompareTag("Door"))
-        {
+    void OnTriggerEnter(Collider other) {
+        if (other.gameObject.CompareTag("Door")) {
             DoorControl doorMono = other.gameObject.GetComponent<DoorControl>();
-            Debug.Log("Door fired: " + doorMono.gameObject.GetInstanceID());
+			
             Vector3 goalPos = doorMono.goalDoor.transform.position + doorMono.goalDoor.transform.forward * DOOR_JUMP;
             goalPos.y = 0;
+			
+            doorMono.goalDoor.GetComponent<DoorControl>().EnterRoom();
+			
             this.transform.position = goalPos;
-            if (IsLocalPlayer())
-            {
+            if (IsLocalPlayer()) {
                 GetComponent<NetworkTransform>().InvokeSyncEvent(0, null);
             }
-            doorMono.goalDoor.GetComponent<DoorControl>().ownRoom.transform.Find("Lights").gameObject.SetActive(true);
-            if (IsMine())
-            {
+            if (IsMine()) {
                 mainCameraTransform.position = (doorMono.goalDoor.GetComponent<DoorControl>().ownRoom.transform.position) + cameraPosition;
             }
-            doorMono.ownRoom.transform.Find("Lights").gameObject.SetActive(false);
+			
+            doorMono.ExitRoom();
         }
-        else if (other.gameObject.CompareTag("Web"))
-        {
+        else if (other.gameObject.CompareTag("Web")) {
             inWeb = true;
         }
     }
 
-    void OnTriggerExit(Collider other)
-    {
-        if (other.gameObject.CompareTag("Web"))
-        {
+    void OnTriggerExit(Collider other) {
+        if (other.gameObject.CompareTag("Web")) {
             inWeb = false;
         }
 
@@ -185,19 +166,16 @@ public class PlayerControl : MonoBehaviour
         //}
     }
 
-    void UpdateCoolDownSlider()
-    {
+    void UpdateCoolDownSlider() {
 		// Update cooldown slider with current cooldown value.
         cooldownSlider.value = cooldown;
     }
 
-    public bool IsMine()
-    {
+    public bool IsMine() {
         return GetComponentInParent<NetworkIdentity>() == null || this.GetComponentInParent<NetworkIdentity>().isLocalPlayer;
     }
 
-    public bool IsLocalPlayer()
-    {
+    public bool IsLocalPlayer() {
         return GetComponentInParent<NetworkIdentity>() != null && this.GetComponentInParent<NetworkIdentity>().isLocalPlayer;
     }
 }

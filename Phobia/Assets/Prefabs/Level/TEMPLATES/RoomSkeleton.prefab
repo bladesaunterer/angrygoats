@@ -23,6 +23,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 442904}
+  - 114: {fileID: 11456154}
   m_Layer: 0
   m_Name: RoomSkeleton
   m_TagString: Untagged
@@ -2236,6 +2237,27 @@ MonoBehaviour:
   goalDoor: {fileID: 142900}
   ownRoom: {fileID: 104770}
   canSend: 1
+--- !u!114 &11456154
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 104770}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b2ff2e0980c0d74abac44bb28447fb1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trash: {fileID: 100828, guid: 245990912d851954f9e9c0cff7d8ac74, type: 2}
+  adjRooms:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  spawnWebs: 1
+  spawnEnemies: 1
+  freeCells: []
+  enemies: []
 --- !u!114 &11468392
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2303,7 +2325,11 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: trash
+      value: 
+      objectReference: {fileID: 100828, guid: 245990912d851954f9e9c0cff7d8ac74, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 104770}

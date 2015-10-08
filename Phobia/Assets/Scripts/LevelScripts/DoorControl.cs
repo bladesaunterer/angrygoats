@@ -16,4 +16,14 @@ public class DoorControl : MonoBehaviour {
 	void Update () {
 	
 	}
+	
+	public void EnterRoom() {
+		ownRoom.transform.Find("Lights").gameObject.SetActive(true);
+		ownRoom.GetComponent<RoomControl>().EnemiesHuntPlayer();
+	}
+	
+	public void ExitRoom() {
+        ownRoom.transform.Find("Lights").gameObject.SetActive(false);
+		ownRoom.GetComponent<RoomControl>().EnemiesGoHome();
+	}
 }

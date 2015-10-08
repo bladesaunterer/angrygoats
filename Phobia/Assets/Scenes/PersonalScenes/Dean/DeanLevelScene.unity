@@ -65,6 +65,7 @@ LightmapSettings:
     m_TextureCompression: 1
     m_FinalGather: 0
     m_FinalGatherRayCount: 1024
+    m_ReflectionCompression: 2
   m_LightmapSnapshot: {fileID: 0}
   m_RuntimeCPUUsage: 25
 --- !u!196 &4
@@ -84,9 +85,6 @@ NavMeshSettings:
     cellSize: .166666672
     manualCellSize: 0
   m_NavMeshData: {fileID: 23800000, guid: ab81f9db15727a04d85e04fa3d57ace4, type: 2}
---- !u!127 &5
-LevelGameManager:
-  m_ObjectHideFlags: 0
 --- !u!20 &53703026 stripped
 Camera:
   m_PrefabParentObject: {fileID: 2000670, guid: 88fdb93fd998ee0489870cb48ef674c3,
@@ -121,7 +119,7 @@ MonoBehaviour:
   m_Script: {fileID: 1997211142, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_AllowActivationOnStandalone: 0
+  m_ForceModuleActive: 0
 --- !u!114 &122708922
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -139,7 +137,7 @@ MonoBehaviour:
   m_CancelButton: Cancel
   m_InputActionsPerSecond: 10
   m_RepeatDelay: .5
-  m_AllowActivationOnMobileDevice: 0
+  m_ForceModuleActive: 0
 --- !u!114 &122708923
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -336,6 +334,7 @@ Camera:
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
+  m_TargetEye: 3
   m_HDR: 0
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
@@ -555,6 +554,10 @@ Prefab:
       propertyPath: healthSlider
       value: 
       objectReference: {fileID: 1466194892}
+    - target: {fileID: 154992, guid: bd5f32c6e1cae924bbb875889927d5cf, type: 2}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: bd5f32c6e1cae924bbb875889927d5cf, type: 2}
   m_IsPrefabParent: 0
@@ -936,7 +939,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   roomsToSpawn: 20
-  wallPrefab: {fileID: 104770, guid: d35c4f618bababb4a8c66065d625ad85, type: 2}
+  roomPrefab: {fileID: 104770, guid: d35c4f618bababb4a8c66065d625ad85, type: 2}
   startPrefab: {fileID: 105500, guid: 430aee4e7c8dacd4b856612a7317ce83, type: 2}
   floorPrefabs:
   - {fileID: 105500, guid: 430aee4e7c8dacd4b856612a7317ce83, type: 2}
@@ -947,10 +950,10 @@ MonoBehaviour:
   enemy: {fileID: 192178, guid: 705ff85a9b8f6fb439775453d35c62e2, type: 2}
   bossFloor: {fileID: 195188, guid: 19c7211c44d355846918060f39acbfc4, type: 2}
   boss: {fileID: 174540, guid: baa64ea1ec0a8f044a4cba96facdad77, type: 2}
-  trash: {fileID: 100828, guid: 245990912d851954f9e9c0cff7d8ac74, type: 2}
   minWebs: 2
   maxWebs: 5
   web: {fileID: 160458, guid: 705edc7941cc1d04f8ee34a247b4c2bc, type: 2}
+  trash: {fileID: 100828, guid: 245990912d851954f9e9c0cff7d8ac74, type: 2}
 --- !u!4 &1876287590
 Transform:
   m_ObjectHideFlags: 0
