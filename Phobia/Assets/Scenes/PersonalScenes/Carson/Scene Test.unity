@@ -295,7 +295,7 @@ Prefab:
 GameObject:
   m_PrefabParentObject: {fileID: 131600, guid: 61ceb55ec97a7054ea7e1559bfff97f0, type: 2}
   m_PrefabInternal: {fileID: 417304819}
---- !u!114 &581005620
+--- !u!114 &581005625
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -327,8 +327,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 10
   duration: 5
-  cost: 25
-  damage: 10
   cost: 25
 --- !u!1 &838577751
 GameObject:
