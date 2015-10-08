@@ -17,9 +17,13 @@ public class LevelGenerator : MonoBehaviour {
 	
     public int totalEnemies = 60;
 	public int maxEnemiesPerRoom = 6;
-	public GameObject enemy;
+	public List<GameObject> enemies;
+	public List<int> enemyCommonness;
+	
+	
     public GameObject bossFloor;
     public GameObject boss;
+	
 	
 	
 	public int minWebs;
@@ -134,6 +138,8 @@ public class LevelGenerator : MonoBehaviour {
 		
 		// populate rooms
 		
+		int totalTickets = enemyCommonness.Sum();
+		
 		for (int i = 0; i < totalEnemies; i++) {
 			
 			int c = 0;
@@ -145,7 +151,17 @@ public class LevelGenerator : MonoBehaviour {
 				c++;
 			} while (chosenRoom.enemies.Count >= maxEnemiesPerRoom || chosenRoom.spawnEnemies == false);
 			
-			chosenRoom.AddEnemy(enemy);
+			int ticket = Random.Range(0, totalTickets);
+			
+			int hopeful = 0;
+			int sum = enemyCommonness[hopeful];
+			
+			while (sum <= ticket) {
+				hopeful++;
+				sum += enemyCommonness[hopeful];
+			}
+			
+			chosenRoom.AddEnemy(enemies[hopeful]);
 		}
     }
 	

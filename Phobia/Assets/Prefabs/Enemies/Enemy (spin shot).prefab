@@ -79,6 +79,7 @@ GameObject:
   - 114: {fileID: 11432310}
   - 135: {fileID: 13576666}
   - 114: {fileID: 11460452}
+  - 114: {fileID: 11417172}
   m_Layer: 0
   m_Name: Enemy (spin shot)
   m_TagString: Enemy
@@ -193,6 +194,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &11417172
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 169390}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff5324341b916fa4ba39509d06c41d51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  home: {fileID: 0}
 --- !u!114 &11419198
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -232,6 +245,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79b5bb1291c8aa24e981e15bedd8f4a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damage: 8
 --- !u!114 &11435784
 MonoBehaviour:
   m_ObjectHideFlags: 1

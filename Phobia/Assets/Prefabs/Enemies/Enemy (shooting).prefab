@@ -49,6 +49,7 @@ GameObject:
   - 114: {fileID: 11406496}
   - 135: {fileID: 13542854}
   - 114: {fileID: 11445982}
+  - 114: {fileID: 11462982}
   m_Layer: 0
   m_Name: Enemy (shooting)
   m_TagString: Enemy
@@ -225,6 +226,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79b5bb1291c8aa24e981e15bedd8f4a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damage: 8
 --- !u!114 &11415318
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -276,6 +278,18 @@ MonoBehaviour:
   shotSpawn1: {fileID: 412118}
   shotSpawn2: {fileID: 497532}
   shotSpawn3: {fileID: 432746}
+--- !u!114 &11462982
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 153314}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff5324341b916fa4ba39509d06c41d51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  home: {fileID: 0}
 --- !u!114 &11464202
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -6,6 +6,7 @@ public class EnemyBolt : MonoBehaviour {
 		public float speed;
 		public GameObject enemy;
 		private Rigidbody rb;
+		public int boltDamage;
 		
 		void Start(){
 			
@@ -25,7 +26,7 @@ public class EnemyBolt : MonoBehaviour {
 				Destroy(gameObject);
 				
 				// If bolt hits an enemy, deal damage to that enemy.
-				HealthControl.dealDamageToPlayer(other.gameObject, 50);
+				HealthControl.dealDamageToPlayer(other.gameObject, boltDamage);
 			}
 		}
 	}

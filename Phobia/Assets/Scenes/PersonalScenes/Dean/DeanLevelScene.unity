@@ -969,7 +969,13 @@ MonoBehaviour:
   - {fileID: 165700, guid: 686caa2ee423a3e4d9783a0a1d7124e6, type: 2}
   totalEnemies: 60
   maxEnemiesPerRoom: 5
-  enemy: {fileID: 192178, guid: 705ff85a9b8f6fb439775453d35c62e2, type: 2}
+  enemies:
+  - {fileID: 192178, guid: 705ff85a9b8f6fb439775453d35c62e2, type: 2}
+  - {fileID: 153314, guid: ec77629a63c417144ba22624c6bcf048, type: 2}
+  - {fileID: 169390, guid: 26d9b6b761347af4ebb1b865968424a0, type: 2}
+  - {fileID: 129274, guid: fab8631f0626a6747864aa7794fa9029, type: 2}
+  - {fileID: 169592, guid: 9f2d6032aca254047bbbb92d6da25270, type: 2}
+  enemyCommonness: 0a00000003000000010000000200000002000000
   bossFloor: {fileID: 195188, guid: 19c7211c44d355846918060f39acbfc4, type: 2}
   boss: {fileID: 174540, guid: baa64ea1ec0a8f044a4cba96facdad77, type: 2}
   minWebs: 5
