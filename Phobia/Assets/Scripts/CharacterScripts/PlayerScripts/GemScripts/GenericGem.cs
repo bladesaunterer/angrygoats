@@ -17,4 +17,8 @@ public class GenericGem : MonoBehaviour {
 		shot = playerControl.shot;
 		shotSpawn = playerControl.shotSpawn;
 	}
+
+	public virtual void onEnemyHit(GameObject other){
+
+	}
 }

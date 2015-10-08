@@ -48,37 +48,9 @@ public class BoltMover : MonoBehaviour
 
 			// If bolt hits an enemy, deal damage to that enemy.
 			//HealthControl.dealDamageToEnemy (other.gameObject);
-			switch (currentGem) {
-			case Gem.Red:
-				FireSpell();
-				break;
-			case Gem.Yellow:
-				LightningSpell();
-				break;
-			case Gem.Blue:
-				IceSpell();
-				break;
-			default:
-				AoeSpell();
-				break;
-			}
+			GenericGem genericGem = gemObject.GetComponent<GenericGem>();
+			genericGem.onEnemyHit(other.gameObject);
 		}
 	}
 
-	void FireSpell(){
-
-	}
-
-	void LightningSpell(){
-
-	}
-
-	void IceSpell(){
-
-	}
-
-	void AoeSpell(){
-
-	}
-	
 }

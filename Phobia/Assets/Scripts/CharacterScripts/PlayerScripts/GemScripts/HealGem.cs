@@ -3,14 +3,9 @@ using System.Collections;
 
 public class HealGem : GenericGem {
 
-	public int heal;				// How much heal this gem does
-	public int cost;               	// How much each special attack costs.
-
-	void Awake(){
-		heal = 10;
-		cost = 25;
-	}
-
+	public int heal = 10;				// How much heal this gem does
+	public int cost = 25;               	// How much each special attack costs.
+	
 	// Update is called once per frame
 	void Update () {
 		//refund the cooldown
