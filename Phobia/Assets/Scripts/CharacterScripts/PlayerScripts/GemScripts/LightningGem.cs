@@ -2,23 +2,14 @@
 using System.Collections;
 
 public class LightningGem : GenericGem {
-
-	public int damage = 10;
-	public int duration = 5;
-	public int cost = 25;
-
-	private bool tick;
-	private float endTime;
-	private float nextTime;
 	private AIPath ai;
-
-
+	
 	// Update is called once per frame
 	void Update () {
 		if (Input.GetKeyDown(KeyCode.K) && playerControl.cooldown >= cost)
 		{
 			playerControl.SubtractCooldown(cost);
-			Instantiate(shot,shotSpawn.position,shotSpawn.rotation);
+			Instantiate(shot,position,shotSpawn.rotation);
 		}
 		if (ai != null &&  tick && Time.time > nextTime){
 			nextTime = Time.time + 1f;
@@ -32,12 +23,7 @@ public class LightningGem : GenericGem {
 	}
 
 	public override void onEnemyHit(GameObject other){
-		EnemyHealth health = other.GetComponent<EnemyHealth>();
 		ai = other.GetComponent<AIPath>();
-		if (health != null){
-			health.TakeDamage(damage);
-			tick = true;
-			endTime = Time.time + duration;
-		}
+		base.onEnemyHit(other);
 	}
 }
