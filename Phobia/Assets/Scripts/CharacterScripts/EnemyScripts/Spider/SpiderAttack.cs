@@ -10,7 +10,6 @@ public class SpiderAttack : MonoBehaviour
 {
 
     public int damage = 8;
-    public Animation animations;
 
 
     private bool playerInRange;
@@ -49,16 +48,12 @@ public class SpiderAttack : MonoBehaviour
     void Update()
     {
         timer += Time.deltaTime;
-        if (timer >= timeBetweenAttacks && playerInRange)
+        if (timer >= timeBetweenAttacks && playerInRange && GetComponent<EnemyHealth>().currentHealth > 0)
         {
-            Attack(player);
             //Play attack animation
+            GetComponent<SpiderAnimation>().attackAnim();
 
-            animations.CrossFade("attack1");
-        }
-        else //Should ckeck it is moving here
-        {
-            animations.CrossFade("walk");
+            Attack(player);
         }
     }
 
@@ -73,23 +68,15 @@ public class SpiderAttack : MonoBehaviour
 
     }
 
-    void onDestroy()
-    {
-        Debug.Log("Enemy Destroyed!");
-        if (this.tag == "Enemy")
-        {
-            // When enemy destroyed, increment score.
-            TEMPScoreScript.Instance.IncrementScore(10);
-        }
-    }
+    //void onDestroy()
+    //{
+    //    Debug.Log("Enemy Destroyed!");
+    //    if (this.tag == "Enemy")
+    //    {
+    //        // When enemy destroyed, increment score.
+    //        TEMPScoreScript.Instance.IncrementScore(10);
+    //    }
+    //}
 
-    void Start()
-    {
-        // Set all animations to loop
-        animations.wrapMode = WrapMode.Loop;
-        // except attacking
-        animations["attack1"].wrapMode = WrapMode.Once;
-
-        animations["attack1"].layer = 1;
-    }
+    
 }

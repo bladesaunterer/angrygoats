@@ -25,7 +25,8 @@ public class EnemyHealth : MonoBehaviour
         if (currentHealth <= 0)
         {
             // ... the enemy is destroyed.
-            Destroy(gameObject);
+            //Destroy(gameObject);
+            GetComponent<SpiderAnimation>().spiderKilled();
 
             Debug.Log("Enemy Destroyed!");
             if (this.tag == "Enemy")
