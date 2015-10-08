@@ -2,7 +2,8 @@
 using System.Collections;
 using UnityEngine.UI;
 
-public class GenericGem : MonoBehaviour {
+public class GenericGem : MonoBehaviour
+{
 
 	protected GameObject player;
 	protected PlayerControl playerControl;
@@ -11,14 +12,18 @@ public class GenericGem : MonoBehaviour {
 	protected Transform shotSpawn;         		// Location where the special attack will spawn. 
 
 	// Use this for initialization
-	void Start () {
-		player = GameObject.FindGameObjectWithTag("Player");
-		playerControl = player.GetComponent<PlayerControl>();
+
+
+	void Start ()
+	{
+		player = GameObject.FindGameObjectWithTag ("Player");
+		playerControl = player.GetComponent<PlayerControl> ();
 		shot = playerControl.shot;
 		shotSpawn = playerControl.shotSpawn;
 	}
 
-	public virtual void onEnemyHit(GameObject other){
+	public virtual void onEnemyHit (GameObject other)
+	{
 
 	}
 }

@@ -13,7 +13,7 @@ public class GemSwitching : MonoBehaviour
 
 	void Awake ()
 	{
-		GemSelection.selectGems (Gem.Red, Gem.Green);
+		GemSelection.selectGems (Gem.White, Gem.Green);
 
 		spawn = GameObject.FindGameObjectWithTag ("SpecialAttack");
 		gemOne = GameObject.FindGameObjectWithTag (GemSelection.GetGemOne ().ToString ());
