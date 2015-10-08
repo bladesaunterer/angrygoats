@@ -1,16 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class FireGem : GenericGem {
+public class IceGem : GenericGem {
 
-	public int overTimeDamage = 5;
-	
-	private EnemyHealth health;
+	public float slowSpeed = 30;
 
-	void awake(){
-		tick = false;
-	}
-	
+	private AIPath ai;
+	private float prevSpeed;
+
 	// Update is called once per frame
 	void Update () {
 		if (Input.GetKeyDown(KeyCode.K) && playerControl.cooldown >= cost)
@@ -18,19 +15,21 @@ public class FireGem : GenericGem {
 			playerControl.SubtractCooldown(cost);
 			Instantiate(shot,position,shotSpawn.rotation);
 		}
-		if (health != null &&  tick && Time.time > nextTime){
+		if (ai != null &&  tick && Time.time > nextTime){
 			nextTime = Time.time + 1f;
-			if (Time.time <= endTime){
-				health.TakeDamage(overTimeDamage);
-			} else {
+			if (Time.time > endTime){
 				tick = false;
+				ai.speed = prevSpeed;
 			}
 		}
 	}
-	
-	
+
 	public override void onEnemyHit(GameObject other){
-		health = other.GetComponent<EnemyHealth>();
+		ai = other.GetComponent<AIPath>();
+		if (ai != null && prevSpeed < ai.speed){
+			prevSpeed = ai.speed;
+			ai.speed -= slowSpeed;
+		}
 		base.onEnemyHit(other);
 	}
 }

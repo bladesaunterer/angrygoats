@@ -1,15 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class FireGem : GenericGem {
-
-	public int overTimeDamage = 5;
-	
-	private EnemyHealth health;
-
-	void awake(){
-		tick = false;
-	}
+public class LightningGem : GenericGem {
+	private AIPath ai;
 	
 	// Update is called once per frame
 	void Update () {
@@ -18,19 +11,19 @@ public class FireGem : GenericGem {
 			playerControl.SubtractCooldown(cost);
 			Instantiate(shot,position,shotSpawn.rotation);
 		}
-		if (health != null &&  tick && Time.time > nextTime){
+		if (ai != null &&  tick && Time.time > nextTime){
 			nextTime = Time.time + 1f;
 			if (Time.time <= endTime){
-				health.TakeDamage(overTimeDamage);
+				ai.enabled = false;
 			} else {
 				tick = false;
+				ai.enabled = true;
 			}
 		}
 	}
-	
-	
+
 	public override void onEnemyHit(GameObject other){
-		health = other.GetComponent<EnemyHealth>();
+		ai = other.GetComponent<AIPath>();
 		base.onEnemyHit(other);
 	}
 }

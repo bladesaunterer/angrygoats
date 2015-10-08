@@ -1,21 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class AreoOfEffect : GenericGem
+public class AreaOfEffect : GenericGem
 {
 
-	private EnemyHealth health;
-	public int damage;
-	public int cost;
-
 	// Use this for initialization
-	void Start ()
-	{
-		player = GameObject.FindGameObjectWithTag ("Player");
-		playerControl = player.GetComponent<PlayerControl> ();
-		shot = playerControl.shot;
-		shotSpawn = playerControl.shotSpawn;
-	}
 	
 	// Update is called once per frame
 	void Update ()
@@ -34,9 +23,6 @@ public class AreoOfEffect : GenericGem
 
 	public override void onEnemyHit (GameObject other)
 	{
-		health = other.GetComponent<EnemyHealth> ();
-		if (health != null) {
-			health.TakeDamage (damage);
-		}
+		base.onEnemyHit (other);
 	}
 }

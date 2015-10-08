@@ -48,8 +48,8 @@ public class BoltMover : MonoBehaviour
 
 			// If bolt hits an enemy, deal damage to that enemy.
 			//HealthControl.dealDamageToEnemy (other.gameObject);
-			GenericGem genericGem = gemObject.GetComponent<GenericGem>();
-			genericGem.onEnemyHit(other.gameObject);
+			GenericGem genericGem = gemObject.GetComponent<GenericGem> ();
+			genericGem.onEnemyHit (other.gameObject);
 		}
 	}
 
