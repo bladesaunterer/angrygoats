@@ -28,7 +28,7 @@ public class EnemyHealth : MonoBehaviour
         if (currentHealth <= 0)
         {
             // ... the enemy is destroyed.
-			if (gameObject.name=="Boss"){
+			if (gameObject.CompareTag("Boss")){
 				isShowingWon = !isShowingWon;
 				wonScreen.SetActive(isShowingWon);
 			}

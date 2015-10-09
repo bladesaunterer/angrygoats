@@ -16,7 +16,7 @@ public class FireGem : GenericGem {
 		if (Input.GetKeyDown(KeyCode.K) && playerControl.cooldown >= cost)
 		{
 			playerControl.SubtractCooldown(cost);
-			Instantiate(shot,position,shotSpawn.rotation);
+			Instantiate(shot,shotSpawn.position,shotSpawn.rotation);
 		}
 		if (health != null &&  tick && Time.time > nextTime){
 			nextTime = Time.time + 1f;

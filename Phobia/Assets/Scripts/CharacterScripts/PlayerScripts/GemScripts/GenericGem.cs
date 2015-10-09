@@ -13,8 +13,7 @@ public class GenericGem : MonoBehaviour
 	protected PlayerControl playerControl;
 
 	protected GameObject shot;             		// The special attack object.
-	protected Transform shotSpawn;         		// Location where the special attack will spawn. 
-	protected Vector3 position;
+	protected Transform shotSpawn;         		// Location where the special attack will spawn.
 
 	protected float nextTime;
 	protected bool tick;
@@ -29,8 +28,6 @@ public class GenericGem : MonoBehaviour
 		playerControl = player.GetComponent<PlayerControl> ();
 		shot = playerControl.shot;
 		shotSpawn = playerControl.shotSpawn;
-		position = shotSpawn.position;
-		position.y = 0.5f;
 	}
 
 	public virtual void onEnemyHit (GameObject other)
