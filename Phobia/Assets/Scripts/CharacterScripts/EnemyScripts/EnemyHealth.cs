@@ -10,6 +10,9 @@ public class EnemyHealth : MonoBehaviour
     public int startingHealth = 100;            // The amount of health the enemy starts the game with.
     public int currentHealth;                   // The current health the enemy has.
 
+	public GameObject wonScreen;
+	private bool isShowingWon = false;
+
     void Awake()
     {
         // Set the current health when the enemy first spawns.
@@ -25,6 +28,11 @@ public class EnemyHealth : MonoBehaviour
         if (currentHealth <= 0)
         {
             // ... the enemy is destroyed.
+			if (gameObject.name=="Boss"){
+				isShowingWon = !isShowingWon;
+				wonScreen.SetActive(isShowingWon);
+			}
+
             //Destroy(gameObject);
             GetComponent<SpiderAnimation>().spiderKilled();
 
