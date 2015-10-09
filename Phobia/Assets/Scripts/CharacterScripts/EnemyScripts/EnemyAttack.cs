@@ -47,7 +47,7 @@ public class EnemyAttack : MonoBehaviour {
 
 	void Attack(GameObject other) {
 		timer = 0f;
-			if (other != null) {
+		if (other != null) {
 			HealthControl.dealDamageToPlayer (other, damage);
 		}
 

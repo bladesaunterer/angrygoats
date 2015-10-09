@@ -377,6 +377,7 @@ GameObject:
   - 54: {fileID: 5400512}
   - 136: {fileID: 13687426}
   - 114: {fileID: 11482812}
+  - 114: {fileID: 11489134}
   m_Layer: 0
   m_Name: Enemy(normal)
   m_TagString: Enemy
@@ -2183,7 +2184,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 8
+--- !u!114 &11489134
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 139882}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d5919f1c61b5344e942e3e21b332733, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   animations: {fileID: 11161334}
+  attack: attack1
+  move: walk
+  death: death2
 --- !u!136 &13687426
 CapsuleCollider:
   m_ObjectHideFlags: 1
