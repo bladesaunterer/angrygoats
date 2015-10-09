@@ -118,7 +118,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
-  damage: 10
+  renderer: {fileID: 0}
 --- !u!135 &13503754
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -141,10 +141,6 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_TagString
       value: SpecialAttack
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: damage
-      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

@@ -38,4 +38,5 @@ public static class HealthControl {
 			Debug.Log ("HAHAHAHA!");
 		}
 	}
+	
 }
