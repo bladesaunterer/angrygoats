@@ -5,6 +5,17 @@ using System.Collections;
 //needs test to see if gems can be reset on restart
 public class GemSelection// : PersistentSingleton<GemSelection>
 {
+	private static GemSelection instance;
+
+	public static GemSelection Instance {
+		get {
+			if (instance == null) {
+				instance = new GemSelection ();
+			}
+			return GemSelection.instance;
+		}
+		
+	}
 
 
 	// Use this for initialization
