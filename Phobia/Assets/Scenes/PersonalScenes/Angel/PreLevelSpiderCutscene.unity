@@ -96,8 +96,8 @@ GameObject:
   - 222: {fileID: 54019332}
   - 114: {fileID: 54019331}
   m_Layer: 5
-  m_Name: Text
-  m_TagString: Untagged
+  m_Name: DialogueText
+  m_TagString: SPreLevDialogueText
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -508,6 +508,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95e059da17d4aa14ca29af55720d9e64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  textBoxString: {fileID: 0}
+  TextFile: {fileID: 4900000, guid: 80e41d876beaa7645a8ed6e721bd7dd9, type: 3}
 --- !u!1 &1693357373
 GameObject:
   m_ObjectHideFlags: 0
