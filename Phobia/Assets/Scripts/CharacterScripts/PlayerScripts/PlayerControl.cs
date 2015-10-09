@@ -162,18 +162,22 @@ public class PlayerControl : MonoBehaviour {
 
 	void UpdateCoolDownSlider() {
 		// Update cooldown slider with current cooldown value.
-		cooldownSlider.value = cooldown;
+		if (cooldownSlider != null) {
+			cooldownSlider.value = cooldown;
+		}
 	}
 	
 	public void SubtractCooldown (int value) {
 		cooldown -= value;
 		UpdateCoolDownSlider ();
 	}
-
+	
+	// if this is singleplayer or i am the local player
 	public bool IsMine() {
 		return GetComponentInParent<NetworkIdentity>() == null || this.GetComponentInParent<NetworkIdentity>().isLocalPlayer;
 	}
 
+	// if this is a multiplayer and i am the local player
 	public bool IsLocalPlayer() {
 		return GetComponentInParent<NetworkIdentity>() != null && this.GetComponentInParent<NetworkIdentity>().isLocalPlayer;
 	}

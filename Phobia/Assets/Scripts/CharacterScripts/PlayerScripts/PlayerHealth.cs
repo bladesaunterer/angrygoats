@@ -27,7 +27,9 @@ public class PlayerHealth : MonoBehaviour
 		currentHealth -= amount;
 
 		// Update health on slider to new value.
-		healthSlider.value = currentHealth;
+		if (healthSlider != null ) {
+			healthSlider.value = currentHealth;
+		}
 		
 		// If the current health is less than or equal to zero...
 		if(currentHealth <= 0)
@@ -45,6 +47,8 @@ public class PlayerHealth : MonoBehaviour
 		if (currentHealth > 100) {
 			currentHealth = 100;
 		}
-		healthSlider.value = currentHealth;
+		if (healthSlider != null ) {
+			healthSlider.value = currentHealth;
+		}
 	}
 }
