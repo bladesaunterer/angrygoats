@@ -65,6 +65,7 @@ LightmapSettings:
     m_TextureCompression: 1
     m_FinalGather: 0
     m_FinalGatherRayCount: 1024
+    m_ReflectionCompression: 2
   m_LightmapSnapshot: {fileID: 0}
   m_RuntimeCPUUsage: 25
 --- !u!196 &4
@@ -84,9 +85,6 @@ NavMeshSettings:
     cellSize: .166666672
     manualCellSize: 0
   m_NavMeshData: {fileID: 23800000, guid: 40df95e27eed34042b7141883705e068, type: 2}
---- !u!127 &5
-LevelGameManager:
-  m_ObjectHideFlags: 0
 --- !u!1001 &94460644
 Prefab:
   m_ObjectHideFlags: 0
@@ -238,19 +236,19 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22434274, guid: f13e57e09732f7e43a81e43ff72dfbb0, type: 2}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 22434274, guid: f13e57e09732f7e43a81e43ff72dfbb0, type: 2}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 22459780, guid: f13e57e09732f7e43a81e43ff72dfbb0, type: 2}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 22459780, guid: f13e57e09732f7e43a81e43ff72dfbb0, type: 2}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 22308736, guid: f13e57e09732f7e43a81e43ff72dfbb0, type: 2}
       propertyPath: m_Camera
@@ -565,6 +563,12 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 105770529}
   m_Script: {fileID: -113659843, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+--- !u!114 &786124455 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 11425664, guid: 274fdd1f29939544b9649782373623cb,
+    type: 2}
+  m_PrefabInternal: {fileID: 1978978342}
+  m_Script: {fileID: 708705254, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
 --- !u!1 &998313477
 GameObject:
   m_ObjectHideFlags: 0
@@ -1071,26 +1075,10 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 11
---- !u!1 &1339381276 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 150704, guid: 72399ab7375aff34e971150fd1d4a1c7, type: 2}
-  m_PrefabInternal: {fileID: 94460644}
 --- !u!4 &1339381277 stripped
 Transform:
   m_PrefabParentObject: {fileID: 473348, guid: 72399ab7375aff34e971150fd1d4a1c7, type: 2}
   m_PrefabInternal: {fileID: 94460644}
---- !u!114 &1339381281
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1339381276}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8d8af7409924e5a42947815cd55d936e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentScore: {fileID: 0}
 --- !u!1 &1420995170
 GameObject:
   m_ObjectHideFlags: 0
@@ -1607,6 +1595,7 @@ Camera:
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
+  m_TargetEye: 3
   m_HDR: 0
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
@@ -2012,6 +2001,14 @@ Prefab:
     - target: {fileID: 22425674, guid: 274fdd1f29939544b9649782373623cb, type: 2}
       propertyPath: m_AnchoredPosition.y
       value: -200
+      objectReference: {fileID: 0}
+    - target: {fileID: 11441434, guid: 274fdd1f29939544b9649782373623cb, type: 2}
+      propertyPath: currentScore
+      value: 
+      objectReference: {fileID: 786124455}
+    - target: {fileID: 122748, guid: 274fdd1f29939544b9649782373623cb, type: 2}
+      propertyPath: m_Name
+      value: Score
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 274fdd1f29939544b9649782373623cb, type: 2}
