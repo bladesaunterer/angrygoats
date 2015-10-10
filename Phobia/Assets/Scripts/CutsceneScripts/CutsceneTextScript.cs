@@ -10,6 +10,7 @@ public class CutsceneTextScript : MonoBehaviour {
 
 	private string[] linesInFile;
 	private string[] scriptLine;
+	private string lineText;
 	private int lineNumber;
 
 	void Start() {
@@ -18,7 +19,8 @@ public class CutsceneTextScript : MonoBehaviour {
 		lineNumber = 0;
 
 		scriptLine = linesInFile[lineNumber].Split(':');
-		StartCoroutine(TypeOutText(scriptLine[1]));
+		lineText = scriptLine[1];
+		StartCoroutine("TypeOutText");
 
 		lineNumber++;
 	}
@@ -26,19 +28,21 @@ public class CutsceneTextScript : MonoBehaviour {
 	void Update() {
 		if (Input.GetMouseButtonDown(0)) {
 			if (lineNumber < linesInFile.Length) {
+				StopCoroutine("TypeOutText");
 				scriptLine = linesInFile[lineNumber].Split(':');
 				if (scriptLine[0] == "Ndoto") {
 					textBoxString.color = Color.red;
 				} else {
 					textBoxString.color = Color.black;
 				}
-				StartCoroutine(TypeOutText(scriptLine[1]));
+				lineText = scriptLine[1];
+				StartCoroutine("TypeOutText");
 				lineNumber++;
 			}
 		}
 	}
 
-	IEnumerator TypeOutText(string lineText) {
+	IEnumerator TypeOutText() {
 		textBoxString.text = "";
 		foreach (char c in lineText.ToCharArray()) {
 			textBoxString.text += c;
