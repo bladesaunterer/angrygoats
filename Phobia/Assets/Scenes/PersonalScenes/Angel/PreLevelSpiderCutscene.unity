@@ -613,6 +613,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textBoxString: {fileID: 0}
   TextFile: {fileID: 4900000, guid: 80e41d876beaa7645a8ed6e721bd7dd9, type: 3}
+  portraitLImage: {fileID: 1195887047}
+  portraitRImage: {fileID: 675486251}
   textTypingDelay: .0250000004
 --- !u!114 &1552587022
 MonoBehaviour:
