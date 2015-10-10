@@ -24,8 +24,6 @@ public class LevelGenerator : MonoBehaviour {
     public GameObject bossFloor;
     public GameObject boss;
 	
-	
-	
 	public int minWebs;
 	public int maxWebs;
 	public GameObject web;
@@ -33,6 +31,9 @@ public class LevelGenerator : MonoBehaviour {
     public GameObject trash;
 
 	Dictionary<Vector2,RoomControl> roomsDict = new Dictionary<Vector2,RoomControl>();
+
+    public GameObject minimapUI;
+    
     
     void Start () {
 		
@@ -42,24 +43,27 @@ public class LevelGenerator : MonoBehaviour {
 		RoomControl chosenRoom;
 		Vector2 roomVector;
 		Vector2 roomVectorRel;
-		
-		
-		// Start room
-		
-		thisRoom = ((GameObject)Instantiate(roomPrefab, new Vector3(0, 0, 0), Quaternion.identity)).GetComponent<RoomControl>();
-		thisRoom.Floor = startPrefab; // pick random floor
+
+        // Reference the minimap, so it can be generated in unison with the actual floor
+        MinimapScript minimapScript = minimapUI.GetComponent<MinimapScript>();
+
+        // Start room
+
+        thisRoom = ((GameObject)Instantiate(roomPrefab, new Vector3(0, 0, 0), Quaternion.identity)).GetComponent<RoomControl>();
+        thisRoom.minimapUI = minimapUI;
+        thisRoom.Floor = startPrefab; // pick random floor
 		
 		thisRoom.Index = new Vector2(0,0);
-		
-		roomsDict.Add(thisRoom.Index,thisRoom);
+        minimapScript.GenerateMapBlock(thisRoom.Index);
+
+        roomsDict.Add(thisRoom.Index,thisRoom);
 		
 		thisRoom.gameObject.name = "Room " + 0;
 		thisRoom.spawnEnemies = false;
 		thisRoom.spawnWebs = false;
 
 		thisRoom.gameObject.transform.Find("Lights").gameObject.SetActive(true);
-		
-		
+
 		// normal rooms
 		
         for (int i = 1; i < roomsToSpawn-1; i++) {
@@ -77,9 +81,11 @@ public class LevelGenerator : MonoBehaviour {
 			roomVector = adjRoom.Index + roomVectorRel;
 			
 			thisRoom = ((GameObject)Instantiate(roomPrefab, RoomControl.IndexToPosition(roomVector), Quaternion.identity)).GetComponent<RoomControl>();
-			thisRoom.Floor = floorPrefabs[Random.Range(0, floorPrefabs.Count)];
+            thisRoom.minimapUI = minimapUI;
+            thisRoom.Floor = floorPrefabs[Random.Range(0, floorPrefabs.Count)];
 			thisRoom.Index = roomVector;
-			thisRoom.gameObject.name = "Room " + i;
+            minimapScript.GenerateMapBlock(thisRoom.Index);
+            thisRoom.gameObject.name = "Room " + i;
 
 			SetAdj(adjRoom, roomVectorRel, thisRoom);
 
@@ -101,9 +107,11 @@ public class LevelGenerator : MonoBehaviour {
 		roomVector = adjRoom.Index + roomVectorRel;
 			
 		thisRoom = ((GameObject)Instantiate(roomPrefab, RoomControl.IndexToPosition(roomVector), Quaternion.identity)).GetComponent<RoomControl>();
-		thisRoom.Floor = bossFloor;
+        thisRoom.minimapUI = minimapUI;
+        thisRoom.Floor = bossFloor;
 		thisRoom.Index = roomVector;
-		thisRoom.gameObject.name = "Boss Room";
+        minimapScript.GenerateMapBlock(thisRoom.Index);
+        thisRoom.gameObject.name = "Boss Room";
 		
 		SetAdj(adjRoom, roomVectorRel, thisRoom);
 
@@ -124,9 +132,11 @@ public class LevelGenerator : MonoBehaviour {
 			}
 			SetAdj(chosenRoom, chosen, get(chosenRoom.Index + chosen));
 		}
-		
-		// add pathfinding graph and webs
-        foreach(RoomControl room in roomsDict.Values) {
+
+        minimapScript.PlayerEntersRoom(new Vector2(0, 0), get(new Vector2(0, 0)).adjRoomsDict.Keys.ToList());
+
+        // add pathfinding graph and webs
+        foreach (RoomControl room in roomsDict.Values) {
 			room.PopulateCells();
 			room.AddGraph();
 			if (room.spawnWebs) {
@@ -232,6 +242,7 @@ public class LevelGenerator : MonoBehaviour {
 
 	// Set up the bidirectional relationship between to rooms that will later ensure the doors are linked
 	public void SetAdj(RoomControl room, Vector2 dir, RoomControl adjRoom) {
+
 		room.SetAdj(dir, adjRoom);
 		adjRoom.SetAdj(dir*-1, room);
 		

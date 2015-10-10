@@ -1,10 +1,13 @@
 fileFormatVersion: 2
 guid: 7a298868444f60e4f8823320aa4b8a2a
-timeCreated: 1442976023
+timeCreated: 1444445950
 licenseType: Free
 MonoImporter:
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - goalDoor: {instanceID: 0}
+  - ownRoom: {instanceID: 0}
+  - minimapUI: {fileID: 133526, guid: 29f8841dccf9c6644ac203a58ae224b8, type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
