@@ -10,6 +10,7 @@ using System.Collections;
 public class CutsceneTextScript : MonoBehaviour {
 	
 	public Text textBoxString;
+	public Text nameBoxString;
 	public TextAsset TextFile;
 	public Image portraitLImage;
 	public Image portraitRImage;
@@ -47,6 +48,7 @@ public class CutsceneTextScript : MonoBehaviour {
 				lineNumber++;
 			} else {
 				//Transition to game level.
+				//Application.LoadLevel("MergedScene");
 			}
 		}
 	}
@@ -62,16 +64,22 @@ public class CutsceneTextScript : MonoBehaviour {
 		// Clear text box.
 		textBoxString.text = "";
 
+		// Set name of speaker.
+		nameBoxString.text = scriptLine [0];
+
 		// Determine what text color to use and image to highlight.
-		if (scriptLine [0] == "Ndoto") {
+		if (scriptLine [0] == "Dr. Ndoto") {
 			textBoxString.color = Color.red;
+			nameBoxString.color = Color.black;
 			portraitLImage.color = Color.white;
 			portraitRImage.color = Color.gray;
+
 		} else if (scriptLine [0] == "Client") {
 			textBoxString.color = Color.blue;
+			nameBoxString.color = Color.black;
 			portraitLImage.color = Color.gray;
 			portraitRImage.color = Color.white;
-		} else if (scriptLine [0] == "None"){
+		} else {
 			portraitLImage.color = Color.gray;
 			portraitRImage.color = Color.gray;
 			textBoxString.color = Color.black;
