@@ -22,6 +22,8 @@ TagManager:
   - EnemyAttack
   - Ball
   - SPreLevDialogueText
+  - PortraitL
+  - PortraitR
   layers:
   - Default
   - TransparentFX

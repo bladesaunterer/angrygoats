@@ -6,6 +6,8 @@ public class CutsceneTextScript : MonoBehaviour {
 	
 	public Text textBoxString;
 	public TextAsset TextFile;
+	public Image portraitLImage;
+	public Image portraitRImage;
 	public float textTypingDelay;
 
 	private string[] linesInFile;
@@ -15,6 +17,9 @@ public class CutsceneTextScript : MonoBehaviour {
 
 	void Start() {
 		textBoxString = GameObject.FindGameObjectWithTag("SPreLevDialogueText").GetComponentInChildren<Text>();
+		//portraitLImage = GameObject.FindGameObjectWithTag("portraitLImage").GetComponentInChildren<Image>();
+		//portraitRImage = GameObject.FindGameObjectWithTag("portraitRImage").GetComponentInChildren<Image>();
+
 		linesInFile = TextFile.text.Split('\n');
 		lineNumber = 0;
 
@@ -28,14 +33,9 @@ public class CutsceneTextScript : MonoBehaviour {
 	void Update() {
 		if (Input.GetMouseButtonDown(0)) {
 			if (lineNumber < linesInFile.Length) {
+				// Stop current Coroutine for typing.
 				StopCoroutine("TypeOutText");
 				scriptLine = linesInFile[lineNumber].Split(':');
-				if (scriptLine[0] == "Ndoto") {
-					textBoxString.color = Color.red;
-				} else {
-					textBoxString.color = Color.black;
-				}
-				lineText = scriptLine[1];
 				StartCoroutine("TypeOutText");
 				lineNumber++;
 			}
@@ -44,6 +44,18 @@ public class CutsceneTextScript : MonoBehaviour {
 
 	IEnumerator TypeOutText() {
 		textBoxString.text = "";
+
+		if (scriptLine[0] == "Ndoto") {
+			textBoxString.color = Color.red;
+			portraitLImage.color = Color.white;
+			portraitRImage.color = Color.gray;
+		} else if (scriptLine[0] == "Client"){
+			textBoxString.color = Color.black;
+			portraitLImage.color = Color.gray;
+			portraitRImage.color = Color.white;
+		}
+		lineText = scriptLine[1];
+
 		foreach (char c in lineText.ToCharArray()) {
 			textBoxString.text += c;
 			yield return new WaitForSeconds(textTypingDelay);
