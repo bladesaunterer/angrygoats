@@ -32,7 +32,7 @@ public class CutsceneTextScript : MonoBehaviour {
 	}
 
 	void Update() {
-		if (Input.GetMouseButtonDown(0)) {
+		if (Input.GetMouseButtonDown(0) || Input.GetKeyDown("space")) {
 			if (lineNumber < linesInFile.Length) {
 				// Stop current Coroutine for typing.
 				StopCoroutine("TypeOutText");
