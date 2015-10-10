@@ -3,12 +3,12 @@ using System.Collections;
 
 public enum Gem
 {
-	Yellow,
 	Blue,
-	Red,
 	Green,
-	Black,
-	White
+	Purple,
+	Red,
+	Turquoise,
+	Yellow
 }
 //Code for if to string causes problems
 //public sealed class Gem

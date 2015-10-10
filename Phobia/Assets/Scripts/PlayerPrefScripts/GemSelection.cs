@@ -54,20 +54,20 @@ public class GemSelection// : PersistentSingleton<GemSelection>
 	private Gem getEnum (string gem)
 	{
 		switch (gem) {
-		case "Yellow":
-			return(Gem.Yellow);
 		case "Blue":
 			return(Gem.Blue);
-		case "Red":
-			return(Gem.Red);
 		case "Green":
 			return(Gem.Green);
-		case "Black":
-			return(Gem.Black);
-		case "White":
-			return(Gem.White);
+		case "Purple":
+			return(Gem.Purple);
+		case "Red":
+			return(Gem.Red);
+		case "Turquoise":
+			return(Gem.Turquoise);
+		case "Yellow":
+			return(Gem.Yellow);
 		default:
-			return Gem.White;
+			return Gem.Yellow;
 		}
 
 	}
