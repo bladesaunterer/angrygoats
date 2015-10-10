@@ -37,7 +37,7 @@ public class MinimapScript : MonoBehaviour
     public void GenerateMapBlock(Vector2 location)
     {
         // Instantiate room image
-        Vector3 position = new Vector3(location.x * 30, location.y * 30 - 30, 0);
+        Vector3 position = new Vector3(location.x * 30, location.y * 30, 0);
         Image roomImage = Instantiate(roomImagePrefab, position, Quaternion.identity) as Image;
 
         // Add image to dictionary and add it to the canvas
@@ -70,8 +70,8 @@ public class MinimapScript : MonoBehaviour
         // Generate paths between rooms
         foreach (var door in doorLocations)
         {
-            Vector3 position = new Vector3(location.x * 30 + door.x * 15, location.y * 30 + door.y * 15 - 30, 0);
-            Image doorImage = Instantiate(doorImagePrefab, position, Quaternion.identity) as Image;
+            Vector3 position = new Vector3(location.x * 30 + door.x * 15, location.y * 30 + door.y * 15, 0);
+            Image doorImage = Instantiate(doorImagePrefab, position, Quaternion.Euler(0,0, door.x * 90)) as Image;
             doorImage.transform.SetParent(miniMapUI.transform, false);
         }
     }
