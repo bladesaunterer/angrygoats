@@ -28,6 +28,14 @@ public class Timer : MonoBehaviour {
             timerUI.text = formattedTime();
         }
     }
+	public int getMinutes(){
+		return Mathf.FloorToInt(timer / 60F);
+	}
+
+	public int getSeconds(){
+		int minutes = Mathf.FloorToInt(timer / 60F);
+		return Mathf.FloorToInt(timer - minutes * 60);
+	}
 
     private string formattedTime()
     {
