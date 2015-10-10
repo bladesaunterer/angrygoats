@@ -39,6 +39,10 @@ public class PlayerControl : MonoBehaviour {
 	void Awake () {
 		this.mainCameraTransform = Camera.main.GetComponentInParent<Transform> ();
 	}
+
+	public void setCooldownSlider(){
+		cooldownSlider = GameObject.Find("MPSlider").GetComponent<Slider>();
+	}
 	
 	void Update () {
 		//Updates every second

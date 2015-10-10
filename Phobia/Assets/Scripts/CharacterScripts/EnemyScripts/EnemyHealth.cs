@@ -19,6 +19,11 @@ public class EnemyHealth : MonoBehaviour
         currentHealth = startingHealth;
     }
 
+	public void setWonScreen(){
+		wonScreen = GameObject.Find ("WonScreen");
+		wonScreen.SetActive (isShowingWon);
+	}
+
     public void TakeDamage(int amount)
     {
         // Reduce current health by the amount of damage taken.

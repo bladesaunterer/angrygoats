@@ -21,6 +21,15 @@ public class PlayerHealth : MonoBehaviour
 		currentHealth = startingHealth;
 	}
 
+	public void setHealthSlider(){
+		healthSlider = GameObject.Find("HPSlider").GetComponent<Slider>();
+	}
+
+	public void setDeadScreen(){
+		deadScreen = GameObject.Find ("DeadScreen");
+		deadScreen.SetActive (isShowingDead);
+	}
+
 	public void TakeDamage (int amount)
 	{		
 		// Reduce the current health by the amount of damage sustained.
