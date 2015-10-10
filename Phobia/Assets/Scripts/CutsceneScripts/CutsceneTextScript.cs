@@ -2,6 +2,11 @@
 using UnityEngine.UI;
 using System.Collections;
 
+/**
+ * 
+ * Class which handles cutscene functionality.
+ * 
+ **/
 public class CutsceneTextScript : MonoBehaviour {
 	
 	public Text textBoxString;
@@ -16,18 +21,14 @@ public class CutsceneTextScript : MonoBehaviour {
 	private int lineNumber;
 
 	void Start() {
-		textBoxString = GameObject.FindGameObjectWithTag("SPreLevDialogueText").GetComponentInChildren<Text>();
-		//portraitLImage = GameObject.FindGameObjectWithTag("portraitLImage").GetComponentInChildren<Image>();
-		//portraitRImage = GameObject.FindGameObjectWithTag("portraitRImage").GetComponentInChildren<Image>();
+		linesInFile = TextFile.text.Split('\n'); 			// Get lines in file.
+		lineNumber = 0;										// Initialize line number to 0.
 
-		linesInFile = TextFile.text.Split('\n');
-		lineNumber = 0;
+		scriptLine = linesInFile[lineNumber].Split(':');	// Split line in text file into Speaker and dialogue.
+		lineText = scriptLine[1];							// Get dialogue text.
+		StartCoroutine("TypeOutText");						// Type out first line to text box. 
 
-		scriptLine = linesInFile[lineNumber].Split(':');
-		lineText = scriptLine[1];
-		StartCoroutine("TypeOutText");
-
-		lineNumber++;
+		lineNumber++;										// Increment line number.
 	}
 
 	void Update() {
@@ -35,16 +36,33 @@ public class CutsceneTextScript : MonoBehaviour {
 			if (lineNumber < linesInFile.Length) {
 				// Stop current Coroutine for typing.
 				StopCoroutine("TypeOutText");
-				scriptLine = linesInFile[lineNumber].Split(':');
+
+				// Get next line in text file.
+				scriptLine = linesInFile[lineNumber].Split(':'); 
+
+				// Start typing new line.
 				StartCoroutine("TypeOutText");
+
+				// Increment line number.
 				lineNumber++;
+			} else {
+				//Transition to game level.
 			}
 		}
 	}
 
+	/**
+	 *
+	 * Coroutine Method for typing out string from 
+	 * file into textbox of cutscene.
+	 *
+	 **/
 	IEnumerator TypeOutText() {
+
+		// Clear text box.
 		textBoxString.text = "";
 
+		// Determine what text color to use and image to highlight.
 		if (scriptLine[0] == "Ndoto") {
 			textBoxString.color = Color.red;
 			portraitLImage.color = Color.white;
@@ -54,8 +72,11 @@ public class CutsceneTextScript : MonoBehaviour {
 			portraitLImage.color = Color.gray;
 			portraitRImage.color = Color.white;
 		}
+
+		// Get dialogue string to write to text box. 
 		lineText = scriptLine[1];
 
+		// Print out string character by character.
 		foreach (char c in lineText.ToCharArray()) {
 			textBoxString.text += c;
 			yield return new WaitForSeconds(textTypingDelay);
