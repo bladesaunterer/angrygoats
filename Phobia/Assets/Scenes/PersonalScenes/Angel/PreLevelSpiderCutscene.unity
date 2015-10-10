@@ -510,6 +510,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textBoxString: {fileID: 0}
   TextFile: {fileID: 4900000, guid: 80e41d876beaa7645a8ed6e721bd7dd9, type: 3}
+  textTypingDelay: .0250000004
 --- !u!1 &1693357373
 GameObject:
   m_ObjectHideFlags: 0
