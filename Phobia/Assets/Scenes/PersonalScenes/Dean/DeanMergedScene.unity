@@ -65,7 +65,6 @@ LightmapSettings:
     m_TextureCompression: 1
     m_FinalGather: 0
     m_FinalGatherRayCount: 1024
-    m_ReflectionCompression: 2
   m_LightmapSnapshot: {fileID: 0}
   m_RuntimeCPUUsage: 25
 --- !u!196 &4
@@ -85,6 +84,9 @@ NavMeshSettings:
     cellSize: .166666672
     manualCellSize: 0
   m_NavMeshData: {fileID: 23800000, guid: ab81f9db15727a04d85e04fa3d57ace4, type: 2}
+--- !u!127 &5
+LevelGameManager:
+  m_ObjectHideFlags: 0
 --- !u!20 &53703026 stripped
 Camera:
   m_PrefabParentObject: {fileID: 2000670, guid: 88fdb93fd998ee0489870cb48ef674c3,
@@ -119,7 +121,7 @@ MonoBehaviour:
   m_Script: {fileID: 1997211142, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ForceModuleActive: 0
+  m_AllowActivationOnStandalone: 0
 --- !u!114 &122708922
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -137,7 +139,7 @@ MonoBehaviour:
   m_CancelButton: Cancel
   m_InputActionsPerSecond: 10
   m_RepeatDelay: .5
-  m_ForceModuleActive: 0
+  m_AllowActivationOnMobileDevice: 0
 --- !u!114 &122708923
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -236,7 +238,6 @@ Camera:
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
-  m_TargetEye: 3
   m_HDR: 0
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
@@ -498,19 +499,19 @@ Prefab:
       objectReference: {fileID: 53703026}
     - target: {fileID: 22495562, guid: ff4da635f34afec47bcde36cd136b975, type: 2}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22495562, guid: ff4da635f34afec47bcde36cd136b975, type: 2}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22437362, guid: ff4da635f34afec47bcde36cd136b975, type: 2}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22437362, guid: ff4da635f34afec47bcde36cd136b975, type: 2}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ff4da635f34afec47bcde36cd136b975, type: 2}
@@ -640,7 +641,7 @@ MonoBehaviour:
     _AreaColors: []
   tagNames:
   - Basic Ground
-  - 1
+  - Flying
   - 2
   - 3
   - 4
@@ -776,12 +777,14 @@ MonoBehaviour:
   floorPrefabs:
   - {fileID: 113332, guid: 97fdf59774474ab4ab73241dd7b702fc, type: 2}
   - {fileID: 166882, guid: dcbabe3be8aedcc45875b77116f37a18, type: 2}
+  - {fileID: 138426, guid: e8ea4575c75a1ff4484e2213660c0225, type: 2}
   totalEnemies: 60
   maxEnemiesPerRoom: 5
   enemies:
   - {fileID: 194068, guid: b2735f79fa3d8a0429baf0a01e85af48, type: 2}
   - {fileID: 139882, guid: 920b67a3fd9e07c4cafb8c907af0daef, type: 2}
-  enemyCommonness: 0a00000003000000
+  - {fileID: 104204, guid: 57b62195fef0efd43a4b02291f4b2e05, type: 2}
+  enemyCommonness: 010000000100000001000000
   bossFloor: {fileID: 113332, guid: 97fdf59774474ab4ab73241dd7b702fc, type: 2}
   boss: {fileID: 176146, guid: 4ca12976c2055d346b3a47174781c7de, type: 2}
   minWebs: 5
@@ -789,6 +792,7 @@ MonoBehaviour:
   web: {fileID: 160458, guid: 705edc7941cc1d04f8ee34a247b4c2bc, type: 2}
   trash: {fileID: 100828, guid: 245990912d851954f9e9c0cff7d8ac74, type: 2}
   minimapUI: {fileID: 905131245}
+  something: {fileID: 1742255551}
 --- !u!4 &1876287590
 Transform:
   m_ObjectHideFlags: 0
@@ -1001,6 +1005,10 @@ Prefab:
       propertyPath: lethalLow
       value: -5
       objectReference: {fileID: 0}
+    - target: {fileID: 6564106, guid: e8b162aa7e827ef4a9381787ddaef8de, type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e8b162aa7e827ef4a9381787ddaef8de, type: 2}
   m_IsPrefabParent: 0
@@ -1033,7 +1041,7 @@ MonoBehaviour:
   m_Script: {fileID: 1997211142, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ForceModuleActive: 0
+  m_AllowActivationOnStandalone: 0
 --- !u!114 &2113666531
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1051,7 +1059,7 @@ MonoBehaviour:
   m_CancelButton: Cancel
   m_InputActionsPerSecond: 10
   m_RepeatDelay: .5
-  m_ForceModuleActive: 0
+  m_AllowActivationOnMobileDevice: 0
 --- !u!114 &2113666532
 MonoBehaviour:
   m_ObjectHideFlags: 0
