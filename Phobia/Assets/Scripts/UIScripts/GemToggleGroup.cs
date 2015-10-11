@@ -41,13 +41,31 @@ namespace UnityEngine.UI
             
 			// disable all toggles in the group
 			for (var i = 0; i < m_Toggles.Count; i++) {
-				if (m_Toggles [i] == toggle)
+
+				if (m_Toggles [i] == toggle || m_Toggles [i].LastGemSelected) {
 					continue;
-                
+				}
+
 				m_Toggles [i].isOn = false;
+                
 			}
+
+			for (var i = 0; i < m_Toggles.Count; i++) {
+				
+				if (m_Toggles [i].LastGemSelected) {
+					m_Toggles [i].LastGemSelected = false;
+				}
+
+				if (m_Toggles [i] == toggle) {
+					m_Toggles [i].LastGemSelected = true;
+				}
+
+				
+			}
+			
+			
 		}
-        
+		
 		public void UnregisterToggle (GemToggle toggle)
 		{
 			if (m_Toggles.Contains (toggle))

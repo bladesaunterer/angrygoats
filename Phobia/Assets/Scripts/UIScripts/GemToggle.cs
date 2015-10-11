@@ -17,6 +17,8 @@ namespace UnityEngine.UI
 	[RequireComponent(typeof(RectTransform))]
 	public class GemToggle : Selectable, IPointerClickHandler, ISubmitHandler, ICanvasElement
 	{
+
+		public bool LastGemSelected = false;
 		public enum ToggleTransition
 		{
 			None,
@@ -54,8 +56,9 @@ namespace UnityEngine.UI
 			get { return m_Group; }
 			set {
 				m_Group = value;
-
+				#if UNITY_EDITOR
 				if (Application.isPlaying) {
+					#endif
 					SetToggleGroup (m_Group, true);
 					PlayEffect (true);
 				}
