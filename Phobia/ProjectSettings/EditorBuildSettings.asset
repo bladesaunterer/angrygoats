@@ -35,3 +35,5 @@ EditorBuildSettings:
     path: Assets/Scenes/MasterCopy/SettingsScene.unity
   - enabled: 1
     path: Assets/Scenes/MasterCopy/MergedScene.unity
+  - enabled: 1
+    path: Assets/Scenes/PersonalScenes/Angel/LoadingScene.unity

@@ -47,8 +47,8 @@ public class CutsceneTextScript : MonoBehaviour {
 				// Increment line number.
 				lineNumber++;
 			} else {
-				//Transition to game level.
-				StartCoroutine("TransitionToGame");
+				//Transition to game loading scene.
+				Application.LoadLevelAsync("LoadingScene");
 			}
 		}
 	}
@@ -93,22 +93,5 @@ public class CutsceneTextScript : MonoBehaviour {
 			textBoxString.text += c;
 			yield return new WaitForSeconds(textTypingDelay);
 		}
-	}
-
-	/**
-	 *
-	 * Coroutine Method for loading game 
-	 * asyncronously.
-	 *
-	 **/
-	IEnumerator TransitionToGame()
-	{
-		AsyncOperation async = Application.LoadLevelAsync("MergedScene");
-		while (!async.isDone)
-		{
-			yield return(0);
-		}
-		
-		Debug.Log("Loading complete");
 	}
 }
