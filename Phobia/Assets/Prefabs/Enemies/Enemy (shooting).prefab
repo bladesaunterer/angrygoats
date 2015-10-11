@@ -41,7 +41,6 @@ GameObject:
   - 33: {fileID: 3302104}
   - 23: {fileID: 2355328}
   - 114: {fileID: 11464202}
-  - 143: {fileID: 14352554}
   - 114: {fileID: 11402132}
   - 114: {fileID: 11415318}
   - 65: {fileID: 6545254}
@@ -262,6 +261,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startingHealth: 100
   currentHealth: 0
+  scoreAwarded: 0
+  wonScreen: {fileID: 0}
 --- !u!114 &11445982
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -329,23 +330,6 @@ SphereCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: .699999988
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!143 &14352554
-CharacterController:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 153314}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Height: 1
-  m_Radius: .5
-  m_SlopeLimit: 18.3999996
-  m_StepOffset: .100000001
-  m_SkinWidth: .0799999982
-  m_MinMoveDistance: .00100000005
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &100100000
 Prefab:
