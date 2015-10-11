@@ -33,6 +33,8 @@ public class LevelGenerator : MonoBehaviour {
 	Dictionary<Vector2,RoomControl> roomsDict = new Dictionary<Vector2,RoomControl>();
 
     public GameObject minimapUI;
+	
+	public AstarPath something;
     
     
     void Start () {
@@ -173,6 +175,7 @@ public class LevelGenerator : MonoBehaviour {
 			
 			chosenRoom.AddEnemy(enemies[hopeful]);
 		}
+		something.Scan();
     }
 	
 	// Update is called once per frame
