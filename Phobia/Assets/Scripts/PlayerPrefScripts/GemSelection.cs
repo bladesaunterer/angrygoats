@@ -18,6 +18,8 @@ public class GemSelection// : PersistentSingleton<GemSelection>
 	}
 
 
+
+
 	// Use this for initialization
 	public void selectGems (Gem gemOne, Gem gemTwo)
 	{
@@ -48,6 +50,20 @@ public class GemSelection// : PersistentSingleton<GemSelection>
 		string gem = PlayerPrefs.GetString ("CurrentGem");
 		return getEnum (gem);
 
+	}
+
+	public void UnlockGem (Gem gem)
+	{
+		PlayerPrefs.SetString (gem.ToString (), "unlocked");
+	}
+
+	public bool CheckIfGemUnlocked (Gem gem)
+	{
+		if (PlayerPrefs.HasKey (gem.ToString ()) && PlayerPrefs.GetString (gem.ToString ()).Equals ("unlocked")) {
+			return true;
+		} else {
+			return false;
+		}
 	}
 	                       
 
