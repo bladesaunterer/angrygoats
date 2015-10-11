@@ -33,3 +33,5 @@ EditorBuildSettings:
     path: Assets/Scenes/PREMERGELevelGenScene.unity
   - enabled: 1
     path: Assets/Scenes/MasterCopy/SettingsScene.unity
+  - enabled: 1
+    path: Assets/Scenes/MasterCopy/MergedScene.unity
