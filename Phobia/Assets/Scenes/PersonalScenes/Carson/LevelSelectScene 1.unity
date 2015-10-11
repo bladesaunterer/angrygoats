@@ -155,6 +155,7 @@ MonoBehaviour:
     m_DisabledTrigger: Disabled
   m_Interactable: 1
   m_TargetGraphic: {fileID: 663838736}
+  LastGemSelected: 0
   m_IsOn: 0
   toggleTransition: 1
   graphic: {fileID: 2144517841}
@@ -678,6 +679,7 @@ MonoBehaviour:
     m_DisabledTrigger: Disabled
   m_Interactable: 1
   m_TargetGraphic: {fileID: 861287200}
+  LastGemSelected: 0
   m_IsOn: 0
   toggleTransition: 1
   graphic: {fileID: 1740279913}
@@ -1439,6 +1441,7 @@ MonoBehaviour:
     m_DisabledTrigger: Disabled
   m_Interactable: 1
   m_TargetGraphic: {fileID: 1056266569}
+  LastGemSelected: 0
   m_IsOn: 0
   toggleTransition: 1
   graphic: {fileID: 1014455291}
@@ -1518,6 +1521,7 @@ MonoBehaviour:
     m_DisabledTrigger: Disabled
   m_Interactable: 1
   m_TargetGraphic: {fileID: 1666758299}
+  LastGemSelected: 0
   m_IsOn: 0
   toggleTransition: 1
   graphic: {fileID: 2098137778}
@@ -4721,6 +4725,7 @@ MonoBehaviour:
     m_DisabledTrigger: Disabled
   m_Interactable: 1
   m_TargetGraphic: {fileID: 418047364}
+  LastGemSelected: 0
   m_IsOn: 0
   toggleTransition: 1
   graphic: {fileID: 1870857217}
@@ -5282,6 +5287,7 @@ MonoBehaviour:
     m_DisabledTrigger: Disabled
   m_Interactable: 1
   m_TargetGraphic: {fileID: 1189277558}
+  LastGemSelected: 0
   m_IsOn: 0
   toggleTransition: 1
   graphic: {fileID: 1947085983}
