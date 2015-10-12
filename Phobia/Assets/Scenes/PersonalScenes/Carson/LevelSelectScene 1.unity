@@ -156,6 +156,7 @@ MonoBehaviour:
   m_Interactable: 1
   m_TargetGraphic: {fileID: 663838736}
   LastGemSelected: 0
+  AssociatedGem: 0
   m_IsOn: 0
   toggleTransition: 1
   graphic: {fileID: 2144517841}
@@ -680,6 +681,7 @@ MonoBehaviour:
   m_Interactable: 1
   m_TargetGraphic: {fileID: 861287200}
   LastGemSelected: 0
+  AssociatedGem: 1
   m_IsOn: 0
   toggleTransition: 1
   graphic: {fileID: 1740279913}
@@ -1442,6 +1444,7 @@ MonoBehaviour:
   m_Interactable: 1
   m_TargetGraphic: {fileID: 1056266569}
   LastGemSelected: 0
+  AssociatedGem: 4
   m_IsOn: 0
   toggleTransition: 1
   graphic: {fileID: 1014455291}
@@ -1522,6 +1525,7 @@ MonoBehaviour:
   m_Interactable: 1
   m_TargetGraphic: {fileID: 1666758299}
   LastGemSelected: 0
+  AssociatedGem: 5
   m_IsOn: 0
   toggleTransition: 1
   graphic: {fileID: 2098137778}
@@ -2353,7 +2357,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1007257869
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2369,10 +2373,10 @@ RectTransform:
   - {fileID: 1470108939}
   - {fileID: 1408185773}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 3255.12354, y: 1806.31628}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &1007257870
@@ -3302,17 +3306,17 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2047396332}
-        m_MethodName: NextLevelButton
-        m_Mode: 5
+      - m_Target: {fileID: 1007257868}
+        m_MethodName: SetActive
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: LevelScene
-          m_BoolArgument: 0
-        m_CallState: 2
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 1
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1222530119
@@ -3695,7 +3699,7 @@ GameObject:
   - 114: {fileID: 1408185774}
   m_Layer: 5
   m_Name: GemToggleGroup
-  m_TagString: Untagged
+  m_TagString: ToggleGroup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3850,7 +3854,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: LevelGenScene
+          m_StringArgument: LevelScene
           m_BoolArgument: 0
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
@@ -3957,7 +3961,7 @@ RectTransform:
   - {fileID: 809414599}
   - {fileID: 126303858}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
@@ -4726,6 +4730,7 @@ MonoBehaviour:
   m_Interactable: 1
   m_TargetGraphic: {fileID: 418047364}
   LastGemSelected: 0
+  AssociatedGem: 3
   m_IsOn: 0
   toggleTransition: 1
   graphic: {fileID: 1870857217}
@@ -5095,8 +5100,8 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1905005985}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 33.7999992}
+  m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 1470108939}
   m_RootOrder: 1
@@ -5114,7 +5119,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1905005985}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 74b868d1b4d9d4242b5884ac9287302e, type: 3}
+  m_Script: {fileID: 11500000, guid: 793bb5e29adbfee4294e57091462a7d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1940519412
@@ -5227,7 +5232,7 @@ GameObject:
   - 224: {fileID: 1944334091}
   - 114: {fileID: 1944334092}
   m_Layer: 5
-  m_Name: PurpleStealthGem
+  m_Name: PurpleStandardGem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5288,6 +5293,7 @@ MonoBehaviour:
   m_Interactable: 1
   m_TargetGraphic: {fileID: 1189277558}
   LastGemSelected: 0
+  AssociatedGem: 2
   m_IsOn: 0
   toggleTransition: 1
   graphic: {fileID: 1947085983}
@@ -5435,7 +5441,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2047396331
 RectTransform:
   m_ObjectHideFlags: 0

@@ -21,6 +21,9 @@ TagManager:
   - Green
   - EnemyAttack
   - Ball
+  - Black
+  - White
+  - ToggleGroup
   layers:
   - Default
   - TransparentFX

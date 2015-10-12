@@ -8,7 +8,8 @@ public enum Gem
 	Purple,
 	Red,
 	Turquoise,
-	Yellow
+	Yellow,
+	None
 }
 //Code for if to string causes problems
 //public sealed class Gem

@@ -19,6 +19,7 @@ namespace UnityEngine.UI
 	{
 
 		public bool LastGemSelected = false;
+		public Gem AssociatedGem;
 		public enum ToggleTransition
 		{
 			None,
@@ -201,6 +202,8 @@ namespace UnityEngine.UI
 				return;
             
 			isOn = !isOn;
+
+
 		}
         
 		/// <summary>
@@ -212,7 +215,9 @@ namespace UnityEngine.UI
 				return;
             
 			InternalToggle ();
+			m_Group.NotifyToggleClick (this);
 		}
+
         
 		public virtual void OnSubmit (BaseEventData eventData)
 		{

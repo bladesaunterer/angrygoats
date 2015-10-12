@@ -3,16 +3,16 @@ using System.Collections;
 
 
 //needs test to see if gems can be reset on restart
-public class GemSelection// : PersistentSingleton<GemSelection>
+public class GemManager// : PersistentSingleton<GemSelection>
 {
-	private static GemSelection instance;
+	private static GemManager instance;
 
-	public static GemSelection Instance {
+	public static GemManager Instance {
 		get {
 			if (instance == null) {
-				instance = new GemSelection ();
+				instance = new GemManager ();
 			}
-			return GemSelection.instance;
+			return GemManager.instance;
 		}
 		
 	}
@@ -21,9 +21,13 @@ public class GemSelection// : PersistentSingleton<GemSelection>
 
 
 	// Use this for initialization
-	public void selectGems (Gem gemOne, Gem gemTwo)
+	public void SetGemOne (Gem gemOne)
 	{
 		PlayerPrefs.SetString ("GemOne", gemOne.ToString ());
+	}
+
+	public void SetGemTwo (Gem gemTwo)
+	{
 		PlayerPrefs.SetString ("GemTwo", gemTwo.ToString ());
 	}
 
@@ -65,6 +69,23 @@ public class GemSelection// : PersistentSingleton<GemSelection>
 			return false;
 		}
 	}
+
+	public void ClearGemSelection ()
+	{
+		PlayerPrefs.DeleteKey ("GemOne");
+		PlayerPrefs.DeleteKey ("GemTwo");
+
+	}
+
+	public void ClearGemOne ()
+	{
+		PlayerPrefs.DeleteKey ("GemOne");
+	}
+
+	public void ClearGemTwo ()
+	{
+		PlayerPrefs.DeleteKey ("GemOne");
+	}
 	                       
 
 	private Gem getEnum (string gem)
@@ -83,7 +104,7 @@ public class GemSelection// : PersistentSingleton<GemSelection>
 		case "Yellow":
 			return(Gem.Yellow);
 		default:
-			return Gem.Yellow;
+			return Gem.None;
 		}
 
 	}

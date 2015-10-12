@@ -65,6 +65,7 @@ LightmapSettings:
     m_TextureCompression: 1
     m_FinalGather: 0
     m_FinalGatherRayCount: 1024
+    m_ReflectionCompression: 2
   m_LightmapSnapshot: {fileID: 0}
   m_RuntimeCPUUsage: 25
 --- !u!196 &4
@@ -84,9 +85,6 @@ NavMeshSettings:
     cellSize: .166666672
     manualCellSize: 0
   m_NavMeshData: {fileID: 23800000, guid: ab81f9db15727a04d85e04fa3d57ace4, type: 2}
---- !u!127 &5
-LevelGameManager:
-  m_ObjectHideFlags: 0
 --- !u!1 &159413481
 GameObject:
   m_ObjectHideFlags: 0
@@ -298,15 +296,41 @@ Prefab:
       objectReference: {fileID: 2100000, guid: ed31f3ac36ea4d14ebd9b4186519ec31, type: 2}
     - target: {fileID: 156972, guid: e8b162aa7e827ef4a9381787ddaef8de, type: 2}
       propertyPath: m_TagString
-      value: Turqouise
+      value: Turquoise
       objectReference: {fileID: 0}
     - target: {fileID: 2329828, guid: e8b162aa7e827ef4a9381787ddaef8de, type: 2}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 45c4ddaaf24f7c74781721210542312b, type: 2}
+    - target: {fileID: 155968, guid: e8b162aa7e827ef4a9381787ddaef8de, type: 2}
+      propertyPath: m_Name
+      value: Basic
+      objectReference: {fileID: 0}
+    - target: {fileID: 155968, guid: e8b162aa7e827ef4a9381787ddaef8de, type: 2}
+      propertyPath: m_TagString
+      value: Purple
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e8b162aa7e827ef4a9381787ddaef8de, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &417304820 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 155968, guid: e8b162aa7e827ef4a9381787ddaef8de, type: 2}
+  m_PrefabInternal: {fileID: 417304819}
+--- !u!114 &417304821
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 417304820}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 756bff657e6230443ad35afa39ccefdd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 10
+  duration: 5
+  cost: 25
 --- !u!4 &1209334191 stripped
 Transform:
   m_PrefabParentObject: {fileID: 432926, guid: e8b162aa7e827ef4a9381787ddaef8de, type: 2}
@@ -392,19 +416,19 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22434274, guid: f13e57e09732f7e43a81e43ff72dfbb0, type: 2}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22434274, guid: f13e57e09732f7e43a81e43ff72dfbb0, type: 2}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22459780, guid: f13e57e09732f7e43a81e43ff72dfbb0, type: 2}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22459780, guid: f13e57e09732f7e43a81e43ff72dfbb0, type: 2}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f13e57e09732f7e43a81e43ff72dfbb0, type: 2}
