@@ -439,7 +439,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 451506, guid: 841d7d8ce049a3048936d54300d6167d, type: 2}
       propertyPath: m_RootOrder
-      value: 9
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 11437582, guid: 841d7d8ce049a3048936d54300d6167d, type: 2}
       propertyPath: healthSlider
@@ -464,6 +464,14 @@ Prefab:
     - target: {fileID: 5460478, guid: 841d7d8ce049a3048936d54300d6167d, type: 2}
       propertyPath: m_UseGravity
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9568400, guid: 841d7d8ce049a3048936d54300d6167d, type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9568400, guid: 841d7d8ce049a3048936d54300d6167d, type: 2}
+      propertyPath: m_ApplyRootMotion
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 841d7d8ce049a3048936d54300d6167d, type: 2}
@@ -553,19 +561,19 @@ Prefab:
       objectReference: {fileID: 53703026}
     - target: {fileID: 22495562, guid: ff4da635f34afec47bcde36cd136b975, type: 2}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 22495562, guid: ff4da635f34afec47bcde36cd136b975, type: 2}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 22437362, guid: ff4da635f34afec47bcde36cd136b975, type: 2}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 22437362, guid: ff4da635f34afec47bcde36cd136b975, type: 2}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ff4da635f34afec47bcde36cd136b975, type: 2}
