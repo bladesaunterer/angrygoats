@@ -1,6 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+/*
+ * This allows us to select the gem we are testing 
+ * Attach this to the player and remove the gemswitching script
+ */
 public class GemSelectorTest : MonoBehaviour {
 
 	public bool fire;

@@ -34,5 +34,6 @@ public class FireGem : GenericGem {
 		//Make sure the dot starts 1 second after the initial damage;
 		nextTime = Time.time + 1;
 		base.onEnemyHit(other);
+		endTime += 1;
 	}
 }
