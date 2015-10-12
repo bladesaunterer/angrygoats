@@ -845,6 +845,7 @@ MonoBehaviour:
   web: {fileID: 160458, guid: 705edc7941cc1d04f8ee34a247b4c2bc, type: 2}
   trash: {fileID: 100828, guid: 245990912d851954f9e9c0cff7d8ac74, type: 2}
   minimapUI: {fileID: 2014768529}
+  something: {fileID: 1742255551}
 --- !u!4 &1876287590
 Transform:
   m_ObjectHideFlags: 0
