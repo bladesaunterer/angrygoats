@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class FireDamage : MonoBehaviour {
+public class FireDamageTest : MonoBehaviour {
 
 	void OnTriggerEnter (Collider other)
 	{
@@ -13,4 +13,5 @@ public class FireDamage : MonoBehaviour {
 			IntegrationTest.Fail(gameObject);
 		}
 	}
+	
 }

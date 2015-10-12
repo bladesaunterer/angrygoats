@@ -39,4 +39,9 @@ public class GenericGem : MonoBehaviour
 			endTime = Time.time + duration;
 		}
 	}
+
+	//Checks if it is the currently selected gem
+	protected bool checkActive(){
+		return gameObject.GetComponent<MeshRenderer>().enabled;
+	}
 }

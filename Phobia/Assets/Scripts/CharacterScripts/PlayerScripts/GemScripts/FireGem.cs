@@ -13,7 +13,7 @@ public class FireGem : GenericGem {
 	
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetKeyDown(KeyCode.K) && playerControl.cooldown >= cost)
+		if (Input.GetKeyDown(KeyCode.K) && playerControl.cooldown >= cost && checkActive())
 		{
 			playerControl.SubtractCooldown(cost);
 			Instantiate(shot,shotSpawn.position,shotSpawn.rotation);
@@ -31,6 +31,8 @@ public class FireGem : GenericGem {
 	
 	public override void onEnemyHit(GameObject other){
 		health = other.GetComponent<EnemyHealth>();
+		//Make sure the dot starts 1 second after the initial damage;
+		nextTime = Time.time + 1;
 		base.onEnemyHit(other);
 	}
 }
