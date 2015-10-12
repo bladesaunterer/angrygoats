@@ -25,6 +25,10 @@ public class EnemyHealth : MonoBehaviour
     {
         // Reduce current health by the amount of damage taken.
         currentHealth -= amount;
+		EnemyFlash temp12 = this.gameObject.GetComponent<EnemyFlash> ();
+		if (temp12 != null) {
+			StartCoroutine (temp12.Flash ());
+		}
 
         // If the current health is less than or equal to zero...
         if (currentHealth <= 0) {
