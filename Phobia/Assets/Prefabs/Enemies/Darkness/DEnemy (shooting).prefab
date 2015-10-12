@@ -1755,7 +1755,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startingHealth: 100
   currentHealth: 0
-  scoreAwarded: 0
+  lethalLow: 0
+  scoreAwarded: 25
   wonScreen: {fileID: 0}
 --- !u!114 &11445982
 MonoBehaviour:
@@ -1917,7 +1918,11 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: scoreAwarded
+      value: 25
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 153314}
