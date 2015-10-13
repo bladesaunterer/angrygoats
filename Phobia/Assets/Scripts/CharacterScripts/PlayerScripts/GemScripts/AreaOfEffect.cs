@@ -10,7 +10,7 @@ public class AreaOfEffect : GenericGem
 	void Update ()
 	{
 
-		if (Input.GetKeyDown (KeyCode.K) && playerControl.cooldown >= cost) {
+		if (Input.GetKeyDown (KeyCode.K) && playerControl.cooldown >= cost && checkActive()) {
 			playerControl.SubtractCooldown (cost);
 			for (int i=0; i<6; i++) {
 				Instantiate (shot, shotSpawn.position, Quaternion.Euler (0, i * 60, 0));

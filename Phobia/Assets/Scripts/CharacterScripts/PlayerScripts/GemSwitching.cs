@@ -13,7 +13,6 @@ public class GemSwitching : MonoBehaviour
 
 	void Awake ()
 	{
-
 		spawn = GameObject.FindGameObjectWithTag ("SpecialAttack");
 		gemOne = GameObject.FindGameObjectWithTag (gemManager.GetGemOne ().ToString ());
 		gemTwo = GameObject.FindGameObjectWithTag (gemManager.GetGemTwo ().ToString ());
@@ -25,6 +24,8 @@ public class GemSwitching : MonoBehaviour
 			child.gameObject.SetActive (false);
 		}
 		gemOne.SetActive (true);
+		gemTwo.SetActive(true);
+		gemTwo.GetComponent<MeshRenderer>().enabled = false;
 		
 		//current selection starts with gemOne
 		gemManager.SetCurrentGem (gemManager.GetGemOne ());
