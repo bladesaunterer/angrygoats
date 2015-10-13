@@ -16,11 +16,17 @@ TagManager:
   - Red
   - Yellow
   - Blue
-  - Black
-  - White
+  - Purple
+  - Turquoise
   - Green
   - EnemyAttack
   - Ball
+  - Black
+  - White
+  - ToggleGroup
+  - SPreLevDialogueText
+  - PortraitL
+  - PortraitR
   layers:
   - Default
   - TransparentFX
@@ -33,8 +39,8 @@ TagManager:
   - Floor
   - Obsticles
   - Floor 2
-  - 
-  - 
+  - Room
+  - Rock
   - 
   - 
   - 

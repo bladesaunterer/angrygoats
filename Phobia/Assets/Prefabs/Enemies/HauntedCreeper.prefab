@@ -20,6 +20,7 @@ GameObject:
   - 65: {fileID: 6578498}
   - 114: {fileID: 11401392}
   - 114: {fileID: 11457040}
+  - 114: {fileID: 11405580}
   m_Layer: 0
   m_Name: HauntedCreeper
   m_TagString: Enemy
@@ -121,6 +122,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   onDeathCreate: {fileID: 198858, guid: 1eb0a86d705f8914597c01f3e1b38a23, type: 2}
+--- !u!114 &11405580
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 169592}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 197cca9dbb7972c4c80bc6a8c338d212, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flash: {fileID: 2100000, guid: 3dd4b9c466d80ff45ae4bf8a4ed4e263, type: 2}
 --- !u!114 &11407950
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -155,6 +168,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startingHealth: 50
   currentHealth: 0
+  scoreAwarded: 10
+  wonScreen: {fileID: 0}
 --- !u!114 &11448136
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -244,6 +259,18 @@ Prefab:
       propertyPath: onDeathCreate
       value: 
       objectReference: {fileID: 198858, guid: 1eb0a86d705f8914597c01f3e1b38a23, type: 2}
+    - target: {fileID: 0}
+      propertyPath: scoreAwarded
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: flash
+      value: 
+      objectReference: {fileID: 2100000, guid: 3dd4b9c466d80ff45ae4bf8a4ed4e263, type: 2}
+    - target: {fileID: 0}
+      propertyPath: m_Constraints
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 169592}

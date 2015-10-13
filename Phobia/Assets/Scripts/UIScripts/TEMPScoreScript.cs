@@ -12,6 +12,7 @@ public class TEMPScoreScript : MonoBehaviour
 
     private static TEMPScoreScript instance;
     public static int pointsCounter;
+	public static int enemyCounter;
     public Text currentScore;
 
 	// Singleton method for getting instance of TEMPScoreScript.
@@ -50,11 +51,20 @@ public class TEMPScoreScript : MonoBehaviour
      amount of points for said enemy.
     */
 
+	public int GetScore(){
+		return pointsCounter;
+	}
+
+	public int GetEnemies(){
+		return enemyCounter;
+	}
+
 
     public void IncrementScore(int points)
     {
 		// Increments score and sets text on UI.
         pointsCounter += points;
+		enemyCounter++;
         SetCountText(pointsCounter, currentScore);
     }
 

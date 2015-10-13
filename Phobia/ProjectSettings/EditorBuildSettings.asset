@@ -9,27 +9,49 @@ EditorBuildSettings:
     path: Assets/Scenes/MasterCopy/MainMenuScene.unity
   - enabled: 1
     path: Assets/Scenes/MasterCopy/LevelSelectScene.unity
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/MasterCopy/LevelScene.unity
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/PersonalScenes/Chester/ChesterScene.unity
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/MasterCopy/LevelSelectScene.unity
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/MasterCopy/MainMenuScene.unity
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Multiplayer/OfflineExampleLevel.unity
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Multiplayer/OnlineExampleLevel.unity
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Multiplayer/OnlineStart.unity
   - enabled: 0
     path: Assets/Scenes/opening_scene.unity
   - enabled: 0
     path: Assets/Scenes/player_test_scene.unity
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/MasterCopy/LevelScene.unity
   - enabled: 0
     path: Assets/Scenes/PREMERGELevelGenScene.unity
   - enabled: 1
     path: Assets/Scenes/MasterCopy/SettingsScene.unity
+  - enabled: 1
+    path: Assets/Scenes/MasterCopy/levels/SpiderLevelScene.unity
+  - enabled: 0
+    path: Assets/Scenes/PersonalScenes/Angel/LoadingScene.unity
+  - enabled: 1
+    path: Assets/Scenes/MasterCopy/levels/HeightsLevelScene.unity
+  - enabled: 1
+    path: Assets/Scenes/MasterCopy/levels/DarknessLevelScene.unity
+  - enabled: 0
+    path: Assets/Scenes/PersonalScenes/Karen/LevelSelectSceneWithSound.unity
+  - enabled: 0
+    path: Assets/Scenes/PersonalScenes/Karen/SettingsSceneWithSound.unity
+  - enabled: 0
+    path: Assets/Scenes/PersonalScenes/Karen/MergedSceneWithSound.unity
+  - enabled: 1
+    path: Assets/Scenes/MasterCopy/LoadingScene.unity
+  - enabled: 1
+    path: Assets/Scenes/MasterCopy/PreSpiderLevelCutscene.unity
+  - enabled: 1
+    path: Assets/Scenes/MasterCopy/LoadingScene.unity
+  - enabled: 1
+    path: Assets/Scenes/MasterCopy/CreditsScene.unity
