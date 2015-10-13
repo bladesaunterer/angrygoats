@@ -52,12 +52,4 @@ public class EnemyAttack : MonoBehaviour {
 		}
 
 	}
-
-	void onDestroy() {
-        Debug.Log("Enemy Destroyed!");
-        if (this.tag == "Enemy") {
-			// When enemy destroyed, increment score.
-            TEMPScoreScript.Instance.IncrementScore(10);
-        }
-    }
 }

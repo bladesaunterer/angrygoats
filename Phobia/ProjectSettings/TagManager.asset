@@ -16,11 +16,14 @@ TagManager:
   - Red
   - Yellow
   - Blue
-  - Black
-  - White
+  - Purple
+  - Turquoise
   - Green
   - EnemyAttack
   - Ball
+  - Black
+  - White
+  - ToggleGroup
   - SPreLevDialogueText
   - PortraitL
   - PortraitR
@@ -36,8 +39,8 @@ TagManager:
   - Floor
   - Obsticles
   - Floor 2
-  - 
-  - 
+  - Room
+  - Rock
   - 
   - 
   - 

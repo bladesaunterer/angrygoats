@@ -4,11 +4,7 @@ using System.Collections;
 public class EnemyDeathSpawn : MonoBehaviour {
 	bool isShuttingDown = false;
 	public GameObject onDeathCreate;
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
+
 	void OnDestroy() {
 		if (!isShuttingDown) {
 			Vector3 off = new Vector3 (2, 0, 0);
