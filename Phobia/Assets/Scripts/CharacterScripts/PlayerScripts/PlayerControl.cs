@@ -8,6 +8,9 @@ using UnityEngine.Networking;
  * 
  **/
 public class PlayerControl : MonoBehaviour {
+
+    Animator anim;
+
 	private const float DOOR_JUMP = 2;
 
 	public float speed = 6f;            // Player movement speed.
@@ -35,6 +38,11 @@ public class PlayerControl : MonoBehaviour {
 	private float camRayLength = 100f;          // The length of the ray from the camera into the scene.
 
 	private Transform mainCameraTransform;
+
+    void Start()
+    {
+        anim = GetComponent<Animator>();
+    }
 
 	void Awake () {
 		this.mainCameraTransform = Camera.main.GetComponentInParent<Transform> ();
@@ -65,6 +73,7 @@ public class PlayerControl : MonoBehaviour {
 
 			// Move the player around the scene.
 			Move (h, v);
+            Animating(h, v);
 
 		}
 	}
@@ -74,13 +83,15 @@ public class PlayerControl : MonoBehaviour {
 		// Set the movement vector based on the axis input.
 		movement.Set (h, 0f, v);
 
-		// Normalise the movement vector and make it proportional to the speed per second.
 
-		float moveSpeed = speed;
+        // Normalise the movement vector and make it proportional to the speed per second.
+        movement = movement.normalized * speed * Time.deltaTime;
+
 		if (inWeb > 0) {
-			moveSpeed *= webSlowFactor;
+			movement *= webSlowFactor;
+
 		}
-		movement = movement.normalized * moveSpeed * Time.deltaTime;
+		
 
 		// Move the player to it's current position plus the movement.
 		GetComponent<Rigidbody> ().MovePosition (transform.position + movement);
@@ -177,4 +188,11 @@ public class PlayerControl : MonoBehaviour {
 	public bool IsLocalPlayer() {
 		return GetComponentInParent<NetworkIdentity>() != null && this.GetComponentInParent<NetworkIdentity>().isLocalPlayer;
 	}
+
+    void Animating(float h, float v)
+    {
+        bool moving = h != 0f || v != 0f;
+        anim.SetBool("Run", moving && inWeb == 0);
+        anim.SetBool("Walk", moving && inWeb > 0);
+    }
 }

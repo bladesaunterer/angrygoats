@@ -21,6 +21,9 @@ TagManager:
   - Green
   - EnemyAttack
   - Ball
+  - SPreLevDialogueText
+  - PortraitL
+  - PortraitR
   layers:
   - Default
   - TransparentFX
@@ -33,8 +36,8 @@ TagManager:
   - Floor
   - Obsticles
   - Floor 2
-  - 
-  - 
+  - Room
+  - Rock
   - 
   - 
   - 

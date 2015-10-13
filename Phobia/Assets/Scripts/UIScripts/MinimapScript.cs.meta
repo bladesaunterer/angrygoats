@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 1bd50e57e9e83d347946ec14570ea9fa
+timeCreated: 1444444561
+licenseType: Free
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - miniMapUI: {instanceID: 0}
+  - roomImagePrefab: {instanceID: 0}
+  - currentRoomSprite: {fileID: 21300000, guid: d4b4e638b21305d41853f7e437dc8d11,
+      type: 3}
+  - exploredRoomSprite: {fileID: 21300000, guid: 0f754a16e9240254e8cf6e6a5f712d9c,
+      type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

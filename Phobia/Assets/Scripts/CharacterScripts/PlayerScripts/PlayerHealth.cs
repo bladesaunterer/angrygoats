@@ -10,6 +10,7 @@ public class PlayerHealth : MonoBehaviour
 {
 	public int startingHealth = 100;            // The amount of health the player starts with.
 	public int currentHealth;                   // The current health the player has.
+    public int lethalLow;
 	public Slider healthSlider;					// Slider for player's health.
 
 	public GameObject deadScreen;
@@ -20,6 +21,14 @@ public class PlayerHealth : MonoBehaviour
 		// Setting the current health when the player first spawns.
 		currentHealth = startingHealth;
 	}
+
+    void Update()
+    {
+        if (gameObject.transform.position.y < lethalLow)
+        {
+            TakeDamage(startingHealth);
+        }
+    }
 
 	public void TakeDamage (int amount)
 	{		

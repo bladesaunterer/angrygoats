@@ -1,10 +1,17 @@
 fileFormatVersion: 2
 guid: 573315f148d13db4ba3d9729ceb72f7c
-timeCreated: 1443504591
+timeCreated: 1444445939
 licenseType: Free
 MonoImporter:
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - roomPrefab: {instanceID: 0}
+  - startPrefab: {instanceID: 0}
+  - bossFloor: {instanceID: 0}
+  - boss: {instanceID: 0}
+  - web: {instanceID: 0}
+  - trash: {instanceID: 0}
+  - minimapUI: {fileID: 133526, guid: 29f8841dccf9c6644ac203a58ae224b8, type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

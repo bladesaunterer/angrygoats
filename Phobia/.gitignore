@@ -3,6 +3,8 @@
 !/.gitattributes
 !/Assets
 !/ProjectSettings
+/ProjectSettings/ProjectSettings.asset
+/ProjectSettings/ProjectVersion.txt
 
 [merge]
 tool = unityyamlmerge

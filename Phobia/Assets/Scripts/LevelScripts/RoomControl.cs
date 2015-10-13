@@ -1,8 +1,11 @@
 using UnityEngine;
 using System.Collections.Generic;
 using Pathfinding;
+using System.Linq;
 
 public class RoomControl : MonoBehaviour {
+
+    public GameObject minimapUI;
 
 	private const int HORIZ_TILING = 100;
 	private const int VERT_TILING = 80;
@@ -63,14 +66,25 @@ public class RoomControl : MonoBehaviour {
 		// Setup a grid graph with some values
 		gg.width = 50;
 		gg.depth = 40;
-		gg.center = transform.position;
+		gg.center = transform.position + new Vector3(0, -5, 0);
 		// Updates internal size from the above values
 		gg.UpdateSizeFromWidthDepth();
+		
+		GraphCollision gc = new GraphCollision();
+		gc.collisionCheck = true;
+		gc.heightCheck = true;
+		gc.diameter = 2F;
+		gc.heightMask = LayerMask.GetMask(new string[] {"Rock","Room","Floor"});
+		gc.mask = LayerMask.GetMask(new string[] {"Rock","Room"});
+		gg.maxClimb = 8F;
+		gg.collision = gc;
 	}
 	
 	public void PopulateCells() {
 		foreach (Transform child in Floor.transform) {
-			freeCells.Add(child.gameObject);
+			if (child.gameObject.layer == LayerMask.NameToLayer("Floor")) {
+				freeCells.Add(child.gameObject);
+			}
 		}
 	}
 	
@@ -80,7 +94,7 @@ public class RoomControl : MonoBehaviour {
 		freeCells.Remove(chosenCell);
 		
 
-		GameObject thisEnemy = (GameObject)GameObject.Instantiate(enemy, (chosenCell.transform.position + new Vector3(0, 4, 0)), Quaternion.identity);
+		GameObject thisEnemy = (GameObject)GameObject.Instantiate(enemy, (chosenCell.transform.position + new Vector3(0, 2, 0)), Quaternion.identity);
 		enemies.Add(thisEnemy);
 
 		thisEnemy.GetComponent<EnemyControl>().home = chosenCell.transform;
@@ -119,4 +133,10 @@ public class RoomControl : MonoBehaviour {
 		}
 
 	}
+
+    public void UpdateMinimap()
+    {
+        // Triggers minimap update
+        minimapUI.GetComponent<MinimapScript>().PlayerEntersRoom(Index, adjRoomsDict.Keys.ToList());
+    }
 }

@@ -9,9 +9,10 @@ public class EnemyHealth : MonoBehaviour
 {
     public int startingHealth = 100;            // The amount of health the enemy starts the game with.
     public int currentHealth;                   // The current health the enemy has.
+    public int lethalLow;
 	public int scoreAwarded = 0;
 
-	public GameObject wonScreen;
+    public GameObject wonScreen;
 	private bool isShowingWon = false;
 	private bool isDed = false;
 
@@ -19,6 +20,14 @@ public class EnemyHealth : MonoBehaviour
     {
         // Set the current health when the enemy first spawns.
         currentHealth = startingHealth;
+    }
+
+    void Update()
+    {
+        if (gameObject.transform.position.y < lethalLow)
+        {
+            TakeDamage(startingHealth);
+        }
     }
 
     public void TakeDamage(int amount)
