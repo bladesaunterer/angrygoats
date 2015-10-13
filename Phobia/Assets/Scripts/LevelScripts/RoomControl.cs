@@ -82,7 +82,9 @@ public class RoomControl : MonoBehaviour {
 	
 	public void PopulateCells() {
 		foreach (Transform child in Floor.transform) {
-			freeCells.Add(child.gameObject);
+			if (child.gameObject.layer == LayerMask.NameToLayer("Floor")) {
+				freeCells.Add(child.gameObject);
+			}
 		}
 	}
 	
