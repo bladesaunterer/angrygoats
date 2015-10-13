@@ -2190,7 +2190,7 @@ MonoBehaviour:
   startingHealth: 50
   currentHealth: 0
   lethalLow: -5
-  scoreAwarded: 0
+  scoreAwarded: 50
   wonScreen: {fileID: 0}
 --- !u!114 &11480768
 MonoBehaviour:
@@ -2340,6 +2340,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_LocalScale.z
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: scoreAwarded
+      value: 50
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

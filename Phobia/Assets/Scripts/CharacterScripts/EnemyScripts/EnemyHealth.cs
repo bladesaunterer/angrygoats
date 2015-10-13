@@ -12,8 +12,6 @@ public class EnemyHealth : MonoBehaviour
     public int lethalLow;
 	public int scoreAwarded = 0;
 
-    public GameObject wonScreen;
-	private bool isShowingWon = false;
 	private bool isDed = false;
 
     void Awake()
@@ -48,17 +46,6 @@ public class EnemyHealth : MonoBehaviour
 					// Increment score when destroyed.
 					Debug.Log ("INCREMEMNTING!");
 					TEMPScoreScript.Instance.IncrementScore (scoreAwarded);
-				}
-				// ... the enemy is destroyed.
-				if (gameObject.CompareTag ("Boss")) {
-					isShowingWon = !isShowingWon;
-					wonScreen.SetActive (isShowingWon);
-					int temp1 = TEMPScoreScript.Instance.GetScore();
-					int temp2 = TEMPScoreScript.Instance.GetEnemies();
-					GameObject time = GameObject.Find("Timer");
-					int temp3 = time.GetComponent<Timer>().getMinutes();
-					int temp4 = time.GetComponent<Timer>().getSeconds();
-					wonScreen.GetComponent<WinUpdate>().SetFinal(temp1,temp2,temp3,temp4);
 				}
 
 				SpiderAnimation temp = GetComponent<SpiderAnimation> ();
