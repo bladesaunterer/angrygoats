@@ -72,22 +72,17 @@ public class CutsceneTextScript : MonoBehaviour {
 		// Set name of speaker.
 		nameBoxString.text = scriptLine [0];
 
-		// Determine what text color to use and image to highlight.
+		// Determine what image to highlight.
 		if (scriptLine [0] == "Dr. Ndoto") {
-			textBoxString.color = Color.red;
-			nameBoxString.color = Color.black;
 			portraitLImage.color = Color.white;
 			portraitRImage.color = Color.gray;
 
 		} else if (scriptLine [0] == "Client") {
-			textBoxString.color = Color.blue;
-			nameBoxString.color = Color.black;
 			portraitLImage.color = Color.gray;
 			portraitRImage.color = Color.white;
 		} else {
 			portraitLImage.color = Color.gray;
 			portraitRImage.color = Color.gray;
-			textBoxString.color = Color.black;
 		}
 
 		// Get dialogue string to write to text box. 
