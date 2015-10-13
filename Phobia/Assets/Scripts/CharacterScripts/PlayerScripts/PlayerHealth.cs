@@ -45,6 +45,10 @@ public class PlayerHealth : MonoBehaviour
             playerControlScript.InitiateAnimation("Die");
             Destroy (gameObject, 0.95f);
 		}
+        else
+        {
+            playerControlScript.InitiateAnimation("Hit");
+        }
 	}
 
 	public void HealPlayer(int heal){
