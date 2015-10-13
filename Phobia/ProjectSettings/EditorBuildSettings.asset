@@ -38,9 +38,9 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/PersonalScenes/Angel/LoadingScene.unity
   - enabled: 1
-    path: Assets/Scenes/MasterCopy/levels/HeightsLevelScene.unity
+    path: Assets/Scenes/MasterCopy/levels/HeightsLevelScene old.unity
   - enabled: 1
-    path: Assets/Scenes/MasterCopy/levels/DarknessLevelScene.unity
+    path: Assets/Scenes/MasterCopy/levels/DarknessLevelScene old.unity
   - enabled: 0
     path: Assets/Scenes/PersonalScenes/Karen/LevelSelectSceneWithSound.unity
   - enabled: 0
