@@ -58,6 +58,7 @@ public class PlayerControl : MonoBehaviour {
 			UpdateCoolDownSlider ();
 		}
 		if (Input.GetKeyDown (KeyCode.J) && Time.time > nextMelee) {
+            PlayerSfxScript.playMeleeSound();
 			nextMelee = Time.time + meleeRate;
 			Instantiate (meleeAttack, meleeSpawn.position, meleeSpawn.rotation);
 		}
