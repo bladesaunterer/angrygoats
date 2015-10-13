@@ -15,6 +15,7 @@ public class FireGem : GenericGem {
 	void Update () {
 		if (Input.GetKeyDown(KeyCode.K) && playerControl.cooldown >= cost)
 		{
+            PlayerSfxScript.playShotSound();
 			playerControl.SubtractCooldown(cost);
 			Instantiate(shot,shotSpawn.position,shotSpawn.rotation);
 		}

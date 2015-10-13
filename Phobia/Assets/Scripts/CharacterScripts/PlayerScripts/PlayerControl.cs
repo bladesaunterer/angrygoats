@@ -66,6 +66,7 @@ public class PlayerControl : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.J) && Time.time > nextMelee)
         {
+            PlayerSfxScript.playMeleeSound();
             nextMelee = Time.time + meleeRate;
             anim.SetTrigger("Melee");
             Instantiate(meleeAttack, meleeSpawn.position, meleeSpawn.rotation);
