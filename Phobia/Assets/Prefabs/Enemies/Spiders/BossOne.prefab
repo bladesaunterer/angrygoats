@@ -846,6 +846,7 @@ GameObject:
   - 65: {fileID: 6531728}
   - 114: {fileID: 11458742}
   - 114: {fileID: 11480768}
+  - 114: {fileID: 11404608}
   m_Layer: 0
   m_Name: BossOne
   m_TagString: Boss
@@ -2101,6 +2102,18 @@ Animation:
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
   m_CullingType: 1
+--- !u!114 &11404608
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 176146}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 197cca9dbb7972c4c80bc6a8c338d212, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flash: {fileID: 2100000, guid: 3dd4b9c466d80ff45ae4bf8a4ed4e263, type: 2}
 --- !u!114 &11421048
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2191,7 +2204,6 @@ MonoBehaviour:
   currentHealth: 0
   lethalLow: -5
   scoreAwarded: 50
-  wonScreen: {fileID: 0}
 --- !u!114 &11480768
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2345,6 +2357,10 @@ Prefab:
       propertyPath: scoreAwarded
       value: 50
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: flash
+      value: 
+      objectReference: {fileID: 2100000, guid: 3dd4b9c466d80ff45ae4bf8a4ed4e263, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 176146}

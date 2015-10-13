@@ -379,6 +379,7 @@ GameObject:
   - 114: {fileID: 11482812}
   - 114: {fileID: 11489134}
   - 114: {fileID: 11464336}
+  - 114: {fileID: 11480294}
   m_Layer: 0
   m_Name: SEnemy(normal)
   m_TagString: Enemy
@@ -2132,7 +2133,6 @@ MonoBehaviour:
   currentHealth: 0
   lethalLow: -5
   scoreAwarded: 10
-  wonScreen: {fileID: 0}
 --- !u!114 &11464336
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2188,6 +2188,18 @@ MonoBehaviour:
   bezierTangentLength: .400000006
   offset: .200000003
   factor: .100000001
+--- !u!114 &11480294
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 139882}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 197cca9dbb7972c4c80bc6a8c338d212, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flash: {fileID: 2100000, guid: 3dd4b9c466d80ff45ae4bf8a4ed4e263, type: 2}
 --- !u!114 &11482812
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2317,6 +2329,10 @@ Prefab:
       propertyPath: scoreAwarded
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: flash
+      value: 
+      objectReference: {fileID: 2100000, guid: 3dd4b9c466d80ff45ae4bf8a4ed4e263, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 139882}
