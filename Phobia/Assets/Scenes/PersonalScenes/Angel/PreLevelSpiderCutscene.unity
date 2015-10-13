@@ -125,7 +125,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 77d77415a79c6e14e9edad661a61be91, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5a31087ab5628424b828255540e5fb3c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &390014262
 Transform:
@@ -135,7 +135,7 @@ Transform:
   m_GameObject: {fileID: 390014260}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -1, z: 10}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children: []
   m_Father: {fileID: 838615150}
   m_RootOrder: 0
@@ -170,7 +170,7 @@ RectTransform:
   m_RootOrder: 1
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: 220, y: -10}
+  m_AnchoredPosition: {x: 240, y: -10}
   m_SizeDelta: {x: 450, y: 700}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &675486251
@@ -192,7 +192,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 208d81213f624a047a2f85e1a0147926, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 45cf0d847de0cd444b3df15874d9f159, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -674,7 +674,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 3e1844feed0a89a41b6d16993626cfdc, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 06c622cbdbb64ed4ca2775d26fca6fce, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -702,8 +702,8 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: -220, y: -50}
-  m_SizeDelta: {x: 450, y: 700}
+  m_AnchoredPosition: {x: -200, y: -30}
+  m_SizeDelta: {x: 380, y: 680}
   m_Pivot: {x: .5, y: .5}
 --- !u!1 &1552587019
 GameObject:

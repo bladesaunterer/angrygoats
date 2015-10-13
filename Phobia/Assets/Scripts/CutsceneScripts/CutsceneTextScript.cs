@@ -33,7 +33,12 @@ public class CutsceneTextScript : MonoBehaviour {
 	}
 
 	void Update() {
-		if (Input.GetMouseButtonDown(0) || Input.GetKeyDown("space")) {
+		if (Input.GetKeyDown (KeyCode.Escape)) {
+		
+			//Skip cutscene to game loading scene.
+			Application.LoadLevelAsync("LoadingScene");
+
+		} else if (Input.GetMouseButtonDown(0) || Input.GetKeyDown("space")) {
 			if (lineNumber < linesInFile.Length) {
 				// Stop current Coroutine for typing.
 				StopCoroutine("TypeOutText");
