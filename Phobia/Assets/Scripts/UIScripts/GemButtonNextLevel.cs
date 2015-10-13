@@ -6,7 +6,7 @@ using System.Collections;
  * Class which handles button logic which moves to different scenes.
  * 
  **/
-public class ButtonNextLevel : MonoBehaviour
+public class GemButtonNextLevel : MonoBehaviour
 {
 
 	public void NextLevelButton (int index)
