@@ -16,7 +16,7 @@ public class LoadingScript : MonoBehaviour {
 	 **/
 	IEnumerator TransitionToGame()
 	{
-		AsyncOperation async = Application.LoadLevelAsync("MergedScene");
+		AsyncOperation async = Application.LoadLevelAsync("SpiderLevelScene");
 		while (!async.isDone)
 		{
 			yield return(0);

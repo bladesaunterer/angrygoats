@@ -91,7 +91,7 @@ MonoBehaviour:
   m_Script: {fileID: 1980459831, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
@@ -114,9 +114,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   miniMapUI: {fileID: 22580352}
   roomImagePrefab: {fileID: 11400616, guid: bb671c6ca99f7b342a391f323c3b1b1a, type: 2}
-  doorImagePrefab: {fileID: 0}
-  currentRoomSprite: {fileID: 21300000, guid: d4b4e638b21305d41853f7e437dc8d11, type: 3}
-  exploredRoomSprite: {fileID: 21300000, guid: 0f754a16e9240254e8cf6e6a5f712d9c, type: 3}
+  doorImagePrefab: {fileID: 11480668, guid: d8630e6ef4cd73942b61e7a32107363a, type: 2}
+  currentRoomSprite: {fileID: 21300000, guid: 38fe7d707ca845749bdce4ec21fb1d7c, type: 3}
+  exploredRoomSprite: {fileID: 21300000, guid: de02830f18f39674f9a1cc2890f2ef20, type: 3}
 --- !u!222 &22274416
 CanvasRenderer:
   m_ObjectHideFlags: 1
@@ -131,10 +131,10 @@ Canvas:
   m_GameObject: {fileID: 133526}
   m_Enabled: 1
   serializedVersion: 2
-  m_RenderMode: 0
+  m_RenderMode: 1
   m_Camera: {fileID: 0}
-  m_PlaneDistance: 100
-  m_PixelPerfect: 0
+  m_PlaneDistance: 22
+  m_PixelPerfect: 1
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
@@ -152,10 +152,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 22474090}
   m_RootOrder: 0
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -20}
-  m_SizeDelta: {x: -600, y: -140}
+  m_AnchorMin: {x: .5, y: .5}
+  m_AnchorMax: {x: .5, y: .5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 310, y: 310}
   m_Pivot: {x: .5, y: .5}
 --- !u!224 &22474090
 RectTransform:
@@ -182,7 +182,7 @@ CanvasGroup:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 133526}
   m_Enabled: 1
-  m_Alpha: 1
+  m_Alpha: 0
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
