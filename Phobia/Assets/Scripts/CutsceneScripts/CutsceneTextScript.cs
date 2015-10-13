@@ -8,7 +8,7 @@ using System.Collections;
  * 
  **/
 public class CutsceneTextScript : MonoBehaviour {
-	
+
 	public Text textBoxString;
 	public Text nameBoxString;
 	public TextAsset TextFile;
