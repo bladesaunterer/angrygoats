@@ -41,3 +41,11 @@ EditorBuildSettings:
     path: Assets/Scenes/MasterCopy/levels/HeightsLevelScene.unity
   - enabled: 1
     path: Assets/Scenes/MasterCopy/levels/DarknessLevelScene.unity
+  - enabled: 1
+    path: Assets/Scenes/PersonalScenes/Karen/LevelSelectSceneWithSound.unity
+  - enabled: 1
+    path: Assets/Scenes/PersonalScenes/Karen/SettingsSceneWithSound.unity
+  - enabled: 1
+    path: Assets/Scenes/PersonalScenes/Karen/MergedSceneWithSound.unity
+  - enabled: 1
+    path: Assets/Scenes/MasterCopy/LoadingScene.unity
