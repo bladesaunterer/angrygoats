@@ -15,12 +15,14 @@ public class PlayerHealth : MonoBehaviour
 
 	public GameObject deadScreen;
 	private bool isShowingDead = false;
+    private PlayerControl playerControlScript;
 
-	void Awake ()
+    void Awake ()
 	{		
 		// Setting the current health when the player first spawns.
 		currentHealth = startingHealth;
-	}
+        playerControlScript = GetComponent<PlayerControl>();
+    }
 
     void Update()
     {
@@ -44,8 +46,9 @@ public class PlayerHealth : MonoBehaviour
 			isShowingDead = !isShowingDead;
 			deadScreen.SetActive(isShowingDead);
 
-			// ... the player is destroyed.
-			Destroy (gameObject);
+            // ... the player is destroyed.
+            playerControlScript.InitiateAnimation("Die");
+            Destroy (gameObject, 0.95f);
 		}
 	}
 

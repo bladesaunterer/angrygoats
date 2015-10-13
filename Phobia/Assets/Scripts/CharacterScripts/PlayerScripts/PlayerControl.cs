@@ -227,4 +227,18 @@ public class PlayerControl : MonoBehaviour
         anim.SetBool("Walk", moving && inWeb > 0);
     }
 
+    public void InitiateAnimation(string animationName)
+    {
+        if(animationName == "Die")
+        {
+            anim.SetBool(animationName, true);
+            anim.SetTrigger("DieTrig");
+        }
+        else
+        {
+            anim.SetTrigger(animationName);
+        }
+        
+    }
+
 }
