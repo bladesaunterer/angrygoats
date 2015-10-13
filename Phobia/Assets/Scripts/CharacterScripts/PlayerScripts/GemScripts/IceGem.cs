@@ -10,7 +10,7 @@ public class IceGem : GenericGem {
 
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetKeyDown(KeyCode.K) && playerControl.cooldown >= cost)
+		if (Input.GetKeyDown(KeyCode.K) && playerControl.cooldown >= cost && checkActive())
 		{
 			playerControl.SubtractCooldown(cost);
 			Instantiate(shot,shotSpawn.position,shotSpawn.rotation);

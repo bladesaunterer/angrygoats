@@ -484,19 +484,19 @@ Prefab:
       objectReference: {fileID: 53703026}
     - target: {fileID: 22495562, guid: ff4da635f34afec47bcde36cd136b975, type: 2}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22495562, guid: ff4da635f34afec47bcde36cd136b975, type: 2}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22437362, guid: ff4da635f34afec47bcde36cd136b975, type: 2}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22437362, guid: ff4da635f34afec47bcde36cd136b975, type: 2}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 11445222, guid: ff4da635f34afec47bcde36cd136b975, type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument

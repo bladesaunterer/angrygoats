@@ -37,8 +37,8 @@ public class WinUpdate : MonoBehaviour {
 
 		final = bonus + score;
 
-		dispText.text = "WINRAR\n\nEnemies killed : " + enemies.ToString () + " \n(+" + score.ToString () + ")" +
-			"\nTime spent : " + minute + ":" + second + " \n(+" + bonus.ToString() + ")" +
+		dispText.text = "Congratulations\nEnemies killed : " + enemies.ToString () + " (+" + score.ToString () + ")" +
+			"\nTime spent : " + minute + ":" + second + " (+" + bonus.ToString() + ")" +
 			"\n\n Total : \t\t " + final.ToString();
 	}
 

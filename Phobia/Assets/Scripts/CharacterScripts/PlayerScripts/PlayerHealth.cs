@@ -12,10 +12,8 @@ public class PlayerHealth : MonoBehaviour
 	public int currentHealth;                   // The current health the player has.
     public int lethalLow;
 	public Slider healthSlider;					// Slider for player's health.
-
-	public GameObject deadScreen;
-	private bool isShowingDead = false;
     private PlayerControl playerControlScript;
+
 
     void Awake ()
 	{		
@@ -43,9 +41,6 @@ public class PlayerHealth : MonoBehaviour
 		// If the current health is less than or equal to zero...
 		if(currentHealth <= 0)
 		{
-			isShowingDead = !isShowingDead;
-			deadScreen.SetActive(isShowingDead);
-
             // ... the player is destroyed.
             playerControlScript.InitiateAnimation("Die");
             Destroy (gameObject, 0.95f);

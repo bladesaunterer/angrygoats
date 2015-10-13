@@ -17,13 +17,13 @@ public class BoltMover : MonoBehaviour
 	private GameObject gemObject;
 
 	public new Renderer renderer;
-	private GemSelection gemSelection = new GemSelection ();
+	private GemManager gemManager = GemManager.Instance;
 	
 	private PlayerHealth playerHealth;
 
 	void Start ()
 	{
-		currentGem = gemSelection.GetCurrentGem ();
+		currentGem = gemManager.GetCurrentGem ();
 		gemObject = GameObject.FindGameObjectWithTag (currentGem.ToString ());
 		renderer = GetComponent<Renderer> ();
 		// Get rigidbody and set bolt's velocity.
