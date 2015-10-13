@@ -13,9 +13,9 @@ public class AreaOfEffect : GenericGem
 		if (Input.GetKeyDown (KeyCode.K) && playerControl.cooldown >= cost) {
 			playerControl.SubtractCooldown (cost);
 			for (int i=0; i<6; i++) {
-				Instantiate (shot, shotSpawn.position, Quaternion.Euler (0, i * 60, 0));
+				Instantiate (shot, shotSpawn.position, Quaternion.Euler (0, 37 + (shotSpawn.rotation.eulerAngles.y - 15 * i), 0));
 			}
-
+		
 
 		}
 	
