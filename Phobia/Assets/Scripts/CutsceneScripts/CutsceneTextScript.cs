@@ -14,17 +14,16 @@ public class CutsceneTextScript : MonoBehaviour {
 	public TextAsset TextFile;
 	public Image portraitLImage;
 	public Image portraitRImage;
-	public string sceneToTransitionTo;
-	public float textTypingDelay;
 	public Sprite clientHappy;
 	public Sprite clientMasked;
 	public Sprite clientExtra;
+	public string sceneToTransitionTo;
+	public float textTypingDelay;
 	
 	private string[] linesInFile;
 	private string[] scriptLine;
 	private string lineText;
 	private int lineNumber;
-	private bool isImageScriptLine;
 
 	void Start() {
 		linesInFile = TextFile.text.Split('\n'); 			// Get lines in file.
@@ -154,12 +153,15 @@ public class CutsceneTextScript : MonoBehaviour {
 			portraitRImage.enabled = true;
 			
 		} else if (scriptLine [2] == "ChangeClientHappy") {
+			//Change to happy client image.
 			portraitRImage.sprite = clientHappy;
 
 		} else if (scriptLine [2] == "ChangeClientMasked") {
+			//Change to masked client image.
 			portraitRImage.sprite = clientMasked;
 
 		} else if (scriptLine [2] == "ChangeClientExtra") {
+			//Change to extra client image.
 			portraitRImage.sprite = clientExtra;
 		}
 	}

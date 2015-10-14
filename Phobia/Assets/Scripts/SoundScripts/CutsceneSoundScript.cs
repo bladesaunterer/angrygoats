@@ -14,8 +14,6 @@ public class CutsceneSoundScript : MonoBehaviour {
 	public AudioClip textSound3;
 	public AudioClip textSound4;
 
-	public AudioClip nextTextBoxSound;
-
 	private AudioSource audioSource;
 	static private int num = 1;
 
@@ -32,17 +30,6 @@ public class CutsceneSoundScript : MonoBehaviour {
 		}
 
 		audioSource = GetComponent<AudioSource>();
-	}
-
-	/**
-	 *
-	 * Static method for playing textbox sound effects.
-	 *
-	 **/
-	static public void PlayNextTextBoxSound() {
-		instance.audioSource.pitch = 0.5f;
-		instance.audioSource.PlayOneShot(instance.nextTextBoxSound, 2.0f);
-	
 	}
 
 	/**
