@@ -51,7 +51,7 @@ public class CutsceneSoundScript : MonoBehaviour {
 	 *
 	 **/
 	static public void PlayTextSound() {
-		instance.audioSource.pitch = 1.8f;
+		instance.audioSource.pitch = 1.0f;
 
 		// Generate random number.
 		num = Random.Range (1, 4);

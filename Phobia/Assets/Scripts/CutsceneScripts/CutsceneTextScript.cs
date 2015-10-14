@@ -16,7 +16,10 @@ public class CutsceneTextScript : MonoBehaviour {
 	public Image portraitRImage;
 	public string sceneToTransitionTo;
 	public float textTypingDelay;
-
+	public Sprite clientHappy;
+	public Sprite clientMasked;
+	public Sprite clientExtra;
+	
 	private string[] linesInFile;
 	private string[] scriptLine;
 	private string lineText;
@@ -43,9 +46,6 @@ public class CutsceneTextScript : MonoBehaviour {
 			Application.LoadLevelAsync(sceneToTransitionTo);
 
 		} else if (Input.GetMouseButtonDown(0) || Input.GetKeyDown("space")) {
-
-			//Play sound effect when moving to next textbox.
-			CutsceneSoundScript.PlayNextTextBoxSound();
 
 			if (lineNumber < linesInFile.Length) {
 				// Stop current Coroutine for typing.
@@ -102,12 +102,19 @@ public class CutsceneTextScript : MonoBehaviour {
 		// Get dialogue string to write to text box. 
 		lineText = scriptLine [1];
 
+		int charCount = 0;
+
 		// Print out string character by character.
 		foreach (char c in lineText.ToCharArray()) {
 			textBoxString.text += c;
 
-			// Play a sound effect for each character.
-			CutsceneSoundScript.PlayTextSound ();
+			if (charCount < 0) {
+				// Play a sound effect for each character.
+				CutsceneSoundScript.PlayTextSound ();
+				charCount = 8;
+			}
+
+			charCount--;
 
 			yield return new WaitForSeconds (textTypingDelay);
 		}
@@ -120,32 +127,40 @@ public class CutsceneTextScript : MonoBehaviour {
 	 **/
 	public void ImageProcessing() {
 
-		if (scriptLine[2] == "DisableL") {
+		if (scriptLine [2] == "DisableL") {
 			//Disable left image only.
 			portraitLImage.enabled = false;
 			
-		} else if (scriptLine[2] == "DisableL"){
+		} else if (scriptLine [2] == "DisableL") {
 			//Disable right image only.
 			portraitRImage.enabled = false;
 
-		} else if (scriptLine[2] == "DisableB"){
+		} else if (scriptLine [2] == "DisableB") {
 			//Disable both images.
 			portraitLImage.enabled = false;
 			portraitRImage.enabled = false;
 			
-		} else if (scriptLine[2] == "EnableL"){
+		} else if (scriptLine [2] == "EnableL") {
 			//Enable left image only.
 			portraitLImage.enabled = true;
 
-		} else if (scriptLine[2] == "EnableR"){
+		} else if (scriptLine [2] == "EnableR") {
 			//Enable right image only.
 			portraitRImage.enabled = true;
 
-		} else if (scriptLine[2] == "EnableB"){
+		} else if (scriptLine [2] == "EnableB") {
 			//Enable both images.
 			portraitLImage.enabled = true;
 			portraitRImage.enabled = true;
 			
-		} 
+		} else if (scriptLine [2] == "ChangeClientHappy") {
+			portraitRImage.sprite = clientHappy;
+
+		} else if (scriptLine [2] == "ChangeClientMasked") {
+			portraitRImage.sprite = clientMasked;
+
+		} else if (scriptLine [2] == "ChangeClientExtra") {
+			portraitRImage.sprite = clientExtra;
+		}
 	}
 }
