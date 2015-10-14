@@ -400,19 +400,19 @@ Prefab:
     m_Modifications:
     - target: {fileID: 22427464, guid: 45c130b80ddf74d4fad4cce0bc27c811, type: 2}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22427464, guid: 45c130b80ddf74d4fad4cce0bc27c811, type: 2}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22494448, guid: 45c130b80ddf74d4fad4cce0bc27c811, type: 2}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22494448, guid: 45c130b80ddf74d4fad4cce0bc27c811, type: 2}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22403150, guid: 45c130b80ddf74d4fad4cce0bc27c811, type: 2}
       propertyPath: m_LocalPosition.x
@@ -505,6 +505,10 @@ Prefab:
     - target: {fileID: 11417566, guid: 45c130b80ddf74d4fad4cce0bc27c811, type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
       value: SpiderLevelScene 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11494300, guid: 45c130b80ddf74d4fad4cce0bc27c811, type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: LevelSelectScene 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 45c130b80ddf74d4fad4cce0bc27c811, type: 2}
