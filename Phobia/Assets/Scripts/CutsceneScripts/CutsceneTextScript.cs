@@ -43,6 +43,7 @@ public class CutsceneTextScript : MonoBehaviour {
 
 		} else if (Input.GetMouseButtonDown(0) || Input.GetKeyDown("space")) {
 
+			//Play sound effect when moving to next textbox.
 			CutsceneSoundScript.PlayNextTextBoxSound();
 
 			if (lineNumber < linesInFile.Length) {
@@ -103,30 +104,44 @@ public class CutsceneTextScript : MonoBehaviour {
 		// Print out string character by character.
 		foreach (char c in lineText.ToCharArray()) {
 			textBoxString.text += c;
+
+			// Play a sound effect for each character.
 			CutsceneSoundScript.PlayTextSound ();
+
 			yield return new WaitForSeconds (textTypingDelay);
 		}
 	}
 
+	/**
+	 *
+	 * Method for enabling and disabling images in cutscenes.
+	 *
+	 **/
 	public void ImageProcessing() {
 
 		if (scriptLine[2] == "DisableL") {
+			//Disable left image only.
 			portraitLImage.enabled = false;
 			
 		} else if (scriptLine[2] == "DisableL"){
+			//Disable right image only.
 			portraitRImage.enabled = false;
 
 		} else if (scriptLine[2] == "DisableB"){
+			//Disable both images.
 			portraitLImage.enabled = false;
 			portraitRImage.enabled = false;
 			
 		} else if (scriptLine[2] == "EnableL"){
+			//Enable left image only.
 			portraitLImage.enabled = true;
 
 		} else if (scriptLine[2] == "EnableR"){
+			//Enable right image only.
 			portraitRImage.enabled = true;
 
 		} else if (scriptLine[2] == "EnableB"){
+			//Enable both images.
 			portraitLImage.enabled = true;
 			portraitRImage.enabled = true;
 			
