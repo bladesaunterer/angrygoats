@@ -830,6 +830,7 @@ MonoBehaviour:
   TextFile: {fileID: 4900000, guid: 80e41d876beaa7645a8ed6e721bd7dd9, type: 3}
   portraitLImage: {fileID: 1195887047}
   portraitRImage: {fileID: 675486251}
+  sceneToTransitionTo: LoadingScene
   textTypingDelay: .0199999996
 --- !u!114 &1552587022
 MonoBehaviour:

@@ -1,10 +1,15 @@
 fileFormatVersion: 2
 guid: 4260f59a55e7f5d4cb04c673b508bf50
-timeCreated: 1444812406
+timeCreated: 1444826903
 licenseType: Free
 MonoImporter:
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - textSound1: {fileID: 8300000, guid: 519b6dc62e8fe754f942f6ab26e10b58, type: 3}
+  - textSound2: {fileID: 8300000, guid: 3606b172005092043b98106e0ae8c08d, type: 3}
+  - textSound3: {fileID: 8300000, guid: 7898abc2c2977ce44977dc8f34e05468, type: 3}
+  - textSound4: {fileID: 8300000, guid: 050f0adae375ceb488b260e966191a71, type: 3}
+  - nextTextBoxSound: {fileID: 8300000, guid: 3d04edb185734c14c94a1c99b0524d77, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

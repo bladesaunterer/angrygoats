@@ -14,6 +14,7 @@ public class CutsceneTextScript : MonoBehaviour {
 	public TextAsset TextFile;
 	public Image portraitLImage;
 	public Image portraitRImage;
+	public string sceneToTransitionTo;
 	public float textTypingDelay;
 
 	private string[] linesInFile;
@@ -39,7 +40,7 @@ public class CutsceneTextScript : MonoBehaviour {
 		if (Input.GetKeyDown (KeyCode.Escape)) {
 
 			//Skip cutscene to game loading scene.
-			Application.LoadLevelAsync("LoadingScene");
+			Application.LoadLevelAsync(sceneToTransitionTo);
 
 		} else if (Input.GetMouseButtonDown(0) || Input.GetKeyDown("space")) {
 
@@ -60,7 +61,7 @@ public class CutsceneTextScript : MonoBehaviour {
 				lineNumber++;
 			} else {
 				//Transition to game loading scene.
-				Application.LoadLevelAsync("LoadingScene");
+				Application.LoadLevelAsync(sceneToTransitionTo);
 			}
 		}
 	}
