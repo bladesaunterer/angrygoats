@@ -8,14 +8,26 @@ using System.Collections;
  **/
 public class ButtonNextLevel : MonoBehaviour
 {
-
+	private string level;
+	public void SetLevel (string level)
+	{
+		this.level = level;
+	}
+	
 	public void NextLevelButton (int index)
 	{
 		Application.LoadLevel (index);
 	}
-
-	public void NextLevelButton (string levelName)
+	
+	public void NextLevelButton (string lvl)
 	{
-		Application.LoadLevel (levelName);
+		Application.LoadLevel (lvl);
+		
+	}
+	
+	public void NextLevelButton ()
+	{
+		if (level != null)
+			Application.LoadLevel (level);
 	}
 }
