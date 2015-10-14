@@ -39,6 +39,9 @@ public class CutsceneTextScript : MonoBehaviour {
 			Application.LoadLevelAsync("LoadingScene");
 
 		} else if (Input.GetMouseButtonDown(0) || Input.GetKeyDown("space")) {
+
+			CutsceneSoundScript.PlayNextTextBoxSound();
+
 			if (lineNumber < linesInFile.Length) {
 				// Stop current Coroutine for typing.
 				StopCoroutine("TypeOutText");
@@ -80,6 +83,7 @@ public class CutsceneTextScript : MonoBehaviour {
 		} else if (scriptLine [0] == "Client") {
 			portraitLImage.color = Color.gray;
 			portraitRImage.color = Color.white;
+
 		} else {
 			portraitLImage.color = Color.gray;
 			portraitRImage.color = Color.gray;
@@ -91,6 +95,7 @@ public class CutsceneTextScript : MonoBehaviour {
 		// Print out string character by character.
 		foreach (char c in lineText.ToCharArray()) {
 			textBoxString.text += c;
+			CutsceneSoundScript.PlayTextSound();
 			yield return new WaitForSeconds(textTypingDelay);
 		}
 	}
