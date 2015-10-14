@@ -80,7 +80,7 @@ public class CutsceneTextScript : MonoBehaviour {
 		nameBoxString.text = scriptLine [0];
 
 		//Manipulate Images if needed.
-		if (scriptLine.Length == 3) {
+		if (scriptLine.Length > 2) {
 			ImageProcessing();
 		}
 
