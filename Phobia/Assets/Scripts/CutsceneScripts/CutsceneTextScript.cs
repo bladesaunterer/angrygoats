@@ -20,21 +20,24 @@ public class CutsceneTextScript : MonoBehaviour {
 	private string[] scriptLine;
 	private string lineText;
 	private int lineNumber;
+	private bool isImageScriptLine;
 
 	void Start() {
 		linesInFile = TextFile.text.Split('\n'); 			// Get lines in file.
 		lineNumber = 0;										// Initialize line number to 0.
 
 		scriptLine = linesInFile[lineNumber].Split(':');	// Split line in text file into Speaker and dialogue.
+
 		lineText = scriptLine[1];							// Get dialogue text.
-		StartCoroutine("TypeOutText");						// Type out first line to text box. 
+
+		StartCoroutine("ProcessScriptLine");				// Type out first line to text box. 
 
 		lineNumber++;										// Increment line number.
 	}
 
 	void Update() {
 		if (Input.GetKeyDown (KeyCode.Escape)) {
-		
+
 			//Skip cutscene to game loading scene.
 			Application.LoadLevelAsync("LoadingScene");
 
@@ -44,13 +47,13 @@ public class CutsceneTextScript : MonoBehaviour {
 
 			if (lineNumber < linesInFile.Length) {
 				// Stop current Coroutine for typing.
-				StopCoroutine("TypeOutText");
+				StopCoroutine("ProcessScriptLine");
 
 				// Get next line in text file.
-				scriptLine = linesInFile[lineNumber].Split(':'); 
+				scriptLine = linesInFile[lineNumber].Split(':');
 
 				// Start typing new line.
-				StartCoroutine("TypeOutText");
+				StartCoroutine("ProcessScriptLine");
 
 				// Increment line number.
 				lineNumber++;
@@ -67,13 +70,18 @@ public class CutsceneTextScript : MonoBehaviour {
 	 * file into textbox of cutscene.
 	 *
 	 **/
-	IEnumerator TypeOutText() {
+	IEnumerator ProcessScriptLine() {
 
 		// Clear text box.
 		textBoxString.text = "";
 
 		// Set name of speaker.
 		nameBoxString.text = scriptLine [0];
+
+		//Manipulate Images if needed.
+		if (scriptLine.Length == 3) {
+			ImageProcessing();
+		}
 
 		// Determine what image to highlight.
 		if (scriptLine [0] == "Dr. Ndoto") {
@@ -90,13 +98,38 @@ public class CutsceneTextScript : MonoBehaviour {
 		}
 
 		// Get dialogue string to write to text box. 
-		lineText = scriptLine[1];
+		lineText = scriptLine [1];
 
 		// Print out string character by character.
 		foreach (char c in lineText.ToCharArray()) {
 			textBoxString.text += c;
-			CutsceneSoundScript.PlayTextSound();
-			yield return new WaitForSeconds(textTypingDelay);
+			CutsceneSoundScript.PlayTextSound ();
+			yield return new WaitForSeconds (textTypingDelay);
 		}
+	}
+
+	public void ImageProcessing() {
+
+		if (scriptLine[2] == "DisableL") {
+			portraitLImage.enabled = false;
+			
+		} else if (scriptLine[2] == "DisableL"){
+			portraitRImage.enabled = false;
+
+		} else if (scriptLine[2] == "DisableB"){
+			portraitLImage.enabled = false;
+			portraitRImage.enabled = false;
+			
+		} else if (scriptLine[2] == "EnableL"){
+			portraitLImage.enabled = true;
+
+		} else if (scriptLine[2] == "EnableR"){
+			portraitRImage.enabled = true;
+
+		} else if (scriptLine[2] == "EnableB"){
+			portraitLImage.enabled = true;
+			portraitRImage.enabled = true;
+			
+		} 
 	}
 }
