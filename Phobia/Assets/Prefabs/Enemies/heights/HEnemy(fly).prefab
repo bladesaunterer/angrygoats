@@ -178,7 +178,7 @@ MonoBehaviour:
   startingHealth: 50
   currentHealth: 0
   lethalLow: 0
-  scoreAwarded: 0
+  scoreAwarded: 25
 --- !u!114 &11456752
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -242,6 +242,10 @@ Prefab:
       propertyPath: flash
       value: 
       objectReference: {fileID: 2100000, guid: 3dd4b9c466d80ff45ae4bf8a4ed4e263, type: 2}
+    - target: {fileID: 0}
+      propertyPath: scoreAwarded
+      value: 25
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 104204}

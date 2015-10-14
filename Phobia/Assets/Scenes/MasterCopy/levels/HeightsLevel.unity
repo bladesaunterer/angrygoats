@@ -768,14 +768,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 573315f148d13db4ba3d9729ceb72f7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  roomsToSpawn: 20
+  roomsToSpawn: 4
   roomPrefab: {fileID: 104770, guid: 2712d668c61c8a245bc7e84e8189abc6, type: 2}
   startPrefab: {fileID: 113332, guid: aefd54ed41e27a34895e19e6a271f122, type: 2}
   floorPrefabs:
   - {fileID: 187184, guid: b0f643fec94cace46869ca0d1b5cc5c4, type: 2}
   - {fileID: 176458, guid: 0d6e79190a222014d9c3253d3eea2d87, type: 2}
   - {fileID: 139194, guid: 0243a5b03b8ae8346b19e2ade4c586cb, type: 2}
-  totalEnemies: 60
+  totalEnemies: 5
   maxEnemiesPerRoom: 5
   enemies:
   - {fileID: 139882, guid: d536fbcec318e124e8dfd51d094f3995, type: 2}
