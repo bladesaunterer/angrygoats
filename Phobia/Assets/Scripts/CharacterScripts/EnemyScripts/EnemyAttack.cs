@@ -10,7 +10,6 @@ public class EnemyAttack : MonoBehaviour {
 
 	public int damage = 8;
 
-
 	private bool playerInRange;
 	private GameObject player;
 	private float timeBetweenAttacks = 0.25f;
@@ -39,8 +38,9 @@ public class EnemyAttack : MonoBehaviour {
 
 	void Update() {
 		timer += Time.deltaTime;
-		if(timer >= timeBetweenAttacks && playerInRange)
+		if(timer >= timeBetweenAttacks && playerInRange && GetComponent<EnemyHealth>().currentHealth > 0)
 		{
+			attackAnimation();
 			Attack (player);
 		}
 	}
@@ -50,6 +50,10 @@ public class EnemyAttack : MonoBehaviour {
 		if (other != null) {
 			HealthControl.dealDamageToPlayer (other, damage);
 		}
+
+	}
+
+	protected virtual void attackAnimation(){
 
 	}
 }
