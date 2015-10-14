@@ -1597,7 +1597,7 @@ MonoBehaviour:
       serializedVersion: 2
       m_Bits: 4294967295
     useGraphRaycasting: 0
-  traversableTags: -1
+  traversableTags: 1
   traversableTagsCompatibility:
     tagsChange: -1
     tagsSet: -1
@@ -1629,7 +1629,6 @@ MonoBehaviour:
   currentHealth: 0
   lethalLow: 0
   scoreAwarded: 10
-  wonScreen: {fileID: 0}
 --- !u!114 &11464336
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1794,6 +1793,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: scoreAwarded
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: traversableTags
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
