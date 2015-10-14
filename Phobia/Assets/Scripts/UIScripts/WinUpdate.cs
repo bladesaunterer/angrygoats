@@ -37,15 +37,15 @@ public class WinUpdate : MonoBehaviour {
 
 		final = bonus + score;
 
-		if (PlayerPrefs.GetInt ("High Score") == null) {
-			PlayerPrefs.SetInt ("High Score", final);
-		} else if(PlayerPrefs.GetInt ("High Score") < final) {
-			PlayerPrefs.SetInt ("High Score", final);
+		if (PlayerPrefs.GetInt ("High Score 1") == null) {
+			PlayerPrefs.SetInt ("High Score 1", final);
+		} else if(PlayerPrefs.GetInt ("High Score 1") < final) {
+			PlayerPrefs.SetInt ("High Score 1", final);
 		}
 
 		dispText.text = "Congratulations\nEnemies killed : " + enemies.ToString () + " (+" + score.ToString () + ")" +
 			"\nTime spent : " + minute + ":" + second + " (+" + bonus.ToString() + ")" +
-				"\n\n Total : \t\t " + final.ToString() + "and your high score is " + PlayerPrefs.GetInt ("High Score");
+				"\n\n Total : \t\t " + final.ToString() + "and your high score is " + PlayerPrefs.GetInt ("High Score 1");
 	}
 
 }
