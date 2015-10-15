@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-using System.Collections;
+using System;
 
 /// <summary>
 /// This is a singleton class in charge of controlling what music is played.
@@ -7,7 +7,22 @@ using System.Collections;
 public class MusicControlScript : MonoBehaviour
 {
     public AudioClip menuMusic;
-    public AudioClip levelMusic;
+    public string[] menuScenes;
+
+    public AudioClip cutsceneMusic;
+    public string[] cutsceneScenes;
+
+    public AudioClip level1Music;
+    public string level1Scene;
+
+    //public AudioClip level2Music;
+    //public string level2Scene;
+
+    //public AudioClip level3Music;
+    //public string level3Scene;
+
+    //public AudioClip winMusic;
+    //public AudioClip loseMusic;
 
     // Component that plays the music
     private AudioSource playingMusic;
@@ -41,34 +56,30 @@ public class MusicControlScript : MonoBehaviour
     void Update ()
     {
         // If in any of the menu scenes, play menu music if not playing already.
-        if (Application.loadedLevelName == "MainMenuSceneWithSound" || 
-            Application.loadedLevelName == "LevelSelectSceneWithSound" ||
-            Application.loadedLevelName == "SettingsSceneWithSound")
+        if (Array.IndexOf(menuScenes, Application.loadedLevelName) != -1)
         {
-            if (instance.playingMusic.clip != instance.menuMusic)
-            {
-                PlayMusic(instance.menuMusic);
-            }
-        } else
-        // Must be in a level, so play level music.
+            PlayMusic(menuMusic);
+
+        } else if (Application.loadedLevelName == level1Scene)
         {
-            if (instance.playingMusic.clip != instance.levelMusic)
-            {
-                PlayMusic(instance.levelMusic);
-            }
+            PlayMusic(level1Music);
         }
+        // Add more background sounds here if needed.
     }
 
-    // Plays the given audio clip.
+    // Plays the given audio clip if not playing already.
     static private void PlayMusic(AudioClip music)
     {
         if (instance != null)
         {
             if (instance.playingMusic != null)
             {
-                instance.playingMusic.Stop();
-                instance.playingMusic.clip = music;
-                instance.playingMusic.Play();
+                if (instance.playingMusic.clip != music)
+                {
+                    instance.playingMusic.Stop();
+                    instance.playingMusic.clip = music;
+                    instance.playingMusic.Play();
+                }
             }
         }
         else

@@ -26,6 +26,8 @@ public class GemSwitching : MonoBehaviour
 			child.gameObject.SetActive (false);
 		}
 		gemOne.SetActive (true);
+		gemTwo.SetActive(true);
+		gemTwo.GetComponent<MeshRenderer>().enabled = false;
 		
 		//current selection starts with gemOne
 		gemManager.SetCurrentGem (gemManager.GetGemOne ());
@@ -41,21 +43,21 @@ public class GemSwitching : MonoBehaviour
 		}
 	}
 
-	void ChangeGem ()
-	{
-		if (gemOne.gameObject.activeSelf) {
-			gemOne.SetActive (false);
-			gemTwo.SetActive (true);
-			gemManager.SetCurrentGem (gemManager.GetGemTwo ());
-		} else {
-			gemOne.SetActive (true);
-			gemTwo.SetActive (false);
-			gemManager.SetCurrentGem (gemManager.GetGemOne ());
-		}
-	}
+    void ChangeGem()
+    {
+        if (gemOne.gameObject.GetComponent<MeshRenderer>().enabled)
+        {
+            gemOne.GetComponent<MeshRenderer>().enabled = false;
+            gemTwo.GetComponent<MeshRenderer>().enabled = true;
+            gemManager.SetCurrentGem(gemManager.GetGemTwo());
+        }
+        else
+        {
+            gemOne.GetComponent<MeshRenderer>().enabled = true;
+            gemTwo.GetComponent<MeshRenderer>().enabled = false;
+            gemManager.SetCurrentGem(gemManager.GetGemOne());
+        }
+    }
 
-//	public Gem GetCurrentGem ()
-//	{
-//		return currentGem;
-//	}
+
 }
