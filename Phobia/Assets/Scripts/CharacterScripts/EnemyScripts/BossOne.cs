@@ -12,16 +12,16 @@ public class BossOne : MonoBehaviour {
 	Vector3 rightr = new Vector3 (-4, 0, 0);
 	Vector3 up = new Vector3 (0, 0, 2);
 	Vector3 down = new Vector3 (0, 0, -2);
-	EnemyHealth eh;
+	EnemyHealth enemyHealth;
 	// Use this for initialization
 	void Start () {
-		eh = this.gameObject.GetComponent<EnemyHealth>();
+		enemyHealth = this.gameObject.GetComponent<EnemyHealth>();
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		timer += Time.deltaTime;
-		if (eh.currentHealth < eh.startingHealth) {
+		if (enemyHealth.currentHealth < enemyHealth.startingHealth) {
 			if (timer > 5f) {
 				timer = 0;
 				if (flag == 0) {
