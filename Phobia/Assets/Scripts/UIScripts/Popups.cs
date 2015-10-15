@@ -6,6 +6,7 @@ using System.Collections;
 **/
 public class Popups : MonoBehaviour {
 
+	public GameObject pauseScreen;
     public GameObject winScreen;
     public GameObject deadScreen;
 
@@ -19,8 +20,14 @@ public class Popups : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		if (Input.GetKeyDown(KeyCode.Escape)) 
+		{
+			// Game Pausing Logic here
+			togglePauseScreen();
+		} 
+
         // Only deal with popups if one not already displaying
-        if (popupDisplaying == false)
+		else if (popupDisplaying == false)
         {
             // if boss destroyed display win screen
             if (GameObject.FindGameObjectWithTag("Boss") == null)
@@ -33,7 +40,19 @@ public class Popups : MonoBehaviour {
                 displayDeathScreen();
             }
         }
-	    
+	}
+
+	// Displays the pause screen
+	void togglePauseScreen() {
+		// Toggle to false or true accordingly.
+		if (popupDisplaying == false) {
+			popupDisplaying = true;
+		} else {
+			popupDisplaying = false;
+		}
+
+		// Set pause screen visibility according to boolean.
+		pauseScreen.SetActive (popupDisplaying);
 	}
 
     // Displays the win screen and updates the score on it
