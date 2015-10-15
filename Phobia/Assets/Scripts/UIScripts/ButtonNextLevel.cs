@@ -11,7 +11,9 @@ public class ButtonNextLevel : MonoBehaviour
 	private string level;
 	public void SetLevel (string level)
 	{
+		Debug.Log ("level set");
 		this.level = level;
+
 	}
 	
 	public void NextLevelButton (int index)
@@ -27,6 +29,7 @@ public class ButtonNextLevel : MonoBehaviour
 	
 	public void NextLevelButton ()
 	{
+		Debug.Log ("level loading");
 		if (level != null)
 			Application.LoadLevel (level);
 	}

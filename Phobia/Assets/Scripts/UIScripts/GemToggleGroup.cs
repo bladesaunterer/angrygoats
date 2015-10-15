@@ -11,6 +11,8 @@ namespace UnityEngine.UI
 	[AddComponentMenu("UI/Toggle Group Custom", 36)]
 	public class GemToggleGroup : UIBehaviour
 	{
+		public Gem GemOneDefault;
+		public Gem GemTwoDefault;
 
 		[SerializeField]
 		private bool
@@ -22,16 +24,17 @@ namespace UnityEngine.UI
 			allowMultipleSelection = false;
         
 		private List<GemToggle> m_Toggles = new List<GemToggle> ();
+		private GemManager gm = GemManager.Instance;
         
 		protected GemToggleGroup ()
 		{
 		}
         
-		private void ValidateToggleIsInGroup (GemToggle toggle)
-		{
-			if (toggle == null || !m_Toggles.Contains (toggle))
-				throw new ArgumentException (string.Format ("Toggle {0} is not part of ToggleGroup {1}", toggle, this));
-		}
+//		private void ValidateToggleIsInGroup (GemToggle toggle)
+//		{
+//			if (toggle == null || !m_Toggles.Contains (toggle))
+//				throw new ArgumentException (string.Format ("Toggle {0} is not part of ToggleGroup {1}", toggle, this));
+//		}
 
 		/**
 		 * Will run everytime toggle in group is clicked. For cases when toggle is
@@ -39,7 +42,7 @@ namespace UnityEngine.UI
 		 */
 		public void NotifyToggleClick (GemToggle toggle)
 		{
-			GemManager gm = GemManager.Instance;
+	
 
 			if (ActiveToggles ().Count () == 1) {
 				for (var i = 0; i < m_Toggles.Count; i++) {
@@ -67,10 +70,7 @@ namespace UnityEngine.UI
         
 		public void NotifyToggleOn (GemToggle toggle)
 		{
-			GemManager gm = GemManager.Instance;
 
-			ValidateToggleIsInGroup (toggle);
-			gm.ClearGemSelection ();
 			gm.SetGemOne (toggle.AssociatedGem);
 			gm.SetGemTwo (toggle.AssociatedGem);
             
@@ -104,6 +104,7 @@ namespace UnityEngine.UI
 			}
 
 		}
+
 		
 		public void UnregisterToggle (GemToggle toggle)
 		{
@@ -113,8 +114,25 @@ namespace UnityEngine.UI
         
 		public void RegisterToggle (GemToggle toggle)
 		{
+			toggle.isOn = false;
+			toggle.LastGemSelected = false;
+
+			gm.ResetGemSelection (GemOneDefault, GemTwoDefault);
+
+			Debug.Log (gm.GetDefaultGemOne ().ToString () + "  default gem 1");
+			Debug.Log (gm.GetDefaultGemTwo ().ToString () + "  default gem 2");
+
+			if (toggle.AssociatedGem == gm.GetDefaultGemOne ()) {
+				toggle.isOn = true;
+				toggle.LastGemSelected = false;
+			} else if (toggle.AssociatedGem == gm.GetDefaultGemTwo ()) {
+				toggle.isOn = true;
+				toggle.LastGemSelected = true;
+			}
+
 			if (!m_Toggles.Contains (toggle))
 				m_Toggles.Add (toggle);
+
 		}
         
 		public bool AnyTogglesOn ()

@@ -13,13 +13,14 @@ public class GemSwitching : MonoBehaviour
 
 	void Awake ()
 	{
+		Debug.Log (gemManager.GetGemOne ().ToString () + " successfully persisted");
+		Debug.Log (gemManager.GetGemTwo ().ToString () + " successfully persisted");
 
 		spawn = GameObject.FindGameObjectWithTag ("SpecialAttack");
 		gemOne = GameObject.FindGameObjectWithTag (gemManager.GetGemOne ().ToString ());
 		gemTwo = GameObject.FindGameObjectWithTag (gemManager.GetGemTwo ().ToString ());
 
-		Debug.Log (gemManager.GetGemOne ().ToString () + " successfully persisted");
-		Debug.Log (gemManager.GetGemTwo ().ToString () + " successfully persisted");
+
 
 		foreach (Transform child in spawn.transform) {
 			child.gameObject.SetActive (false);
