@@ -917,7 +917,7 @@ Prefab:
     - target: {fileID: 11487308, guid: 45c130b80ddf74d4fad4cce0bc27c811, type: 2}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 3290622708e042c41bedf243a16bd280,
+      objectReference: {fileID: 21300000, guid: 1c5738db893c33e4ab5efdc4903bd914,
         type: 3}
     - target: {fileID: 11487308, guid: 45c130b80ddf74d4fad4cce0bc27c811, type: 2}
       propertyPath: m_Type
@@ -925,7 +925,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 141052, guid: 45c130b80ddf74d4fad4cce0bc27c811, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 11490170, guid: 45c130b80ddf74d4fad4cce0bc27c811, type: 2}
       propertyPath: m_Text
@@ -1175,7 +1175,7 @@ Prefab:
     - target: {fileID: 11415740, guid: 45c130b80ddf74d4fad4cce0bc27c811, type: 2}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 3290622708e042c41bedf243a16bd280,
+      objectReference: {fileID: 21300000, guid: 1c5738db893c33e4ab5efdc4903bd914,
         type: 3}
     - target: {fileID: 11415740, guid: 45c130b80ddf74d4fad4cce0bc27c811, type: 2}
       propertyPath: m_Type
@@ -1866,7 +1866,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: FEAR CURED
+  m_Text: PHOBIA CURED
 --- !u!222 &2007355410
 CanvasRenderer:
   m_ObjectHideFlags: 0

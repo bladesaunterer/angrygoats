@@ -2,6 +2,11 @@
 using System.Collections;
 using UnityEngine.UI;
 
+/**
+ * 
+ * Class for updating win pop-up text.
+ * 
+ **/
 public class WinUpdate : MonoBehaviour {
 
 	public Text enemyValueText;
@@ -11,6 +16,11 @@ public class WinUpdate : MonoBehaviour {
 	public Text timeBonusCalcText;
 	public Text totalCalcText;
 
+	/**
+	 * 
+	 * Method for updating win pop-up text.
+	 * 
+	 **/
 	public void SetFinal(int score, int enemies, int minutes, int seconds){
 
 		string second;
@@ -18,6 +28,7 @@ public class WinUpdate : MonoBehaviour {
 		int bonus;
 		int final;
 
+		//Add zeroes to minute or second strings if required.
 		if (seconds < 10) {
 			second = "0" + seconds.ToString();	
 		} else {
@@ -29,6 +40,7 @@ public class WinUpdate : MonoBehaviour {
 			minute = minutes.ToString();
 		}
 
+		//Determine Time Bonus based on remaining time:
 		if (minutes < 1) {
 			bonus = 500;
 		} else if (minutes < 2) {
@@ -43,13 +55,10 @@ public class WinUpdate : MonoBehaviour {
 			bonus = 0;
 		}
 
+		//Calculate total score.
 		final = bonus + score;
 
-		/*
-		dispText.text = "Congratulations\nEnemies killed : " + enemies.ToString () + " (+" + score.ToString () + ")" +
-			"\nTime spent : " + minute + ":" + second + " (+" + bonus.ToString() + ")" +
-			"\n\n Total : \t\t " + final.ToString();
-			*/
+		//Update text with their respective values.
 		enemyValueText.text = enemies.ToString ();
 		timeValueText.text = minute + ":" + second;
 
