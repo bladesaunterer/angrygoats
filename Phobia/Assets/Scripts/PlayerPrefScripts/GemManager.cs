@@ -3,7 +3,7 @@ using System.Collections;
 
 
 //needs test to see if gems can be reset on restart
-public class GemManager// : PersistentSingleton<GemSelection>
+public class GemManager
 {
 	private static GemManager instance;
 
@@ -14,8 +14,6 @@ public class GemManager// : PersistentSingleton<GemSelection>
 			}
 			return GemManager.instance;
 		}
-
-		
 	}
 
 	private Gem defaultGemOne = Gem.Blue;

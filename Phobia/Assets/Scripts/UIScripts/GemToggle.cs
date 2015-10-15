@@ -120,8 +120,6 @@ namespace UnityEngine.UI
 			GemManager gm = GemManager.Instance;
 
 
-
-
 			// Sometimes IsActive returns false in OnDisable so don't check for it.
 			// Rather remove the toggle too oftem than too little.
 			if (m_Group != null)
@@ -192,7 +190,6 @@ namespace UnityEngine.UI
 				return;
 
 			GemManager gm = GemManager.Instance;
-
 
 			if (gm.CheckIfGemUnlocked (this.AssociatedGem)) {
 				this.interactable = true;

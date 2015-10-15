@@ -2,12 +2,16 @@ using System;
 using System.Linq;
 using System.Collections.Generic;
 using UnityEngine.EventSystems;
-/**
- * http://answers.unity3d.com/questions/908591/is-there-a-multiple-selection-ugui-toggle-group.html
- */
 
 namespace UnityEngine.UI
 {
+	/**
+	 * Custom Toggle grouping script for gem selection. Will restrict selection to any two 
+	 * active toggles in group. Uses gem manager to restrict selection to unlocked gems
+	 * 
+	 * based on scripts from:
+	 * http://answers.unity3d.com/questions/908591/is-there-a-multiple-selection-ugui-toggle-group.html
+	 */
 	[AddComponentMenu("UI/Toggle Group Custom", 36)]
 	public class GemToggleGroup : UIBehaviour
 	{
@@ -29,12 +33,6 @@ namespace UnityEngine.UI
 		protected GemToggleGroup ()
 		{
 		}
-        
-//		private void ValidateToggleIsInGroup (GemToggle toggle)
-//		{
-//			if (toggle == null || !m_Toggles.Contains (toggle))
-//				throw new ArgumentException (string.Format ("Toggle {0} is not part of ToggleGroup {1}", toggle, this));
-//		}
 
 		/**
 		 * Will run everytime toggle in group is clicked. For cases when toggle is
@@ -58,8 +56,6 @@ namespace UnityEngine.UI
 					gm.ClearGemOne ();
 				else if (gm.GetGemTwo () == toggle.AssociatedGem)
 					gm.ClearGemTwo ();
-				//will set both gems to whatever toggle is on
-
 			}
 			Debug.Log ("***********************");
 			Debug.Log (gm.GetGemOne ().ToString ());
@@ -77,10 +73,8 @@ namespace UnityEngine.UI
 			if (allowMultipleSelection)
 				return;
             
-			// disable all toggles in the group
+			//will disable all toggles expcept current toggle and last selected toggle
 			for (var i = 0; i < m_Toggles.Count; i++) {
-				//Will assign both gems to be the same in the case that only one gem is 
-				//unlocked
 
 				if (m_Toggles [i] == toggle || m_Toggles [i].LastGemSelected) {
 					continue;
@@ -90,6 +84,7 @@ namespace UnityEngine.UI
                 
 			}
 
+			//Will change booleans associated with toggles to match current game state
 			for (var i = 0; i < m_Toggles.Count; i++) {
 				if (m_Toggles [i].LastGemSelected) {
 					gm.SetGemTwo (m_Toggles [i].AssociatedGem);
@@ -105,17 +100,18 @@ namespace UnityEngine.UI
 
 		}
 
-		
+		//Removes toggle from group
 		public void UnregisterToggle (GemToggle toggle)
 		{
 			if (m_Toggles.Contains (toggle))
 				m_Toggles.Remove (toggle);
 		}
         
+
+		//Will add Toggle to group
 		public void RegisterToggle (GemToggle toggle)
 		{
-			toggle.isOn = false;
-			toggle.LastGemSelected = false;
+
 
 			/**
 			 * Will set  up gem system if hasnt been used before
@@ -136,6 +132,9 @@ namespace UnityEngine.UI
 
 			Debug.Log (gm.GetDefaultGemOne ().ToString () + "  default gem 1");
 			Debug.Log (gm.GetDefaultGemTwo ().ToString () + "  default gem 2");
+
+			toggle.isOn = false;
+			toggle.LastGemSelected = false;
 
 			if (toggle.AssociatedGem == gm.GetDefaultGemOne ()) {
 				toggle.isOn = true;
