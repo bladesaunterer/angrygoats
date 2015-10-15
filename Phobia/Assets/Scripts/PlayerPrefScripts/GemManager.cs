@@ -17,9 +17,6 @@ public class GemManager// : PersistentSingleton<GemSelection>
 		
 	}
 
-
-
-
 	// Use this for initialization
 	public void SetGemOne (Gem gemOne)
 	{
