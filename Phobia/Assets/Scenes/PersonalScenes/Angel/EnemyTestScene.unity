@@ -104,7 +104,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f6b10c66d65f694591d2d34b50dbed7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shot: {fileID: 139214, guid: 75b9146e48fbfba4494cd4157de92085, type: 2}
+  shot: {fileID: 164260, guid: 1eebcc31c798eab4a8bd96b19aeecac0, type: 2}
   shotSpawn: {fileID: 404601359}
 --- !u!1001 &105770529
 Prefab:
@@ -365,7 +365,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 404601359}
   m_Layer: 0
-  m_Name: SpiderProjectile
+  m_Name: SpiderProjectilePosition
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -538,15 +538,15 @@ Prefab:
     m_Modifications:
     - target: {fileID: 426848, guid: 920b67a3fd9e07c4cafb8c907af0daef, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 11.75
+      value: 9.52000046
       objectReference: {fileID: 0}
     - target: {fileID: 426848, guid: 920b67a3fd9e07c4cafb8c907af0daef, type: 2}
       propertyPath: m_LocalPosition.y
-      value: .5
+      value: 1.33000004
       objectReference: {fileID: 0}
     - target: {fileID: 426848, guid: 920b67a3fd9e07c4cafb8c907af0daef, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -1.73000002
+      value: -7.61000013
       objectReference: {fileID: 0}
     - target: {fileID: 426848, guid: 920b67a3fd9e07c4cafb8c907af0daef, type: 2}
       propertyPath: m_LocalRotation.x
@@ -1217,6 +1217,10 @@ Prefab:
       propertyPath: target
       value: 
       objectReference: {fileID: 2058505332}
+    - target: {fileID: 153314, guid: 4d788e1a2ebb5a34f8325fdb789f66c8, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4d788e1a2ebb5a34f8325fdb789f66c8, type: 2}
   m_IsPrefabParent: 0
