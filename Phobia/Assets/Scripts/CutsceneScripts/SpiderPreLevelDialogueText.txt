@@ -1,5 +1,8 @@
+:(In a secluded hut, far from any modern civilization…):DisableB
+Client:Hello? Anyone here?:EnableR
+:(A caped figure approaches the man from the darker corners of the hut.)
 Client:Hello, are you Mister Ndoto?
-Dr. Ndoto:That's DOCTOR Ndoto to you, stranger. What business do you have with me?
+Dr. Ndoto:That's DOCTOR Ndoto to you, stranger. What business do you have with me?:EnableL
 Client:I've heard that you can help me with a little problem of mine.
 Client:A 'fear' problem.
 Dr. Ndoto:Say no more. Come closer.
@@ -11,5 +14,6 @@ Dr. Ndoto:Calm down. It’s just normal procedure.
 Dr. Ndoto:Hmmm, spiders huh. Such a ridiculous fear.
 Dr. Ndoto:*Sigh*
 Dr. Ndoto:But I suppose a job’s a job.
-Dr. Ndoto:Give me a few minutes. I expect proper compensation for this.
+Dr. Ndoto:Give me a few minutes. 
+Dr. Ndoto:I expect proper compensation for this.
 :(Dr. Ndoto brings his staff to the client's face and enters the client's mind.)
