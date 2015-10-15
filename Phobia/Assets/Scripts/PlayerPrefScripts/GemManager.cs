@@ -103,6 +103,27 @@ public class GemManager// : PersistentSingleton<GemSelection>
 		UnlockGem (Gem.Turquoise);
 		UnlockGem (Gem.Yellow);
 	}
+
+	public void LockAllGems ()
+	{
+		LockGem (Gem.Blue);
+		LockGem (Gem.Green);
+		LockGem (Gem.Purple);
+		LockGem (Gem.Red);
+		LockGem (Gem.Turquoise);
+		LockGem (Gem.Yellow);
+
+	}
+
+	/**
+	 * Will check if keys exist for gem unlock, will set them if not
+	 */
+	public void CheckFirstGame ()
+	{
+		if (!PlayerPrefs.HasKey (Gem.Blue.ToString ()))
+			LockAllGems ();
+
+	}
 	
 	public bool CheckIfGemUnlocked (Gem gem)
 	{
@@ -113,18 +134,18 @@ public class GemManager// : PersistentSingleton<GemSelection>
 		}
 	}
 
-	public void ResetGemSelection ()
+	public void ResetToDefaultSelection ()
 	{
 		SetGemOne (GetDefaultGemOne ());
 		SetGemTwo (GetDefaultGemTwo ());
 
 	}
 
-	public void ResetGemSelection (Gem one, Gem two)
+	public void ResetToDefaultSelection (Gem one, Gem two)
 	{
 		SetDefaultGemOne (one);
 		SetDefaultGemTwo (two);
-		ResetGemSelection ();
+		ResetToDefaultSelection ();
 	}
 
 	public void ClearGemOne ()

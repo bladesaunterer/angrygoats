@@ -193,8 +193,6 @@ namespace UnityEngine.UI
 
 			GemManager gm = GemManager.Instance;
 
-			gm.LockGem (Gem.Yellow);
-			gm.LockGem (Gem.Red);
 
 			if (gm.CheckIfGemUnlocked (this.AssociatedGem)) {
 				this.interactable = true;

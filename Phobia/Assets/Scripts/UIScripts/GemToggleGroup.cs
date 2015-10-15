@@ -117,7 +117,22 @@ namespace UnityEngine.UI
 			toggle.isOn = false;
 			toggle.LastGemSelected = false;
 
-			gm.ResetGemSelection (GemOneDefault, GemTwoDefault);
+			/**
+			 * Will set  up gem system if hasnt been used before
+			 */
+			gm.CheckFirstGame ();
+
+
+			gm.UnlockGem (GemOneDefault);
+			gm.UnlockGem (GemTwoDefault);
+
+			/**
+			 *Use below line to unlock additional gems 
+			 */
+			//gm.UnlockGem (Gem.Green);
+
+
+			gm.ResetToDefaultSelection (GemOneDefault, GemTwoDefault);
 
 			Debug.Log (gm.GetDefaultGemOne ().ToString () + "  default gem 1");
 			Debug.Log (gm.GetDefaultGemTwo ().ToString () + "  default gem 2");

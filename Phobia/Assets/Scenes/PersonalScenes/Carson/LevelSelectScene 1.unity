@@ -157,7 +157,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 663838736}
   LastGemSelected: 0
   AssociatedGem: 0
-  m_IsOn: 0
+  m_IsOn: 1
   toggleTransition: 1
   checkGraphic: {fileID: 2144517841}
   m_Group: {fileID: 1408185774}
@@ -762,7 +762,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &388869069
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1598,11 +1598,11 @@ MonoBehaviour:
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 1056266569}
   LastGemSelected: 0
   AssociatedGem: 4
-  m_IsOn: 1
+  m_IsOn: 0
   toggleTransition: 1
   checkGraphic: {fileID: 1014455291}
   m_Group: {fileID: 1408185774}
@@ -1679,11 +1679,11 @@ MonoBehaviour:
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
     m_DisabledTrigger: Disabled
-  m_Interactable: 0
+  m_Interactable: 1
   m_TargetGraphic: {fileID: 1666758299}
   LastGemSelected: 0
   AssociatedGem: 5
-  m_IsOn: 0
+  m_IsOn: 1
   toggleTransition: 1
   checkGraphic: {fileID: 2098137778}
   m_Group: {fileID: 1408185774}
@@ -2080,7 +2080,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &751438070
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4110,7 +4110,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1394387792
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4211,8 +4211,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70d5c0c4c2d74524d8a12698eb00a997, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GemOneDefault: 4
-  GemTwoDefault: 2
+  GemOneDefault: 0
+  GemTwoDefault: 5
   m_AllowSwitchOff: 0
   allowMultipleSelection: 0
 --- !u!1 &1417698012
@@ -5766,11 +5766,11 @@ MonoBehaviour:
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 1189277558}
-  LastGemSelected: 1
+  LastGemSelected: 0
   AssociatedGem: 2
-  m_IsOn: 1
+  m_IsOn: 0
   toggleTransition: 1
   checkGraphic: {fileID: 1947085983}
   m_Group: {fileID: 1408185774}
