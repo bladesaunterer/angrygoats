@@ -4,12 +4,20 @@ using UnityEngine.UI;
 
 public class WinUpdate : MonoBehaviour {
 
-	public Text dispText;
+	public Text enemyValueText;
+	public Text timeValueText;
+
+	public Text enemyBonusCalcText;
+	public Text timeBonusCalcText;
+	public Text totalCalcText;
+
 	public void SetFinal(int score, int enemies, int minutes, int seconds){
+
 		string second;
 		string minute;
 		int bonus;
 		int final;
+
 		if (seconds < 10) {
 			second = "0" + seconds.ToString();	
 		} else {
@@ -37,9 +45,17 @@ public class WinUpdate : MonoBehaviour {
 
 		final = bonus + score;
 
+		/*
 		dispText.text = "Congratulations\nEnemies killed : " + enemies.ToString () + " (+" + score.ToString () + ")" +
 			"\nTime spent : " + minute + ":" + second + " (+" + bonus.ToString() + ")" +
 			"\n\n Total : \t\t " + final.ToString();
+			*/
+		enemyValueText.text = enemies.ToString ();
+		timeValueText.text = minute + ":" + second;
+
+		enemyBonusCalcText.text = score.ToString();
+		timeBonusCalcText.text = bonus.ToString();
+		totalCalcText.text = final.ToString();
 	}
 
 }
