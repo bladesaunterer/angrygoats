@@ -40,13 +40,13 @@ public class Popups : MonoBehaviour {
     void displayWinScreen()
     {
         popupDisplaying = true;
-        winScreen.SetActive(popupDisplaying);
         int temp1 = TEMPScoreScript.Instance.GetScore();
         int temp2 = TEMPScoreScript.Instance.GetEnemies();
         GameObject time = GameObject.Find("Timer");
         int temp3 = time.GetComponent<Timer>().getMinutes();
         int temp4 = time.GetComponent<Timer>().getSeconds();
         winScreen.GetComponent<WinUpdate>().SetFinal(temp1, temp2, temp3, temp4);
+        winScreen.SetActive(popupDisplaying);
     }
 
     // Display the death screen
