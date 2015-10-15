@@ -46,8 +46,11 @@ namespace UnityEngine.UI
 		/// <summary>
 		/// Graphic the toggle should be working with.
 		/// </summary>
-		public Graphic graphic;
+
+		public Graphic checkGraphic;
         
+
+
 		// group that this toggle can belong to
 		[SerializeField]
 		private GemToggleGroup
@@ -73,6 +76,7 @@ namespace UnityEngine.UI
         
 		protected GemToggle ()
 		{
+
 		}
         
         #if UNITY_EDITOR
@@ -112,8 +116,12 @@ namespace UnityEngine.UI
         
 		private void SetToggleGroup (GemToggleGroup newGroup, bool setMemberValue)
 		{
-			GemToggleGroup oldGroup = m_Group;
-            
+			GemToggleGroup oldGroup = m_Group;            
+			GemManager gm = GemManager.Instance;
+
+
+
+
 			// Sometimes IsActive returns false in OnDisable so don't check for it.
 			// Rather remove the toggle too oftem than too little.
 			if (m_Group != null)
@@ -132,6 +140,8 @@ namespace UnityEngine.UI
 			// Note: Don't refer to m_Group here as it's not guaranteed to have been set.
 			if (newGroup != null && newGroup != oldGroup && isOn && IsActive ())
 				m_Group.NotifyToggleOn (this);
+
+			
 		}
         
 		/// <summary>
@@ -177,17 +187,37 @@ namespace UnityEngine.UI
 		/// </summary>
 		private void PlayEffect (bool instant)
 		{
-			if (graphic == null)
+
+			if (checkGraphic == null)
 				return;
-            
-			#if UNITY_EDITOR
-			if (!Application.isPlaying)
-				graphic.canvasRenderer.SetAlpha (m_IsOn ? 1f : 0f);
-			else
-                #endif
-				graphic.CrossFadeAlpha (m_IsOn ? 1f : 0f, instant ? 0f : 0.1f, true);
+
+			GemManager gm = GemManager.Instance;
+
+
+			if (gm.CheckIfGemUnlocked (this.AssociatedGem)) {
+				this.interactable = true;
+				gameObject.transform.Find ("Background").Find ("Locked").gameObject.SetActive (false);
+				RenderImage (instant);
+			} else {
+				this.isOn = false;
+				gameObject.transform.Find ("Background").Find ("Locked").gameObject.SetActive (true);
+				RenderImage (instant);
+				this.interactable = false;
+
+			}
+
 		}
         
+		private void RenderImage (bool instant)
+		{
+			#if UNITY_EDITOR
+			if (!Application.isPlaying)
+				checkGraphic.canvasRenderer.SetAlpha (m_IsOn ? 1f : 0f);
+			else
+				#endif
+				checkGraphic.CrossFadeAlpha (m_IsOn ? 1f : 0f, instant ? 0f : 0.1f, true);
+
+		}
 		/// <summary>
 		/// Assume the correct visual state.
 		/// </summary>

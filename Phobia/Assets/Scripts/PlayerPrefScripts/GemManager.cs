@@ -14,7 +14,33 @@ public class GemManager// : PersistentSingleton<GemSelection>
 			}
 			return GemManager.instance;
 		}
+
 		
+	}
+
+	private Gem defaultGemOne = Gem.Blue;
+	private Gem defaultGemTwo = Gem.Blue;
+
+	public void SetDefaultGemOne (Gem dGemOne)
+	{
+		PlayerPrefs.SetString ("DefaultGemOne", dGemOne.ToString ());
+	}
+
+	public void SetDefaultGemTwo (Gem dGemTwo)
+	{
+		PlayerPrefs.SetString ("DefaultGemTwo", dGemTwo.ToString ());
+	}
+
+	public Gem GetDefaultGemOne ()
+	{
+		string gem = PlayerPrefs.GetString ("DefaultGemOne");
+		return getEnum (gem);
+	}
+	
+	public Gem GetDefaultGemTwo ()
+	{
+		string gem = PlayerPrefs.GetString ("DefaultGemTwo");
+		return getEnum (gem);
 	}
 
 
@@ -61,6 +87,44 @@ public class GemManager// : PersistentSingleton<GemSelection>
 		PlayerPrefs.SetString (gem.ToString (), "unlocked");
 	}
 
+	public void LockGem (Gem gem)
+	{
+
+		PlayerPrefs.SetString (gem.ToString (), "locked");
+
+	}
+
+	public void UnlockAllGems ()
+	{
+		UnlockGem (Gem.Blue);
+		UnlockGem (Gem.Green);
+		UnlockGem (Gem.Purple);
+		UnlockGem (Gem.Red);
+		UnlockGem (Gem.Turquoise);
+		UnlockGem (Gem.Yellow);
+	}
+
+	public void LockAllGems ()
+	{
+		LockGem (Gem.Blue);
+		LockGem (Gem.Green);
+		LockGem (Gem.Purple);
+		LockGem (Gem.Red);
+		LockGem (Gem.Turquoise);
+		LockGem (Gem.Yellow);
+
+	}
+
+	/**
+	 * Will check if keys exist for gem unlock, will set them if not
+	 */
+	public void CheckFirstGame ()
+	{
+		if (!PlayerPrefs.HasKey (Gem.Blue.ToString ()))
+			LockAllGems ();
+
+	}
+	
 	public bool CheckIfGemUnlocked (Gem gem)
 	{
 		if (PlayerPrefs.HasKey (gem.ToString ()) && PlayerPrefs.GetString (gem.ToString ()).Equals ("unlocked")) {
@@ -70,21 +134,28 @@ public class GemManager// : PersistentSingleton<GemSelection>
 		}
 	}
 
-	public void ClearGemSelection ()
+	public void ResetToDefaultSelection ()
 	{
-		PlayerPrefs.DeleteKey ("GemOne");
-		PlayerPrefs.DeleteKey ("GemTwo");
+		SetGemOne (GetDefaultGemOne ());
+		SetGemTwo (GetDefaultGemTwo ());
 
+	}
+
+	public void ResetToDefaultSelection (Gem one, Gem two)
+	{
+		SetDefaultGemOne (one);
+		SetDefaultGemTwo (two);
+		ResetToDefaultSelection ();
 	}
 
 	public void ClearGemOne ()
 	{
-		PlayerPrefs.DeleteKey ("GemOne");
+		SetGemOne (GetDefaultGemOne ());
 	}
 
 	public void ClearGemTwo ()
 	{
-		PlayerPrefs.DeleteKey ("GemOne");
+		SetGemOne (GetDefaultGemOne ());
 	}
 	                       
 
