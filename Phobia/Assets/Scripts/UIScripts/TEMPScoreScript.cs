@@ -11,8 +11,8 @@ public class TEMPScoreScript : MonoBehaviour
 {
 
     private static TEMPScoreScript instance;
-    public static int pointsCounter;
-	public static int enemyCounter;
+    public int pointsCounter;
+	public int enemyCounter;
     public Text currentScore;
 
 	// Singleton method for getting instance of TEMPScoreScript.
@@ -32,7 +32,9 @@ public class TEMPScoreScript : MonoBehaviour
 
     void Start()
     {
-        SetCountText(pointsCounter, currentScore);
+		pointsCounter = 0;
+		enemyCounter = 0;
+		SetCountText(pointsCounter, currentScore);
     }
 
     void Awake()
