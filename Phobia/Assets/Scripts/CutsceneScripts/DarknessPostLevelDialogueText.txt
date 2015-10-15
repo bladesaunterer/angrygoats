@@ -1,0 +1,11 @@
+:(The doctor and his client come out of their trance.):ChangeClientMasked
+Client:Wha.. Wha.. What happened...?:ChangeClientExtra
+Dr. Ndoto: I just cured you!
+Client: What do you-...
+:(Dr. Ndoto blows out the candles, covering the hut in darkness.)
+Client: ...
+Client: You’re right, mister! I’m not afraid anymore!:ChangeClientHappy
+Dr. Ndoto: No need to thank me.
+Client: Oh, my mommy’s probably looking for me. Bye, mister!
+:(The girl leaves.)
+Dr. Ndoto: Such a sweet little girl...
