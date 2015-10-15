@@ -1,5 +1,5 @@
 :*heavy footsteps*:DisableR
-:(Client comes bursting in):EnableR
+:(Client bursts into the hut):EnableR
 Client:HULLO, are ya Doct’r Ndoto?
 Dr. Ndoto: Yes I am. Is there a phobia you’re looking to cure?
 Client: Yeh… I mean nah! I ain’t ‘fraid of nothin.

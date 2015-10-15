@@ -731,7 +731,7 @@ MonoBehaviour:
   clientHappy: {fileID: 21300000, guid: 66207673842994e47b9ac41c71850c6e, type: 3}
   clientMasked: {fileID: 21300000, guid: 2d8541008c01b9a44a10ee8fdac58fc5, type: 3}
   clientExtra: {fileID: 21300000, guid: 32e9da97247b1c445a77be6a0e401a7d, type: 3}
-  sceneToTransitionTo: SpiderLoadingScene
+  sceneToTransitionTo: LoadingSpiderScene
   textTypingDelay: .0199999996
 --- !u!1 &1195887046
 GameObject:
@@ -810,7 +810,6 @@ GameObject:
   - 224: {fileID: 1552587020}
   - 222: {fileID: 1552587023}
   - 114: {fileID: 1552587022}
-  - 114: {fileID: 1552587021}
   m_Layer: 5
   m_Name: TextBox
   m_TagString: Untagged
@@ -836,27 +835,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -182}
   m_SizeDelta: {x: 800, y: 150}
   m_Pivot: {x: .5, y: .5}
---- !u!114 &1552587021
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1552587019}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 95e059da17d4aa14ca29af55720d9e64, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  textBoxString: {fileID: 844593247}
-  nameBoxString: {fileID: 896222601}
-  TextFile: {fileID: 4900000, guid: 80e41d876beaa7645a8ed6e721bd7dd9, type: 3}
-  portraitLImage: {fileID: 1195887047}
-  portraitRImage: {fileID: 675486251}
-  clientHappy: {fileID: 21300000, guid: 66207673842994e47b9ac41c71850c6e, type: 3}
-  clientMasked: {fileID: 21300000, guid: 2d8541008c01b9a44a10ee8fdac58fc5, type: 3}
-  clientExtra: {fileID: 21300000, guid: 32e9da97247b1c445a77be6a0e401a7d, type: 3}
-  sceneToTransitionTo: SpiderLoadingScene
-  textTypingDelay: .0199999996
 --- !u!114 &1552587022
 MonoBehaviour:
   m_ObjectHideFlags: 0
