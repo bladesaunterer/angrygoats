@@ -1,0 +1,9 @@
+:*heavy footsteps*:DisableR
+:(Client comes bursting in):EnableR
+Client:HULLO, are ya Doct’r Ndoto?
+Dr. Ndoto: Yes I am. Is there a phobia you’re looking to cure?
+Client: Yeh… I mean nah! I ain’t ‘fraid of nothin.
+Dr. Ndoto: Only one way to find out.
+:(Ndoto forces a mask on the client and waves his staff around.):ChangeClientMasked
+Dr. Ndoto: He’s surprisingly calm about this.
+Dr. Ndoto: Hmmm... Well, it’s only heights he’s afraid of... This should be a piece of cake.

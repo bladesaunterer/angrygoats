@@ -36,7 +36,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MasterCopy/levels/SpiderLevelScene.unity
   - enabled: 0
-    path: Assets/Scenes/PersonalScenes/Angel/SpiderLoadingScene.unity
+    path: Assets/Scenes/PersonalScenes/Angel/LoadingSpiderScene.unity
   - enabled: 1
     path: Assets/Scenes/MasterCopy/levels/HeightsLevelScene.unity
   - enabled: 1
@@ -56,4 +56,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MasterCopy/CreditsScene.unity
   - enabled: 1
-    path: Assets/Scenes/PersonalScenes/Angel/SpiderLoadingScene.unity
+    path: Assets/Scenes/PersonalScenes/Angel/LoadingSpiderScene.unity
+  - enabled: 1
+    path: Assets/Scenes/PersonalScenes/Angel/LoadingHeightsScene.unity

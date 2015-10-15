@@ -130,7 +130,7 @@ public class CutsceneTextScript : MonoBehaviour {
 			//Disable left image only.
 			portraitLImage.enabled = false;
 			
-		} else if (scriptLine [2] == "DisableL") {
+		} else if (scriptLine [2] == "DisableR") {
 			//Disable right image only.
 			portraitRImage.enabled = false;
 
