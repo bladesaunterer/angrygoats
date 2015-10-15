@@ -32,7 +32,9 @@ public class TEMPScoreScript : MonoBehaviour
 
     void Start()
     {
-        SetCountText(pointsCounter, currentScore);
+		pointsCounter = 0;
+		enemyCounter = 0;
+		SetCountText(pointsCounter, currentScore);
     }
 
     void Awake()
