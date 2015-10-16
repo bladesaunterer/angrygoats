@@ -72,7 +72,7 @@ public class Popups : MonoBehaviour {
     void displayWinScreen()
     {
         popupDisplaying = true;
-		Time.timeScale = 1.0f;
+		Time.timeScale = 0.0f;
 		int temp1 = TEMPScoreScript.Instance.GetScore();
         int temp2 = TEMPScoreScript.Instance.GetEnemies();
         GameObject time = GameObject.Find("Timer");
