@@ -61,6 +61,7 @@ public class GemManager
 	/**
 	 * Registers Selected Gem one (non default)
 	 */
+
 	public void SetGemOne (Gem gemOne)
 	{
 		PlayerPrefs.SetString ("GemOne", gemOne.ToString ());
