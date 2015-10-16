@@ -4,21 +4,13 @@ using System.Collections;
 public class DarknessFollow : MonoBehaviour
 {
 
-    public GameObject player;
-    public GameObject dark;
+    public RectTransform canvasRectT;
+    public RectTransform darknessImage;
+    public GameObject objectToFollow;
 
-    private Vector3 offset;
-
-    void Start()
+    void Update()
     {
-        offset = transform.position - player.transform.position;
-        //offset = dark.transform.position - player.transform.position;
-
-    }
-
-    void LateUpdate()
-    {
-        transform.position = player.transform.position + offset;
-        //dark.transform.position = player.transform.position + offset;
+        Vector2 screenPoint = RectTransformUtility.WorldToScreenPoint(Camera.main, objectToFollow.transform.position);
+        darknessImage.anchoredPosition = screenPoint - canvasRectT.sizeDelta / 2f;
     }
 }

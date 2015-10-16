@@ -1,42 +1,45 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-/**
- * 
- * Class which handles damaging logic between 
- * player to enemy (and vice-versa).
- * 
- **/
+/// <summary>
+/// Purpose: Handles damaging logic between player to enemies(and vice-versa).<para/>
+/// Authors:
+/// </summary>
 public static class HealthControl {
 	
 	public static void dealDamageToEnemy (GameObject other, int damage) {
 		
-		// Try and find an EnemyHealth script on the gameobject hit.
+		// Try and find EnemyHealth script on the gameobject hit.
 		EnemyHealth enemyHealth = other.gameObject.GetComponent <EnemyHealth> ();
 		
 		// If the EnemyHealth component exist the enemy should take damage,
-		if (enemyHealth != null) {
+		if (enemyHealth != null && enemyHealth.currentHealth >= 0) {
+
 			Debug.Log ("Enemy has health!");
-			// ... the enemy should take damage.
+
+			// Enemy takes damage.
 			enemyHealth.TakeDamage (damage);
+
 		} else {
-			Debug.Log ("HAHAHAHA!");
+			Debug.Log ("No enemy detected || No enemy health");
 		}
 	}
 
 	public static void dealDamageToPlayer (GameObject other, int damage) {
 		
-		// Try and find an EnemyHealth script on the gameobject hit.
+		// Try and find EnemyHealth script on the gameobject hit.
 		PlayerHealth playerHealth = other.gameObject.GetComponent <PlayerHealth> ();
-		
-		// If the PlayerHealth component exist...
-		if (playerHealth != null && playerHealth.currentHealth >= 0) {
+
+        // If the EnemyHealth component exist the enemy should take damage
+        if (playerHealth != null && playerHealth.currentHealth >= 0) {
+
 			Debug.Log ("Player has health!");
-			// ... the player should take damage.
+
+			// Player takes damage.
 			playerHealth.TakeDamage (damage);
+
 		} else {
-			Debug.Log ("HAHAHAHA!");
-		}
-	}
-	
+            Debug.Log("No player detected || No player health");
+        }
+	}	
 }
