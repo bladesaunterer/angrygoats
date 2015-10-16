@@ -83,8 +83,9 @@ namespace UnityEngine.UI
 			set {
 				m_Group = value;
 				#if UNITY_EDITOR
-				if (Application.isPlaying) {
-					#endif
+				if (Application.isPlaying) 
+				#endif
+				{
 					SetToggleGroup (m_Group, true);
 					PlayEffect (true);
 				}
