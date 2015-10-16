@@ -242,7 +242,7 @@ RectTransform:
   m_RootOrder: 1
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: 240, y: -10}
+  m_AnchoredPosition: {x: 240, y: -100}
   m_SizeDelta: {x: 450, y: 700}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &675486251
@@ -264,7 +264,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 45cf0d847de0cd444b3df15874d9f159, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7844302b13387314d9265c7122529c13, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -725,13 +725,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textBoxString: {fileID: 844593247}
   nameBoxString: {fileID: 896222601}
-  TextFile: {fileID: 4900000, guid: 80e41d876beaa7645a8ed6e721bd7dd9, type: 3}
+  TextFile: {fileID: 4900000, guid: 5600f16274f193b419e7b523da10fdc7, type: 3}
   portraitLImage: {fileID: 1195887047}
   portraitRImage: {fileID: 675486251}
-  clientHappy: {fileID: 21300000, guid: 66207673842994e47b9ac41c71850c6e, type: 3}
-  clientMasked: {fileID: 21300000, guid: 2d8541008c01b9a44a10ee8fdac58fc5, type: 3}
-  clientExtra: {fileID: 21300000, guid: 32e9da97247b1c445a77be6a0e401a7d, type: 3}
-  sceneToTransitionTo: LoadingSpiderScene
+  clientHappy: {fileID: 21300000, guid: fbb5c0244f352124b9a57120ee648d2d, type: 3}
+  clientMasked: {fileID: 21300000, guid: 7cabbe578d7b1c9458481a2d8d289f66, type: 3}
+  clientExtra: {fileID: 21300000, guid: 7844302b13387314d9265c7122529c13, type: 3}
+  sceneToTransitionTo: LevelSelectScene
   textTypingDelay: .0199999996
 --- !u!1 &1195887046
 GameObject:

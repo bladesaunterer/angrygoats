@@ -6,7 +6,7 @@ Dr. Ndoto:That's DOCTOR Ndoto to you, stranger. What business do you have with m
 Client:I've heard that you can help me with a little problem of mine.
 Client:A 'fear' problem.
 Dr. Ndoto:Say no more. Come closer.
-:*THONK* (Ndoto forces a mask onto the client’s face.)
+:*THONK* (Ndoto forces a mask onto the client’s face.):ChangeClientMasked
 Client:WHAT THE… WHAT IS THIS MASK?!
 Client:WHAT ARE YOU DOING?! WHAT’S HAPPENING!?
 Dr. Ndoto:Calm down. It’s just normal procedure.
