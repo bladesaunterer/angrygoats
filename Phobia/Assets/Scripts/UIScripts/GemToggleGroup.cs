@@ -2,26 +2,29 @@ using System;
 using System.Linq;
 using System.Collections.Generic;
 using UnityEngine.EventSystems;
-/**
- * http://answers.unity3d.com/questions/908591/is-there-a-multiple-selection-ugui-toggle-group.html
- */
 
 namespace UnityEngine.UI
 {
+	/**
+	 * Custom Toggle grouping script for gem selection. Will restrict selection to any two 
+	 * active toggles in group. Uses gem manager to restrict selection to unlocked gems
+	 * 
+	 * based on scripts from:
+	 * http://answers.unity3d.com/questions/908591/is-there-a-multiple-selection-ugui-toggle-group.html
+	 */
 	[AddComponentMenu("UI/Toggle Group Custom", 36)]
 	public class GemToggleGroup : UIBehaviour
 	{
 		public Gem GemOneDefault;
 		public Gem GemTwoDefault;
 
+		//boolean determining whehter or not at least one toggle needs to be on
 		[SerializeField]
 		private bool
 			m_AllowSwitchOff = false;
 		public bool allowSwitchOff { get { return m_AllowSwitchOff; } set { m_AllowSwitchOff = value; } }
         
-		[SerializeField]
-		public bool
-			allowMultipleSelection = false;
+
         
 		private List<GemToggle> m_Toggles = new List<GemToggle> ();
 		private GemManager gm = GemManager.Instance;
@@ -29,16 +32,9 @@ namespace UnityEngine.UI
 		protected GemToggleGroup ()
 		{
 		}
-        
-//		private void ValidateToggleIsInGroup (GemToggle toggle)
-//		{
-//			if (toggle == null || !m_Toggles.Contains (toggle))
-//				throw new ArgumentException (string.Format ("Toggle {0} is not part of ToggleGroup {1}", toggle, this));
-//		}
 
 		/**
-		 * Will run everytime toggle in group is clicked. For cases when toggle is
-		 * deselected
+		 * Will run everytime toggle in group is clicked. 
 		 */
 		public void NotifyToggleClick (GemToggle toggle)
 		{
@@ -58,8 +54,6 @@ namespace UnityEngine.UI
 					gm.ClearGemOne ();
 				else if (gm.GetGemTwo () == toggle.AssociatedGem)
 					gm.ClearGemTwo ();
-				//will set both gems to whatever toggle is on
-
 			}
 			Debug.Log ("***********************");
 			Debug.Log (gm.GetGemOne ().ToString ());
@@ -68,19 +62,14 @@ namespace UnityEngine.UI
 			
 		}
         
+		/**
+		 * Called whenever a toggle is turned on. Will determine which 
+		 * toggles get turned off
+		 */
 		public void NotifyToggleOn (GemToggle toggle)
-		{
-
-			gm.SetGemOne (toggle.AssociatedGem);
-			gm.SetGemTwo (toggle.AssociatedGem);
-            
-			if (allowMultipleSelection)
-				return;
-            
-			// disable all toggles in the group
+		{  
+			//will disable all toggles expcept current toggle and last selected toggle
 			for (var i = 0; i < m_Toggles.Count; i++) {
-				//Will assign both gems to be the same in the case that only one gem is 
-				//unlocked
 
 				if (m_Toggles [i] == toggle || m_Toggles [i].LastGemSelected) {
 					continue;
@@ -90,6 +79,7 @@ namespace UnityEngine.UI
                 
 			}
 
+			//Will change booleans associated with toggles to match current game state
 			for (var i = 0; i < m_Toggles.Count; i++) {
 				if (m_Toggles [i].LastGemSelected) {
 					gm.SetGemTwo (m_Toggles [i].AssociatedGem);
@@ -105,38 +95,46 @@ namespace UnityEngine.UI
 
 		}
 
-		
+		/**
+		 * Removes toggle from group
+		 */
 		public void UnregisterToggle (GemToggle toggle)
 		{
 			if (m_Toggles.Contains (toggle))
 				m_Toggles.Remove (toggle);
 		}
         
+
+		/**
+		 * Adds toggle to group
+		 */
 		public void RegisterToggle (GemToggle toggle)
 		{
-			toggle.isOn = false;
-			toggle.LastGemSelected = false;
+			//following line used for testing
+			//gm.LockAllGems ();
 
-			/**
-			 * Will set  up gem system if hasnt been used before
-			 */
+
+			// Will set  up gem system if hasnt been used before
 			gm.CheckFirstGame ();
 
-
+			//will unlock the default gems
 			gm.UnlockGem (GemOneDefault);
 			gm.UnlockGem (GemTwoDefault);
 
-			/**
-			 *Use below line to unlock additional gems 
-			 */
+
+			//Use below line to unlock additional gems 
 			//gm.UnlockGem (Gem.Green);
 
-
-			gm.ResetToDefaultSelection (GemOneDefault, GemTwoDefault);
+			//will register the default selection to gem manager
+			gm.SetDefaultSelection (GemOneDefault, GemTwoDefault);
 
 			Debug.Log (gm.GetDefaultGemOne ().ToString () + "  default gem 1");
 			Debug.Log (gm.GetDefaultGemTwo ().ToString () + "  default gem 2");
 
+			toggle.isOn = false;
+			toggle.LastGemSelected = false;
+
+			//Will set gem toggle state for default gems
 			if (toggle.AssociatedGem == gm.GetDefaultGemOne ()) {
 				toggle.isOn = true;
 				toggle.LastGemSelected = false;
@@ -150,16 +148,25 @@ namespace UnityEngine.UI
 
 		}
         
+		/**
+		 * Whether any toggles are on
+		 */
 		public bool AnyTogglesOn ()
 		{
 			return m_Toggles.Find (x => x.isOn) != null;
 		}
         
+		/*
+		 * Returns list of active toggles
+		 */
 		public IEnumerable<GemToggle> ActiveToggles ()
 		{
 			return m_Toggles.Where (x => x.isOn);
 		}
         
+		/*
+		 * Will turn off all toggles
+		 */
 		public void SetAllTogglesOff ()
 		{
 			bool oldAllowSwitchOff = m_AllowSwitchOff;

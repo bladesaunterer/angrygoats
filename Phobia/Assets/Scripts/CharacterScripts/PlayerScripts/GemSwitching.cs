@@ -1,6 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+/**
+ * Will handle all logic behind gem logic in game, and will
+ * notify gem manager of changes
+ */
 public class GemSwitching : MonoBehaviour
 {
 
@@ -10,7 +14,7 @@ public class GemSwitching : MonoBehaviour
 	private Gem currentGem;
 	private GemManager gemManager = GemManager.Instance;
 
-
+	//Called when script is loaded
 	void Awake ()
 	{
 		Debug.Log (gemManager.GetGemOne ().ToString () + " successfully persisted");
@@ -21,13 +25,13 @@ public class GemSwitching : MonoBehaviour
 		gemTwo = GameObject.FindGameObjectWithTag (gemManager.GetGemTwo ().ToString ());
 
 
-
+		//will set all gem game objects to be inactive except selected gems
 		foreach (Transform child in spawn.transform) {
 			child.gameObject.SetActive (false);
 		}
 		gemOne.SetActive (true);
-		gemTwo.SetActive(true);
-		gemTwo.GetComponent<MeshRenderer>().enabled = false;
+		gemTwo.SetActive (true);
+		gemTwo.GetComponent<MeshRenderer> ().enabled = false;
 		
 		//current selection starts with gemOne
 		gemManager.SetCurrentGem (gemManager.GetGemOne ());
@@ -42,22 +46,19 @@ public class GemSwitching : MonoBehaviour
 			ChangeGem ();
 		}
 	}
-
-    void ChangeGem()
-    {
-        if (gemOne.gameObject.GetComponent<MeshRenderer>().enabled)
-        {
-            gemOne.GetComponent<MeshRenderer>().enabled = false;
-            gemTwo.GetComponent<MeshRenderer>().enabled = true;
-            gemManager.SetCurrentGem(gemManager.GetGemTwo());
-        }
-        else
-        {
-            gemOne.GetComponent<MeshRenderer>().enabled = true;
-            gemTwo.GetComponent<MeshRenderer>().enabled = false;
-            gemManager.SetCurrentGem(gemManager.GetGemOne());
-        }
-    }
+	
+	void ChangeGem ()
+	{
+		if (gemOne.gameObject.GetComponent<MeshRenderer> ().enabled) {
+			gemOne.GetComponent<MeshRenderer> ().enabled = false;
+			gemTwo.GetComponent<MeshRenderer> ().enabled = true;
+			gemManager.SetCurrentGem (gemManager.GetGemTwo ());
+		} else {
+			gemOne.GetComponent<MeshRenderer> ().enabled = true;
+			gemTwo.GetComponent<MeshRenderer> ().enabled = false;
+			gemManager.SetCurrentGem (gemManager.GetGemOne ());
+		}
+	}
 
 
 }
