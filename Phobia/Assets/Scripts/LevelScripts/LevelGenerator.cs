@@ -1,7 +1,8 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections.Generic;
 using Pathfinding;
 using System.Linq;
+using System;
 
 /**
  * 
@@ -11,6 +12,8 @@ using System.Linq;
 public class LevelGenerator : MonoBehaviour {
     
     public int roomsToSpawn = 20;
+	public string seed = "";
+	public int actseed = -1;
     public GameObject roomPrefab;
 	public GameObject startPrefab;
 	public List<GameObject> floorPrefabs;
@@ -46,6 +49,18 @@ public class LevelGenerator : MonoBehaviour {
 		Vector2 roomVector;
 		Vector2 roomVectorRel;
 
+		if (seed == "") {
+			actseed = System.Environment.TickCount;
+		} else {
+			string[] parts = seed.ToString().Split('#');
+			actseed = Int32.Parse(parts[0]);
+			roomsToSpawn = Int32.Parse(parts[1]);
+			totalEnemies = Int32.Parse(parts[2]);
+			maxEnemiesPerRoom = Int32.Parse(parts[3]);
+			minWebs = Int32.Parse(parts[4]);
+			maxWebs = Int32.Parse(parts[5]);
+		}
+		UnityEngine.Random.seed = actseed;
         // Reference the minimap, so it can be generated in unison with the actual floor
         MinimapScript minimapScript = minimapUI.GetComponent<MinimapScript>();
 
@@ -53,7 +68,7 @@ public class LevelGenerator : MonoBehaviour {
 
         thisRoom = ((GameObject)Instantiate(roomPrefab, new Vector3(0, 0, 0), Quaternion.identity)).GetComponent<RoomControl>();
         thisRoom.minimapUI = minimapUI;
-        thisRoom.Floor = startPrefab; // pick random floor
+        thisRoom.Floor = startPrefab; // pick set floor
 		
 		thisRoom.Index = new Vector2(0,0);
         minimapScript.GenerateMapBlock(thisRoom.Index);
@@ -74,7 +89,7 @@ public class LevelGenerator : MonoBehaviour {
 			do {
 				adjRoom = RandomRoom();
 				if (a > 1000) {
-					throw new System.Exception();
+					throw new System.Exception("Infinite loop occuring.");
 				}
 				a++;
 			} while (!IsNextToEmpty(adjRoom));
@@ -84,7 +99,7 @@ public class LevelGenerator : MonoBehaviour {
 			
 			thisRoom = ((GameObject)Instantiate(roomPrefab, RoomControl.IndexToPosition(roomVector), Quaternion.identity)).GetComponent<RoomControl>();
             thisRoom.minimapUI = minimapUI;
-            thisRoom.Floor = floorPrefabs[Random.Range(0, floorPrefabs.Count)];
+			thisRoom.Floor = floorPrefabs[UnityEngine.Random.Range(0, floorPrefabs.Count)];
 			thisRoom.Index = roomVector;
             minimapScript.GenerateMapBlock(thisRoom.Index);
             thisRoom.gameObject.name = "Room " + i;
@@ -100,7 +115,7 @@ public class LevelGenerator : MonoBehaviour {
 		do {
 			adjRoom = RandomRoom();
 			if (b > 1000) {
-				throw new System.Exception();
+				throw new System.Exception("Infinite loop occuring.");
 			}
 			b++;
 		} while (!IsNextToEmpty(adjRoom));
@@ -119,12 +134,12 @@ public class LevelGenerator : MonoBehaviour {
 
 		roomsDict.Add(thisRoom.Index,thisRoom);
 
-		boss = (GameObject)Instantiate(boss, thisRoom.transform.position + new Vector3(0, 4, 0), Quaternion.identity);
+		boss = (GameObject)Instantiate(boss, thisRoom.transform.position + new Vector3(0, 2, 0), Quaternion.identity);
 		boss.GetComponent<AIPath>().target = GameObject.FindWithTag("Player").transform;
 		
 		
 		// link rooms
-		
+		// ensures no infinite loops by incrementing i by nine when a door is already there.
 		for (int i = 0; i < roomsToSpawn*3; i++) {
 			chosenRoom = RandomRoom();
 			
@@ -142,7 +157,7 @@ public class LevelGenerator : MonoBehaviour {
 			room.PopulateCells();
 			room.AddGraph();
 			if (room.spawnWebs) {
-				room.AddWebs(web, Random.Range(minWebs, maxWebs));
+				room.AddWebs(web, UnityEngine.Random.Range(minWebs, maxWebs));
 			}
         }
 
@@ -158,12 +173,12 @@ public class LevelGenerator : MonoBehaviour {
 			do {
 				chosenRoom = RandomRoom();
 				if (c > 1000) {
-					throw new System.Exception();
+					throw new System.Exception("Infinite loop occuring.");
 				}
 				c++;
 			} while (chosenRoom.enemies.Count >= maxEnemiesPerRoom || chosenRoom.spawnEnemies == false);
-			
-			int ticket = Random.Range(0, totalTickets);
+
+			int ticket = UnityEngine.Random.Range(0, totalTickets);
 			
 			int hopeful = 0;
 			int sum = enemyCommonness[hopeful];
@@ -175,6 +190,9 @@ public class LevelGenerator : MonoBehaviour {
 			
 			chosenRoom.AddEnemy(enemies[hopeful]);
 		}
+		// generate seed for recreate
+		seed = actseed.ToString() + "#" + roomsToSpawn.ToString() + "#" + totalEnemies.ToString()
+			+ "#" + maxEnemiesPerRoom.ToString() + "#" + minWebs.ToString() + "#" + maxWebs.ToString();
 		something.Scan();
     }
 	
@@ -196,7 +214,7 @@ public class LevelGenerator : MonoBehaviour {
 		return output;
     }
 
-	// does this room have an adjacent place for a room that is not occupied by a room already
+	// does this room have an adjacent place for a room that is not occupied by a room already?
 	private bool IsNextToEmpty(RoomControl room) {
 		for (int index = 0; index < 4; index++) {
 			if (IsEmpty(room.Index+RoomControl.vectors[index])) {
@@ -207,7 +225,7 @@ public class LevelGenerator : MonoBehaviour {
 	}
 	
 	private RoomControl RandomRoom() {
-		return roomsDict.ElementAt(Random.Range(0, roomsDict.Count)).Value;
+		return roomsDict.ElementAt(UnityEngine.Random.Range(0, roomsDict.Count)).Value;
 	}
 
 	// returns: 0-3  signalling a direction which can give an empty room
@@ -220,9 +238,9 @@ public class LevelGenerator : MonoBehaviour {
 		Vector2 vect;
 		int d = 0;
 		do {
-			vect = RoomControl.vectors[Random.Range(0, 4)];
+			vect = RoomControl.vectors[UnityEngine.Random.Range(0, 4)];
 			if (d > 1000) {
-				throw new System.Exception();
+				throw new System.Exception("Infinite loop occuring.");
 			}
 			d++;
 		} while (!IsEmpty(room.Index+vect));
@@ -234,7 +252,7 @@ public class LevelGenerator : MonoBehaviour {
 		Vector2 vect;
 		int d = 0;
 		do {
-			vect = RoomControl.vectors[Random.Range(0, 4)];
+			vect = RoomControl.vectors[UnityEngine.Random.Range(0, 4)];
 			if (d > 1000) {
 				throw new System.Exception();
 			}

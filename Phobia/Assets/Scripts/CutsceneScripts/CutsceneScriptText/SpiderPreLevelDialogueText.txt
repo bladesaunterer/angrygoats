@@ -1,0 +1,19 @@
+:(In a secluded hut, far from any modern civilization…):DisableB
+Client:Hello? Anyone here?:EnableR
+:(A caped figure approaches the man from the darker corners of the hut.)
+Client:Hello, are you Mister Ndoto?
+Dr. Ndoto:That's DOCTOR Ndoto to you, stranger. What business do you have with me?:EnableL
+Client:I've heard that you can help me with a little problem of mine.
+Client:A 'fear' problem.
+Dr. Ndoto:Say no more. Come closer.
+:*THONK* (Ndoto forces a mask onto the client’s face.):ChangeClientMasked
+Client:WHAT THE… WHAT IS THIS MASK?!
+Client:WHAT ARE YOU DOING?! WHAT’S HAPPENING!?
+Dr. Ndoto:Calm down. It’s just normal procedure.
+:(The doctor waves his hand over the client’s mask.)
+Dr. Ndoto:Hmmm, spiders huh. Such a ridiculous fear.
+Dr. Ndoto:*Sigh*
+Dr. Ndoto:But I suppose a job’s a job.
+Dr. Ndoto:Give me a few minutes. 
+Dr. Ndoto:I expect proper compensation for this.
+:(Dr. Ndoto brings his staff to the client's face and enters the client's mind.)

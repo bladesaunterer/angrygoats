@@ -2,41 +2,45 @@
 using System.Collections;
 
 public class BossOne : MonoBehaviour {
-	float timer = 5f;
-	int flag = 0;
-	public GameObject one;
-	public GameObject two;
+	public GameObject enemyTypeOne;
+	public GameObject enemyTypeTwo;
+	public float spawnRate = 5f;
+	
+	float lastSpawnTime = 0;
+	int nextSpawnType = 0;
 	Vector3 left = new Vector3 (2, 0, 0);
-	Vector3 leftl = new Vector3 (4, 0, 0);
 	Vector3 right = new Vector3 (-2, 0, 0);
-	Vector3 rightr = new Vector3 (-4, 0, 0);
 	Vector3 up = new Vector3 (0, 0, 2);
 	Vector3 down = new Vector3 (0, 0, -2);
-	EnemyHealth eh;
+	EnemyHealth enemyHealth;
 	// Use this for initialization
 	void Start () {
-		eh = this.gameObject.GetComponent<EnemyHealth>();
+		enemyHealth = this.gameObject.GetComponent<EnemyHealth>();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		timer += Time.deltaTime;
-		if (eh.currentHealth < eh.startingHealth) {
-			if (timer > 5f) {
-				timer = 0;
-				if (flag == 0) {
-					GameObject make = (GameObject)GameObject.Instantiate (one, this.gameObject.transform.position + left, this.gameObject.transform.rotation);
+		if (enemyHealth.currentHealth < enemyHealth.startingHealth) {
+			if (Time.time > lastSpawnTime + spawnRate) {
+				lastSpawnTime = Time.time;
+				if (nextSpawnType == 0) {
+					GameObject make = (GameObject)GameObject.Instantiate (enemyTypeOne, this.gameObject.transform.position + left, this.gameObject.transform.rotation);
 					make.GetComponent<AIPath> ().target = GameObject.FindWithTag ("Player").transform;
-					make = (GameObject)GameObject.Instantiate (one, this.gameObject.transform.position + right, this.gameObject.transform.rotation);
+					make.GetComponent<EnemyControl>().home = transform;
+					make = (GameObject)GameObject.Instantiate (enemyTypeOne, this.gameObject.transform.position + right, this.gameObject.transform.rotation);
 					make.GetComponent<AIPath> ().target = GameObject.FindWithTag ("Player").transform;
+					make.GetComponent<EnemyControl>().home = transform;
 
-					flag = 1;
+					nextSpawnType = 1;
 				} else {
-					GameObject make = (GameObject)GameObject.Instantiate (two, this.gameObject.transform.position + up, this.gameObject.transform.rotation);
+					GameObject make = (GameObject)GameObject.Instantiate (enemyTypeTwo, this.gameObject.transform.position + up, this.gameObject.transform.rotation);
 					make.GetComponent<AIPath> ().target = GameObject.FindWithTag ("Player").transform;
-					make = (GameObject)GameObject.Instantiate (two, this.gameObject.transform.position + down, this.gameObject.transform.rotation);
+					make.GetComponent<EnemyControl>().home = transform;
+					make = (GameObject)GameObject.Instantiate (enemyTypeTwo, this.gameObject.transform.position + down, this.gameObject.transform.rotation);
 					make.GetComponent<AIPath> ().target = GameObject.FindWithTag ("Player").transform;
-					flag = 0;
+					make.GetComponent<EnemyControl>().home = transform;
+
+					nextSpawnType = 0;
 				}
 			}
 		}

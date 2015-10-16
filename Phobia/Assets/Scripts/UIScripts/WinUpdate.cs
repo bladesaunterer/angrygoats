@@ -2,14 +2,35 @@
 using System.Collections;
 using UnityEngine.UI;
 
+/**
+ * 
+ * Class for updating win pop-up text.
+ * 
+ **/
 public class WinUpdate : MonoBehaviour {
 
-	public Text dispText;
+	public Text enemyValueText;
+	public Text timeValueText;
+
+	public Text enemyBonusCalcText;
+	public Text timeBonusCalcText;
+	public Text totalCalcText;
+
+	public GameObject HighScoreNamePanel;
+
+	/**
+	 * 
+	 * Method for updating win pop-up text.
+	 * 
+	 **/
 	public void SetFinal(int score, int enemies, int minutes, int seconds){
+
 		string second;
 		string minute;
 		int bonus;
 		int final;
+
+		//Add zeroes to minute or second strings if required.
 		if (seconds < 10) {
 			second = "0" + seconds.ToString();	
 		} else {
@@ -21,6 +42,7 @@ public class WinUpdate : MonoBehaviour {
 			minute = minutes.ToString();
 		}
 
+		//Determine Time Bonus based on remaining time:
 		if (minutes < 1) {
 			bonus = 500;
 		} else if (minutes < 2) {
@@ -35,11 +57,27 @@ public class WinUpdate : MonoBehaviour {
 			bonus = 0;
 		}
 
+		//Calculate total score.
 		final = bonus + score;
 
-		dispText.text = "Congratulations\nEnemies killed : " + enemies.ToString () + " (+" + score.ToString () + ")" +
-			"\nTime spent : " + minute + ":" + second + " (+" + bonus.ToString() + ")" +
-			"\n\n Total : \t\t " + final.ToString();
+		
+		// PlayerPrefs logic here.
+//		PlayerPrefs.SetInt(Application.loadedLevelName, 0);
+//		print (Application.loadedLevelName);
+		if (PlayerPrefs.GetInt (Application.loadedLevelName) == null) {
+			PlayerPrefs.SetInt (Application.loadedLevelName, final);
+		} else if(PlayerPrefs.GetInt (Application.loadedLevelName) < final) {
+			PlayerPrefs.SetInt (Application.loadedLevelName, final);
+			HighScoreNamePanel.SetActive(true);
+		}
+
+		//Update text with their respective values.
+		enemyValueText.text = enemies.ToString ();
+		timeValueText.text = minute + ":" + second;
+
+		enemyBonusCalcText.text = score.ToString();
+		timeBonusCalcText.text = bonus.ToString();
+		totalCalcText.text = final.ToString();
 	}
 
 }

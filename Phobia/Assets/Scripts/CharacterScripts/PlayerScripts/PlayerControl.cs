@@ -41,6 +41,7 @@ public class PlayerControl : MonoBehaviour
     private float camRayLength = 100f;          // The length of the ray from the camera into the scene.
 
     private Transform mainCameraTransform;
+	public GameObject currentRoom;
 
     void Start()
     {
@@ -176,6 +177,7 @@ public class PlayerControl : MonoBehaviour
             }
 
             doorMono.ExitRoom();
+			currentRoom = doorMono.goalDoor.GetComponent<DoorControl>().ownRoom;
         }
         else if (other.gameObject.CompareTag("Web"))
         {

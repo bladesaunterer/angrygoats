@@ -274,6 +274,7 @@ GameObject:
   - 65: {fileID: 6555558}
   - 114: {fileID: 11498188}
   - 114: {fileID: 11431796}
+  - 114: {fileID: 11452026}
   m_Layer: 0
   m_Name: HEnemy(push)
   m_TagString: Enemy
@@ -1930,7 +1931,7 @@ MonoBehaviour:
       serializedVersion: 2
       m_Bits: 4294967295
     useGraphRaycasting: 0
-  traversableTags: -1
+  traversableTags: 1
   traversableTagsCompatibility:
     tagsChange: -1
     tagsSet: -1
@@ -1957,6 +1958,18 @@ MonoBehaviour:
   forwardLook: 1
   endReachedDistance: .200000003
   closestOnPathCheck: 1
+--- !u!114 &11452026
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 129274}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 197cca9dbb7972c4c80bc6a8c338d212, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flash: {fileID: 2100000, guid: 3dd4b9c466d80ff45ae4bf8a4ed4e263, type: 2}
 --- !u!114 &11456886
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2003,9 +2016,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startingHealth: 50
   currentHealth: 0
-  lethalLow: 0
+  lethalLow: -1
   scoreAwarded: 20
-  wonScreen: {fileID: 0}
 --- !u!114 &11498188
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2109,6 +2121,22 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: scoreAwarded
       value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: flash
+      value: 
+      objectReference: {fileID: 2100000, guid: 3dd4b9c466d80ff45ae4bf8a4ed4e263, type: 2}
+    - target: {fileID: 0}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: lethalLow
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: traversableTags
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

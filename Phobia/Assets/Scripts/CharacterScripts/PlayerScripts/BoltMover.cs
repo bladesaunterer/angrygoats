@@ -21,17 +21,17 @@ public class BoltMover : MonoBehaviour
 	
 	private PlayerHealth playerHealth;
 
-	void Start ()
+	void Start()
 	{
-		currentGem = gemManager.GetCurrentGem ();
-		gemObject = GameObject.FindGameObjectWithTag (currentGem.ToString ());
-		renderer = GetComponent<Renderer> ();
+		currentGem = gemManager.GetCurrentGem();
+
+		renderer = GetComponent<Renderer>();
 		// Get rigidbody and set bolt's velocity.
-		rb = GetComponent<Rigidbody> ();
+		rb = GetComponent<Rigidbody>();
 		rb.velocity = transform.forward * speed;
 
-		GameObject child = this.transform.GetChild (0).gameObject;
-		child.GetComponent<Renderer> ().materials = gemObject.GetComponent<Renderer> ().materials;
+		GameObject child = this.transform.GetChild(0).gameObject;
+		child.GetComponent<Renderer>().materials = gemObject.GetComponent<Renderer>().materials;
 
 	}
 
@@ -50,6 +50,9 @@ public class BoltMover : MonoBehaviour
 			GenericGem genericGem = gemObject.GetComponent<GenericGem> ();
 			genericGem.onEnemyHit (other.gameObject);
 		}
+	}
+	public void SetGemObject(GameObject gemObj) {
+		gemObject = gemObj;
 	}
 
 }

@@ -24,7 +24,7 @@ TagManager:
   - Black
   - White
   - ToggleGroup
-  - SPreLevDialogueText
+  - HelpText
   - PortraitL
   - PortraitR
   layers:
@@ -41,7 +41,7 @@ TagManager:
   - Floor 2
   - Room
   - Rock
-  - 
+  - Darkness
   - 
   - 
   - 
