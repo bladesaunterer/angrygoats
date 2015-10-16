@@ -139,7 +139,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: d546e529c6470644db2f363343b1f859, type: 3}
     m_FontSize: 14
     m_FontStyle: 0
     m_BestFit: 0
@@ -221,8 +221,8 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
+    m_Font: {fileID: 12800000, guid: 382a6de7f607af34187a86d2d4933b60, type: 3}
+    m_FontSize: 20
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 10
@@ -250,6 +250,7 @@ GameObject:
   - 222: {fileID: 306382042}
   - 114: {fileID: 306382041}
   - 114: {fileID: 306382040}
+  - 114: {fileID: 306382043}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -349,6 +350,25 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 306382038}
+--- !u!114 &306382043
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 306382038}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1862395651, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls: []
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  delegates: []
 --- !u!1001 &455193322
 Prefab:
   m_ObjectHideFlags: 0
@@ -505,8 +525,8 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
+    m_Font: {fileID: 12800000, guid: d546e529c6470644db2f363343b1f859, type: 3}
+    m_FontSize: 16
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 10
@@ -533,6 +553,7 @@ GameObject:
   - 224: {fileID: 610637264}
   - 222: {fileID: 610637266}
   - 114: {fileID: 610637265}
+  - 114: {fileID: 610637267}
   m_Layer: 5
   m_Name: HighScoreName
   m_TagString: Untagged
@@ -593,6 +614,19 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 610637263}
+--- !u!114 &610637267
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 610637263}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 959befb81010246f5a00ac7e5f7a3faf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  NameField: {fileID: 1594724368}
+  EnterButton: {fileID: 306382040}
 --- !u!1 &1402797333
 GameObject:
   m_ObjectHideFlags: 0
@@ -647,7 +681,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: d546e529c6470644db2f363343b1f859, type: 3}
     m_FontSize: 14
     m_FontStyle: 2
     m_BestFit: 0
@@ -1218,11 +1252,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 22464700, guid: 1e676168ea4324942a4134913bf821a9, type: 2}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 22464700, guid: 1e676168ea4324942a4134913bf821a9, type: 2}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 22438504, guid: 1e676168ea4324942a4134913bf821a9, type: 2}
       propertyPath: m_LocalPosition.x
@@ -1298,11 +1332,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22449744, guid: 1e676168ea4324942a4134913bf821a9, type: 2}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 22449744, guid: 1e676168ea4324942a4134913bf821a9, type: 2}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 11411408, guid: 1e676168ea4324942a4134913bf821a9, type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
@@ -1324,6 +1358,10 @@ Prefab:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 11452454, guid: 1e676168ea4324942a4134913bf821a9, type: 2}
+      propertyPath: HighScoreNamePanel
+      value: 
+      objectReference: {fileID: 610637263}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1e676168ea4324942a4134913bf821a9, type: 2}
   m_IsPrefabParent: 0
