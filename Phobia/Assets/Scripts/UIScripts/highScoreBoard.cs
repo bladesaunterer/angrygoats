@@ -11,10 +11,10 @@ public class highScoreBoard : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		if (PlayerPrefs.GetString ("High Score 1 name") == "") {
+		if (PlayerPrefs.GetString ("SpiderLevelScene 1 name") == "") {
 			levelOne.text = "None yet!";
 		} else {
-			levelOne.text = PlayerPrefs.GetString("High Score 1 name") + ": " + PlayerPrefs.GetInt ("High Score 1").ToString();
+			levelOne.text = PlayerPrefs.GetString("SpiderLevelScene 1 name") + ": " + PlayerPrefs.GetInt ("SpiderLevelScene 1").ToString();
 		}
 
 		if (PlayerPrefs.GetString ("High Score 2 name") == "") {

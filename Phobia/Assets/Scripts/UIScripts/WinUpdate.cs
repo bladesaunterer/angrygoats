@@ -62,12 +62,12 @@ public class WinUpdate : MonoBehaviour {
 
 		
 		// PlayerPrefs logic here.
-		PlayerPrefs.SetInt("High Score 1", 0);
-
-		if (PlayerPrefs.GetInt ("High Score 1") == null) {
-			PlayerPrefs.SetInt ("High Score 1", final);
-		} else if(PlayerPrefs.GetInt ("High Score 1") <= final) {
-			PlayerPrefs.SetInt ("High Score 1", final);
+		PlayerPrefs.SetInt(Application.loadedLevelName, 0);
+		print (Application.loadedLevelName);
+		if (PlayerPrefs.GetInt (Application.loadedLevelName) == null) {
+			PlayerPrefs.SetInt (Application.loadedLevelName, final);
+		} else if(PlayerPrefs.GetInt (Application.loadedLevelName) < final) {
+			PlayerPrefs.SetInt (Application.loadedLevelName, final);
 			HighScoreNamePanel.SetActive(true);
 		}
 

@@ -8,7 +8,7 @@ public class EnterNameScript : MonoBehaviour {
 	public Button EnterButton;
 
 	public void Enter (){
-		PlayerPrefs.SetString ("High Score 1 name", NameField.text);
+		PlayerPrefs.SetString (Application.loadedLevelName+" name", NameField.text);
 		gameObject.SetActive (false);
 	}
 
