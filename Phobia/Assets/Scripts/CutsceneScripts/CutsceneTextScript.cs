@@ -109,8 +109,11 @@ public class CutsceneTextScript : MonoBehaviour {
 
 		int charCount = 0;
 
+		Debug.Log ("Length of LineText: " + lineText.ToCharArray().Length);
+
 		// Print out string character by character.
 		foreach (char c in lineText.ToCharArray()) {
+			Debug.Log ("Loop Start.");
 			textBoxString.text += c;
 
 			if (charCount < 0) {
@@ -120,7 +123,7 @@ public class CutsceneTextScript : MonoBehaviour {
 			}
 
 			charCount--;
-
+			Debug.Log ("Loop End.");
 			yield return new WaitForSeconds (textTypingDelay);
 		}
 	}
