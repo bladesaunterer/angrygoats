@@ -617,6 +617,7 @@ MonoBehaviour:
   m_IsOn: 1
   toggleTransition: 1
   checkGraphic: {fileID: 11491066}
+  lockedGraphic: {fileID: 0}
   m_Group: {fileID: 11440562}
   onValueChanged:
     m_PersistentCalls:
@@ -898,6 +899,7 @@ MonoBehaviour:
   m_IsOn: 1
   toggleTransition: 1
   checkGraphic: {fileID: 11468528}
+  lockedGraphic: {fileID: 0}
   m_Group: {fileID: 11440562}
   onValueChanged:
     m_PersistentCalls:
@@ -945,6 +947,7 @@ MonoBehaviour:
   m_IsOn: 0
   toggleTransition: 1
   checkGraphic: {fileID: 11453040}
+  lockedGraphic: {fileID: 0}
   m_Group: {fileID: 11440562}
   onValueChanged:
     m_PersistentCalls:
@@ -992,7 +995,6 @@ MonoBehaviour:
   GemOneDefault: 0
   GemTwoDefault: 5
   m_AllowSwitchOff: 0
-  allowMultipleSelection: 0
 --- !u!114 &11441462
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1330,6 +1332,7 @@ MonoBehaviour:
   m_IsOn: 0
   toggleTransition: 1
   checkGraphic: {fileID: 11452176}
+  lockedGraphic: {fileID: 0}
   m_Group: {fileID: 11440562}
   onValueChanged:
     m_PersistentCalls:
@@ -1456,6 +1459,7 @@ MonoBehaviour:
   m_IsOn: 0
   toggleTransition: 1
   checkGraphic: {fileID: 11417312}
+  lockedGraphic: {fileID: 0}
   m_Group: {fileID: 11440562}
   onValueChanged:
     m_PersistentCalls:
@@ -1530,6 +1534,7 @@ MonoBehaviour:
   m_IsOn: 0
   toggleTransition: 1
   checkGraphic: {fileID: 11437340}
+  lockedGraphic: {fileID: 0}
   m_Group: {fileID: 11440562}
   onValueChanged:
     m_PersistentCalls:
