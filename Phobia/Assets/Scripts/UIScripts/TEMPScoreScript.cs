@@ -11,8 +11,8 @@ public class TEMPScoreScript : MonoBehaviour
 {
 
     private static TEMPScoreScript instance;
-    public static int pointsCounter;
-	public static int enemyCounter;
+    public int pointsCounter;
+	public int enemyCounter;
     public Text currentScore;
 
 	// Singleton method for getting instance of TEMPScoreScript.
@@ -32,7 +32,9 @@ public class TEMPScoreScript : MonoBehaviour
 
     void Start()
     {
-        SetCountText(pointsCounter, currentScore);
+		pointsCounter = 0;
+		enemyCounter = 0;
+		SetCountText(pointsCounter, currentScore);
     }
 
     void Awake()
@@ -73,15 +75,15 @@ public class TEMPScoreScript : MonoBehaviour
     {
         if (value < 10)
         {
-            gText.text = "000" + value.ToString();
+            gText.text = "Score: " + "000" + value.ToString();
         }
         else if (value < 100)
         {
-            gText.text = "00" + value.ToString();
+            gText.text = "Score: " + "00" + value.ToString();
         }
         else if (value < 1000)
         {
-            gText.text = "0" + value.ToString();
+            gText.text = "Score: " + "0" + value.ToString();
         }
         else
         {

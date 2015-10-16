@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections.Generic;
 using Pathfinding;
 using System.Linq;
@@ -119,7 +119,7 @@ public class LevelGenerator : MonoBehaviour {
 
 		roomsDict.Add(thisRoom.Index,thisRoom);
 
-		boss = (GameObject)Instantiate(boss, thisRoom.transform.position + new Vector3(0, 4, 0), Quaternion.identity);
+		boss = (GameObject)Instantiate(boss, thisRoom.transform.position + new Vector3(0, 2, 0), Quaternion.identity);
 		boss.GetComponent<AIPath>().target = GameObject.FindWithTag("Player").transform;
 		
 		

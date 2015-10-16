@@ -85,6 +85,10 @@ NavMeshSettings:
     cellSize: .166666672
     manualCellSize: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &56876493 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 197354, guid: 95c252b12390e6149bc6a64a36d17555, type: 2}
+  m_PrefabInternal: {fileID: 1457815143}
 --- !u!1 &63483149
 GameObject:
   m_ObjectHideFlags: 0
@@ -838,20 +842,31 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 456526596}
+  m_TargetGraphic: {fileID: 1222530119}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2047396332}
-        m_MethodName: NextLevelButton
+      - m_Target: {fileID: 56876493}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: PreSpiderLevelCutscene
+          m_BoolArgument: 1
+        m_CallState: 1
+      - m_Target: {fileID: 1222525867}
+        m_MethodName: SetLevel
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: DarknessLevelScene
-          m_BoolArgument: 0
+          m_StringArgument: PreLevelDarknessCutscene
+          m_BoolArgument: 1
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
@@ -1551,10 +1566,6 @@ Transform:
   - {fileID: 2130900684}
   m_Father: {fileID: 674261221}
   m_RootOrder: 0
---- !u!1 &920175085 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 127570, guid: 53849e7929c41eb47aa1e2b5b469ad3d, type: 2}
-  m_PrefabInternal: {fileID: 1361724685}
 --- !u!1 &946357095
 GameObject:
   m_ObjectHideFlags: 0
@@ -1825,20 +1836,31 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 1022979641}
+  m_TargetGraphic: {fileID: 1222530119}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2047396332}
-        m_MethodName: NextLevelButton
+      - m_Target: {fileID: 56876493}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: PreSpiderLevelCutscene
+          m_BoolArgument: 1
+        m_CallState: 1
+      - m_Target: {fileID: 1222525867}
+        m_MethodName: SetLevel
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: HeightsLevelScene
-          m_BoolArgument: 0
+          m_StringArgument: PreLevelHeightsCutscene
+          m_BoolArgument: 1
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
@@ -2239,6 +2261,12 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4ab0471d37c9bcf41a8ff3f282e4efc4, type: 2}
   m_IsPrefabParent: 0
+--- !u!114 &1222525867 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 11475060, guid: 95c252b12390e6149bc6a64a36d17555,
+    type: 2}
+  m_PrefabInternal: {fileID: 1457815143}
+  m_Script: {fileID: 11500000, guid: 74b868d1b4d9d4242b5884ac9287302e, type: 3}
 --- !u!1 &1222530116
 GameObject:
   m_ObjectHideFlags: 0
@@ -2315,7 +2343,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 920175085}
+      - m_Target: {fileID: 56876493}
         m_MethodName: SetActive
         m_Mode: 6
         m_Arguments:
@@ -2326,6 +2354,17 @@ MonoBehaviour:
           m_StringArgument: PreSpiderLevelCutscene
           m_BoolArgument: 1
         m_CallState: 1
+      - m_Target: {fileID: 1222525867}
+        m_MethodName: SetLevel
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: PreLevelSpiderCutscene
+          m_BoolArgument: 1
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1222530119
@@ -2609,92 +2648,6 @@ Transform:
   - {fileID: 92030997}
   m_Father: {fileID: 1355893104}
   m_RootOrder: 1
---- !u!1001 &1361724685
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 22445382, guid: 53849e7929c41eb47aa1e2b5b469ad3d, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 22445382, guid: 53849e7929c41eb47aa1e2b5b469ad3d, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 22445382, guid: 53849e7929c41eb47aa1e2b5b469ad3d, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 22445382, guid: 53849e7929c41eb47aa1e2b5b469ad3d, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 22445382, guid: 53849e7929c41eb47aa1e2b5b469ad3d, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 22445382, guid: 53849e7929c41eb47aa1e2b5b469ad3d, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 22445382, guid: 53849e7929c41eb47aa1e2b5b469ad3d, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 22445382, guid: 53849e7929c41eb47aa1e2b5b469ad3d, type: 2}
-      propertyPath: m_RootOrder
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 22445382, guid: 53849e7929c41eb47aa1e2b5b469ad3d, type: 2}
-      propertyPath: m_AnchoredPosition.x
-      value: 3255.12354
-      objectReference: {fileID: 0}
-    - target: {fileID: 22445382, guid: 53849e7929c41eb47aa1e2b5b469ad3d, type: 2}
-      propertyPath: m_AnchoredPosition.y
-      value: 1806.31628
-      objectReference: {fileID: 0}
-    - target: {fileID: 22445382, guid: 53849e7929c41eb47aa1e2b5b469ad3d, type: 2}
-      propertyPath: m_SizeDelta.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 22445382, guid: 53849e7929c41eb47aa1e2b5b469ad3d, type: 2}
-      propertyPath: m_SizeDelta.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 22445382, guid: 53849e7929c41eb47aa1e2b5b469ad3d, type: 2}
-      propertyPath: m_AnchorMin.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 22445382, guid: 53849e7929c41eb47aa1e2b5b469ad3d, type: 2}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 22445382, guid: 53849e7929c41eb47aa1e2b5b469ad3d, type: 2}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 22445382, guid: 53849e7929c41eb47aa1e2b5b469ad3d, type: 2}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 22445382, guid: 53849e7929c41eb47aa1e2b5b469ad3d, type: 2}
-      propertyPath: m_Pivot.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 22445382, guid: 53849e7929c41eb47aa1e2b5b469ad3d, type: 2}
-      propertyPath: m_Pivot.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 11467494, guid: 53849e7929c41eb47aa1e2b5b469ad3d, type: 2}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
-      value: PreSpiderLevelCutscene
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 53849e7929c41eb47aa1e2b5b469ad3d, type: 2}
-  m_IsPrefabParent: 0
 --- !u!1 &1363625612
 GameObject:
   m_ObjectHideFlags: 0
@@ -2811,6 +2764,96 @@ Transform:
   - {fileID: 1283234772}
   m_Father: {fileID: 1700254302}
   m_RootOrder: 0
+--- !u!1001 &1457815143
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 22497194, guid: 95c252b12390e6149bc6a64a36d17555, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22497194, guid: 95c252b12390e6149bc6a64a36d17555, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22497194, guid: 95c252b12390e6149bc6a64a36d17555, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22497194, guid: 95c252b12390e6149bc6a64a36d17555, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22497194, guid: 95c252b12390e6149bc6a64a36d17555, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22497194, guid: 95c252b12390e6149bc6a64a36d17555, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22497194, guid: 95c252b12390e6149bc6a64a36d17555, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 22497194, guid: 95c252b12390e6149bc6a64a36d17555, type: 2}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 22497194, guid: 95c252b12390e6149bc6a64a36d17555, type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22497194, guid: 95c252b12390e6149bc6a64a36d17555, type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22497194, guid: 95c252b12390e6149bc6a64a36d17555, type: 2}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22497194, guid: 95c252b12390e6149bc6a64a36d17555, type: 2}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22497194, guid: 95c252b12390e6149bc6a64a36d17555, type: 2}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22497194, guid: 95c252b12390e6149bc6a64a36d17555, type: 2}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22497194, guid: 95c252b12390e6149bc6a64a36d17555, type: 2}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22497194, guid: 95c252b12390e6149bc6a64a36d17555, type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22497194, guid: 95c252b12390e6149bc6a64a36d17555, type: 2}
+      propertyPath: m_Pivot.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22497194, guid: 95c252b12390e6149bc6a64a36d17555, type: 2}
+      propertyPath: m_Pivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11435946, guid: 95c252b12390e6149bc6a64a36d17555, type: 2}
+      propertyPath: LastGemSelected
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 197354, guid: 95c252b12390e6149bc6a64a36d17555, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 95c252b12390e6149bc6a64a36d17555, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &1473574146
 GameObject:
   m_ObjectHideFlags: 0

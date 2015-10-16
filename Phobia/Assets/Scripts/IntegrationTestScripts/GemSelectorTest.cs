@@ -15,51 +15,32 @@ public class GemSelectorTest : MonoBehaviour {
 	private GameObject gemOne;
 	private GameObject gemTwo;
 	private Gem currentGem;
-	//private GemSelection GemSelection = new GemSelection ();
+	private GemManager GemSelection = new GemManager ();
 	
-	//void Awake () {
-	//	if (fire){
-	//		GemSelection.selectGems (Gem.Red, Gem.Green);
-	//	} else if (lightning){
-	//		GemSelection.selectGems (Gem.Yellow, Gem.Green);
-	//	} else if (ice){
-	//		GemSelection.selectGems (Gem.Blue, Gem.Green);
-	//	}
+	void Awake () {
+		if (fire){
+			GemSelection.SetGemOne(Gem.Red);
+			GemSelection.SetGemTwo(Gem.Green);
+		} else if (lightning){
+			GemSelection.SetGemOne(Gem.Yellow);
+			GemSelection.SetGemTwo(Gem.Green);
+		} else if (ice){
+			GemSelection.SetGemOne(Gem.Blue);
+			GemSelection.SetGemTwo(Gem.Green);
+		}
 	
-	//	spawn = GameObject.FindGameObjectWithTag ("SpecialAttack");
-	//	gemOne = GameObject.FindGameObjectWithTag (GemSelection.GetGemOne ().ToString ());
-	//	gemTwo = GameObject.FindGameObjectWithTag (GemSelection.GetGemTwo ().ToString ());
+		spawn = GameObject.FindGameObjectWithTag ("SpecialAttack");
+		gemOne = GameObject.FindGameObjectWithTag (GemSelection.GetGemOne ().ToString ());
+		gemTwo = GameObject.FindGameObjectWithTag (GemSelection.GetGemTwo ().ToString ());
 		
-	//	foreach (Transform child in spawn.transform) {
-	//		child.gameObject.SetActive (false);
-	//	}
-	//	gemOne.SetActive (true);
+		foreach (Transform child in spawn.transform) {
+			child.gameObject.SetActive (false);
+		}
+		gemOne.SetActive (true);
 		
-	//	//current selection starts with gemOne
-	//	GemSelection.SetCurrentGem (GemSelection.GetGemOne ());
+		//current selection starts with gemOne
+		GemSelection.SetCurrentGem (GemSelection.GetGemOne ());
 		
-	//}
-	
-	
-	// Update is called once per frame
-	//void Update ()
-	//{
-	//	if (Input.GetKeyDown (KeyCode.L)) {
-	//		ChangeGem ();
-	//	}
-	//}
-	
-	//void ChangeGem ()
-	//{
-	//	if (gemOne.gameObject.activeSelf) {
-	//		gemOne.SetActive (false);
-	//		gemTwo.SetActive (true);
-	//		GemSelection.SetCurrentGem (GemSelection.GetGemTwo ());
-	//	} else {
-	//		gemOne.SetActive (true);
-	//		gemTwo.SetActive (false);
-	//		GemSelection.SetCurrentGem (GemSelection.GetGemOne ());
-	//	}
-	//}
+	}
 	
 }

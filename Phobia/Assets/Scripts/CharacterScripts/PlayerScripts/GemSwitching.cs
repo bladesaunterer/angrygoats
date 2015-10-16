@@ -1,6 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+/**
+ * Will handle all logic behind gem logic in game, and will
+ * notify gem manager of changes
+ */
 public class GemSwitching : MonoBehaviour
 {
 
@@ -10,22 +14,24 @@ public class GemSwitching : MonoBehaviour
 	private Gem currentGem;
 	private GemManager gemManager = GemManager.Instance;
 
-
+	//Called when script is loaded
 	void Awake ()
 	{
+		Debug.Log (gemManager.GetGemOne ().ToString () + " successfully persisted");
+		Debug.Log (gemManager.GetGemTwo ().ToString () + " successfully persisted");
+
 		spawn = GameObject.FindGameObjectWithTag ("SpecialAttack");
 		gemOne = GameObject.FindGameObjectWithTag (gemManager.GetGemOne ().ToString ());
 		gemTwo = GameObject.FindGameObjectWithTag (gemManager.GetGemTwo ().ToString ());
 
-		Debug.Log (gemManager.GetGemOne ().ToString () + " successfully persisted");
-		Debug.Log (gemManager.GetGemTwo ().ToString () + " successfully persisted");
 
+		//will set all gem game objects to be inactive except selected gems
 		foreach (Transform child in spawn.transform) {
 			child.gameObject.SetActive (false);
 		}
 		gemOne.SetActive (true);
-		gemTwo.SetActive(true);
-		gemTwo.GetComponent<MeshRenderer>().enabled = false;
+		gemTwo.SetActive (true);
+		gemTwo.GetComponent<MeshRenderer> ().enabled = false;
 		
 		//current selection starts with gemOne
 		gemManager.SetCurrentGem (gemManager.GetGemOne ());
@@ -40,22 +46,19 @@ public class GemSwitching : MonoBehaviour
 			ChangeGem ();
 		}
 	}
-
+	
 	void ChangeGem ()
 	{
-		if (gemOne.gameObject.activeSelf) {
-			gemOne.SetActive (false);
-			gemTwo.SetActive (true);
+		if (gemOne.gameObject.GetComponent<MeshRenderer> ().enabled) {
+			gemOne.GetComponent<MeshRenderer> ().enabled = false;
+			gemTwo.GetComponent<MeshRenderer> ().enabled = true;
 			gemManager.SetCurrentGem (gemManager.GetGemTwo ());
 		} else {
-			gemOne.SetActive (true);
-			gemTwo.SetActive (false);
+			gemOne.GetComponent<MeshRenderer> ().enabled = true;
+			gemTwo.GetComponent<MeshRenderer> ().enabled = false;
 			gemManager.SetCurrentGem (gemManager.GetGemOne ());
 		}
 	}
 
-//	public Gem GetCurrentGem ()
-//	{
-//		return currentGem;
-//	}
+
 }
