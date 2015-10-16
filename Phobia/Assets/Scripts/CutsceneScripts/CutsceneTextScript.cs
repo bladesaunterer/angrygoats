@@ -107,25 +107,14 @@ public class CutsceneTextScript : MonoBehaviour {
 		// Get dialogue string to write to text box. 
 		lineText = scriptLine [1];
 
-		int charCount = 0;
+		// Play a sound effect for each character.
+		CutsceneSoundScript.PlayTextSound ();
 
-		Debug.Log ("Length of LineText: " + lineText.ToCharArray().Length);
+		textBoxString.text = lineText;
 
-		// Print out string character by character.
-		foreach (char c in lineText.ToCharArray()) {
-			Debug.Log ("Loop Start.");
-			textBoxString.text += c;
+		yield return new WaitForSeconds (0);
 
-			if (charCount < 0) {
-				// Play a sound effect for each character.
-				CutsceneSoundScript.PlayTextSound ();
-				charCount = 8;
-			}
-
-			charCount--;
-			Debug.Log ("Loop End.");
-			yield return new WaitForSeconds (textTypingDelay);
-		}
+		Debug.Log ("End of Coroutine reached.");
 	}
 
 	/**
