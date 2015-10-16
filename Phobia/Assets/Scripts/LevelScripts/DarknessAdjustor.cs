@@ -2,23 +2,21 @@
 using UnityEngine.UI;
 using System.Collections;
 
-/**
- * 
- * Class which adds a darkness overlay to level.
- * 
- **/
+/// <summary>
+/// Purpose: Used for adjusting the darkness's transparency.<para/>
+/// Author: Chester Booker
+/// </summary>
 public class DarknessAdjustor : MonoBehaviour {
 
     public RawImage darkness;
     public float transparencyLevel = 0;
 
-	// Update is called once per frame
 	void Update () {
 
-        // Might have to change this to a public field where you link the darkness image.
         RawImage darkImg = darkness.GetComponent<RawImage>();
         Color c = darkImg.color;
-   
+        
+        // Updates the transparency level of the image based on the public input
         c.a = transparencyLevel;
         darkImg.color = c;
     }
