@@ -498,7 +498,7 @@ MonoBehaviour:
   - {fileID: 141436, guid: eb20733af130758428bb92d96026d132, type: 2}
   - {fileID: 113590, guid: e4996203039b6644dae10dcede7e5fbd, type: 2}
   - {fileID: 114772, guid: 9caad488b6a1a4242835427b1a0ef6bd, type: 2}
-  totalEnemies: 65
+  totalEnemies: 67
   maxEnemiesPerRoom: 7
   enemies:
   - {fileID: 139882, guid: 6558d27cdb76a804fbb0d7ff3440dacc, type: 2}
@@ -685,19 +685,27 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22464700, guid: 1e676168ea4324942a4134913bf821a9, type: 2}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 22464700, guid: 1e676168ea4324942a4134913bf821a9, type: 2}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 22449744, guid: 1e676168ea4324942a4134913bf821a9, type: 2}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 22449744, guid: 1e676168ea4324942a4134913bf821a9, type: 2}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11457184, guid: 1e676168ea4324942a4134913bf821a9, type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: PostLevelDarknessCutscene
+      objectReference: {fileID: 0}
+    - target: {fileID: 11466908, guid: 1e676168ea4324942a4134913bf821a9, type: 2}
+      propertyPath: m_Text
+      value: Finish
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1e676168ea4324942a4134913bf821a9, type: 2}
