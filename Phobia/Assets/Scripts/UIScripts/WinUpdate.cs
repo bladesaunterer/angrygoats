@@ -58,6 +58,14 @@ public class WinUpdate : MonoBehaviour {
 		//Calculate total score.
 		final = bonus + score;
 
+		
+		// PlayerPrefs logic here.
+		if (PlayerPrefs.GetInt ("High Score 1") == null) {
+			PlayerPrefs.SetInt ("High Score 1", final);
+		} else if(PlayerPrefs.GetInt ("High Score 1") < final) {
+			PlayerPrefs.SetInt ("High Score 1", final);
+		}
+
 		//Update text with their respective values.
 		enemyValueText.text = enemies.ToString ();
 		timeValueText.text = minute + ":" + second;
