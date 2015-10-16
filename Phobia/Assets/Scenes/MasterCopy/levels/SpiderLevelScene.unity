@@ -594,16 +594,16 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 421778, guid: 22ff990e31887644dbf700581d979542, type: 2}
       propertyPath: m_RootOrder
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
-    - target: {fileID: 11418660, guid: 22ff990e31887644dbf700581d979542, type: 2}
-      propertyPath: healthSlider
-      value: 
-      objectReference: {fileID: 1978764125}
     - target: {fileID: 11408550, guid: 22ff990e31887644dbf700581d979542, type: 2}
       propertyPath: cooldownSlider
       value: 
       objectReference: {fileID: 1978764124}
+    - target: {fileID: 11418660, guid: 22ff990e31887644dbf700581d979542, type: 2}
+      propertyPath: healthSlider
+      value: 
+      objectReference: {fileID: 1978764125}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 22ff990e31887644dbf700581d979542, type: 2}
   m_IsPrefabParent: 0
@@ -616,11 +616,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 22464700, guid: 1e676168ea4324942a4134913bf821a9, type: 2}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 22464700, guid: 1e676168ea4324942a4134913bf821a9, type: 2}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 22438504, guid: 1e676168ea4324942a4134913bf821a9, type: 2}
       propertyPath: m_LocalPosition.x
@@ -696,11 +696,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22449744, guid: 1e676168ea4324942a4134913bf821a9, type: 2}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 22449744, guid: 1e676168ea4324942a4134913bf821a9, type: 2}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 11411408, guid: 1e676168ea4324942a4134913bf821a9, type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument

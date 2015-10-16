@@ -15,7 +15,7 @@ GameObject:
   - 114: {fileID: 11493336}
   m_Layer: 0
   m_Name: AoE
-  m_TagString: White
+  m_TagString: Turquoise
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1555,6 +1555,7 @@ AudioSource:
   m_Pitch: 1
   Loop: 0
   Mute: 0
+  Spatialize: 0
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
