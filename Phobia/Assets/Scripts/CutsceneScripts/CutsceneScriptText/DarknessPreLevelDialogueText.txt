@@ -1,0 +1,18 @@
+:*Knock, knock*:DisableR
+Dr. Ndoto:I am closed for the day! Leave me be!
+:*Knock, knock*
+Dr. Ndoto:*sigh*
+:(Ndoto swings open the door in frustration.)
+Dr. Ndoto:I SAID LEAVE ME ALO…:EnableR
+Dr. Ndoto:Ah… my apologies, child.
+Client:*sob*... I’m sorry, mister. *sob*
+Dr. Ndoto:THAT’S DOCT… *sigh* That’s all right, child. Please. Come in.
+:(The girl enters the hut.)
+Dr. Ndoto:Now, what brings you here at this hour?
+Client:*sob* I heard you could cure fears, mister. Could you cure mine? I’m afraid of the dark…
+Dr. Ndoto:The dark? With a fear like that, you could have waited till next morning!
+Client:But I’m sooo tired of being afraid! *sob* I just want it gone!
+Dr. Ndoto:*chuckle*
+Dr. Ndoto:That’s quite brave of you, child.
+:(The doctor carefully fastens a mask on the girl’s face.):ChangeClientMasked
+Dr. Ndoto:Alright, hang on, this may take a while.

@@ -455,6 +455,7 @@ GameObject:
   - 114: {fileID: 11445982}
   - 114: {fileID: 11462982}
   - 54: {fileID: 5455494}
+  - 114: {fileID: 11497626}
   m_Layer: 0
   m_Name: DEnemy (shooting)
   m_TagString: Enemy
@@ -1735,7 +1736,7 @@ MonoBehaviour:
   target: {fileID: 0}
   canSearch: 1
   canMove: 1
-  speed: 20
+  speed: 70
   turningSpeed: 6
   slowdownDistance: 0
   pickNextWaypointDist: 2
@@ -1757,7 +1758,6 @@ MonoBehaviour:
   currentHealth: 0
   lethalLow: 0
   scoreAwarded: 25
-  wonScreen: {fileID: 0}
 --- !u!114 &11445982
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1809,11 +1809,23 @@ MonoBehaviour:
       serializedVersion: 2
       m_Bits: 4294967295
     useGraphRaycasting: 0
-  traversableTags: -1
+  traversableTags: 1
   traversableTagsCompatibility:
     tagsChange: -1
     tagsSet: -1
   tagPenalties: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+--- !u!114 &11497626
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 153314}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 197cca9dbb7972c4c80bc6a8c338d212, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flash: {fileID: 2100000, guid: 3dd4b9c466d80ff45ae4bf8a4ed4e263, type: 2}
 --- !u!135 &13542854
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -1922,6 +1934,18 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: scoreAwarded
       value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: traversableTags
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: flash
+      value: 
+      objectReference: {fileID: 2100000, guid: 3dd4b9c466d80ff45ae4bf8a4ed4e263, type: 2}
+    - target: {fileID: 0}
+      propertyPath: speed
+      value: 70
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

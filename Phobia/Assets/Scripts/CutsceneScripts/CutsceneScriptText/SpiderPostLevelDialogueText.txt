@@ -1,0 +1,11 @@
+:(The doctor and his client come out of their trance.):ChangeClientMasked
+Dr. Ndoto:See, that wasn’t so bad now, was it?
+Client:I didn’t feel a thing… are you sure it worked?
+Dr. Ndoto:I hope so. Otherwise that final boss fight was for nothing.
+Client:What?
+Dr. Ndoto:Oh nothing. No, no, it should have worked.
+Dr. Ndoto:Perhaps we should test it? Let’s see…
+:(Ndoto removes the mask and replaces it with a giant spider.):ChangeClientExtra
+Dr. Ndoto:How’s that?
+Client:Wow! I’m not afraid at all! Thanks Doc!:ChangeClientHappy
+Dr. Ndoto:No problem. Now, about that compensation...

@@ -16,6 +16,7 @@ public class StunGemTest : GemEffectTest {
 				IntegrationTest.Fail();
 			} else {
 				check = true;
+				nextTime++;
 			}
 		}
 		if(Time.time > (maxTime+0.1f) && check){
@@ -30,5 +31,6 @@ public class StunGemTest : GemEffectTest {
 	public override void toggleOnHit(GameObject other){
 		ai = other.GetComponent<AIPath>();
 		base.toggleOnHit(other);
+		nextTime = Time.time + 0.1f;;
 	}
 }

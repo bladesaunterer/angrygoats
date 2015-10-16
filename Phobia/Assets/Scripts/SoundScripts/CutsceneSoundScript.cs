@@ -14,8 +14,6 @@ public class CutsceneSoundScript : MonoBehaviour {
 	public AudioClip textSound3;
 	public AudioClip textSound4;
 
-	public AudioClip nextTextBoxSound;
-
 	private AudioSource audioSource;
 	static private int num = 1;
 
@@ -36,22 +34,11 @@ public class CutsceneSoundScript : MonoBehaviour {
 
 	/**
 	 *
-	 * Static method for playing textbox sound effects.
-	 *
-	 **/
-	static public void PlayNextTextBoxSound() {
-		instance.audioSource.pitch = 0.5f;
-		instance.audioSource.PlayOneShot(instance.nextTextBoxSound, 2.0f);
-	
-	}
-
-	/**
-	 *
 	 * Static method for playing text sound effects.
 	 *
 	 **/
 	static public void PlayTextSound() {
-		instance.audioSource.pitch = 1.8f;
+		instance.audioSource.pitch = 1.0f;
 
 		// Generate random number.
 		num = Random.Range (1, 4);
