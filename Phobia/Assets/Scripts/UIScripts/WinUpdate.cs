@@ -16,6 +16,8 @@ public class WinUpdate : MonoBehaviour {
 	public Text timeBonusCalcText;
 	public Text totalCalcText;
 
+	public GameObject HighScoreNamePanel;
+
 	/**
 	 * 
 	 * Method for updating win pop-up text.
@@ -60,10 +62,13 @@ public class WinUpdate : MonoBehaviour {
 
 		
 		// PlayerPrefs logic here.
+		PlayerPrefs.SetInt("High Score 1", 0);
+
 		if (PlayerPrefs.GetInt ("High Score 1") == null) {
 			PlayerPrefs.SetInt ("High Score 1", final);
-		} else if(PlayerPrefs.GetInt ("High Score 1") < final) {
+		} else if(PlayerPrefs.GetInt ("High Score 1") <= final) {
 			PlayerPrefs.SetInt ("High Score 1", final);
+			HighScoreNamePanel.SetActive(true);
 		}
 
 		//Update text with their respective values.
