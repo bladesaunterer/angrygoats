@@ -350,6 +350,7 @@ GameObject:
   - 136: {fileID: 13687426}
   - 114: {fileID: 11464336}
   - 114: {fileID: 11429734}
+  - 114: {fileID: 11491104}
   m_Layer: 0
   m_Name: DEnemy(normal)
   m_TagString: Enemy
@@ -1597,7 +1598,7 @@ MonoBehaviour:
       serializedVersion: 2
       m_Bits: 4294967295
     useGraphRaycasting: 0
-  traversableTags: -1
+  traversableTags: 1
   traversableTagsCompatibility:
     tagsChange: -1
     tagsSet: -1
@@ -1629,7 +1630,6 @@ MonoBehaviour:
   currentHealth: 0
   lethalLow: 0
   scoreAwarded: 10
-  wonScreen: {fileID: 0}
 --- !u!114 &11464336
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1657,7 +1657,7 @@ MonoBehaviour:
   target: {fileID: 0}
   canSearch: 1
   canMove: 1
-  speed: 30
+  speed: 100
   turningSpeed: 6
   slowdownDistance: 0
   pickNextWaypointDist: 2
@@ -1685,6 +1685,18 @@ MonoBehaviour:
   bezierTangentLength: .400000006
   offset: .200000003
   factor: .100000001
+--- !u!114 &11491104
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 139882}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 197cca9dbb7972c4c80bc6a8c338d212, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flash: {fileID: 2100000, guid: 3dd4b9c466d80ff45ae4bf8a4ed4e263, type: 2}
 --- !u!136 &13687426
 CapsuleCollider:
   m_ObjectHideFlags: 1
@@ -1794,6 +1806,18 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: scoreAwarded
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: traversableTags
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: flash
+      value: 
+      objectReference: {fileID: 2100000, guid: 3dd4b9c466d80ff45ae4bf8a4ed4e263, type: 2}
+    - target: {fileID: 0}
+      propertyPath: speed
+      value: 100
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
