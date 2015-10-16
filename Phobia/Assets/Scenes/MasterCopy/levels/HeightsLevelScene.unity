@@ -345,6 +345,14 @@ Prefab:
       propertyPath: m_Text
       value: Finish
       objectReference: {fileID: 0}
+    - target: {fileID: 11417032, guid: 1e676168ea4324942a4134913bf821a9, type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: HeightsLevelScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 11411408, guid: 1e676168ea4324942a4134913bf821a9, type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: HeightsLevelScene
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1e676168ea4324942a4134913bf821a9, type: 2}
   m_IsPrefabParent: 0
@@ -610,6 +618,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   roomsToSpawn: 20
+  seed: 
+  actseed: -1
   roomPrefab: {fileID: 104770, guid: 2712d668c61c8a245bc7e84e8189abc6, type: 2}
   startPrefab: {fileID: 113332, guid: aefd54ed41e27a34895e19e6a271f122, type: 2}
   floorPrefabs:
