@@ -26,14 +26,20 @@ public class BossOne : MonoBehaviour {
 				if (nextSpawnType == 0) {
 					GameObject make = (GameObject)GameObject.Instantiate (enemyTypeOne, this.gameObject.transform.position + left, this.gameObject.transform.rotation);
 					make.GetComponent<AIPath> ().target = GameObject.FindWithTag ("Player").transform;
+					make.GetComponent<EnemyControl>().home = transform;
 					make = (GameObject)GameObject.Instantiate (enemyTypeOne, this.gameObject.transform.position + right, this.gameObject.transform.rotation);
 					make.GetComponent<AIPath> ().target = GameObject.FindWithTag ("Player").transform;
+					make.GetComponent<EnemyControl>().home = transform;
+
 					nextSpawnType = 1;
 				} else {
 					GameObject make = (GameObject)GameObject.Instantiate (enemyTypeTwo, this.gameObject.transform.position + up, this.gameObject.transform.rotation);
 					make.GetComponent<AIPath> ().target = GameObject.FindWithTag ("Player").transform;
+					make.GetComponent<EnemyControl>().home = transform;
 					make = (GameObject)GameObject.Instantiate (enemyTypeTwo, this.gameObject.transform.position + down, this.gameObject.transform.rotation);
 					make.GetComponent<AIPath> ().target = GameObject.FindWithTag ("Player").transform;
+					make.GetComponent<EnemyControl>().home = transform;
+
 					nextSpawnType = 0;
 				}
 			}

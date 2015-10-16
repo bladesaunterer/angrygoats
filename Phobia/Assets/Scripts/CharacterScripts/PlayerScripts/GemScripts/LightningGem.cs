@@ -9,7 +9,8 @@ public class LightningGem : GenericGem {
 		if (Input.GetKeyDown(KeyCode.K) && playerControl.cooldown >= cost && checkActive())
 		{
 			playerControl.SubtractCooldown(cost);
-			Instantiate(shot,shotSpawn.position,shotSpawn.rotation);
+			GameObject shotSpawned = Instantiate(shot,shotSpawn.position,shotSpawn.rotation) as GameObject;
+			shotSpawned.GetComponent<BoltMover>().SetGemObject(gameObject);
 		}
 		if (ai != null &&  tick && Time.time > nextTime){
 			nextTime = Time.time + 1f;

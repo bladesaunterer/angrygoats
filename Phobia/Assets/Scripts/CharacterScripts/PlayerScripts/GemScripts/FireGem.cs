@@ -17,7 +17,8 @@ public class FireGem : GenericGem {
 		{
             PlayerSfxScript.playShotSound();
 			playerControl.SubtractCooldown(cost);
-			Instantiate(shot,shotSpawn.position,shotSpawn.rotation);
+			GameObject shotSpawned = Instantiate(shot,shotSpawn.position,shotSpawn.rotation) as GameObject;
+			shotSpawned.GetComponent<BoltMover>().SetGemObject(gameObject);
 		}
 		if (health != null &&  tick && Time.time > nextTime){
 			nextTime = Time.time + 1f;
