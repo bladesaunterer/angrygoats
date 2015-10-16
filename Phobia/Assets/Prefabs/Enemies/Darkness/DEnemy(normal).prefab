@@ -351,6 +351,7 @@ GameObject:
   - 114: {fileID: 11464336}
   - 114: {fileID: 11429734}
   - 114: {fileID: 11491104}
+  - 114: {fileID: 11487142}
   m_Layer: 0
   m_Name: DEnemy(normal)
   m_TagString: Enemy
@@ -1685,6 +1686,18 @@ MonoBehaviour:
   bezierTangentLength: .400000006
   offset: .200000003
   factor: .100000001
+--- !u!114 &11487142
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 139882}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbc41f568f2a1b242a0e23be278d1b9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anim: {fileID: 9540678}
 --- !u!114 &11491104
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1819,6 +1832,10 @@ Prefab:
       propertyPath: speed
       value: 100
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: anim
+      value: 
+      objectReference: {fileID: 9540678}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 139882}

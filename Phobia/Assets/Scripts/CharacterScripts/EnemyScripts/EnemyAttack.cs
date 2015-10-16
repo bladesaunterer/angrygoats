@@ -6,54 +6,75 @@ using System.Collections;
  * Class which handles enemy attack logic.
  * 
  **/
-public class EnemyAttack : MonoBehaviour {
+public class EnemyAttack : MonoBehaviour
+{
 
-	public int damage = 8;
+    public int damage = 8;
 
-	private bool playerInRange;
-	private GameObject player;
-	private float timeBetweenAttacks = 0.25f;
-	float timer;
+    private bool playerInRange;
+    private GameObject player;
+    private float timeBetweenAttacks = 0.25f;
+    private Animator anim;
+    float timer;
 
-	void Awake () {
-		playerInRange = false;
-	}
-	void OnTriggerEnter (Collider other) {
-		// When colliding with player, damage the player.
-		if (player == null) {
-			if (other.gameObject.CompareTag("Player")){
-			    player = other.gameObject;
-			}
-		}
-		if (other.gameObject.CompareTag ("Player")) {
-			playerInRange = true;
-		}
-	}
+    void Awake()
+    {
+        playerInRange = false;
+        anim = GetComponent<EnemyAnimatorFinding>().getEnemyAnimator();
+    }
+    void OnTriggerEnter(Collider other)
+    {
+        // When colliding with player, damage the player.
+        if (player == null)
+        {
+            if (other.gameObject.CompareTag("Player"))
+            {
+                player = other.gameObject;
+            }
+        }
+        if (other.gameObject.CompareTag("Player"))
+        {
+            playerInRange = true;
+        }
+    }
 
-	void OnTriggerExit (Collider other) {
-		if (other.gameObject.CompareTag ("Player")) {
-			playerInRange = false;
-		}
-	}
+    void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            playerInRange = false;
+        }
+    }
 
-	void Update() {
-		timer += Time.deltaTime;
-		if(timer >= timeBetweenAttacks && playerInRange && GetComponent<EnemyHealth>().currentHealth > 0)
-		{
-			attackAnimation();
-			Attack (player);
-		}
-	}
+    void Update()
+    {
+        timer += Time.deltaTime;
+        if (timer >= timeBetweenAttacks && playerInRange && GetComponent<EnemyHealth>().currentHealth > 0)
+        {
+            if (anim != null)
+            {
+                EnemyAnimatorController.ExecuteAnimation(anim, "Attack");
+            }
+            else
+            {
+                attackAnimation();
+            }
+            Attack(player);
+        }
+    }
 
-	void Attack(GameObject other) {
-		timer = 0f;
-		if (other != null) {
-			HealthControl.dealDamageToPlayer (other, damage);
-		}
+    void Attack(GameObject other)
+    {
+        timer = 0f;
+        if (other != null)
+        {
+            HealthControl.dealDamageToPlayer(other, damage);
+        }
 
-	}
+    }
 
-	protected virtual void attackAnimation(){
+    protected virtual void attackAnimation()
+    {
 
-	}
+    }
 }
