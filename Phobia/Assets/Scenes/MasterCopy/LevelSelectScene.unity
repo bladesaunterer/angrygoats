@@ -2843,14 +2843,6 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 11435946, guid: 95c252b12390e6149bc6a64a36d17555, type: 2}
-      propertyPath: LastGemSelected
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 197354, guid: 95c252b12390e6149bc6a64a36d17555, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 95c252b12390e6149bc6a64a36d17555, type: 2}
   m_IsPrefabParent: 0

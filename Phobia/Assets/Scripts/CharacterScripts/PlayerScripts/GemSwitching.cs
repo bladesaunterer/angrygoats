@@ -17,12 +17,23 @@ public class GemSwitching : MonoBehaviour
 	//Called when script is loaded
 	void Awake ()
 	{
-		Debug.Log (gemManager.GetGemOne ().ToString () + " successfully persisted");
-		Debug.Log (gemManager.GetGemTwo ().ToString () + " successfully persisted");
+		Debug.Log(gemManager.GetGemOne().ToString() + " successfully persisted");
+		Debug.Log(gemManager.GetGemTwo().ToString() + " successfully persisted");
 
-		spawn = GameObject.FindGameObjectWithTag ("SpecialAttack");
-		gemOne = GameObject.FindGameObjectWithTag (gemManager.GetGemOne ().ToString ());
-		gemTwo = GameObject.FindGameObjectWithTag (gemManager.GetGemTwo ().ToString ());
+		spawn = GameObject.FindGameObjectWithTag("SpecialAttack");
+		
+		//This way broke when people added the gem switching in the hud
+		//gemOne = GameObject.FindGameObjectsWithTag (gemManager.GetGemOne ().ToString ());
+		//gemTwo = GameObject.FindGameObjectsWithTag (gemManager.GetGemTwo ().ToString ());
+		
+		foreach (Transform childTransform in gameObject.transform.Find("Shot Spawn")) {
+			if (childTransform.gameObject.CompareTag(gemManager.GetGemOne().ToString ()))  {
+				gemOne = childTransform.gameObject;
+			}
+			if (childTransform.gameObject.CompareTag(gemManager.GetGemTwo().ToString()))  {
+				gemTwo = childTransform.gameObject;
+			}
+		}
 
 
 		//will set all gem game objects to be inactive except selected gems
