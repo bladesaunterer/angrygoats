@@ -7,23 +7,23 @@ using System.Collections;
  */
 public class InitialDamageTest : MonoBehaviour {
 
-	//private GemSelection gemSelection = new GemSelection ();
+	private GemManager gemSelection = new GemManager ();
 
-	//void OnTriggerEnter (Collider other)
-	//{
-	//	GameObject enemy = other.gameObject;
-	//	EnemyHealth health = enemy.GetComponent<EnemyHealth>();
-	//	Gem currentGem = gemSelection.GetCurrentGem ();
-	//	GameObject gemObject = GameObject.FindGameObjectWithTag (currentGem.ToString ());
-	//	int damage = gemObject.GetComponent<GenericGem>().damage;
+	void OnTriggerEnter (Collider other)
+	{
+		GameObject enemy = other.gameObject;
+		EnemyHealth health = enemy.GetComponent<EnemyHealth>();
+		Gem currentGem = gemSelection.GetCurrentGem ();
+		GameObject gemObject = GameObject.FindGameObjectWithTag (currentGem.ToString ());
+		int damage = gemObject.GetComponent<GenericGem>().damage;
 
-	//	int newHealth = health.startingHealth - damage;
+		int newHealth = health.startingHealth - damage;
 
-	//	if(health.currentHealth == newHealth){
-	//		gemObject.GetComponent<GemEffectTest>().toggleOnHit(other.gameObject);
-	//	} else {
-	//		IntegrationTest.Fail(gameObject);
-	//	}
-	//}
+		if(health.currentHealth == newHealth){
+			gemObject.GetComponent<GemEffectTest>().toggleOnHit(other.gameObject);
+		} else {
+			IntegrationTest.Fail(gameObject);
+		}
+	}
 	
 }

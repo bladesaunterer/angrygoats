@@ -20,7 +20,7 @@ public class EnemyDamageTest : MonoBehaviour {
 	void Update(){
 		if( player != null && Time.time > nextTime){
 			PlayerHealth health = player.GetComponent<PlayerHealth>();
-			int damage = gameObject.GetComponent<SpiderAttack>().damage;
+			int damage = gameObject.GetComponent<EnemyAttack>().damage;
 			float newHealth = health.startingHealth - damage;
 			if(health.currentHealth == newHealth){
 				IntegrationTest.Pass(gameObject);

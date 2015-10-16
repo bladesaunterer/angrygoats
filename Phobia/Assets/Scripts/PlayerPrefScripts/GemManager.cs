@@ -43,9 +43,6 @@ public class GemManager// : PersistentSingleton<GemSelection>
 		return getEnum (gem);
 	}
 
-
-
-
 	// Use this for initialization
 	public void SetGemOne (Gem gemOne)
 	{
