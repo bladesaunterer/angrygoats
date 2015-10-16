@@ -560,7 +560,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &610637264
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1362,6 +1362,10 @@ Prefab:
       propertyPath: HighScoreNamePanel
       value: 
       objectReference: {fileID: 610637263}
+    - target: {fileID: 100590, guid: 1e676168ea4324942a4134913bf821a9, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1e676168ea4324942a4134913bf821a9, type: 2}
   m_IsPrefabParent: 0
