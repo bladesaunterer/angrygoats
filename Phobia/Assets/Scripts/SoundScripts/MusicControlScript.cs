@@ -87,4 +87,10 @@ public class MusicControlScript : MonoBehaviour
             Debug.LogError("Unavailable MusicPlayer component");
         }
     }
+
+	// Increases the music volume
+	static public void ChangeMusicVolume(float newValue) 
+	{
+		instance.playingMusic.volume = newValue;
+	}
 }
