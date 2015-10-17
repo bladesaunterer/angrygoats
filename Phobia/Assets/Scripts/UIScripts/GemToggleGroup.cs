@@ -118,8 +118,27 @@ namespace UnityEngine.UI
 			gm.CheckFirstGame ();
 
 			//will unlock the default gems
+			gm.LockAllGems ();
 			gm.UnlockGem (GemOneDefault);
 			gm.UnlockGem (GemTwoDefault);
+
+			if(PlayerPrefs.GetInt ("SpiderLevelScene")>0){
+				gm.UnlockGem (Gem.Blue);
+			}
+
+			if (PlayerPrefs.GetInt ("HeightsLevelScene") > 0) {
+				gm.UnlockGem (Gem.Turquoise);
+			}
+
+			if (PlayerPrefs.GetInt ("DarknessLevelScene") > 0) {
+				gm.UnlockGem (Gem.Yellow);
+			}
+
+			if (PlayerPrefs.GetInt ("SpiderLevelScene") > 600 && PlayerPrefs.GetInt ("HeightsLevelScene") > 600 && PlayerPrefs.GetInt ("DarknessLevelScene") > 600) {
+				gm.UnlockGem(Gem.Purple);
+			}
+
+//			gm.UnlockAllGems ();
 
 
 			//Use below line to unlock additional gems 
