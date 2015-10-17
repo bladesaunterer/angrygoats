@@ -47,7 +47,7 @@ MonoBehaviour:
   floorPrefabs:
   - {fileID: 151258, guid: db3c8919e4c5be44f8cc29d7df86c69e, type: 2}
   - {fileID: 135730, guid: ed13d2c4087e73f46961f4e69008ede7, type: 2}
-  totalEnemies: 2
+  totalEnemies: 65
   maxEnemiesPerRoom: 7
   enemies:
   - {fileID: 139882, guid: 6558d27cdb76a804fbb0d7ff3440dacc, type: 2}
