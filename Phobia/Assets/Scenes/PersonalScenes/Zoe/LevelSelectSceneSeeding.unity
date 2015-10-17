@@ -383,6 +383,14 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 11483670, guid: 138177782941846b9ac6f72be8c2002c, type: 2}
+      propertyPath: m_LineType
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 140070, guid: 138177782941846b9ac6f72be8c2002c, type: 2}
+      propertyPath: m_Name
+      value: SeedBegin
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 138177782941846b9ac6f72be8c2002c, type: 2}
   m_IsPrefabParent: 0
@@ -556,6 +564,12 @@ Transform:
   - {fileID: 182402915}
   m_Father: {fileID: 1890796996}
   m_RootOrder: 0
+--- !u!114 &401629822 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 11498372, guid: 138177782941846b9ac6f72be8c2002c,
+    type: 2}
+  m_PrefabInternal: {fileID: 339635362}
+  m_Script: {fileID: 1392445389, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
 --- !u!1 &411705946
 GameObject:
   m_ObjectHideFlags: 0
@@ -926,6 +940,12 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1066893042}
   m_RootOrder: 0
+--- !u!114 &509580281 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 11483670, guid: 138177782941846b9ac6f72be8c2002c,
+    type: 2}
+  m_PrefabInternal: {fileID: 339635362}
+  m_Script: {fileID: 575553740, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
 --- !u!1 &511205960
 GameObject:
   m_ObjectHideFlags: 0
@@ -1036,6 +1056,23 @@ Transform:
   m_Children: []
   m_Father: {fileID: 518208564}
   m_RootOrder: 0
+--- !u!1 &613938601 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 105024, guid: 138177782941846b9ac6f72be8c2002c, type: 2}
+  m_PrefabInternal: {fileID: 339635362}
+--- !u!114 &613938603
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 613938601}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4477ce245e5e462fb7aee46273bd62a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  seedField: {fileID: 509580281}
+  beginButton: {fileID: 401629822}
 --- !u!1 &635006906
 GameObject:
   m_ObjectHideFlags: 0
