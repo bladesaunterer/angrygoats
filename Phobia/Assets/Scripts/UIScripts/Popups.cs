@@ -50,7 +50,7 @@ public class Popups : MonoBehaviour {
 	}
 
 	// Displays the pause screen
-	void togglePauseScreen() {
+	public void togglePauseScreen() {
 		// Toggle to false or true accordingly.
 		if (popupDisplaying == false) {
 			popupDisplaying = true;
