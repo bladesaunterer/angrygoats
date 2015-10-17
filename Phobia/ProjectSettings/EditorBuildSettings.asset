@@ -9,38 +9,28 @@ EditorBuildSettings:
     path: Assets/Scenes/MasterCopy/MainMenuScene.unity
   - enabled: 1
     path: Assets/Scenes/MasterCopy/LevelSelectScene.unity
-  - enabled: 0
-    path: Assets/Scenes/MasterCopy/LevelScene.unity
-  - enabled: 0
-    path: Assets/Scenes/PersonalScenes/Chester/ChesterScene.unity
-  - enabled: 0
-    path: Assets/Scenes/MasterCopy/LevelSelectScene.unity
-  - enabled: 0
-    path: Assets/Scenes/MasterCopy/MainMenuScene.unity
-  - enabled: 0
-    path: 
-  - enabled: 0
-    path: Assets/Scenes/MasterCopy/PreSpiderLevelCutscene.unity
   - enabled: 1
-    path: Assets/Scenes/MasterCopy/Cutscenes/PreLevelSpiderCutscene.unity
+    path: Assets/Scenes/MasterCopy/HighScoresScene.unity
   - enabled: 1
-    path: Assets/Scenes/MasterCopy/Cutscenes/LoadingSpiderScene.unity
+    path: Assets/Scenes/MasterCopy/CreditsScene.unity
   - enabled: 1
     path: Assets/Scenes/MasterCopy/levels/SpiderLevelScene.unity
   - enabled: 1
-    path: Assets/Scenes/MasterCopy/Cutscenes/PreLevelHeightsCutscene.unity
+    path: Assets/Scenes/MasterCopy/levels/HeightsLevelScene.unity
   - enabled: 1
-    path: Assets/Scenes/MasterCopy/Cutscenes/PreLevelDarknessCutscene.unity
+    path: Assets/Scenes/MasterCopy/levels/DarknessLevelScene.unity
+  - enabled: 1
+    path: Assets/Scenes/MasterCopy/Cutscenes/LoadingSpiderScene.unity
   - enabled: 1
     path: Assets/Scenes/MasterCopy/Cutscenes/LoadingHeightsScene.unity
   - enabled: 1
     path: Assets/Scenes/MasterCopy/Cutscenes/LoadingDarknessScene.unity
   - enabled: 1
-    path: Assets/Scenes/MasterCopy/CreditsScene.unity
+    path: Assets/Scenes/MasterCopy/Cutscenes/PreLevelSpiderCutscene.unity
   - enabled: 1
-    path: Assets/Scenes/MasterCopy/levels/HeightsLevelScene.unity
+    path: Assets/Scenes/MasterCopy/Cutscenes/PreLevelHeightsCutscene.unity
   - enabled: 1
-    path: Assets/Scenes/MasterCopy/levels/DarknessLevelScene.unity
+    path: Assets/Scenes/MasterCopy/Cutscenes/PreLevelDarknessCutscene.unity
   - enabled: 1
     path: Assets/Scenes/MasterCopy/Cutscenes/PostLevelSpiderCutscene.unity
   - enabled: 1

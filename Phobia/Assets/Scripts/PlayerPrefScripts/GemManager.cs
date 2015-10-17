@@ -46,7 +46,7 @@ public class GemManager
 	public Gem GetDefaultGemOne ()
 	{
 		string gem = PlayerPrefs.GetString ("DefaultGemOne");
-		return getEnum (gem);
+		return GetEnum (gem);
 	}
 
 	/**
@@ -55,7 +55,7 @@ public class GemManager
 	public Gem GetDefaultGemTwo ()
 	{
 		string gem = PlayerPrefs.GetString ("DefaultGemTwo");
-		return getEnum (gem);
+		return GetEnum (gem);
 	}
 
 	/**
@@ -81,7 +81,7 @@ public class GemManager
 	public Gem GetGemOne ()
 	{
 		string gem = PlayerPrefs.GetString ("GemOne");
-		return getEnum (gem);
+		return GetEnum (gem);
 	}
 
 	/**
@@ -90,7 +90,7 @@ public class GemManager
 	public Gem GetGemTwo ()
 	{
 		string gem = PlayerPrefs.GetString ("GemTwo");
-		return getEnum (gem);
+		return GetEnum (gem);
 	}
 
 	/**
@@ -108,7 +108,7 @@ public class GemManager
 	public Gem GetCurrentGem ()
 	{
 		string gem = PlayerPrefs.GetString ("CurrentGem");
-		return getEnum (gem);
+		return GetEnum (gem);
 
 	}
 
@@ -211,7 +211,7 @@ public class GemManager
 	}
 	                       
 
-	private Gem getEnum (string gem)
+	public Gem GetEnum (string gem)
 	{
 
 		foreach (Gem g in Gem.GetValues(typeof(Gem))) {
