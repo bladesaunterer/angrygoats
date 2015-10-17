@@ -17,10 +17,22 @@ public class EnemyAttack : MonoBehaviour
     private Animator anim;
     float timer;
 
+    void Start()
+    {
+        try
+        {
+            anim = GetComponent<EnemyAnimatorFinding>().getEnemyAnimator();
+        }
+        catch
+        {
+            Debug.Log("Could not find EnemyAnimatorFinding Script attached!");
+        }
+        
+    }
+
     void Awake()
     {
         playerInRange = false;
-        anim = GetComponent<EnemyAnimatorFinding>().getEnemyAnimator();
     }
     void OnTriggerEnter(Collider other)
     {
