@@ -8,6 +8,8 @@ public class GenericGem : MonoBehaviour
 	public int damage = 10;
 	public int duration = 5;
 	public int cost = 25;
+	public bool isCurrent = true;
+	public Material boltMaterial;
     public Material staffMaterial;
     public Material staffParticles;
 
@@ -32,18 +34,5 @@ public class GenericGem : MonoBehaviour
 		shotSpawn = playerControl.shotSpawn;
 	}
 
-	public virtual void onEnemyHit (GameObject other)
-	{
-		EnemyHealth health = other.GetComponent<EnemyHealth> ();
-		if (health != null) {
-			health.TakeDamage (damage);
-			tick = true;
-			endTime = Time.time + duration;
-		}
-	}
-
-	//Checks if it is the currently selected gem
-	protected bool checkActive(){
-		return gameObject.GetComponent<MeshRenderer>().enabled;
-	}
+	public virtual void onEnemyHit (GameObject other) {}
 }
