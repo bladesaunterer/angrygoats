@@ -104,6 +104,25 @@ namespace UnityEngine.UI
 				m_Toggles.Remove (toggle);
 		}
         
+		public void Update(){
+			if (Input.GetKeyDown(KeyCode.B)){
+				PlayerPrefs.SetInt ("SpiderLevelScene", 0);
+				PlayerPrefs.SetString ("SpiderLevelScene name", "");
+				PlayerPrefs.SetInt ("HeightsLevelScene", 0);
+				PlayerPrefs.SetString ("HeightsLevelScene name", "");
+				PlayerPrefs.SetInt ("DarknessLevelScene", 0);
+				PlayerPrefs.SetString ("DarknessLevelScene name", "");
+			}
+			if (Input.GetKeyDown (KeyCode.C)) {
+				PlayerPrefs.SetInt ("SpiderLevelScene", 700);
+				PlayerPrefs.SetString ("SpiderLevelScene name", "zoe");
+				PlayerPrefs.SetInt ("HeightsLevelScene", 700);
+				PlayerPrefs.SetString ("HeightsLevelScene name", "zoe");
+				PlayerPrefs.SetInt ("DarknessLevelScene", 700);
+				PlayerPrefs.SetString ("DarknessLevelScene name", "zoe");
+			}
+		}
+
 
 		/**
 		 * Adds toggle to group
