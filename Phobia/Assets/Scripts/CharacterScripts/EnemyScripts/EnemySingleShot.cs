@@ -12,7 +12,11 @@ public class EnemySingleShot : MonoBehaviour {
 
     void Start()
     {
-        anim = anim = GetComponent<EnemyAnimatorFinding>().getEnemyAnimator();
+        var eaf = GetComponent<EnemyAnimatorFinding>();
+        if (anim != null)
+        {
+            anim = eaf.getEnemyAnimator();
+        }
     }
 
     // Update is called once per frame
