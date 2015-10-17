@@ -11,22 +11,22 @@ public class highScoreBoard : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		if (PlayerPrefs.GetString ("SpiderLevelScene 1 name") == "") {
+		if (PlayerPrefs.GetString ("SpiderLevelScene name") == "") {
 			levelOne.text = "None yet!";
 		} else {
-			levelOne.text = PlayerPrefs.GetString("SpiderLevelScene 1 name") + ": " + PlayerPrefs.GetInt ("SpiderLevelScene 1").ToString();
+			levelOne.text = PlayerPrefs.GetString("SpiderLevelScene name") + ": " + PlayerPrefs.GetInt ("SpiderLevelScene").ToString();
 		}
 
-		if (PlayerPrefs.GetString ("High Score 2 name") == "") {
+		if (PlayerPrefs.GetString ("HeightsLevelScene name") == "") {
 			levelTwo.text = "None yet!";
 		} else {
-			levelTwo.text = PlayerPrefs.GetString("High Score 2 name") + ": " + PlayerPrefs.GetInt ("High Score 2").ToString();
+			levelTwo.text = PlayerPrefs.GetString("HeightsLevelScene name") + ": " + PlayerPrefs.GetInt ("HeightsLevelScene").ToString();
 		}
 
-		if (PlayerPrefs.GetString ("High Score 3 name") == "") {
+		if (PlayerPrefs.GetString ("DarknessLevelScene name") == "") {
 			levelThree.text = "None yet!";
 		} else {
-			levelThree.text = PlayerPrefs.GetString("High Score 3 name") + ": " + PlayerPrefs.GetInt ("High Score 3").ToString();
+			levelThree.text = PlayerPrefs.GetString("DarknessLevelScene name") + ": " + PlayerPrefs.GetInt ("DarknessLevelScene").ToString();
 		}
 
 

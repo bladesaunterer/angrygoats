@@ -27,6 +27,8 @@ TagManager:
   - HelpText
   - PortraitL
   - PortraitR
+  - SPreLevDialogueText
+  - Staff
   layers:
   - Default
   - TransparentFX

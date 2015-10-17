@@ -337,7 +337,7 @@ GameObject:
   - 23: {fileID: 2336444}
   m_Layer: 0
   m_Name: LowPolyNecromancerWand
-  m_TagString: Untagged
+  m_TagString: Staff
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1641,6 +1641,8 @@ MonoBehaviour:
   damage: 10
   duration: 5
   cost: 25
+  staffMaterial: {fileID: 2100000, guid: 4636556fe1fa5634d8193119f3511900, type: 2}
+  staffParticles: {fileID: 2100000, guid: c7557fd96334d564989a89fbf8a3c436, type: 2}
   heal: 20
 --- !u!114 &11407712
 MonoBehaviour:
@@ -1656,6 +1658,8 @@ MonoBehaviour:
   damage: 10
   duration: 5
   cost: 25
+  staffMaterial: {fileID: 2100000, guid: cbabf168e5cb8c846aa8c7e514f43686, type: 2}
+  staffParticles: {fileID: 2100000, guid: f591c75199771da40a4343473884a304, type: 2}
 --- !u!114 &11408550
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1692,6 +1696,8 @@ MonoBehaviour:
   damage: 10
   duration: 5
   cost: 25
+  staffMaterial: {fileID: 2100000, guid: f74caaca16a809449b71c2043e0378ec, type: 2}
+  staffParticles: {fileID: 2100000, guid: fbf44a20f017c7c4db0783755f15cf51, type: 2}
   slowSpeed: 30
 --- !u!114 &11418660
 MonoBehaviour:
@@ -1722,6 +1728,8 @@ MonoBehaviour:
   damage: 10
   duration: 5
   cost: 100
+  staffMaterial: {fileID: 2100000, guid: d27b32bbc4547a94eb2b87e1236fc2b3, type: 2}
+  staffParticles: {fileID: 2100000, guid: c3c8315f1a9f9964391c65f469c5083a, type: 2}
   isInvis: 0
   oldRoom: {fileID: 0}
 --- !u!114 &11441820
@@ -1762,6 +1770,8 @@ MonoBehaviour:
   damage: 10
   duration: 5
   cost: 25
+  staffMaterial: {fileID: 2100000, guid: d67b663f09ad26048af330d5a26edc6f, type: 2}
+  staffParticles: {fileID: 2100000, guid: 7010844f8979bdb4d80ab46f3ba70b1d, type: 2}
   overTimeDamage: 5
 --- !u!114 &11493336
 MonoBehaviour:
@@ -1777,6 +1787,8 @@ MonoBehaviour:
   damage: 10
   duration: 5
   cost: 25
+  staffMaterial: {fileID: 2100000, guid: c57e606c0e1c4d344b98f9783342f64a, type: 2}
+  staffParticles: {fileID: 2100000, guid: 202e7dec98cdc65408f3b033e58edcaa, type: 2}
 --- !u!135 &13517352
 SphereCollider:
   m_ObjectHideFlags: 1
