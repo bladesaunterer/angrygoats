@@ -8,6 +8,8 @@ public class GenericGem : MonoBehaviour
 	public int damage = 10;
 	public int duration = 5;
 	public int cost = 25;
+    public Material staffMaterial;
+    public Material staffParticles;
 
 	protected GameObject player;
 	protected PlayerControl playerControl;
