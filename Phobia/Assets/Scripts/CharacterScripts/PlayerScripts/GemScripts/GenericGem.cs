@@ -34,5 +34,12 @@ public class GenericGem : MonoBehaviour
 		shotSpawn = playerControl.shotSpawn;
 	}
 
-	public virtual void onEnemyHit (GameObject other) {}
+	public virtual void onEnemyHit (GameObject other) {
+		EnemyHealth health = other.GetComponent<EnemyHealth> ();
+		if (health != null) {
+			health.TakeDamage (damage);
+			tick = true;
+			endTime = Time.time + duration;
+		}
+	}
 }
