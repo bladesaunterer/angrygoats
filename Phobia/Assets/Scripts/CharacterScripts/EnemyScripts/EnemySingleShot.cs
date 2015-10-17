@@ -8,13 +8,23 @@ public class EnemySingleShot : MonoBehaviour {
 	public bool shouldShoot = true;
 	float timer;
 	private float timeBetweenAttacks = 1f;
-	
-	// Update is called once per frame
-	void Update () {
+    private Animator anim;
+
+    void Start()
+    {
+        anim = anim = GetComponent<EnemyAnimatorFinding>().getEnemyAnimator();
+    }
+
+    // Update is called once per frame
+    void Update () {
 		timer += Time.deltaTime;
 		if (timer >= timeBetweenAttacks && shouldShoot) {
 			timer = 0f;
-			Instantiate (shot, shotSpawn.position, shotSpawn.rotation);
+            if (anim != null)
+            {
+                EnemyAnimatorController.ExecuteAnimation(anim, "Cast");
+            }
+            Instantiate (shot, shotSpawn.position, shotSpawn.rotation);
 		}
 	}
 }

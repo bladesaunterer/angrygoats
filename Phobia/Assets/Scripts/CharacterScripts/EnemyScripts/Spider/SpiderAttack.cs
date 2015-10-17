@@ -7,9 +7,10 @@ using System.Collections;
 public class SpiderAttack : EnemyAttack
 {
 
-	protected override void attackAnimation () {
-		GetComponent<SpiderAnimation>().attackAnim();
-	}
+    protected override void attackAnimation()
+    {
+        GetComponent<SpiderAnimation>().attackAnim();
+    }
 
 }
 
