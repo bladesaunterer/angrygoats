@@ -47,4 +47,9 @@ public class PlayerSfxScript : MonoBehaviour {
         float vol = Random.Range(instance.volLowRange, instance.volHighRange);
         instance.attackSound.PlayOneShot(instance.shotSound, vol);
     }
+
+	static public void ChangeSfxVolume(float newValue)
+	{
+		instance.attackSound.volume = newValue;
+	}
 }
