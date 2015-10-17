@@ -21,13 +21,13 @@ public class ButtonNextLevel : MonoBehaviour
 	//Will load scene based in index in build settings
 	public void NextLevelButton (int index)
 	{
-		Application.LoadLevel (index);
+		Application.LoadLevelAsync (index);
 	}
 
 	//Will load scene based on name
 	public void NextLevelButton (string lvl)
 	{
-		Application.LoadLevel (lvl);
+		Application.LoadLevelAsync (lvl);
 		
 	}
 

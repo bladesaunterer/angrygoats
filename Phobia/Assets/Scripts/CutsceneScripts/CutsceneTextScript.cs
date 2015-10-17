@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using System.Text.RegularExpressions;
 
 /**
  * 
@@ -40,6 +41,8 @@ public class CutsceneTextScript : MonoBehaviour {
 
 	void Update() {
 		if (Input.GetKeyDown (KeyCode.Escape)) {
+			//Stop Coroutine
+			StopCoroutine("ProcessScriptLine");
 
 			//Skip cutscene to game loading scene.
 			Application.LoadLevelAsync(sceneToTransitionTo);
@@ -59,6 +62,9 @@ public class CutsceneTextScript : MonoBehaviour {
 				// Increment line number.
 				lineNumber++;
 			} else {
+				//Stop Coroutine
+				StopCoroutine("ProcessScriptLine");
+
 				//Transition to game loading scene.
 				Application.LoadLevelAsync(sceneToTransitionTo);
 			}
@@ -101,22 +107,14 @@ public class CutsceneTextScript : MonoBehaviour {
 		// Get dialogue string to write to text box. 
 		lineText = scriptLine [1];
 
-		int charCount = 0;
+		// Play a sound effect for each character.
+		CutsceneSoundScript.PlayTextSound ();
 
-		// Print out string character by character.
-		foreach (char c in lineText.ToCharArray()) {
-			textBoxString.text += c;
+		textBoxString.text = lineText;
 
-			if (charCount < 0) {
-				// Play a sound effect for each character.
-				CutsceneSoundScript.PlayTextSound ();
-				charCount = 8;
-			}
+		yield return new WaitForSeconds (0);
 
-			charCount--;
-
-			yield return new WaitForSeconds (textTypingDelay);
-		}
+		Debug.Log ("End of Coroutine reached.");
 	}
 
 	/**
@@ -125,42 +123,46 @@ public class CutsceneTextScript : MonoBehaviour {
 	 *
 	 **/
 	public void ImageProcessing() {
+		//Remove line ending.
+		string editedString = scriptLine [2];
+		editedString = editedString.Remove(editedString.Length - 1);
 
-		if (scriptLine [2] == "DisableL") {
+		if (editedString == "DisableL") {
 			//Disable left image only.
 			portraitLImage.enabled = false;
 			
-		} else if (scriptLine [2] == "DisableR") {
+		} else if (editedString == "DisableR") {
 			//Disable right image only.
 			portraitRImage.enabled = false;
 
-		} else if (scriptLine [2] == "DisableB") {
+		} else if (editedString.Equals("DisableB")) {
+			Debug.Log ("Disabled Both");
 			//Disable both images.
 			portraitLImage.enabled = false;
 			portraitRImage.enabled = false;
 			
-		} else if (scriptLine [2] == "EnableL") {
+		} else if (editedString == "EnableL") {
 			//Enable left image only.
 			portraitLImage.enabled = true;
 
-		} else if (scriptLine [2] == "EnableR") {
+		} else if (editedString == "EnableR") {
 			//Enable right image only.
 			portraitRImage.enabled = true;
 
-		} else if (scriptLine [2] == "EnableB") {
+		} else if (editedString == "EnableB") {
 			//Enable both images.
 			portraitLImage.enabled = true;
 			portraitRImage.enabled = true;
 			
-		} else if (scriptLine [2] == "ChangeClientHappy") {
+		} else if (editedString == "ChangeClientHappy") {
 			//Change to happy client image.
 			portraitRImage.sprite = clientHappy;
 
-		} else if (scriptLine [2] == "ChangeClientMasked") {
+		} else if (editedString == "ChangeClientMasked") {
 			//Change to masked client image.
 			portraitRImage.sprite = clientMasked;
 
-		} else if (scriptLine [2] == "ChangeClientExtra") {
+		} else if (editedString == "ChangeClientExtra") {
 			//Change to extra client image.
 			portraitRImage.sprite = clientExtra;
 		}
