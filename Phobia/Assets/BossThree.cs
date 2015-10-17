@@ -20,6 +20,13 @@ public class BossThree : MonoBehaviour {
 				Debug.Log("Hit!");
 			}
 		}
+		if (flag == 1 &&  (this.gameObject.GetComponent<EnemyHealth> ().currentHealth != this.gameObject.GetComponent<EnemyHealth> ().startingHealth)) {
+			flag = 2;
+			GameObject player = GameObject.FindWithTag("Player");
+			Vector3 temp = player.transform.rotation * Vector3.forward * -1;
+			player.GetComponent<Rigidbody>().AddForce(temp*3000);
+			this.gameObject.GetComponent<EnemySpinShot>().shoot = 1;
+		}
 
 	}
 }
