@@ -194,6 +194,10 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 29f8841dccf9c6644ac203a58ae224b8, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &562773427 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 100014, guid: 22ff990e31887644dbf700581d979542, type: 2}
+  m_PrefabInternal: {fileID: 1963127004}
 --- !u!1001 &1567918620
 Prefab:
   m_ObjectHideFlags: 0
@@ -620,6 +624,10 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!1 &1941191721 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 117366, guid: 22ff990e31887644dbf700581d979542, type: 2}
+  m_PrefabInternal: {fileID: 1963127004}
 --- !u!1 &1961984127
 GameObject:
   m_ObjectHideFlags: 0
@@ -741,6 +749,14 @@ Prefab:
       propertyPath: cooldownSlider
       value: 
       objectReference: {fileID: 1567918622}
+    - target: {fileID: 11464052, guid: 22ff990e31887644dbf700581d979542, type: 2}
+      propertyPath: gemOne
+      value: 
+      objectReference: {fileID: 562773427}
+    - target: {fileID: 11464052, guid: 22ff990e31887644dbf700581d979542, type: 2}
+      propertyPath: gemTwo
+      value: 
+      objectReference: {fileID: 1941191721}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 22ff990e31887644dbf700581d979542, type: 2}
   m_IsPrefabParent: 0

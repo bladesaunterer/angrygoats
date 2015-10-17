@@ -9,8 +9,8 @@ public class GemSwitching : MonoBehaviour
 {
 
 	private GameObject spawn;
-	private GameObject gemOne;
-	private GameObject gemTwo;
+	public GameObject gemOne;
+	public GameObject gemTwo;
 	private Gem currentGem;
 	private GemManager gemManager = GemManager.Instance;
 

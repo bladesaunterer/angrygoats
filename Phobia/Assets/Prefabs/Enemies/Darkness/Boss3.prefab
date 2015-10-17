@@ -1646,7 +1646,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   roomCont: {fileID: 0}
   ghost: {fileID: 195160, guid: d04363e6bda03724bb9a6c13387dca8d, type: 2}
-  quantPerWave: 5
+  quantPerWave: 25
 --- !u!114 &11450636
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1824,7 +1824,7 @@ Prefab:
       objectReference: {fileID: 195160, guid: d04363e6bda03724bb9a6c13387dca8d, type: 2}
     - target: {fileID: 0}
       propertyPath: quantPerWave
-      value: 5
+      value: 25
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
