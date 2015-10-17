@@ -294,6 +294,10 @@ Prefab:
       propertyPath: home
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 11415318, guid: 4d788e1a2ebb5a34f8325fdb789f66c8, type: 2}
+      propertyPath: anim
+      value: 
+      objectReference: {fileID: 655291469}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4d788e1a2ebb5a34f8325fdb789f66c8, type: 2}
   m_IsPrefabParent: 0
@@ -742,19 +746,19 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22464700, guid: 1e676168ea4324942a4134913bf821a9, type: 2}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22464700, guid: 1e676168ea4324942a4134913bf821a9, type: 2}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22449744, guid: 1e676168ea4324942a4134913bf821a9, type: 2}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22449744, guid: 1e676168ea4324942a4134913bf821a9, type: 2}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 11457184, guid: 1e676168ea4324942a4134913bf821a9, type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument

@@ -344,16 +344,15 @@ public class AIPath : MonoBehaviour
     // Dean changed from "Update" to "FixedUpdate"
     public virtual void FixedUpdate()
     {
+        if (anim != null)
+        {
+            //bool moving = dir.x != 0f || dir.z != 0f;
+            anim.SetBool("Run", canMove);
+        }
 
         if (!canMove) { return; }
 
         Vector3 dir = CalculateVelocity(GetFeetPosition());
-        if (anim != null)
-        {    
-            bool moving = dir.x != 0f || dir.z != 0f;
-            anim.SetBool("Run", moving);
-        }
-
 
         //Rotate towards targetDirection (filled in by CalculateVelocity)
         RotateTowards(targetDirection);

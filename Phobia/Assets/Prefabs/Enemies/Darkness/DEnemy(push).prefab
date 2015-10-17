@@ -1651,6 +1651,7 @@ MonoBehaviour:
   forwardLook: 1
   endReachedDistance: .200000003
   closestOnPathCheck: 1
+  anim: {fileID: 9578048}
 --- !u!114 &11440268
 MonoBehaviour:
   m_ObjectHideFlags: 1
