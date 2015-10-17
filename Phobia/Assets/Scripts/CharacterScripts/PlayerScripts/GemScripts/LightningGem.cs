@@ -6,7 +6,7 @@ public class LightningGem : GenericGem {
 	
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetKeyDown(KeyCode.K) && playerControl.cooldown >= cost && checkActive())
+		if (Input.GetKeyDown(KeyCode.K) && playerControl.cooldown >= cost && isCurrent)
 		{
 			playerControl.SubtractCooldown(cost);
 			GameObject shotSpawned = Instantiate(shot,shotSpawn.position,shotSpawn.rotation) as GameObject;

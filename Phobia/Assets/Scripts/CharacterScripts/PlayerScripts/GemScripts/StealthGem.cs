@@ -9,7 +9,7 @@ public class StealthGem : GenericGem {
 	private Material material;
 	
 	void Update () {
-		if (Input.GetKeyDown(KeyCode.K) && playerControl.cooldown >= cost && checkActive()) {
+		if (Input.GetKeyDown(KeyCode.K) && playerControl.cooldown >= cost && isCurrent) {
 			if (!isInvis) {
 				playerControl.SubtractCooldown(cost);
 				
@@ -28,7 +28,7 @@ public class StealthGem : GenericGem {
 		}
 		
 		if (isInvis) {
-			if (Time.time > endTime || Input.GetKeyDown(KeyCode.J) || (!checkActive() && Input.GetKeyDown(KeyCode.K))) {
+			if (Time.time > endTime || Input.GetKeyDown(KeyCode.J) || (!isCurrent && Input.GetKeyDown(KeyCode.K))) {
 			
 				if (playerControl.currentRoom != null) {
 					playerControl.currentRoom.GetComponent<RoomControl>().EnemiesHuntPlayer();

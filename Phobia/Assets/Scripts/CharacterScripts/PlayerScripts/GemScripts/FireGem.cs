@@ -13,7 +13,7 @@ public class FireGem : GenericGem {
 	
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetKeyDown(KeyCode.K) && playerControl.cooldown >= cost && checkActive())
+		if (Input.GetKeyDown(KeyCode.K) && playerControl.cooldown >= cost && isCurrent)
 		{
             PlayerSfxScript.playShotSound();
 			playerControl.SubtractCooldown(cost);
