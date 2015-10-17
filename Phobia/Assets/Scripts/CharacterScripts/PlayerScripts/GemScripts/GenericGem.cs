@@ -18,8 +18,7 @@ public class GenericGem : MonoBehaviour
 
 	protected GameObject shot;             		// The special attack object.
 	protected Transform shotSpawn;         		// Location where the special attack will spawn.
-
-	protected float nextTime;
+	
 	protected float endTime;
 
 

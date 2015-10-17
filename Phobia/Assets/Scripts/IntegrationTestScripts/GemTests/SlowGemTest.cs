@@ -14,7 +14,7 @@ public class SlowGemTest : GemEffectTest {
 	private float newSpeed;
 
 	void Awake(){
-		slow = gameObject.GetComponent<IceGem>().slowSpeed;
+		slow = gameObject.GetComponent<IceGem>().factor;
 	}
 
 	// Update is called once per frame

@@ -4,13 +4,7 @@ using System.Collections;
 public class FireGem : GenericGem {
 
 	public int overTimeDamage = 5;
-	
-	private EnemyHealth health;
-	/*
-	void awake(){
-		tick = false;
-	}
-	
+
 	// Update is called once per frame
 	void Update () {
 		if (Input.GetKeyDown(KeyCode.K) && playerControl.cooldown >= cost && isCurrent)
@@ -20,22 +14,18 @@ public class FireGem : GenericGem {
 			GameObject shotSpawned = Instantiate(shot,shotSpawn.position,shotSpawn.rotation) as GameObject;
 			shotSpawned.GetComponent<BoltMover>().SetGemObject(gameObject);
 		}
-		if (health != null &&  tick && Time.time > nextTime){
-			nextTime = Time.time + 1f;
-			if (Time.time <= endTime){
-				health.TakeDamage(overTimeDamage);
-			} else {
-				tick = false;
-			}
-		}
+
 	}
 	
 	
 	public override void onEnemyHit(GameObject other){
-		health = other.GetComponent<EnemyHealth>();
 		//Make sure the dot starts 1 second after the initial damage;
-		nextTime = Time.time + 1;
 		base.onEnemyHit(other);
 		endTime += 1;
-	}*/
+		FireCurse curse = other.GetComponent<FireCurse>();
+		if (curse == null){
+			curse = other.AddComponent<FireCurse>();
+		}
+		curse.updateStats(endTime,overTimeDamage);
+	}
 }
