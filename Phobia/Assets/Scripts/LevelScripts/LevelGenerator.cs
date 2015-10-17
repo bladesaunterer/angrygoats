@@ -37,7 +37,7 @@ public class LevelGenerator : MonoBehaviour {
 
     public GameObject minimapUI;
 	
-	public AstarPath something;
+	public AstarPath aStarGrids;
     
     
     void Start () {
@@ -193,7 +193,7 @@ public class LevelGenerator : MonoBehaviour {
 		// generate seed for recreate
 		seed = actseed.ToString() + "#" + roomsToSpawn.ToString() + "#" + totalEnemies.ToString()
 			+ "#" + maxEnemiesPerRoom.ToString() + "#" + minWebs.ToString() + "#" + maxWebs.ToString();
-		something.Scan();
+		aStarGrids.Scan();
     }
 	
 	// Update is called once per frame
