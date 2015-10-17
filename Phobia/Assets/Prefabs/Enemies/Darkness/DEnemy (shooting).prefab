@@ -456,6 +456,7 @@ GameObject:
   - 114: {fileID: 11462982}
   - 54: {fileID: 5455494}
   - 114: {fileID: 11497626}
+  - 114: {fileID: 11442148}
   m_Layer: 0
   m_Name: DEnemy (shooting)
   m_TagString: Enemy
@@ -1654,7 +1655,7 @@ Rigidbody:
   m_Mass: 1
   m_Drag: 5
   m_AngularDrag: .150000006
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 2
   m_Constraints: 0
@@ -1743,6 +1744,7 @@ MonoBehaviour:
   forwardLook: 1
   endReachedDistance: .200000003
   closestOnPathCheck: 1
+  anim: {fileID: 9565994}
 --- !u!114 &11438940
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1758,6 +1760,18 @@ MonoBehaviour:
   currentHealth: 0
   lethalLow: 0
   scoreAwarded: 25
+--- !u!114 &11442148
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 153314}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbc41f568f2a1b242a0e23be278d1b9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anim: {fileID: 9565994}
 --- !u!114 &11445982
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1785,7 +1799,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff5324341b916fa4ba39509d06c41d51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  home: {fileID: 0}
+  home: {fileID: 473958}
 --- !u!114 &11464202
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1946,6 +1960,18 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: speed
       value: 70
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: anim
+      value: 
+      objectReference: {fileID: 9565994}
+    - target: {fileID: 0}
+      propertyPath: home
+      value: 
+      objectReference: {fileID: 473958}
+    - target: {fileID: 0}
+      propertyPath: m_UseGravity
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

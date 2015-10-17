@@ -9,17 +9,22 @@ public class EnemyPewPew : MonoBehaviour {
 	public Transform shotSpawn3;
 	float timer;
 	private float timeBetweenAttacks = 0.5f;
+    private Animator anim;
 	// Use this for initialization
 	void Start () {
-	
-	}
+        anim = GetComponent<EnemyAnimatorFinding>().getEnemyAnimator();
+    }
 	
 	// Update is called once per frame
 	void Update () {
 		timer += Time.deltaTime;
 		if (timer >= timeBetweenAttacks) {
 			timer = 0f;
-			Instantiate (shot, shotSpawn.position, shotSpawn.rotation);
+            if (anim != null)
+            {
+                EnemyAnimatorController.ExecuteAnimation(anim, "Cast");
+            }
+            Instantiate (shot, shotSpawn.position, shotSpawn.rotation);
 			Instantiate (shot, shotSpawn1.position, shotSpawn1.rotation);
 			Instantiate (shot, shotSpawn2.position, shotSpawn2.rotation);
 			Instantiate (shot, shotSpawn3.position, shotSpawn3.rotation);

@@ -801,6 +801,7 @@ GameObject:
   - 114: {fileID: 11436488}
   - 114: {fileID: 11471268}
   - 114: {fileID: 11440846}
+  - 114: {fileID: 11414740}
   m_Layer: 0
   m_Name: DEnemy(fast)
   m_TagString: Enemy
@@ -1603,6 +1604,18 @@ MonoBehaviour:
     tagsChange: -1
     tagsSet: -1
   tagPenalties: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+--- !u!114 &11414740
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 194068}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbc41f568f2a1b242a0e23be278d1b9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anim: {fileID: 9526822}
 --- !u!114 &11427626
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1625,6 +1638,7 @@ MonoBehaviour:
   forwardLook: 1
   endReachedDistance: .200000003
   closestOnPathCheck: 1
+  anim: {fileID: 9526822}
 --- !u!114 &11436488
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1819,6 +1833,14 @@ Prefab:
       propertyPath: speed
       value: 2000
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: e90c46908982a0845b8cc2417f883156, type: 2}
+    - target: {fileID: 0}
+      propertyPath: anim
+      value: 
+      objectReference: {fileID: 9526822}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 194068}
