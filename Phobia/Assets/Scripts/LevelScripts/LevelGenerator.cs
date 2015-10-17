@@ -192,7 +192,7 @@ public class LevelGenerator : MonoBehaviour {
 		}
 		// generate seed for recreate
 		seed = actseed.ToString() + "#" + roomsToSpawn.ToString() + "#" + totalEnemies.ToString()
-			+ "#" + maxEnemiesPerRoom.ToString() + "#" + minWebs.ToString() + "#" + maxWebs.ToString();
+			+ "#" + maxEnemiesPerRoom.ToString() + "#" + minWebs.ToString() + "#" + maxWebs.ToString() + "#" + Application.loadedLevelName;
 		aStarGrids.Scan();
     }
 	

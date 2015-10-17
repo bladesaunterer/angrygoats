@@ -40,7 +40,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   roomsToSpawn: 20
-  seed: 
+  seed: 2
   actseed: -1
   roomPrefab: {fileID: 137374, guid: 00557a0a0f69c234cb5f46cf2b67dde0, type: 2}
   startPrefab: {fileID: 151258, guid: db3c8919e4c5be44f8cc29d7df86c69e, type: 2}
@@ -69,7 +69,11 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: seed
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 155550}
