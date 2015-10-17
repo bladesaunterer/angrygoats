@@ -117,6 +117,14 @@ namespace UnityEngine.UI
 			// Will set  up gem system if hasnt been used before
 			gm.CheckFirstGame ();
 
+//			PlayerPrefs.SetInt ("SpiderLevelScene", 0);
+//			PlayerPrefs.SetString ("SpiderLevelScene name", "");
+//			PlayerPrefs.SetInt ("HeightsLevelScene", 0);
+//			PlayerPrefs.SetString ("HeightsLevelScene name", "");
+//			PlayerPrefs.SetInt ("DarknessLevelScene", 0);
+//			PlayerPrefs.SetString ("DarknessLevelScene name", "");
+
+
 			//will unlock the default gems
 			gm.LockAllGems ();
 			gm.UnlockGem (GemOneDefault);
