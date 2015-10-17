@@ -374,6 +374,10 @@ Prefab:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
       value: DarknessLevelScene
       objectReference: {fileID: 0}
+    - target: {fileID: 11466874, guid: 089eccb1d7b60944c98279c5f96db997, type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: PostLevelDarknessCutscene
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 089eccb1d7b60944c98279c5f96db997, type: 2}
   m_IsPrefabParent: 0
@@ -638,7 +642,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 573315f148d13db4ba3d9729ceb72f7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  roomsToSpawn: 22
+  roomsToSpawn: 2
   seed: 
   actseed: -1
   roomPrefab: {fileID: 137374, guid: 00557a0a0f69c234cb5f46cf2b67dde0, type: 2}
@@ -647,7 +651,7 @@ MonoBehaviour:
   - {fileID: 141436, guid: eb20733af130758428bb92d96026d132, type: 2}
   - {fileID: 113590, guid: e4996203039b6644dae10dcede7e5fbd, type: 2}
   - {fileID: 114772, guid: 9caad488b6a1a4242835427b1a0ef6bd, type: 2}
-  totalEnemies: 67
+  totalEnemies: 2
   maxEnemiesPerRoom: 7
   enemies:
   - {fileID: 139882, guid: 6558d27cdb76a804fbb0d7ff3440dacc, type: 2}
