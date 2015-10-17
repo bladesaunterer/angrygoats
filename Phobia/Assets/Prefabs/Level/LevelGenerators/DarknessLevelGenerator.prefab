@@ -1,0 +1,76 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &155550
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 498160}
+  - 114: {fileID: 11460894}
+  m_Layer: 0
+  m_Name: DarknessLevelGenerator
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &498160
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 155550}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+--- !u!114 &11460894
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 155550}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 573315f148d13db4ba3d9729ceb72f7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  roomsToSpawn: 20
+  seed: 
+  actseed: -1
+  roomPrefab: {fileID: 137374, guid: 00557a0a0f69c234cb5f46cf2b67dde0, type: 2}
+  startPrefab: {fileID: 151258, guid: db3c8919e4c5be44f8cc29d7df86c69e, type: 2}
+  floorPrefabs:
+  - {fileID: 151258, guid: db3c8919e4c5be44f8cc29d7df86c69e, type: 2}
+  - {fileID: 135730, guid: ed13d2c4087e73f46961f4e69008ede7, type: 2}
+  totalEnemies: 2
+  maxEnemiesPerRoom: 7
+  enemies:
+  - {fileID: 139882, guid: 6558d27cdb76a804fbb0d7ff3440dacc, type: 2}
+  - {fileID: 194068, guid: 273b4b88f7cc83347aa798e7e85b6fd4, type: 2}
+  - {fileID: 129274, guid: 66f47bbecd920df4d8b5a61b310518a4, type: 2}
+  - {fileID: 153314, guid: 4d788e1a2ebb5a34f8325fdb789f66c8, type: 2}
+  enemyCommonness: 04000000040000000400000002000000
+  bossFloor: {fileID: 151258, guid: db3c8919e4c5be44f8cc29d7df86c69e, type: 2}
+  boss: {fileID: 137310, guid: 988050b1c4d1443458e7eb54debc06fd, type: 2}
+  minWebs: 0
+  maxWebs: 0
+  web: {fileID: 160458, guid: 705edc7941cc1d04f8ee34a247b4c2bc, type: 2}
+  trash: {fileID: 100828, guid: 245990912d851954f9e9c0cff7d8ac74, type: 2}
+  minimapUI: {fileID: 0}
+  aStarGrids: {fileID: 0}
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 155550}
+  m_IsPrefabParent: 1
