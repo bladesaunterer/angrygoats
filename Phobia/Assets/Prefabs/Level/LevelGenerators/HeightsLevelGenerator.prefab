@@ -45,9 +45,14 @@ MonoBehaviour:
   roomPrefab: {fileID: 104770, guid: 2712d668c61c8a245bc7e84e8189abc6, type: 2}
   startPrefab: {fileID: 113332, guid: aefd54ed41e27a34895e19e6a271f122, type: 2}
   floorPrefabs:
-  - {fileID: 187184, guid: b0f643fec94cace46869ca0d1b5cc5c4, type: 2}
-  - {fileID: 176458, guid: 0d6e79190a222014d9c3253d3eea2d87, type: 2}
-  - {fileID: 139194, guid: 0243a5b03b8ae8346b19e2ade4c586cb, type: 2}
+  - {fileID: 138424, guid: 9964a040c944ad940ae8db9c8deacf24, type: 2}
+  - {fileID: 126076, guid: 81e3e4293d59e024e8f8651c9cf53457, type: 2}
+  - {fileID: 122914, guid: 7045bc02a40c66d4fb64ecdf73dec0bc, type: 2}
+  - {fileID: 190174, guid: 2937658c3dc49b64d864714043e57fca, type: 2}
+  - {fileID: 153334, guid: acb5317a517f1bf4bb20957d8d15dc63, type: 2}
+  - {fileID: 132938, guid: aa911a0b2765716478c69306817cb4e2, type: 2}
+  - {fileID: 178504, guid: 80d13a2453886114e9ba2fac38f456d6, type: 2}
+  - {fileID: 126066, guid: 20c48a892db98ca46b113934bf230e90, type: 2}
   totalEnemies: 65
   maxEnemiesPerRoom: 6
   enemies:
@@ -70,7 +75,43 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: floorPrefabs.Array.size
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: floorPrefabs.Array.data[0]
+      value: 
+      objectReference: {fileID: 138424, guid: 9964a040c944ad940ae8db9c8deacf24, type: 2}
+    - target: {fileID: 0}
+      propertyPath: floorPrefabs.Array.data[1]
+      value: 
+      objectReference: {fileID: 126076, guid: 81e3e4293d59e024e8f8651c9cf53457, type: 2}
+    - target: {fileID: 0}
+      propertyPath: floorPrefabs.Array.data[2]
+      value: 
+      objectReference: {fileID: 122914, guid: 7045bc02a40c66d4fb64ecdf73dec0bc, type: 2}
+    - target: {fileID: 0}
+      propertyPath: floorPrefabs.Array.data[3]
+      value: 
+      objectReference: {fileID: 190174, guid: 2937658c3dc49b64d864714043e57fca, type: 2}
+    - target: {fileID: 0}
+      propertyPath: floorPrefabs.Array.data[4]
+      value: 
+      objectReference: {fileID: 153334, guid: acb5317a517f1bf4bb20957d8d15dc63, type: 2}
+    - target: {fileID: 0}
+      propertyPath: floorPrefabs.Array.data[5]
+      value: 
+      objectReference: {fileID: 132938, guid: aa911a0b2765716478c69306817cb4e2, type: 2}
+    - target: {fileID: 0}
+      propertyPath: floorPrefabs.Array.data[6]
+      value: 
+      objectReference: {fileID: 178504, guid: 80d13a2453886114e9ba2fac38f456d6, type: 2}
+    - target: {fileID: 0}
+      propertyPath: floorPrefabs.Array.data[7]
+      value: 
+      objectReference: {fileID: 126066, guid: 20c48a892db98ca46b113934bf230e90, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 101118}
