@@ -96,7 +96,6 @@ public class RoomControl : MonoBehaviour {
 
 		GameObject thisEnemy = (GameObject)GameObject.Instantiate(enemy, (chosenCell.transform.position + new Vector3(0, 2, 0)), Quaternion.identity);
 		enemies.Add(thisEnemy);
-
 		thisEnemy.GetComponent<EnemyControl>().home = chosenCell.transform;
 		thisEnemy.GetComponent<AIPath>().target = chosenCell.transform;
 
@@ -132,9 +131,9 @@ public class RoomControl : MonoBehaviour {
 		foreach (GameObject enemy in enemies) {
 			if (enemy != null) {
 				enemy.GetComponent<AIPath>().target = GameObject.FindWithTag("Player").transform;
-			}
-			if (enemy.GetComponent<EnemySingleShot>() != null) {
-				enemy.GetComponent<EnemySingleShot>().shouldShoot = true;
+				if (enemy.GetComponent<EnemySingleShot>() != null) {
+					enemy.GetComponent<EnemySingleShot>().shouldShoot = true;
+				}
 			}
 		}
 

@@ -135,6 +135,10 @@ public class LevelGenerator : MonoBehaviour {
 		roomsDict.Add(thisRoom.Index,thisRoom);
 
 		boss = (GameObject)Instantiate(boss, thisRoom.transform.position + new Vector3(0, 2, 0), Quaternion.identity);
+		BossThree bs3 = boss.GetComponent<BossThree> ();
+		if (bs3 != null) {
+			bs3.roomCont = thisRoom.GetComponent<RoomControl>();
+		}
 		boss.GetComponent<AIPath>().target = GameObject.FindWithTag("Player").transform;
 		
 		
