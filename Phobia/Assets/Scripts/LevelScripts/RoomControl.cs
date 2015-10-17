@@ -119,6 +119,9 @@ public class RoomControl : MonoBehaviour {
 		foreach (GameObject enemy in enemies) {
 			if (enemy != null) {
 				enemy.GetComponent<AIPath>().target = enemy.GetComponent<EnemyControl>().home;
+				if (enemy.GetComponent<EnemySingleShot>() != null) {
+					enemy.GetComponent<EnemySingleShot>().shouldShoot = false;
+				}
 			}
 		}
 
@@ -129,6 +132,9 @@ public class RoomControl : MonoBehaviour {
 		foreach (GameObject enemy in enemies) {
 			if (enemy != null) {
 				enemy.GetComponent<AIPath>().target = GameObject.FindWithTag("Player").transform;
+			}
+			if (enemy.GetComponent<EnemySingleShot>() != null) {
+				enemy.GetComponent<EnemySingleShot>().shouldShoot = true;
 			}
 		}
 
