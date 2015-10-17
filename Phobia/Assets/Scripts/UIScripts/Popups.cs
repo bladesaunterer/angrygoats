@@ -22,12 +22,14 @@ public class Popups : MonoBehaviour
 	
 		Time.timeScale = 1.0f;
 		minimapObject = GameObject.Find ("Minimap");
-
 		//To ensure boss is loaded
-		if (GameObject.FindGameObjectWithTag ("Boss").GetComponent<BossOne> () != null)
+		if (Application.loadedLevelName.Equals ("SpiderLevelScene"))
 			levelToUnlock = Level.Dark;
 		else
 			levelToUnlock = Level.Height;
+
+
+
 
 	}
 	
@@ -46,6 +48,7 @@ public class Popups : MonoBehaviour
 			// if boss destroyed display win screen
 			if (GameObject.FindGameObjectWithTag ("Boss") == null) {
 				LevelManager.Instance.unlockLevel (levelToUnlock);
+				Debug.Log (PlayerPrefs.GetString (levelToUnlock.ToString ()) + " " + levelToUnlock.ToString ());
 				displayWinScreen ();
 			}
 			// if player destroyed display death screen

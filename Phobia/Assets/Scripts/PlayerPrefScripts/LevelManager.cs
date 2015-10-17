@@ -25,6 +25,7 @@ public class LevelManager
 	public void unlockLevel (Level level)
 	{
 		PlayerPrefs.SetString (level.ToString (), "Unlocked");
+		PlayerPrefs.Save ();
 	}
 
 	/**
@@ -33,7 +34,8 @@ public class LevelManager
 	public void lockLevel (Level level)
 	{
 		PlayerPrefs.SetString (level.ToString (), "Locked");
-
+		PlayerPrefs.Save ();
+		
 	}
 
 	/**
