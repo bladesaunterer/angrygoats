@@ -739,6 +739,10 @@ Prefab:
       propertyPath: cooldownSlider
       value: 
       objectReference: {fileID: 1567918622}
+    - target: {fileID: 2303292, guid: 22ff990e31887644dbf700581d979542, type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 45c4ddaaf24f7c74781721210542312b, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 22ff990e31887644dbf700581d979542, type: 2}
   m_IsPrefabParent: 0
