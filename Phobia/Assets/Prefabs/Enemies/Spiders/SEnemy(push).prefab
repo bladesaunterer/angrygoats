@@ -1697,7 +1697,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 129274}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -10.4406433, y: 5, z: 2.32984519}
+  m_LocalPosition: {x: 238.077118, y: 349.168152, z: -374.046326}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 498240}
@@ -2180,6 +2180,7 @@ MonoBehaviour:
   forwardLook: 1
   endReachedDistance: .200000003
   closestOnPathCheck: 1
+  anim: {fileID: 0}
 --- !u!114 &11456886
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2262,7 +2263,7 @@ SkinnedMeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 2100000, guid: 6e152606697666d4aaa4fc59a9f45835, type: 2}
+  - {fileID: 2100000, guid: cf8c18ddeda71ec4d99f5e57460a7add, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
