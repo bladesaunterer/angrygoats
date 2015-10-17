@@ -5,18 +5,16 @@ using System.Collections;
  * Will handle all logic behind gem logic in game, and will
  * notify gem manager of changes
  */
-public class GemSwitching : MonoBehaviour
-{
+public class GemSwitching : MonoBehaviour {
 
 	private GameObject spawn;
 	private GameObject gemOne;
 	private GameObject gemTwo;
-	private Gem currentGem;
+	//private Gem currentGem;
 	private GemManager gemManager = GemManager.Instance;
 
 	//Called when script is loaded
-	void Awake ()
-	{
+	void Awake () {
 		Debug.Log(gemManager.GetGemOne().ToString() + " successfully persisted");
 		Debug.Log(gemManager.GetGemTwo().ToString() + " successfully persisted");
 
@@ -40,9 +38,9 @@ public class GemSwitching : MonoBehaviour
 		foreach (Transform child in spawn.transform) {
 			child.gameObject.SetActive (false);
 		}
-		gemOne.SetActive (true);
-		gemTwo.SetActive (true);
-		gemTwo.GetComponent<MeshRenderer> ().enabled = false;
+		gemOne.SetActive(true);
+		gemTwo.SetActive(true);
+		gemTwo.GetComponent<GenericGem>().isCurrent = false;
 		
 		//current selection starts with gemOne
 		gemManager.SetCurrentGem (gemManager.GetGemOne ());
@@ -53,34 +51,26 @@ public class GemSwitching : MonoBehaviour
 	
 
 	// Update is called once per frame
-	void Update ()
-	{
+	void Update () {
 		if (Input.GetKeyDown (KeyCode.L)) {
 			ChangeGem ();
 		}
 	}
 	
-	void ChangeGem ()
-	{
-        
-		if (gemOne.gameObject.GetComponent<MeshRenderer> ().enabled) {
-			gemOne.GetComponent<MeshRenderer> ().enabled = false;
-			gemTwo.GetComponent<MeshRenderer> ().enabled = true;
-			gemManager.SetCurrentGem (gemManager.GetGemTwo ());
-            updateStaff(gemTwo);
-		} else {
-			gemOne.GetComponent<MeshRenderer> ().enabled = true;
-			gemTwo.GetComponent<MeshRenderer> ().enabled = false;
-			gemManager.SetCurrentGem (gemManager.GetGemOne ());
-            updateStaff(gemOne);
-        }
+	void ChangeGem () {
+		gemOne.GetComponent<GenericGem>().isCurrent = !gemOne.GetComponent<GenericGem>().isCurrent;
+		gemTwo.GetComponent<GenericGem>().isCurrent = !gemTwo.GetComponent<GenericGem>().isCurrent;
+	
+        GameObject currentGem = (gemOne.GetComponent<GenericGem>().isCurrent) ? gemOne: gemTwo;
+		
+		gemManager.SetCurrentGem (gemManager.GetEnum(currentGem.tag));
+		updateStaff(currentGem);
 	}
 
     /*
-    * Update the staff the player holds to match the equiped gem, also update the smoke/particles to match.
+    * Update the staff the player holds to match the equipped gem, also update the smoke/particles to match.
     */
-    void updateStaff(GameObject gem)
-    {
+    void updateStaff(GameObject gem) {
         GameObject.FindGameObjectWithTag("Staff").GetComponent<Renderer>().material = gem.GetComponent<GenericGem>().staffMaterial;
         GameObject.FindGameObjectWithTag("Staff").transform.Find("smoke").GetComponent<Renderer>().material = gem.GetComponent<GenericGem>().staffParticles;
     }

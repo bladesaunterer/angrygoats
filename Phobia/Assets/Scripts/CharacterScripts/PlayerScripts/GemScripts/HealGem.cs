@@ -10,7 +10,7 @@ public class HealGem : GenericGem {
 		//refund the cooldown
 		PlayerHealth playerHealth = player.GetComponent<PlayerHealth> ();
 
-		if (Input.GetKeyDown(KeyCode.K) && playerControl.cooldown >= cost && checkActive())
+		if (Input.GetKeyDown(KeyCode.K) && playerControl.cooldown >= cost && isCurrent)
 		{
 			if (playerHealth.currentHealth != 100){
 				playerControl.SubtractCooldown(cost);
