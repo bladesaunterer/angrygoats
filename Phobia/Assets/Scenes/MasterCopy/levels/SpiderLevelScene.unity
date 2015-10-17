@@ -731,14 +731,14 @@ Prefab:
       propertyPath: m_RootOrder
       value: 6
       objectReference: {fileID: 0}
-    - target: {fileID: 11408550, guid: 22ff990e31887644dbf700581d979542, type: 2}
-      propertyPath: cooldownSlider
-      value: 
-      objectReference: {fileID: 1567918622}
     - target: {fileID: 11418660, guid: 22ff990e31887644dbf700581d979542, type: 2}
       propertyPath: healthSlider
       value: 
       objectReference: {fileID: 1567918621}
+    - target: {fileID: 11408550, guid: 22ff990e31887644dbf700581d979542, type: 2}
+      propertyPath: cooldownSlider
+      value: 
+      objectReference: {fileID: 1567918622}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 22ff990e31887644dbf700581d979542, type: 2}
   m_IsPrefabParent: 0

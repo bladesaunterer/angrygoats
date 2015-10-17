@@ -47,6 +47,8 @@ public class GemSwitching : MonoBehaviour
 		//current selection starts with gemOne
 		gemManager.SetCurrentGem (gemManager.GetGemOne ());
 
+        updateStaff(gemOne);
+
 	}
 	
 
@@ -60,16 +62,28 @@ public class GemSwitching : MonoBehaviour
 	
 	void ChangeGem ()
 	{
+        
 		if (gemOne.gameObject.GetComponent<MeshRenderer> ().enabled) {
 			gemOne.GetComponent<MeshRenderer> ().enabled = false;
 			gemTwo.GetComponent<MeshRenderer> ().enabled = true;
 			gemManager.SetCurrentGem (gemManager.GetGemTwo ());
+            updateStaff(gemTwo);
 		} else {
 			gemOne.GetComponent<MeshRenderer> ().enabled = true;
 			gemTwo.GetComponent<MeshRenderer> ().enabled = false;
 			gemManager.SetCurrentGem (gemManager.GetGemOne ());
-		}
+            updateStaff(gemOne);
+        }
 	}
+
+    /*
+    * Update the staff the player holds to match the equiped gem, also update the smoke/particles to match.
+    */
+    void updateStaff(GameObject gem)
+    {
+        GameObject.FindGameObjectWithTag("Staff").GetComponent<Renderer>().material = gem.GetComponent<GenericGem>().staffMaterial;
+        GameObject.FindGameObjectWithTag("Staff").transform.Find("smoke").GetComponent<Renderer>().material = gem.GetComponent<GenericGem>().staffParticles;
+    }
 
 
 }
