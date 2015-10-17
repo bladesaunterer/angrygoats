@@ -65,6 +65,7 @@ LightmapSettings:
     m_TextureCompression: 1
     m_FinalGather: 0
     m_FinalGatherRayCount: 1024
+    m_ReflectionCompression: 2
   m_LightmapSnapshot: {fileID: 0}
   m_RuntimeCPUUsage: 25
 --- !u!196 &4
@@ -84,9 +85,6 @@ NavMeshSettings:
     cellSize: .166666672
     manualCellSize: 0
   m_NavMeshData: {fileID: 23800000, guid: ab81f9db15727a04d85e04fa3d57ace4, type: 2}
---- !u!127 &5
-LevelGameManager:
-  m_ObjectHideFlags: 0
 --- !u!20 &53703026 stripped
 Camera:
   m_PrefabParentObject: {fileID: 2000670, guid: 88fdb93fd998ee0489870cb48ef674c3,
@@ -139,6 +137,10 @@ Prefab:
       propertyPath: cooldownSlider
       value: 
       objectReference: {fileID: 1242141350}
+    - target: {fileID: 2303292, guid: 22ff990e31887644dbf700581d979542, type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 45c4ddaaf24f7c74781721210542312b, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 22ff990e31887644dbf700581d979542, type: 2}
   m_IsPrefabParent: 0
@@ -341,7 +343,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 123022, guid: 089eccb1d7b60944c98279c5f96db997, type: 2}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22410704, guid: 089eccb1d7b60944c98279c5f96db997, type: 2}
       propertyPath: m_AnchoredPosition.y
@@ -364,6 +366,22 @@ Prefab:
       value: 
       objectReference: {fileID: 12800000, guid: d546e529c6470644db2f363343b1f859,
         type: 3}
+    - target: {fileID: 11453324, guid: 089eccb1d7b60944c98279c5f96db997, type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: HeightsLevelScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 11457706, guid: 089eccb1d7b60944c98279c5f96db997, type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: HeightsLevelScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 11432332, guid: 089eccb1d7b60944c98279c5f96db997, type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: HeightsLevelScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 11466874, guid: 089eccb1d7b60944c98279c5f96db997, type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: PostLevelHeightsCutscene
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 089eccb1d7b60944c98279c5f96db997, type: 2}
   m_IsPrefabParent: 0
@@ -694,7 +712,7 @@ MonoBehaviour:
   m_Script: {fileID: 1997211142, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_AllowActivationOnStandalone: 0
+  m_ForceModuleActive: 0
 --- !u!114 &1961984129
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -712,7 +730,7 @@ MonoBehaviour:
   m_CancelButton: Cancel
   m_InputActionsPerSecond: 10
   m_RepeatDelay: .5
-  m_AllowActivationOnMobileDevice: 0
+  m_ForceModuleActive: 0
 --- !u!114 &1961984130
 MonoBehaviour:
   m_ObjectHideFlags: 0

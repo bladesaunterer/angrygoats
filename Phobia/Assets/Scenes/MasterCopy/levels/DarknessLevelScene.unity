@@ -65,6 +65,7 @@ LightmapSettings:
     m_TextureCompression: 1
     m_FinalGather: 0
     m_FinalGatherRayCount: 1024
+    m_ReflectionCompression: 2
   m_LightmapSnapshot: {fileID: 0}
   m_RuntimeCPUUsage: 25
 --- !u!196 &4
@@ -84,9 +85,6 @@ NavMeshSettings:
     cellSize: .166666672
     manualCellSize: 0
   m_NavMeshData: {fileID: 23800000, guid: ab81f9db15727a04d85e04fa3d57ace4, type: 2}
---- !u!127 &5
-LevelGameManager:
-  m_ObjectHideFlags: 0
 --- !u!20 &53703026 stripped
 Camera:
   m_PrefabParentObject: {fileID: 2000670, guid: 88fdb93fd998ee0489870cb48ef674c3,
@@ -139,6 +137,10 @@ Prefab:
       propertyPath: healthSlider
       value: 
       objectReference: {fileID: 816712242}
+    - target: {fileID: 2303292, guid: 22ff990e31887644dbf700581d979542, type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 45c4ddaaf24f7c74781721210542312b, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 22ff990e31887644dbf700581d979542, type: 2}
   m_IsPrefabParent: 0
@@ -360,6 +362,22 @@ Prefab:
       value: 
       objectReference: {fileID: 12800000, guid: d546e529c6470644db2f363343b1f859,
         type: 3}
+    - target: {fileID: 11453324, guid: 089eccb1d7b60944c98279c5f96db997, type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: DarknessLevelScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 11432332, guid: 089eccb1d7b60944c98279c5f96db997, type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: DarknessLevelScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 11457706, guid: 089eccb1d7b60944c98279c5f96db997, type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: DarknessLevelScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 11466874, guid: 089eccb1d7b60944c98279c5f96db997, type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: PostLevelDarknessCutscene
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 089eccb1d7b60944c98279c5f96db997, type: 2}
   m_IsPrefabParent: 0
@@ -624,7 +642,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 573315f148d13db4ba3d9729ceb72f7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  roomsToSpawn: 22
+  roomsToSpawn: 2
   seed: 
   actseed: -1
   roomPrefab: {fileID: 137374, guid: 00557a0a0f69c234cb5f46cf2b67dde0, type: 2}
@@ -633,7 +651,7 @@ MonoBehaviour:
   - {fileID: 141436, guid: eb20733af130758428bb92d96026d132, type: 2}
   - {fileID: 113590, guid: e4996203039b6644dae10dcede7e5fbd, type: 2}
   - {fileID: 114772, guid: 9caad488b6a1a4242835427b1a0ef6bd, type: 2}
-  totalEnemies: 67
+  totalEnemies: 2
   maxEnemiesPerRoom: 7
   enemies:
   - {fileID: 139882, guid: 6558d27cdb76a804fbb0d7ff3440dacc, type: 2}
@@ -690,7 +708,7 @@ MonoBehaviour:
   m_Script: {fileID: 1997211142, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_AllowActivationOnStandalone: 0
+  m_ForceModuleActive: 0
 --- !u!114 &1961984129
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -708,7 +726,7 @@ MonoBehaviour:
   m_CancelButton: Cancel
   m_InputActionsPerSecond: 10
   m_RepeatDelay: .5
-  m_AllowActivationOnMobileDevice: 0
+  m_ForceModuleActive: 0
 --- !u!114 &1961984130
 MonoBehaviour:
   m_ObjectHideFlags: 0
