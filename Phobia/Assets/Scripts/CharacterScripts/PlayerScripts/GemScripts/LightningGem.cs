@@ -15,10 +15,10 @@ public class LightningGem : GenericGem {
 		if (ai != null &&  tick && Time.time > nextTime){
 			nextTime = Time.time + 1f;
 			if (Time.time <= endTime){
-				ai.enabled = false;
+				ai.canMove = false;
 			} else {
 				tick = false;
-				ai.enabled = true;
+				ai.canMove = true;
 			}
 		}
 	}
