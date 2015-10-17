@@ -24,7 +24,6 @@ public class Popups : MonoBehaviour
 		minimapObject = GameObject.Find ("Minimap");
 
 		//To ensure boss is loaded
-		yield return new WaitForSeconds (0.25f);
 		if (GameObject.FindGameObjectWithTag ("Boss").GetComponent<BossOne> () != null)
 			levelToUnlock = Level.Dark;
 		else
