@@ -6,7 +6,7 @@ public class FireGem : GenericGem {
 	public int overTimeDamage = 5;
 	
 	private EnemyHealth health;
-
+	/*
 	void awake(){
 		tick = false;
 	}
@@ -37,5 +37,5 @@ public class FireGem : GenericGem {
 		nextTime = Time.time + 1;
 		base.onEnemyHit(other);
 		endTime += 1;
-	}
+	}*/
 }

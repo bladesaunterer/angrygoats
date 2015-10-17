@@ -7,7 +7,7 @@ public class IceGem : GenericGem {
 
 	private AIPath ai;
 	private float prevSpeed;
-
+	/*
 	// Update is called once per frame
 	void Update () {
 		if (Input.GetKeyDown(KeyCode.K) && playerControl.cooldown >= cost && isCurrent)
@@ -33,5 +33,5 @@ public class IceGem : GenericGem {
 			ai.speed -= slowSpeed;
 		}
 		base.onEnemyHit(other);
-	}
+	}*/
 }
