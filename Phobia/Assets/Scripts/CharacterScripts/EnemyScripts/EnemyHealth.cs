@@ -12,7 +12,7 @@ public class EnemyHealth : MonoBehaviour
     public int lethalLow;
 	public int scoreAwarded = 0;
 
-	private bool isDed = false;
+	private bool isDead = false;
 
     void Awake()
     {
@@ -39,13 +39,17 @@ public class EnemyHealth : MonoBehaviour
 
         // If the current health is less than or equal to zero...
         if (currentHealth <= 0) {
-			if (isDed == false) {
-				isDed = true;
+			if (isDead == false) {
+				isDead = true;
 				Debug.Log ("Enemy Destroyed!");
 				if (this.tag == "Enemy" || this.tag == "Boss") {
 					// Increment score when destroyed.
 					Debug.Log ("INCREMEMNTING!");
-					TEMPScoreScript.Instance.IncrementScore (scoreAwarded);
+					TEMPScoreScript.Instance.IncrementScore (scoreAwarded); 
+				}
+				
+				if (GetComponent<EnemySingleShot>() != null) {
+					GetComponent<EnemySingleShot>().shouldShoot = false;
 				}
 
 				SpiderAnimation temp = GetComponent<SpiderAnimation> ();
