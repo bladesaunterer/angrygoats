@@ -134,10 +134,14 @@ public class LevelGenerator : MonoBehaviour {
 
 		roomsDict.Add(thisRoom.Index,thisRoom);
 
-		boss = (GameObject)Instantiate(boss, thisRoom.transform.position + new Vector3(0, 2, 0), Quaternion.identity);
-		BossThree bs3 = boss.GetComponent<BossThree> ();
-		if (bs3 != null) {
-			bs3.roomCont = thisRoom.GetComponent<RoomControl>();
+		if (boss.transform.name == "Boss3") {
+			int temp1 = UnityEngine.Random.Range(-18, 18);
+			int temp2 = UnityEngine.Random.Range(-10, 10);
+			boss = (GameObject)Instantiate (boss, thisRoom.transform.position + new Vector3 (temp1, 2, temp2), Quaternion.identity);
+			BossThree bs3 = boss.GetComponent<BossThree> ();
+			bs3.roomCont = thisRoom.GetComponent<RoomControl> ();
+		} else {
+			boss = (GameObject)Instantiate (boss, thisRoom.transform.position + new Vector3 (0, 2, 0), Quaternion.identity);
 		}
 		boss.GetComponent<AIPath>().target = GameObject.FindWithTag("Player").transform;
 		
