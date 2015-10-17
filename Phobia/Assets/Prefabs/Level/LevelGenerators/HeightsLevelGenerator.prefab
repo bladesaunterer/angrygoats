@@ -1,0 +1,77 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &101118
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 436556}
+  - 114: {fileID: 11452810}
+  m_Layer: 0
+  m_Name: HeightsLevelGenerator
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &436556
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 101118}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+--- !u!114 &11452810
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 101118}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 573315f148d13db4ba3d9729ceb72f7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  roomsToSpawn: 20
+  seed: 
+  actseed: -1
+  roomPrefab: {fileID: 104770, guid: 2712d668c61c8a245bc7e84e8189abc6, type: 2}
+  startPrefab: {fileID: 113332, guid: aefd54ed41e27a34895e19e6a271f122, type: 2}
+  floorPrefabs:
+  - {fileID: 187184, guid: b0f643fec94cace46869ca0d1b5cc5c4, type: 2}
+  - {fileID: 176458, guid: 0d6e79190a222014d9c3253d3eea2d87, type: 2}
+  - {fileID: 139194, guid: 0243a5b03b8ae8346b19e2ade4c586cb, type: 2}
+  totalEnemies: 65
+  maxEnemiesPerRoom: 6
+  enemies:
+  - {fileID: 139882, guid: d536fbcec318e124e8dfd51d094f3995, type: 2}
+  - {fileID: 194068, guid: 682c6875cdb03534ea00b1b0833bccef, type: 2}
+  - {fileID: 129274, guid: 013d05dfec3bcb54989bc74d2bc54506, type: 2}
+  - {fileID: 104204, guid: ee6fe54f842731b4f8311f2875fc943b, type: 2}
+  enemyCommonness: 0a000000040000000200000002000000
+  bossFloor: {fileID: 152652, guid: 8a97ce7772632c24ebbadeb4960b2ddb, type: 2}
+  boss: {fileID: 137310, guid: 988050b1c4d1443458e7eb54debc06fd, type: 2}
+  minWebs: 0
+  maxWebs: 0
+  web: {fileID: 160458, guid: 705edc7941cc1d04f8ee34a247b4c2bc, type: 2}
+  trash: {fileID: 100828, guid: 245990912d851954f9e9c0cff7d8ac74, type: 2}
+  minimapUI: {fileID: 0}
+  aStarGrids: {fileID: 0}
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 101118}
+  m_IsPrefabParent: 1
