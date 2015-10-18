@@ -418,19 +418,19 @@ Prefab:
         type: 3}
     - target: {fileID: 22441852, guid: 089eccb1d7b60944c98279c5f96db997, type: 2}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22441852, guid: 089eccb1d7b60944c98279c5f96db997, type: 2}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22473714, guid: 089eccb1d7b60944c98279c5f96db997, type: 2}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22473714, guid: 089eccb1d7b60944c98279c5f96db997, type: 2}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 089eccb1d7b60944c98279c5f96db997, type: 2}
@@ -494,7 +494,7 @@ Transform:
   m_LocalScale: {x: 4, y: 1, z: 2.4000001}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
 --- !u!1 &1742255550
 GameObject:
   m_ObjectHideFlags: 0
