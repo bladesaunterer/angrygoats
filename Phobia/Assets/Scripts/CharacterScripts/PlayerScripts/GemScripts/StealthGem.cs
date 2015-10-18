@@ -9,24 +9,6 @@ public class StealthGem : GenericGem {
 	private Material material;
 	
 	void Update () {
-		if (Input.GetKeyDown(KeyCode.K) && playerControl.cooldown >= cost && isCurrent) {
-			if (!isInvis) {
-				playerControl.SubtractCooldown(cost);
-				
-				if (playerControl.currentRoom != null) {
-					playerControl.currentRoom.GetComponent<RoomControl>().EnemiesGoHome();
-				}
-				endTime = Time.time + duration;
-				
-				material = player.transform.Find("LowPolyNecromancer").gameObject.GetComponent<Renderer>().material;
-				Color temp = material.color;
-				temp.a = 0;
-				material.color = temp;
-				
-				isInvis = true;
-			}
-		}
-		
 		if (isInvis) {
 			if (Time.time > endTime || Input.GetKeyDown(KeyCode.J) || (!isCurrent && Input.GetKeyDown(KeyCode.K))) {
 			
@@ -44,6 +26,23 @@ public class StealthGem : GenericGem {
 				playerControl.currentRoom.GetComponent<RoomControl>().EnemiesGoHome();
 				oldRoom = playerControl.currentRoom;
 			}
+		}
+	}
+
+	protected override void doEffect(){
+		if (!isInvis) {
+			playerControl.SubtractCooldown(cost);
+			if (playerControl.currentRoom != null) {
+				playerControl.currentRoom.GetComponent<RoomControl>().EnemiesGoHome();
+			}
+			endTime = Time.time + duration;
+			
+			material = player.transform.Find("LowPolyNecromancer").gameObject.GetComponent<Renderer>().material;
+			Color temp = material.color;
+			temp.a = 0;
+			material.color = temp;
+			
+			isInvis = true;
 		}
 	}
 }

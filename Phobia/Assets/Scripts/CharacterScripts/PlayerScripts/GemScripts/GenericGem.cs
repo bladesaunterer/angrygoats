@@ -33,6 +33,24 @@ public class GenericGem : MonoBehaviour
 		shotSpawn = playerControl.shotSpawn;
 	}
 
+	void Update(){
+		if (Input.GetKeyDown (KeyCode.K) && playerControl.cooldown >= cost && isCurrent) {
+			AchievementManager.Instance.usedGem();
+			PlayerSfxScript.playShotSound();
+			doEffect();
+		}
+	}
+
+	/**
+	 * Method gets called when k button is pressed
+	 */
+	protected virtual void doEffect(){
+
+	}
+
+	/**
+	 * Method gets called by the bolt when it hits an enemy
+	 */
 	public virtual void onEnemyHit (GameObject other) {
 		EnemyHealth health = other.GetComponent<EnemyHealth> ();
 		if (health != null) {

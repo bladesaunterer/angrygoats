@@ -4,14 +4,10 @@ using System.Collections.Generic;
 
 public class LightningGem : GenericGem {
 
-	// Update is called once per frame
-	void Update () {
-		if (Input.GetKeyDown(KeyCode.K) && playerControl.cooldown >= cost && isCurrent)
-		{
-			playerControl.SubtractCooldown(cost);
-			GameObject shotSpawned = Instantiate(shot,shotSpawn.position,shotSpawn.rotation) as GameObject;
-			shotSpawned.GetComponent<BoltMover>().SetGemObject(gameObject);
-		}
+	protected override void doEffect(){
+		playerControl.SubtractCooldown (cost);
+		GameObject shotSpawned = Instantiate(shot,shotSpawn.position,shotSpawn.rotation) as GameObject;
+		shotSpawned.GetComponent<BoltMover>().SetGemObject(gameObject);
 	}
 
 	public override void onEnemyHit(GameObject other){
