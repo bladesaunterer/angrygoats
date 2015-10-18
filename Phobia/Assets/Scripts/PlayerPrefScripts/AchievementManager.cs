@@ -19,6 +19,8 @@ public class AchievementManager : MonoBehaviour {
 
 	private bool gemUsage;
 
+	private float enterTime;
+
 	void Start(){
 		gemUsage = false;
 	}
@@ -38,6 +40,9 @@ public class AchievementManager : MonoBehaviour {
 		if (!gemUsage){
 			PlayerPrefs.SetInt("You're Not Special",1);
 		}
+		if (Time.time >= enterTime + 15f && generator.gameObject.name == "SpiderLevelGenerator"){
+			PlayerPrefs.SetInt("Impossible",1);
+		}
 	}
 
 	/**
@@ -55,5 +60,14 @@ public class AchievementManager : MonoBehaviour {
 	 */
 	public void usedGem(){
 		gemUsage = true;
+	}
+
+	/**
+	 * When the player enters a room 
+	 */
+	public void enterRoom(GameObject obj){
+		if (obj.name == "boss room"){
+			enterTime = Time.time;
+		} 
 	}
 }
