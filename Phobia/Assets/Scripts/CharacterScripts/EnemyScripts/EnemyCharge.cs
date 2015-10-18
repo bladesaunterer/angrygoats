@@ -13,6 +13,7 @@ public class EnemyCharge : MonoBehaviour {
 	void Update () {
 		Vector3 fwd = transform.TransformDirection (Vector3.forward);
 		if (Physics.Raycast (transform.position, fwd)) {
+			//Debug.Log("I AM CHARGING, MOVE!");
 				this.gameObject.GetComponent<Rigidbody> ().AddForce (gameObject.transform.forward * scale);
 		}
 	}

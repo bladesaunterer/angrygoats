@@ -42,11 +42,13 @@ public class PlayerHealth : MonoBehaviour
 		if(currentHealth <= 0)
 		{
             // ... the player is destroyed.
+            PlayerSfxScript.playDeathSound();
             playerControlScript.InitiateAnimation("Die");
             Destroy (gameObject, 0.95f);
 		}
         else
         {
+            PlayerSfxScript.playHitSound();
             playerControlScript.InitiateAnimation("Hit");
         }
 	}
