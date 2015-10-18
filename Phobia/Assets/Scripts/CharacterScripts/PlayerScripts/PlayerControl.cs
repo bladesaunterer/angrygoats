@@ -70,9 +70,13 @@ public class PlayerControl : MonoBehaviour
             PlayerSfxScript.playMeleeSound();
             nextMelee = Time.time + meleeRate;
             anim.SetTrigger("Melee");
-            Instantiate(meleeAttack, meleeSpawn.position, meleeSpawn.rotation);
-
+            Invoke("AttactInstantiate", 0.15f);
         }
+    }
+
+    void AttactInstantiate()
+    {
+        Instantiate(meleeAttack, meleeSpawn.position, meleeSpawn.rotation);
     }
 
     void FixedUpdate()

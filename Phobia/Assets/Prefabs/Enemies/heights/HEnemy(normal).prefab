@@ -334,6 +334,7 @@ GameObject:
   - 114: {fileID: 11425418}
   - 114: {fileID: 11464336}
   - 114: {fileID: 11420644}
+  - 114: {fileID: 11413222}
   m_Layer: 0
   m_Name: HEnemy(normal)
   m_TagString: Enemy
@@ -1887,7 +1888,7 @@ Animator:
   m_GameObject: {fileID: 146784}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: abfc7e7022cd8314a938aa968a89a9ea, type: 3}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 68a5b32621f1e3246b8dba92495ced5c, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -1923,6 +1924,18 @@ MonoBehaviour:
     tagsChange: -1
     tagsSet: -1
   tagPenalties: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+--- !u!114 &11413222
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 139882}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbc41f568f2a1b242a0e23be278d1b9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anim: {fileID: 9584816}
 --- !u!114 &11420644
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1962,6 +1975,7 @@ MonoBehaviour:
   currentHealth: 0
   lethalLow: -1
   scoreAwarded: 10
+  HealthBar: {fileID: 0}
 --- !u!114 &11464336
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1996,7 +2010,7 @@ MonoBehaviour:
   forwardLook: 1
   endReachedDistance: .200000003
   closestOnPathCheck: 1
-  anim: {fileID: 0}
+  anim: {fileID: 9584816}
 --- !u!114 &11473194
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2134,6 +2148,14 @@ Prefab:
       propertyPath: traversableTags
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 68a5b32621f1e3246b8dba92495ced5c, type: 2}
+    - target: {fileID: 0}
+      propertyPath: anim
+      value: 
+      objectReference: {fileID: 9584816}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 139882}

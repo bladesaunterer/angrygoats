@@ -1,0 +1,195 @@
+fileFormatVersion: 2
+guid: 662a8453ba133dd449b2cd5b25b6531a
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: BackVrtule
+    100002: Cinema4D_Editor
+    100004: Helicopter
+    100006: //RootNode
+    100008: jointBottom
+    100010: jointFront
+    100012: JointList1
+    100014: JointList2
+    100016: JointList3
+    100018: jointNaraznikD
+    100020: jointNaraznikH
+    100022: jointRotor
+    100024: Left
+    100026: Left1
+    100028: Left2
+    100030: Left3
+    100032: Left4
+    100034: Main
+    100036: MainVrtule
+    100038: Right
+    100040: Right1
+    100042: Right2
+    100044: Right3
+    100046: Right4
+    400000: BackVrtule
+    400002: Cinema4D_Editor
+    400004: Helicopter
+    400006: //RootNode
+    400008: jointBottom
+    400010: jointFront
+    400012: JointList1
+    400014: JointList2
+    400016: JointList3
+    400018: jointNaraznikD
+    400020: jointNaraznikH
+    400022: jointRotor
+    400024: Left
+    400026: Left1
+    400028: Left2
+    400030: Left3
+    400032: Left4
+    400034: Main
+    400036: MainVrtule
+    400038: Right
+    400040: Right1
+    400042: Right2
+    400044: Right3
+    400046: Right4
+    4300000: Helicopter
+    7400000: Engine Running
+    9500000: //RootNode
+    13700000: Helicopter
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Engine Running
+      takeName: C4D Animation Take
+      firstFrame: 0
+      lastFrame: 28
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Cinema4D_Editor
+        weight: 1
+      - path: Helicopter
+        weight: 1
+      - path: Main
+        weight: 1
+      - path: Main/BackVrtule
+        weight: 1
+      - path: Main/jointBottom
+        weight: 1
+      - path: Main/jointBottom/jointNaraznikD
+        weight: 1
+      - path: Main/jointBottom/jointNaraznikH
+        weight: 1
+      - path: Main/jointFront
+        weight: 1
+      - path: Main/Left
+        weight: 1
+      - path: Main/Left/Left1
+        weight: 1
+      - path: Main/Left/Left1/Left2
+        weight: 1
+      - path: Main/Left/Left1/Left2/Left3
+        weight: 1
+      - path: Main/Left/Left1/Left2/Left3/Left4
+        weight: 1
+      - path: Main/MainVrtule
+        weight: 1
+      - path: Main/MainVrtule/jointRotor
+        weight: 1
+      - path: Main/MainVrtule/jointRotor/JointList1
+        weight: 1
+      - path: Main/MainVrtule/jointRotor/JointList2
+        weight: 1
+      - path: Main/MainVrtule/jointRotor/JointList3
+        weight: 1
+      - path: Main/Right
+        weight: 1
+      - path: Main/Right/Right1
+        weight: 1
+      - path: Main/Right/Right1/Right2
+        weight: 1
+      - path: Main/Right/Right1/Right2/Right3
+        weight: 1
+      - path: Main/Right/Right1/Right2/Right3/Right4
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .00999999978
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
