@@ -8,9 +8,9 @@ using System.Collections;
 public class GemSwitching : MonoBehaviour {
 
 	private GameObject spawn;
-	private GameObject gemOne;
-	private GameObject gemTwo;
-	//private Gem currentGem;
+	public GameObject gemOne;
+	public GameObject gemTwo;
+	private Gem currentGem;
 	private GemManager gemManager = GemManager.Instance;
 
 	//Called when script is loaded
