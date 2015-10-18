@@ -57,6 +57,10 @@ public class InfiniteGenerator : MonoBehaviour {
 		double temp;
 		temp = (double)roomsToSpawn * ramp;
 		roomsToSpawn = (int)temp;
+		temp = (double)totalEnemies * ramp;
+		totalEnemies = (int)temp;
+		temp = (double)maxEnemiesPerRoom * ramp;
+		maxEnemiesPerRoom = (int)temp;
 
 
 		// Reference the minimap, so it can be generated in unison with the actual floor
@@ -143,6 +147,15 @@ public class InfiniteGenerator : MonoBehaviour {
 		} else {
 			boss = (GameObject)Instantiate (boss, thisRoom.transform.position + new Vector3 (0, 2, 0), Quaternion.identity);
 		}
+
+		temp = (double)boss.GetComponent<EnemyHealth> ().currentHealth * ramp;
+		boss.GetComponent<EnemyHealth> ().currentHealth = (int)temp;
+		temp = (double)boss.GetComponent<EnemyHealth> ().startingHealth * ramp;
+		boss.GetComponent<EnemyHealth> ().startingHealth = (int)temp;
+
+		temp = (double)boss.GetComponent<EnemyAttack> ().damage * ramp;
+		boss.GetComponent<EnemyAttack> ().damage = (int)temp;
+
 		boss.GetComponent<AIPath>().target = GameObject.FindWithTag("Player").transform;
 		
 		
@@ -196,7 +209,7 @@ public class InfiniteGenerator : MonoBehaviour {
 				sum += enemyCommonness[hopeful];
 			}
 			
-			chosenRoom.AddEnemy(enemies[hopeful]);
+			chosenRoom.AddEnemyWithRamp(enemies[hopeful],ramp);
 		}
 		aStarGrids.Scan();
 	}
