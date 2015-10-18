@@ -25,9 +25,9 @@ public class BossOne : MonoBehaviour {
 	void Update () {
 		if (enemyHealth.currentHealth < enemyHealth.startingHealth) {
             float currentSpawnRate = spawnRate;
-            if (numEnemiesSpawned < 3) {
+            if (numEnemiesSpawned <= 3) {
                 currentSpawnRate = spawnRate - 2;
-            } else if (numEnemiesSpawned < 7) {
+            } else if (numEnemiesSpawned <= 7) {
                 currentSpawnRate = spawnRate;
             } else {
                 currentSpawnRate = spawnRate + 2;
