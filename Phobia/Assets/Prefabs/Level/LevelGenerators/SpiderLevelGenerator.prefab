@@ -39,7 +39,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 573315f148d13db4ba3d9729ceb72f7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  roomsToSpawn: 20
+  roomsToSpawn: 2
   seed: 
   actseed: -1
   roomPrefab: {fileID: 104770, guid: d35c4f618bababb4a8c66065d625ad85, type: 2}
@@ -53,7 +53,7 @@ MonoBehaviour:
   - {fileID: 118186, guid: 0b6efa638e338b745b126e2741d2ca4e, type: 2}
   - {fileID: 198754, guid: 8076a686518b4e74f99d848707da0709, type: 2}
   - {fileID: 129790, guid: cf8ca9f61f02b7b458c4b03045261572, type: 2}
-  totalEnemies: 60
+  totalEnemies: 1
   maxEnemiesPerRoom: 5
   enemies:
   - {fileID: 139882, guid: 920b67a3fd9e07c4cafb8c907af0daef, type: 2}
@@ -75,7 +75,15 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: roomsToSpawn
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: totalEnemies
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 128482}

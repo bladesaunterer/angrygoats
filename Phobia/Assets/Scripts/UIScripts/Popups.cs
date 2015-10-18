@@ -24,9 +24,11 @@ public class Popups : MonoBehaviour
 		minimapObject = GameObject.Find ("Minimap");
 		//To ensure boss is loaded
 		if (Application.loadedLevelName.Equals ("SpiderLevelScene"))
+			levelToUnlock = Level.Height;
+		else if (Application.loadedLevelName.Equals ("HeightsLevelScene"))
 			levelToUnlock = Level.Dark;
 		else
-			levelToUnlock = Level.Height;
+			levelToUnlock = Level.Endless;
 
 
 
@@ -59,7 +61,8 @@ public class Popups : MonoBehaviour
 	}
 
 	// Displays the pause screen
-	public void togglePauseScreen() {
+	public void togglePauseScreen ()
+	{
 		// Toggle to false or true accordingly.
 		if (popupDisplaying == false) {
 			popupDisplaying = true;
