@@ -22,6 +22,7 @@ public class InitialDamageTest : MonoBehaviour {
 		if(health.currentHealth == newHealth){
 			gemObject.GetComponent<GemEffectTest>().toggleOnHit(other.gameObject);
 		} else {
+			Debug.Log("fail");
 			IntegrationTest.Fail(gameObject);
 		}
 	}
