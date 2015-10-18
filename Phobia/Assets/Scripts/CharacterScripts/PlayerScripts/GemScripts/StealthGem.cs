@@ -13,8 +13,7 @@ public class StealthGem : GenericGem
 
     private Material material;
 
-    void Update()
-    {
+    protected override void Update() {
         // Check if invisible
         if (isInvis)
         {
@@ -40,14 +39,16 @@ public class StealthGem : GenericGem
                 oldRoom = playerControl.currentRoom;
             }
         }
+		else {
+			base.Update();
+		}
     }
 
-    protected override void doEffect()
-    {
+    protected override void doEffect() {
         if (!isInvis)
         {
 
-            // Cause the player to go invisable for a period of time
+            // Cause the player to go invisible for a period of time
             playerControl.SubtractCooldown(cost);
             if (playerControl.currentRoom != null)
             {

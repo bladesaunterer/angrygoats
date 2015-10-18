@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public class GenericAchievement : MonoBehaviour {
 
-	public string name;
+	public string achievementName;
 	
 	[TextArea(3,10)]
 	public string lockeddescription;
@@ -25,7 +25,7 @@ public class GenericAchievement : MonoBehaviour {
 	 * This method should only be called for Other Achievements
 	 */
 	protected void checkUnlocked(){
-		if (PlayerPrefs.GetInt(name)== 0){
+		if (PlayerPrefs.GetInt(achievementName)== 0){
 			unlocked = false;
 		} else {
 			unlocked = true;
@@ -47,12 +47,12 @@ public class GenericAchievement : MonoBehaviour {
 		if (secret){
 			title.text = "Secret";
 		} else {
-			title.text = name;
+			title.text = achievementName;
 		}
 		if (unlocked){
 			image.sprite = unlockedimage;
 			description.text = unlockeddescription;
-			title.text = name;
+			title.text = achievementName;
 		} else {
 			image.sprite = lockedimage;
 			description.text = lockeddescription;
