@@ -8,14 +8,13 @@ using System.Collections;
  **/
 public class EnemyAttack : MonoBehaviour
 {
-
+    public AudioClip attackSound;
     public int damage = 8;
 
     private bool playerInRange;
     private GameObject player;
     private float timeBetweenAttacks = 0.25f;
     private Animator anim;
-    private EnemySfxScript sfx;
     float timer;
 
     void Start()
@@ -64,7 +63,10 @@ public class EnemyAttack : MonoBehaviour
         timer += Time.deltaTime;
         if (timer >= timeBetweenAttacks && playerInRange && GetComponent<EnemyHealth>().currentHealth > 0)
         {
-            EnemySfxScript.playMeleeSound();
+            //if (attackSound != null)
+            //{
+            //    EnemySfxScript.playSound(attackSound);
+            //}
 
             if (anim != null)
             {

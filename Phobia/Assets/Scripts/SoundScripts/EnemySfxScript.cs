@@ -6,14 +6,7 @@ using System.Collections;
 /// </summary>
 public class EnemySfxScript : MonoBehaviour
 {
-
     private AudioSource sound;
-    public AudioClip meleeSound;
-    public AudioClip shotSound;
-    public AudioClip deathSound;
-    public AudioClip hitSound;
-    private float volLowRange = .5f;
-    private float volHighRange = 1.0f;
 
     static private EnemySfxScript instance;
 
@@ -33,25 +26,8 @@ public class EnemySfxScript : MonoBehaviour
     }
 
     // Methods for calling in other classes at the appropriate time.
-    static public void playMeleeSound()
+    static public void playSound(AudioClip sound)
     {
-        float vol = Random.Range(instance.volLowRange, instance.volHighRange);
-        instance.sound.PlayOneShot(instance.meleeSound, vol);
-    }
-
-    static public void playShotSound()
-    {
-        float vol = Random.Range(instance.volLowRange, instance.volHighRange);
-        instance.sound.PlayOneShot(instance.shotSound, vol);
-    }
-
-    static public void playDeathSound()
-    {
-        instance.sound.PlayOneShot(instance.deathSound);
-    }
-
-    static public void playHitSound()
-    {
-        instance.sound.PlayOneShot(instance.hitSound);
+        instance.sound.PlayOneShot(sound);
     }
 }
