@@ -24,11 +24,13 @@ public class Popups : MonoBehaviour
 		minimapObject = GameObject.Find ("Minimap");
 		//To ensure boss is loaded
 		if (Application.loadedLevelName.Equals ("SpiderLevelScene"))
+			levelToUnlock = Level.Height;
+		else if (Application.loadedLevelName.Equals ("HeightsLevelScene"))
 			levelToUnlock = Level.Dark;
 		else
-			levelToUnlock = Level.Height;
+			levelToUnlock = Level.Extra;
 
-
+		GemManager.Instance.UnlockAllGems ();
 
 
 	}
@@ -59,7 +61,8 @@ public class Popups : MonoBehaviour
 	}
 
 	// Displays the pause screen
-	public void togglePauseScreen() {
+	public void togglePauseScreen ()
+	{
 		// Toggle to false or true accordingly.
 		if (popupDisplaying == false) {
 			popupDisplaying = true;
@@ -89,7 +92,7 @@ public class Popups : MonoBehaviour
 		int temp4 = time.GetComponent<Timer> ().getSeconds ();
 		winScreen.GetComponent<WinUpdate> ().SetFinal (temp1, temp2, temp3, temp4);
 		winScreen.SetActive (popupDisplaying);
-		AchievementManager.Instance.OnLevelEnd();
+		AchievementManager.Instance.OnLevelEnd ();
 	}
 
 	// Display the death screen
@@ -98,6 +101,6 @@ public class Popups : MonoBehaviour
 		popupDisplaying = true;
 		Time.timeScale = 0.0f;
 		deadScreen.SetActive (popupDisplaying);
-		AchievementManager.Instance.OnLevelLoss();
+		AchievementManager.Instance.OnLevelLoss ();
 	}
 }

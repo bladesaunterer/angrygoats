@@ -27,4 +27,10 @@ public class AreaOfEffect : GenericGem
     {
         base.onEnemyHit(other);
     }
+
+    // Uses an aoe animation
+    public override void castAnimation()
+    {
+        anim.SetTrigger("AOESpell");
+    }
 }
