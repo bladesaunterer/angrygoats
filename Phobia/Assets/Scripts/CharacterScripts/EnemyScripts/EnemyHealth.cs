@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 
 /**
  * 
@@ -7,13 +8,15 @@
  **/
 public class EnemyHealth : MonoBehaviour
 {
-    public int startingHealth = 100;            // The amount of health the enemy starts the game with.
+    public int startingHealth;            // The amount of health the enemy starts the game with.
     public int currentHealth;                   // The current health the enemy has.
     public int lethalLow;
 	public int scoreAwarded = 0;
+    public Image HealthBar;                     // Only needs to be set for the boss
 
 	private bool isDed = false;
     private Animator anim;
+    
 
     void Start()
     {
@@ -36,6 +39,12 @@ public class EnemyHealth : MonoBehaviour
 
     void Update()
     {
+        if( HealthBar != null)
+        {
+            float healthRatio = (float)currentHealth / (float)startingHealth;
+            HealthBar.GetComponent<EnemyHealthBar>().SetHealthVisual(healthRatio);
+
+        }
         if (gameObject.transform.position.y < lethalLow)
         {
             TakeDamage(startingHealth);
