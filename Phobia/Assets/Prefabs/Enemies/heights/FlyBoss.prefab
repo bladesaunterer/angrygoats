@@ -57,6 +57,7 @@ GameObject:
   - 114: {fileID: 11434934}
   - 114: {fileID: 11439154}
   - 54: {fileID: 5429270}
+  - 65: {fileID: 6533332}
   m_Layer: 0
   m_Name: FlyBoss
   m_TagString: Boss
@@ -71,7 +72,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 185364}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 4, z: 6.57999992}
+  m_LocalPosition: {x: 249.8591, y: 555.358398, z: -869.657166}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_Children:
   - {fileID: 22485298}
@@ -138,6 +139,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: .029521158, y: -.0500000007, z: .0452017859}
   m_Center: {x: 0, y: -.013741198, z: .00129536167}
+--- !u!65 &6533332
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 185364}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: .0352116004, y: -.0500000007, z: .0520179011}
+  m_Center: {x: 0, y: -.013741198, z: .00129536167}
 --- !u!114 &11400078
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -170,7 +183,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2afd7eb33f5769048905ab023f97bfe1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  knockback: 500
+  knockback: 450
 --- !u!114 &11434934
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -266,6 +279,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
@@ -285,7 +304,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de30b137a5c0646458b7f1b5e03e9c51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingHealth: 200
+  deathSound: {fileID: 0}
+  hurtSound: {fileID: 0}
+  startingHealth: 150
   currentHealth: 0
   lethalLow: 0
   scoreAwarded: 50
@@ -301,6 +322,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79b5bb1291c8aa24e981e15bedd8f4a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  attackSound: {fileID: 0}
   damage: 8
 --- !u!114 &11487788
 MonoBehaviour:
@@ -424,7 +446,19 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: startingHealth
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: knockback
+      value: 450
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: speed
+      value: 50
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 185364}
