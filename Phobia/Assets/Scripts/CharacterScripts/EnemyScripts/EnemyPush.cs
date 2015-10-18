@@ -12,7 +12,7 @@ public class EnemyPush : MonoBehaviour {
 	{
 		if (other.gameObject.CompareTag ("Player")) {
 			if (other.gameObject.GetComponent<Rigidbody>() != null) {
-				Debug.Log("Here!");
+				Debug.Log("I SAID MOVE!");
 				other.gameObject.GetComponent<Rigidbody>().AddForce(gameObject.transform.forward*knockback);
 			}
 		} 
