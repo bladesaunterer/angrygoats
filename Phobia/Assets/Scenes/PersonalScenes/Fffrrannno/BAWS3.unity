@@ -291,11 +291,17 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 131552, guid: d4fc3a939c2c1b743990468eea57381e, type: 2}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d4fc3a939c2c1b743990468eea57381e, type: 2}
   m_IsPrefabParent: 0
+--- !u!114 &1542550969 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 11436256, guid: 089eccb1d7b60944c98279c5f96db997,
+    type: 2}
+  m_PrefabInternal: {fileID: 1567918620}
+  m_Script: {fileID: -113659843, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
 --- !u!1001 &1567918620
 Prefab:
   m_ObjectHideFlags: 0
@@ -494,7 +500,13 @@ Transform:
   m_LocalScale: {x: 4, y: 1, z: 2.4000001}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
+--- !u!114 &1692408574 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 11458122, guid: 089eccb1d7b60944c98279c5f96db997,
+    type: 2}
+  m_PrefabInternal: {fileID: 1567918620}
+  m_Script: {fileID: -113659843, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
 --- !u!1 &1742255550
 GameObject:
   m_ObjectHideFlags: 0
@@ -707,7 +719,7 @@ MonoBehaviour:
   - {fileID: 125026, guid: 64b33628e68d76c4bafd2a8b553d1b57, type: 2}
   enemyCommonness: 02000000020000000100000001000000
   bossFloor: {fileID: 113332, guid: 97fdf59774474ab4ab73241dd7b702fc, type: 2}
-  boss: {fileID: 177236, guid: d2c3918174fec974b8ac25e1c3a34542, type: 2}
+  boss: {fileID: 183420, guid: d1f7d67e55856fb4a835bbff6b3c85e0, type: 2}
   minWebs: 5
   maxWebs: 10
   web: {fileID: 160458, guid: 705edc7941cc1d04f8ee34a247b4c2bc, type: 2}
@@ -846,11 +858,11 @@ Prefab:
     - target: {fileID: 11418660, guid: 22ff990e31887644dbf700581d979542, type: 2}
       propertyPath: healthSlider
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1692408574}
     - target: {fileID: 11408550, guid: 22ff990e31887644dbf700581d979542, type: 2}
       propertyPath: cooldownSlider
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1542550969}
     - target: {fileID: 11464052, guid: 22ff990e31887644dbf700581d979542, type: 2}
       propertyPath: gemOne
       value: 

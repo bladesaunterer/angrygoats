@@ -1814,6 +1814,7 @@ MonoBehaviour:
   forwardLook: 1
   endReachedDistance: .200000003
   closestOnPathCheck: 1
+  anim: {fileID: 0}
 --- !u!114 &11493876
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1829,6 +1830,7 @@ MonoBehaviour:
   currentHealth: 0
   lethalLow: 0
   scoreAwarded: 10
+  HealthBar: {fileID: 0}
 --- !u!136 &13630736
 CapsuleCollider:
   m_ObjectHideFlags: 1
