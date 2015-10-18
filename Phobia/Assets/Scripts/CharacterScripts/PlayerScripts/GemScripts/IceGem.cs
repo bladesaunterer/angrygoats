@@ -3,10 +3,8 @@ using System.Collections;
 
 public class IceGem : GenericGem {
 
-	public float slowSpeed = 30;
+	public float factor = 0.5f;
 
-	private AIPath ai;
-	private float prevSpeed;
 
 	// Update is called once per frame
 	void Update () {
@@ -17,21 +15,15 @@ public class IceGem : GenericGem {
 			shotSpawned.GetComponent<BoltMover>().SetGemObject(gameObject);
 
 		}
-		if (ai != null &&  tick && Time.time > nextTime){
-			nextTime = Time.time + 1f;
-			if (Time.time > endTime){
-				tick = false;
-				ai.speed = prevSpeed;
-			}
-		}
 	}
 
 	public override void onEnemyHit(GameObject other){
-		ai = other.GetComponent<AIPath>();
-		if (ai != null && prevSpeed < ai.speed){
-			prevSpeed = ai.speed;
-			ai.speed -= slowSpeed;
-		}
 		base.onEnemyHit(other);
+		IceCurse curse = other.GetComponent<IceCurse>();
+		if (curse == null){
+			curse = other.AddComponent<IceCurse>();
+			curse.addFactor(factor);
+		}
+		curse.updateEndTime(endTime);
 	}
 }

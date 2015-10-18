@@ -11,7 +11,7 @@ public class StealthGemTest : MonoBehaviour {
 	private PlayerControl playerControl;
 	private Transform playerTransform;
 
-	private StealthGem gem;
+	public StealthGem gem;
 	private GameObject enemy;
 	private AIPath path;
 	private EnemyControl enemyControl;
@@ -25,8 +25,6 @@ public class StealthGemTest : MonoBehaviour {
 	void Start () {
 		playerControl = GetComponent<PlayerControl>();
 		playerTransform = gameObject.transform;
-		GameObject temp = GameObject.FindGameObjectWithTag ("Black");
-		gem = temp.GetComponent<StealthGem>();
 		enemy = GameObject.FindGameObjectWithTag("Enemy");
 		path = enemy.GetComponent<AIPath>();
 		enemyControl = enemy.GetComponent<EnemyControl>();
