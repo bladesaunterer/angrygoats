@@ -40,7 +40,7 @@ public class LevelGenerator : MonoBehaviour {
 	public AstarPath aStarGrids;
     
     
-    void Start () {
+    void Awake () {
 		
 		// These variables will change their meaning over the course of the method
 		RoomControl thisRoom;
@@ -134,7 +134,17 @@ public class LevelGenerator : MonoBehaviour {
 
 		roomsDict.Add(thisRoom.Index,thisRoom);
 
-		boss = (GameObject)Instantiate(boss, thisRoom.transform.position + new Vector3(0, 2, 0), Quaternion.identity);
+		if (boss.transform.name == "Boss3") {
+			int temp1 = UnityEngine.Random.Range (-18, 18);
+			int temp2 = UnityEngine.Random.Range (-10, 10);
+			boss = (GameObject)Instantiate (boss, thisRoom.transform.position + new Vector3 (temp1, 2, temp2), Quaternion.identity);
+			BossThree bs3 = boss.GetComponent<BossThree> ();
+			bs3.roomCont = thisRoom.GetComponent<RoomControl> ();
+		} else if (boss.transform.name == "FlyBoss" || boss.transform.name == "FlyBossTest") {
+			boss = (GameObject)Instantiate (boss, thisRoom.transform.position + new Vector3 (0, 4, 0), Quaternion.identity);
+		} else {
+			boss = (GameObject)Instantiate (boss, thisRoom.transform.position + new Vector3 (0, 2, 0), Quaternion.identity);
+		}
 		boss.GetComponent<AIPath>().target = GameObject.FindWithTag("Player").transform;
 		
 		
@@ -192,7 +202,7 @@ public class LevelGenerator : MonoBehaviour {
 		}
 		// generate seed for recreate
 		seed = actseed.ToString() + "#" + roomsToSpawn.ToString() + "#" + totalEnemies.ToString()
-			+ "#" + maxEnemiesPerRoom.ToString() + "#" + minWebs.ToString() + "#" + maxWebs.ToString();
+			+ "#" + maxEnemiesPerRoom.ToString() + "#" + minWebs.ToString() + "#" + maxWebs.ToString() + "#" + Application.loadedLevelName;
 		aStarGrids.Scan();
     }
 	
