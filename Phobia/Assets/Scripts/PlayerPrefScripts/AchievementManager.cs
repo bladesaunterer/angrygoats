@@ -29,10 +29,10 @@ public class AchievementManager : MonoBehaviour {
 	public void OnLevelEnd(){
 		int enemiesCount = TEMPScoreScript.Instance.enemyCounter;
 		int totalEnemies = generator.totalEnemies;
-		if (enemiesCount == 0){
+		if (enemiesCount == 1){
 			PlayerPrefs.SetInt("Only The Boss",1);
 		}
-		if (enemiesCount == totalEnemies){
+		if (enemiesCount == totalEnemies + 1){
 			PlayerPrefs.SetInt("Level Clear",1);
 		}
 		if (!gemUsage){
