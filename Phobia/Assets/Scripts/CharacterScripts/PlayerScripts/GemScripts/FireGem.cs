@@ -31,4 +31,10 @@ public class FireGem : GenericGem
         }
         curse.updateStats(endTime, overTimeDamage);
     }
+
+    // Uses the basic cast animation
+    public override void castAnimation()
+    {
+        base.castAnimation();
+    }
 }

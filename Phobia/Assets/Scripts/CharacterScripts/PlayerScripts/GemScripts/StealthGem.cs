@@ -65,4 +65,10 @@ public class StealthGem : GenericGem
             isInvis = true;
         }
     }
+
+    // Overrides with a heal animation
+    public override void castAnimation()
+    {
+        anim.SetTrigger("AOESpell");
+    }
 }
