@@ -8,6 +8,8 @@ public class PreLevelSelectSetup : MonoBehaviour
 	// Use this for initialization
 	void Awake ()
 	{
+		//use to test
+		//LevelManager.Instance.resetLevels ();
 		LevelManager.Instance.firstGameSetup (defaultFirstLevel);	
 	}
 
