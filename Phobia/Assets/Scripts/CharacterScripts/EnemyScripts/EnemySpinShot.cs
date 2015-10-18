@@ -10,6 +10,7 @@ public class EnemySpinShot : MonoBehaviour {
 	Quaternion temp;
 	float timer;
 	private float counter = 0;
+	public int shoot = 1;
 	private float timeBetweenAttacks = 0.3f;
 	// Use this for initialization
 	void Start () {
@@ -20,7 +21,7 @@ public class EnemySpinShot : MonoBehaviour {
 	void Update () {
 		timer += Time.deltaTime;
 		counter++;
-		if (timer >= timeBetweenAttacks) {
+		if (timer >= timeBetweenAttacks && shoot == 1) {
 			timer = 0f;
 			temp = shotSpawn.rotation;
 			temp *= Quaternion.Euler(0, counter, 0);

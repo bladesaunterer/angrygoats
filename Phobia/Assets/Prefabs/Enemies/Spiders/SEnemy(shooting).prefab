@@ -2130,10 +2130,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de30b137a5c0646458b7f1b5e03e9c51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  deathSound: {fileID: 8300000, guid: 0f3c5d317dcac4346923f7849bb71658, type: 3}
+  hurtSound: {fileID: 8300000, guid: 0f3c5d317dcac4346923f7849bb71658, type: 3}
   startingHealth: 50
   currentHealth: 0
   lethalLow: -5
   scoreAwarded: 10
+  HealthBar: {fileID: 0}
 --- !u!114 &11413334
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2180,6 +2183,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 241b27616211bb2409907b5dd9dff189, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  attackSound: {fileID: 0}
   damage: 8
 --- !u!114 &11433428
 MonoBehaviour:
@@ -2360,7 +2364,15 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: deathSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 0f3c5d317dcac4346923f7849bb71658, type: 3}
+    - target: {fileID: 0}
+      propertyPath: hurtSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 0f3c5d317dcac4346923f7849bb71658, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 125026}

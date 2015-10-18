@@ -1325,8 +1325,8 @@ MonoBehaviour:
   cutsceneScenes:
   - PreSpiderLevelCutscene
   - LoadingScene
-  level1Music: {fileID: 8300000, guid: b403025f2c34346459a83a9838d00239, type: 3}
-  level1Scene: SpiderLevelScene
+  levelMusic: {fileID: 0}
+  levelScenes: []
 --- !u!82 &1637139940
 AudioSource:
   m_ObjectHideFlags: 0
