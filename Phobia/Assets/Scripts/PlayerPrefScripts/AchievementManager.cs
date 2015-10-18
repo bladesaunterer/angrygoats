@@ -30,13 +30,13 @@ public class AchievementManager : MonoBehaviour {
 		int enemiesCount = TEMPScoreScript.Instance.enemyCounter;
 		int totalEnemies = generator.totalEnemies;
 		if (enemiesCount == 0){
-
+			PlayerPrefs.SetInt("Only The Boss",1);
 		}
 		if (enemiesCount == totalEnemies){
-
+			PlayerPrefs.SetInt("Level Clear",1);
 		}
 		if (!gemUsage){
-
+			PlayerPrefs.SetInt("You're Not Special",1);
 		}
 	}
 
@@ -46,7 +46,7 @@ public class AchievementManager : MonoBehaviour {
 	public void OnLevelLoss(){
 		int enemiesCount = TEMPScoreScript.Instance.enemyCounter;
 		if (enemiesCount == 0){
-
+			PlayerPrefs.SetInt("You Suck",1);
 		}
 	}
 

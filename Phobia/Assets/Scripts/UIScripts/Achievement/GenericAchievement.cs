@@ -52,6 +52,7 @@ public class GenericAchievement : MonoBehaviour {
 		if (unlocked){
 			image.sprite = unlockedimage;
 			description.text = unlockeddescription;
+			title.text = name;
 		} else {
 			image.sprite = lockedimage;
 			description.text = lockeddescription;
