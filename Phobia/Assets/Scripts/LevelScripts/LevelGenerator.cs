@@ -40,7 +40,7 @@ public class LevelGenerator : MonoBehaviour {
 	public AstarPath aStarGrids;
     
     
-    void Start () {
+    void Awake () {
 		
 		// These variables will change their meaning over the course of the method
 		RoomControl thisRoom;
@@ -202,7 +202,7 @@ public class LevelGenerator : MonoBehaviour {
 		}
 		// generate seed for recreate
 		seed = actseed.ToString() + "#" + roomsToSpawn.ToString() + "#" + totalEnemies.ToString()
-			+ "#" + maxEnemiesPerRoom.ToString() + "#" + minWebs.ToString() + "#" + maxWebs.ToString();
+			+ "#" + maxEnemiesPerRoom.ToString() + "#" + minWebs.ToString() + "#" + maxWebs.ToString() + "#" + Application.loadedLevelName;
 		aStarGrids.Scan();
     }
 	
