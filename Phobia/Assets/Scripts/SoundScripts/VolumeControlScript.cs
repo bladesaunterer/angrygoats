@@ -20,6 +20,6 @@ public class VolumeControlScript : MonoBehaviour {
 
 	private void ChangeSfxVolume()
 	{
-        AudioListener.volume = musicSlider.value;
+        AudioListener.volume = sfxSlider.value;
 	}
 }
