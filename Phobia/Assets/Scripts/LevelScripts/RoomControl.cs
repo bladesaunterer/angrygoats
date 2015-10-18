@@ -104,6 +104,10 @@ public class RoomControl : MonoBehaviour {
 
 
 	}
+
+	public void AddBoss(GameObject boss){
+		enemies.Add (boss);
+	}
 	
 	public void AddWebs(GameObject web, int amount) {
 		
@@ -121,13 +125,17 @@ public class RoomControl : MonoBehaviour {
 		
 		foreach (GameObject enemy in enemies) {
 			if (enemy != null) {
-				enemy.GetComponent<AIPath>().target = enemy.GetComponent<EnemyControl>().home;
-				if (enemy.GetComponent<EnemySingleShot>() != null) {
-					enemy.GetComponent<EnemySingleShot>().shouldShoot = false;
+				if (enemy.CompareTag ("Boss")) {
+					print ("LOTS OF RANDOMNESS <3");
+					enemy.GetComponent<EnemyHealth> ().currentHealth = enemy.GetComponent<EnemyHealth> ().startingHealth;
+				} else {
+					enemy.GetComponent<AIPath> ().target = enemy.GetComponent<EnemyControl> ().home;
+					if (enemy.GetComponent<EnemySingleShot> () != null) {
+						enemy.GetComponent<EnemySingleShot> ().shouldShoot = false;
+					}
 				}
 			}
 		}
-
 	}
 	
 	public void EnemiesHuntPlayer() {
