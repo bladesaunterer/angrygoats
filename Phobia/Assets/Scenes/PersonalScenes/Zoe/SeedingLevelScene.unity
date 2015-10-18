@@ -1932,7 +1932,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SpiderLevelGenerator: {fileID: 166840479}
-  DarknessLevelGenerator: {fileID: 0}
+  DarknessLevelGenerator: {fileID: 1753910250}
   HeightsLevelGenerator: {fileID: 139321779}
   DarknessOverlay: {fileID: 503992097}
 --- !u!4 &628529481
@@ -1946,7 +1946,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
 --- !u!1 &658357134
 GameObject:
   m_ObjectHideFlags: 0
@@ -2258,7 +2258,7 @@ RectTransform:
   - {fileID: 1570228613}
   - {fileID: 1898545836}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
@@ -3661,7 +3661,7 @@ Transform:
   m_LocalScale: {x: 4, y: 1, z: 2.4000001}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
 --- !u!4 &1649706891 stripped
 Transform:
   m_PrefabParentObject: {fileID: 421778, guid: 22ff990e31887644dbf700581d979542, type: 2}
@@ -4009,9 +4009,21 @@ Prefab:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 11460894, guid: 642fdfba58bb97944b87ac4d99a266b2, type: 2}
+      propertyPath: minimapUI
+      value: 
+      objectReference: {fileID: 2014768529}
+    - target: {fileID: 11460894, guid: 642fdfba58bb97944b87ac4d99a266b2, type: 2}
+      propertyPath: aStarGrids
+      value: 
+      objectReference: {fileID: 1742255551}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 642fdfba58bb97944b87ac4d99a266b2, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1753910250 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 155550, guid: 642fdfba58bb97944b87ac4d99a266b2, type: 2}
+  m_PrefabInternal: {fileID: 1753910249}
 --- !u!1001 &1772248617
 Prefab:
   m_ObjectHideFlags: 0
