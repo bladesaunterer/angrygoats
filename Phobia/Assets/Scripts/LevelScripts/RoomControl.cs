@@ -88,6 +88,7 @@ public class RoomControl : MonoBehaviour {
 		}
 	}
 	
+
 	public GameObject AddEnemy(GameObject enemy) {
 		
 		GameObject chosenCell = freeCells[Random.Range(0, freeCells.Count)];
@@ -96,9 +97,11 @@ public class RoomControl : MonoBehaviour {
 
 		GameObject thisEnemy = (GameObject)GameObject.Instantiate(enemy, (chosenCell.transform.position + new Vector3(0, 2, 0)), Quaternion.identity);
 		enemies.Add(thisEnemy);
+
 		thisEnemy.GetComponent<EnemyControl>().home = chosenCell.transform;
 		thisEnemy.GetComponent<AIPath>().target = chosenCell.transform;
 		return thisEnemy;
+
 
 	}
 	

@@ -16,7 +16,6 @@ public class BoltMover : MonoBehaviour
 	private Gem currentGem;
 	private GameObject gemObject;
 
-	public new Renderer renderer;
 	private GemManager gemManager = GemManager.Instance;
 	
 	private PlayerHealth playerHealth;
@@ -25,13 +24,12 @@ public class BoltMover : MonoBehaviour
 	{
 		currentGem = gemManager.GetCurrentGem();
 
-		renderer = GetComponent<Renderer>();
 		// Get rigidbody and set bolt's velocity.
 		rb = GetComponent<Rigidbody>();
 		rb.velocity = transform.forward * speed;
 
 		GameObject child = this.transform.GetChild(0).gameObject;
-		child.GetComponent<Renderer>().materials = gemObject.GetComponent<Renderer>().materials;
+		child.GetComponent<Renderer>().material = gemObject.GetComponent<GenericGem>().boltMaterial;
 
 	}
 

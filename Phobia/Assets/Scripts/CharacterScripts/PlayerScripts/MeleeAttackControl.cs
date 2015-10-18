@@ -35,6 +35,12 @@ public class MeleeAttackControl : MonoBehaviour {
 			if (other.gameObject.GetComponent<Rigidbody>() != null) {
 				other.gameObject.GetComponent<Rigidbody>().AddForce(gameObject.transform.forward*knockback);
 			}
-		} 
+		}
+		if (other.gameObject.CompareTag ("EnemyAttack")) {
+			Destroy(other.gameObject);
+			
+			// Destroy bolt on contact.
+			Destroy(gameObject);
+		}
 	}
 }

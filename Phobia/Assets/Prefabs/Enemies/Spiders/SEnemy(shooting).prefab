@@ -1812,7 +1812,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 125026}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.01060534, y: 17.592947, z: -10.1474466}
+  m_LocalPosition: {x: 238.911407, y: 351.340576, z: -372.673645}
   m_LocalScale: {x: 2, y: 1, z: 2}
   m_Children:
   - {fileID: 488186}
@@ -2147,6 +2147,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shot: {fileID: 164260, guid: 1eebcc31c798eab4a8bd96b19aeecac0, type: 2}
   shotSpawn: {fileID: 417694}
+  shouldShoot: 1
 --- !u!114 &11418924
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2269,6 +2270,7 @@ MonoBehaviour:
   forwardLook: 1
   endReachedDistance: .200000003
   closestOnPathCheck: 1
+  anim: {fileID: 0}
 --- !u!136 &13632036
 CapsuleCollider:
   m_ObjectHideFlags: 1
@@ -2292,7 +2294,7 @@ SkinnedMeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 2100000, guid: 645469e0f8f35804c8108b15e8a5baee, type: 2}
+  - {fileID: 2100000, guid: e398d1053da11a74a860e5a746e48e61, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1

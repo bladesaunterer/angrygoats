@@ -104,6 +104,25 @@ namespace UnityEngine.UI
 				m_Toggles.Remove (toggle);
 		}
         
+		public void Update(){
+			if (Input.GetKeyDown(KeyCode.B)){
+				PlayerPrefs.SetInt ("SpiderLevelScene", 0);
+				PlayerPrefs.SetString ("SpiderLevelScene name", "");
+				PlayerPrefs.SetInt ("HeightsLevelScene", 0);
+				PlayerPrefs.SetString ("HeightsLevelScene name", "");
+				PlayerPrefs.SetInt ("DarknessLevelScene", 0);
+				PlayerPrefs.SetString ("DarknessLevelScene name", "");
+			}
+			if (Input.GetKeyDown (KeyCode.C)) {
+				PlayerPrefs.SetInt ("SpiderLevelScene", 700);
+				PlayerPrefs.SetString ("SpiderLevelScene name", "zoe");
+				PlayerPrefs.SetInt ("HeightsLevelScene", 700);
+				PlayerPrefs.SetString ("HeightsLevelScene name", "zoe");
+				PlayerPrefs.SetInt ("DarknessLevelScene", 700);
+				PlayerPrefs.SetString ("DarknessLevelScene name", "zoe");
+			}
+		}
+
 
 		/**
 		 * Adds toggle to group
@@ -117,9 +136,36 @@ namespace UnityEngine.UI
 			// Will set  up gem system if hasnt been used before
 			gm.CheckFirstGame ();
 
+//			PlayerPrefs.SetInt ("SpiderLevelScene", 0);
+//			PlayerPrefs.SetString ("SpiderLevelScene name", "");
+//			PlayerPrefs.SetInt ("HeightsLevelScene", 0);
+//			PlayerPrefs.SetString ("HeightsLevelScene name", "");
+//			PlayerPrefs.SetInt ("DarknessLevelScene", 0);
+//			PlayerPrefs.SetString ("DarknessLevelScene name", "");
+
+
 			//will unlock the default gems
+			gm.LockAllGems ();
 			gm.UnlockGem (GemOneDefault);
 			gm.UnlockGem (GemTwoDefault);
+
+			if(PlayerPrefs.GetInt ("SpiderLevelScene")>0){
+				gm.UnlockGem (Gem.Blue);
+			}
+
+			if (PlayerPrefs.GetInt ("HeightsLevelScene") > 0) {
+				gm.UnlockGem (Gem.Turquoise);
+			}
+
+			if (PlayerPrefs.GetInt ("DarknessLevelScene") > 0) {
+				gm.UnlockGem (Gem.Yellow);
+			}
+
+			if (PlayerPrefs.GetInt ("SpiderLevelScene") > 600 && PlayerPrefs.GetInt ("HeightsLevelScene") > 600 && PlayerPrefs.GetInt ("DarknessLevelScene") > 600) {
+				gm.UnlockGem(Gem.Purple);
+			}
+
+//			gm.UnlockAllGems ();
 
 
 			//Use below line to unlock additional gems 

@@ -291,7 +291,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 131552, guid: d4fc3a939c2c1b743990468eea57381e, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d4fc3a939c2c1b743990468eea57381e, type: 2}
@@ -305,19 +305,19 @@ Prefab:
     m_Modifications:
     - target: {fileID: 22417756, guid: 089eccb1d7b60944c98279c5f96db997, type: 2}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 22417756, guid: 089eccb1d7b60944c98279c5f96db997, type: 2}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 22492038, guid: 089eccb1d7b60944c98279c5f96db997, type: 2}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 22492038, guid: 089eccb1d7b60944c98279c5f96db997, type: 2}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 22453106, guid: 089eccb1d7b60944c98279c5f96db997, type: 2}
       propertyPath: m_LocalPosition.x
@@ -416,21 +416,25 @@ Prefab:
       value: 
       objectReference: {fileID: 12800000, guid: d546e529c6470644db2f363343b1f859,
         type: 3}
+    - target: {fileID: 22441852, guid: 089eccb1d7b60944c98279c5f96db997, type: 2}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 22441852, guid: 089eccb1d7b60944c98279c5f96db997, type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 22473714, guid: 089eccb1d7b60944c98279c5f96db997, type: 2}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 22473714, guid: 089eccb1d7b60944c98279c5f96db997, type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 089eccb1d7b60944c98279c5f96db997, type: 2}
   m_IsPrefabParent: 0
---- !u!114 &1567918621 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 11490064, guid: 089eccb1d7b60944c98279c5f96db997,
-    type: 2}
-  m_PrefabInternal: {fileID: 1567918620}
-  m_Script: {fileID: -113659843, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
---- !u!114 &1567918622 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 11428864, guid: 089eccb1d7b60944c98279c5f96db997,
-    type: 2}
-  m_PrefabInternal: {fileID: 1567918620}
-  m_Script: {fileID: -113659843, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
 --- !u!1 &1622551926
 GameObject:
   m_ObjectHideFlags: 0
@@ -490,7 +494,7 @@ Transform:
   m_LocalScale: {x: 4, y: 1, z: 2.4000001}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
 --- !u!1 &1742255550
 GameObject:
   m_ObjectHideFlags: 0
@@ -606,7 +610,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
 --- !u!1001 &1772248617
 Prefab:
   m_ObjectHideFlags: 0
@@ -721,7 +725,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
 --- !u!1 &1941191721 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 117366, guid: 22ff990e31887644dbf700581d979542, type: 2}
@@ -799,7 +803,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
 --- !u!1001 &1963127004
 Prefab:
   m_ObjectHideFlags: 0
@@ -837,16 +841,16 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 421778, guid: 22ff990e31887644dbf700581d979542, type: 2}
       propertyPath: m_RootOrder
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 11418660, guid: 22ff990e31887644dbf700581d979542, type: 2}
       propertyPath: healthSlider
       value: 
-      objectReference: {fileID: 1567918621}
+      objectReference: {fileID: 0}
     - target: {fileID: 11408550, guid: 22ff990e31887644dbf700581d979542, type: 2}
       propertyPath: cooldownSlider
       value: 
-      objectReference: {fileID: 1567918622}
+      objectReference: {fileID: 0}
     - target: {fileID: 11464052, guid: 22ff990e31887644dbf700581d979542, type: 2}
       propertyPath: gemOne
       value: 

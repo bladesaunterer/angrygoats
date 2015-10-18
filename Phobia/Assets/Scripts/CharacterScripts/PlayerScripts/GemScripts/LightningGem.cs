@@ -6,7 +6,7 @@ public class LightningGem : GenericGem {
 	
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetKeyDown(KeyCode.K) && playerControl.cooldown >= cost && checkActive())
+		if (Input.GetKeyDown(KeyCode.K) && playerControl.cooldown >= cost && isCurrent)
 		{
 			playerControl.SubtractCooldown(cost);
 			GameObject shotSpawned = Instantiate(shot,shotSpawn.position,shotSpawn.rotation) as GameObject;
@@ -15,10 +15,10 @@ public class LightningGem : GenericGem {
 		if (ai != null &&  tick && Time.time > nextTime){
 			nextTime = Time.time + 1f;
 			if (Time.time <= endTime){
-				ai.enabled = false;
+				ai.canMove = false;
 			} else {
 				tick = false;
-				ai.enabled = true;
+				ai.canMove = true;
 			}
 		}
 	}
