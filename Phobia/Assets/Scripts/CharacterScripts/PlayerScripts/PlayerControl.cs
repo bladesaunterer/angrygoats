@@ -159,6 +159,7 @@ public class PlayerControl : MonoBehaviour
             // Updates the room references to the new room
             doorMono.ExitRoom();
             currentRoom = doorMono.goalDoor.GetComponent<DoorControl>().ownRoom;
+			AchievementManager.Instance.enterRoom(currentRoom);
         }
         // Tracks webs the player is currently stepping on
         else if (other.gameObject.CompareTag("Web"))
