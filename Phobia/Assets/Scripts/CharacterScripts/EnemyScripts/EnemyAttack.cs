@@ -15,6 +15,7 @@ public class EnemyAttack : MonoBehaviour
     private GameObject player;
     private float timeBetweenAttacks = 0.25f;
     private Animator anim;
+    private EnemySfxScript sfx;
     float timer;
 
     void Start()
@@ -63,6 +64,8 @@ public class EnemyAttack : MonoBehaviour
         timer += Time.deltaTime;
         if (timer >= timeBetweenAttacks && playerInRange && GetComponent<EnemyHealth>().currentHealth > 0)
         {
+            sfx.playAttackSound();
+
             if (anim != null)
             {
                 EnemyAnimatorController.ExecuteAnimation(anim, "Attack");

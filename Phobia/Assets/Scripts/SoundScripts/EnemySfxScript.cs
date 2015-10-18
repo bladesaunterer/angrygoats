@@ -3,18 +3,18 @@ using System.Collections;
 
 public class EnemySfxScript : MonoBehaviour {
 
-    private AudioSource attackSound;
+    private AudioSource sound;
 
-    public AudioClip walkingSound;
-    public AudioClip shortRangeAttackSound;
-    public AudioClip longRangeAttackSound;
+    public AudioClip hitSound;
+    public AudioClip deathSound;
+    public AudioClip attackSound;
 
     private float volLowRange = .5f;
     private float volHighRange = 1.0f;
 
     // Use this for initialization
     void Start () {
-        this.attackSound = GetComponentInChildren<AudioSource>();
+        sound = GetComponentInChildren<AudioSource>();
     }
 	
 	// Update is called once per frame
@@ -23,15 +23,20 @@ public class EnemySfxScript : MonoBehaviour {
     }
 
     // Methods for calling in other classes at the appropriate time.
-    public void playShortRangeAttackSound()
+    public void playHitSound()
     {
         float vol = Random.Range(volLowRange, volHighRange);
-        attackSound.PlayOneShot(shortRangeAttackSound, vol);
+        sound.PlayOneShot(hitSound, vol);
     }
 
-    public void playLongRangeAttackSound()
+    public void playDeathSound()
+    {
+        sound.PlayOneShot(deathSound);
+    }
+
+    public void playAttackSound()
     {
         float vol = Random.Range(volLowRange, volHighRange);
-        attackSound.PlayOneShot(longRangeAttackSound, vol);
+        sound.PlayOneShot(attackSound, vol);
     }
 }
