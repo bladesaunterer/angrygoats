@@ -9,7 +9,7 @@ public class EnemyPewPew : MonoBehaviour {
 	public Transform shotSpawn2;
 	public Transform shotSpawn3;
 	float timer;
-	private float timeBetweenAttacks = 0.5f;
+	private float timeBetweenAttacks = 1.5f;
     private Animator anim;
 	// Use this for initialization
 	void Start () {
