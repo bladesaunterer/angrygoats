@@ -52,6 +52,7 @@ public class SeedInputProcessor : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		beginButton.onClick.AddListener(() => Enter());
+		beginButton.gameObject.SetActive (false);
 	}
 	
 	// Update is called once per frame

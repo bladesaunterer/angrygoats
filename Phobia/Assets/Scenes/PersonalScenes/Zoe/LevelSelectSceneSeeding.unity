@@ -1745,7 +1745,6 @@ GameObject:
   - 114: {fileID: 613938605}
   - 114: {fileID: 613938604}
   - 114: {fileID: 613938603}
-  - 114: {fileID: 613938608}
   m_Layer: 5
   m_Name: Seeding
   m_TagString: Untagged
@@ -1871,17 +1870,6 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
---- !u!114 &613938608
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 613938601}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3b3cc85daa98c4aff93c99384cdac81f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &635006906
 GameObject:
   m_ObjectHideFlags: 0
@@ -2907,7 +2895,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &917664186
 RectTransform:
   m_ObjectHideFlags: 0
