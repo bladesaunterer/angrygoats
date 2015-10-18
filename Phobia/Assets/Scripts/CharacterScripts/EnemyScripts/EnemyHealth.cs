@@ -9,7 +9,7 @@ using UnityEngine.UI;
 public class EnemyHealth : MonoBehaviour
 {
     public AudioClip deathSound;
-    public AudioClip hurtSound;
+//    public AudioClip hurtSound;
     public int startingHealth;            // The amount of health the enemy starts the game with.
     public int currentHealth;                   // The current health the enemy has.
     public int lethalLow;
@@ -58,10 +58,10 @@ public class EnemyHealth : MonoBehaviour
         // Reduce current health by the amount of damage taken.
         currentHealth -= amount;
 
-        if (hurtSound != null)
-        {
-            EnemySfxScript.playSound(hurtSound);
-        }
+//        if (hurtSound != null)
+//        {
+//            EnemySfxScript.playSound(hurtSound);
+//        }
 
         if (anim != null)
         {
@@ -84,10 +84,10 @@ public class EnemyHealth : MonoBehaviour
 					TEMPScoreScript.Instance.IncrementScore (scoreAwarded);
 				}
 
-                if (deathSound != null)
-                {
-                    EnemySfxScript.playSound(deathSound);
-                }
+//                if (deathSound != null)
+//                {
+//                    EnemySfxScript.playSound(deathSound);
+//                }
                 if (anim != null)
                 {
                     EnemyAnimatorController.ExecuteAnimation(anim, "Die");
