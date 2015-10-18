@@ -18,10 +18,9 @@ public class GenericGem : MonoBehaviour
 
 	protected GameObject shot;             		// The special attack object.
 	protected Transform shotSpawn;         		// Location where the special attack will spawn.
-
-	protected float nextTime;
-	protected bool tick;
+	
 	protected float endTime;
+
 
 	// Use this for initialization
 
@@ -38,7 +37,6 @@ public class GenericGem : MonoBehaviour
 		EnemyHealth health = other.GetComponent<EnemyHealth> ();
 		if (health != null) {
 			health.TakeDamage (damage);
-			tick = true;
 			endTime = Time.time + duration;
 		}
 	}
