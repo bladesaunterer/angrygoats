@@ -65,7 +65,6 @@ LightmapSettings:
     m_TextureCompression: 1
     m_FinalGather: 0
     m_FinalGatherRayCount: 1024
-    m_ReflectionCompression: 2
   m_LightmapSnapshot: {fileID: 0}
   m_RuntimeCPUUsage: 25
 --- !u!196 &4
@@ -85,6 +84,9 @@ NavMeshSettings:
     cellSize: .166666672
     manualCellSize: 0
   m_NavMeshData: {fileID: 23800000, guid: ab81f9db15727a04d85e04fa3d57ace4, type: 2}
+--- !u!127 &5
+LevelGameManager:
+  m_ObjectHideFlags: 0
 --- !u!20 &53703026 stripped
 Camera:
   m_PrefabParentObject: {fileID: 2000670, guid: 88fdb93fd998ee0489870cb48ef674c3,
@@ -97,6 +99,10 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 11468682, guid: d0c4a9b69a301ad4886abc7ae87a96a9, type: 2}
+      propertyPath: floorPrefabs.Array.size
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 482240, guid: d0c4a9b69a301ad4886abc7ae87a96a9, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -137,6 +143,18 @@ Prefab:
       propertyPath: aStarGrids
       value: 
       objectReference: {fileID: 1742255551}
+    - target: {fileID: 11468682, guid: d0c4a9b69a301ad4886abc7ae87a96a9, type: 2}
+      propertyPath: floorPrefabs.Array.data[8]
+      value: 
+      objectReference: {fileID: 172674, guid: eb171bf0b3f31e24a935b3e4f2f911f0, type: 2}
+    - target: {fileID: 11468682, guid: d0c4a9b69a301ad4886abc7ae87a96a9, type: 2}
+      propertyPath: floorPrefabs.Array.data[9]
+      value: 
+      objectReference: {fileID: 142334, guid: 63da9138e2c6a064c889cba5ce48f15e, type: 2}
+    - target: {fileID: 11468682, guid: d0c4a9b69a301ad4886abc7ae87a96a9, type: 2}
+      propertyPath: floorPrefabs.Array.data[10]
+      value: 
+      objectReference: {fileID: 173814, guid: 7e522d9350a5e7a4c95529e2ba33a861, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d0c4a9b69a301ad4886abc7ae87a96a9, type: 2}
   m_IsPrefabParent: 0
@@ -505,7 +523,7 @@ MonoBehaviour:
   m_Script: {fileID: 1997211142, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ForceModuleActive: 0
+  m_AllowActivationOnStandalone: 0
 --- !u!114 &1961984129
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -523,7 +541,7 @@ MonoBehaviour:
   m_CancelButton: Cancel
   m_InputActionsPerSecond: 10
   m_RepeatDelay: .5
-  m_ForceModuleActive: 0
+  m_AllowActivationOnMobileDevice: 0
 --- !u!114 &1961984130
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -689,19 +707,19 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22499716, guid: 3380099f88c9c9a4fa2591938a2c84bc, type: 2}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 22499716, guid: 3380099f88c9c9a4fa2591938a2c84bc, type: 2}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 22495568, guid: 3380099f88c9c9a4fa2591938a2c84bc, type: 2}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 22495568, guid: 3380099f88c9c9a4fa2591938a2c84bc, type: 2}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 186832, guid: 3380099f88c9c9a4fa2591938a2c84bc, type: 2}
       propertyPath: m_IsActive

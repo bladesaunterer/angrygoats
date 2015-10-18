@@ -54,6 +54,8 @@ public class InfiniteGenerator : MonoBehaviour {
 		// This is where we ramp.
 		// If you thought Wild Growth turn one was bad, check this.
 
+		Debug.Log ("We r ramp!");
+
 		double temp;
 		temp = (double)roomsToSpawn * ramp;
 		roomsToSpawn = (int)temp;
@@ -61,6 +63,9 @@ public class InfiniteGenerator : MonoBehaviour {
 		totalEnemies = (int)temp;
 		temp = (double)maxEnemiesPerRoom * ramp;
 		maxEnemiesPerRoom = (int)temp;
+
+		Debug.Log ("Pls make me " + roomsToSpawn.ToString () + " rooms pls kthanx");
+		Debug.Log ("Ramp was " + ramp.ToString () + ". Hopefully that's what you expected.");
 
 
 		// Reference the minimap, so it can be generated in unison with the actual floor

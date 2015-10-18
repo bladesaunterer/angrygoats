@@ -286,8 +286,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c7ae2036f5c65b4090f7b8b8de5958a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ramp: 1.10000002
-  times: 1
+  ramp: 1.25
+  times: 3
 --- !u!4 &1067354251
 Transform:
   m_ObjectHideFlags: 0
@@ -785,19 +785,19 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22499716, guid: 3380099f88c9c9a4fa2591938a2c84bc, type: 2}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22499716, guid: 3380099f88c9c9a4fa2591938a2c84bc, type: 2}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22495568, guid: 3380099f88c9c9a4fa2591938a2c84bc, type: 2}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22495568, guid: 3380099f88c9c9a4fa2591938a2c84bc, type: 2}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 186832, guid: 3380099f88c9c9a4fa2591938a2c84bc, type: 2}
       propertyPath: m_IsActive
