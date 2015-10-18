@@ -4,19 +4,19 @@ using UnityEngine.Networking;
 using System.Collections;
 using System.Collections.Generic;
 
-/**
- * 
- * Class which handles player control (abilities) logic.
- * 
- **/
+/// <summary>
+/// Purpose: The main controlling class for the player.<para/>
+/// Authors: Chester Booker, Dean Ulbrick       <para/>
+/// This class handles the players melee attacks, movements, animations and allows the camera to always be over the current room of the player.
+/// </summary>
 public class PlayerControl : MonoBehaviour
 {
-
     Animator anim;
 
     private const float DOOR_JUMP = 2;
 
     public float speed = 6f;            // Player movement speed.
+
     public float webSlowFactor = 0.5f;
     private int inWeb = 0;
 
@@ -41,21 +41,23 @@ public class PlayerControl : MonoBehaviour
     private float camRayLength = 100f;          // The length of the ray from the camera into the scene.
 
     private Transform mainCameraTransform;
-	public GameObject currentRoom;
+    public GameObject currentRoom;
 
     void Start()
     {
+        // Enables animations
         anim = GetComponent<Animator>();
     }
 
     void Awake()
     {
+        // Enables the camera to track where the character is
         this.mainCameraTransform = Camera.main.GetComponentInParent<Transform>();
     }
 
     void Update()
     {
-        //Updates every second
+        // Regenerate the energy/mana bar after a specified amount of time
         if (Time.time > nextTime)
         {
             nextTime = Time.time + 1f;
@@ -65,15 +67,20 @@ public class PlayerControl : MonoBehaviour
             }
             UpdateCoolDownSlider();
         }
+
+        // Perform a basic melee attack
         if (Input.GetKeyDown(KeyCode.J) && Time.time > nextMelee)
         {
+            // Playsound, animate and attack
             PlayerSfxScript.playMeleeSound();
-            nextMelee = Time.time + meleeRate;
             anim.SetTrigger("Melee");
+            // Pauses to sync up more with the animation
             Invoke("AttactInstantiate", 0.15f);
+            nextMelee = Time.time + meleeRate;
         }
     }
 
+    // Instantiate the basic melee collision object
     void AttactInstantiate()
     {
         Instantiate(meleeAttack, meleeSpawn.position, meleeSpawn.rotation);
@@ -81,49 +88,44 @@ public class PlayerControl : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (IsMine())
-        {
-            // Store the input axes.
-            float h = Input.GetAxisRaw("Horizontal");
-            float v = Input.GetAxisRaw("Vertical");
+        // Store the input axes.
+        float h = Input.GetAxisRaw("Horizontal");
+        float v = Input.GetAxisRaw("Vertical");
 
-            floorMask = LayerMask.GetMask("Floor");
+        floorMask = LayerMask.GetMask("Floor");
 
-            // Move the player around the scene.
-            Move(h, v);
-            Animating(h, v);
-
-        }
+        // Move the player around the scene.
+        Move(h, v);
+        // Animate the player based on movement
+        Animating(h, v);
     }
 
-    //This will also attempt to rotate the player 
+    // This will also attempt to rotate the player 
     void Move(float h, float v)
     {
         // Set the movement vector based on the axis input.
         movement.Set(h, 0f, v);
 
-
         // Normalise the movement vector and make it proportional to the speed per second.
         movement = movement.normalized * speed * Time.deltaTime;
 
+        // Reduce the players movement speed basic on if they are in a web
         if (inWeb > 0)
         {
             movement *= webSlowFactor;
-
         }
-
 
         // Move the player to it's current position plus the movement.
         GetComponent<Rigidbody>().MovePosition(transform.position + movement);
 
-        //Rotate the player
+        // Rotate the player
         if (h != 0f || v != 0f)
         {
             Rotate(h, v);
         }
     }
 
-    //This method rotates player based on keyboard input
+    // This method rotates player based on keyboard input
     void Rotate(float h, float v)
     {
         Vector3 targetDirection = new Vector3(h, 0f, v);
@@ -132,8 +134,84 @@ public class PlayerControl : MonoBehaviour
         GetComponent<Rigidbody>().MoveRotation(newRotation);
     }
 
-    //This method rotates the player based on 
-    //Dean says to not delete this method. Not used, but is useful
+    void OnTriggerEnter(Collider other)
+    {
+        // When walking through a door
+        if (other.gameObject.CompareTag("Door"))
+        {
+            DoorControl doorMono = other.gameObject.GetComponent<DoorControl>();
+
+            Vector3 goalPos = doorMono.goalDoor.transform.position + doorMono.goalDoor.transform.forward * DOOR_JUMP;
+            goalPos.y = 0;
+
+            doorMono.goalDoor.GetComponent<DoorControl>().EnterRoom();
+
+            // Move the character to the room linked to the door they went through
+            this.transform.position = goalPos;
+
+            // Make the camera follow the characters position
+            mainCameraTransform.position = (doorMono.goalDoor.GetComponent<DoorControl>().ownRoom.transform.position) + cameraPosition;
+
+            // Updates the room references to the new room
+            doorMono.ExitRoom();
+            currentRoom = doorMono.goalDoor.GetComponent<DoorControl>().ownRoom;
+        }
+        // Tracks webs the player is currently stepping on
+        else if (other.gameObject.CompareTag("Web"))
+        {
+            inWeb++;
+        }
+    }
+
+    // Remove web tracking when stepping off a web
+    void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.CompareTag("Web"))
+        {
+            if (inWeb > 0)
+            {
+                inWeb--;
+            }
+        }
+    }
+
+    void UpdateCoolDownSlider()
+    {
+        // Update cooldown slider with current cooldown value.
+        cooldownSlider.value = cooldown;
+    }
+
+    public void SubtractCooldown(int value)
+    {
+        cooldown -= value;
+        UpdateCoolDownSlider();
+    }
+
+    // Cause the player to idle animate if doing nothing, walk animate if in a web or run animate for other circumstances
+    void Animating(float h, float v)
+    {
+        bool moving = h != 0f || v != 0f;
+        anim.SetBool("Run", moving && inWeb == 0);
+        anim.SetBool("Walk", moving && inWeb > 0);
+    }
+
+    // Triggers the other animations of the player (die, cast, hit..)
+    public void InitiateAnimation(string animationName)
+    {
+        if (animationName == "Die")
+        {
+            anim.SetBool(animationName, true);
+            anim.SetTrigger("DieTrig");
+        }
+        else
+        {
+            anim.SetTrigger(animationName);
+        }
+    }
+
+    /*
+    // CURRENTLY NOT USED BY IS KEEP FOR FUTURE USE
+    // This method rotates the player based on 
     void Turning()
     {
         // Create a ray from the mouse cursor on screen in the direction of the camera.
@@ -158,93 +236,6 @@ public class PlayerControl : MonoBehaviour
             GetComponent<Rigidbody>().MoveRotation(newRotatation);
         }
     }
-
-    void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.CompareTag("Door"))
-        {
-            DoorControl doorMono = other.gameObject.GetComponent<DoorControl>();
-
-            Vector3 goalPos = doorMono.goalDoor.transform.position + doorMono.goalDoor.transform.forward * DOOR_JUMP;
-            goalPos.y = 0;
-
-            doorMono.goalDoor.GetComponent<DoorControl>().EnterRoom();
-
-            this.transform.position = goalPos;
-            if (IsLocalPlayer())
-            {
-                GetComponent<NetworkTransform>().InvokeSyncEvent(0, null);
-            }
-            if (IsMine())
-            {
-                mainCameraTransform.position = (doorMono.goalDoor.GetComponent<DoorControl>().ownRoom.transform.position) + cameraPosition;
-            }
-
-            doorMono.ExitRoom();
-			currentRoom = doorMono.goalDoor.GetComponent<DoorControl>().ownRoom;
-        }
-        else if (other.gameObject.CompareTag("Web"))
-        {
-            inWeb++;
-        }
-    }
-
-    void OnTriggerExit(Collider other)
-    {
-        if (other.gameObject.CompareTag("Web"))
-        {
-            if (inWeb > 0)
-            {
-                inWeb--;
-            }
-        }
-
-        //if (IsMine()) {
-        //        mainCameraTransform.position = (doorMono.goalRoom.transform.position) + cameraPosition;
-        //}
-    }
-
-    void UpdateCoolDownSlider()
-    {
-        // Update cooldown slider with current cooldown value.
-        cooldownSlider.value = cooldown;
-    }
-
-    public void SubtractCooldown(int value)
-    {
-        cooldown -= value;
-        UpdateCoolDownSlider();
-    }
-
-    public bool IsMine()
-    {
-        return GetComponentInParent<NetworkIdentity>() == null || this.GetComponentInParent<NetworkIdentity>().isLocalPlayer;
-    }
-
-    public bool IsLocalPlayer()
-    {
-        return GetComponentInParent<NetworkIdentity>() != null && this.GetComponentInParent<NetworkIdentity>().isLocalPlayer;
-    }
-
-    void Animating(float h, float v)
-    {
-        bool moving = h != 0f || v != 0f;
-        anim.SetBool("Run", moving && inWeb == 0);
-        anim.SetBool("Walk", moving && inWeb > 0);
-    }
-
-    public void InitiateAnimation(string animationName)
-    {
-        if(animationName == "Die")
-        {
-            anim.SetBool(animationName, true);
-            anim.SetTrigger("DieTrig");
-        }
-        else
-        {
-            anim.SetTrigger(animationName);
-        }
-        
-    }
+    */
 
 }

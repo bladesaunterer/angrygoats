@@ -1,19 +1,18 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-/**
- * 
- * Class which handles the player's movement logic.
- * 
- **/
+/// <summary>
+/// Purpose: Handles players movement logic through the character controller.<para/>
+/// Authors:
+/// </summary>
 public class PlayerMovement : MonoBehaviour
 {
-
+    // Sets speed and gravity
     public float speed = 6.0F;
     public float gravity = 20.0F;
 
-    private Vector3 moveDirection = Vector3.zero;
     public CharacterController controller;
+    private Vector3 moveDirection = Vector3.zero;
 
     void Start()
     {
@@ -31,7 +30,7 @@ public class PlayerMovement : MonoBehaviour
             moveDirection = transform.TransformDirection(moveDirection);
             moveDirection *= speed;
         }
-        // Apply gravity manually.
+        // Apply gravity manually
         moveDirection.y -= gravity * Time.deltaTime;
         // Move Character Controller
         controller.Move(moveDirection * Time.deltaTime);
