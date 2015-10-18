@@ -36,17 +36,20 @@ public class BoltMover : MonoBehaviour
 	void OnTriggerEnter (Collider other)
 	{
 
-		if (other.gameObject.CompareTag ("Door") 
-			|| other.gameObject.CompareTag ("Wall") 
-			|| other.gameObject.CompareTag ("Enemy") 
-			|| other.gameObject.CompareTag ("Boss")) {
-
+		if (other.gameObject.CompareTag ("Enemy") 
+		    || other.gameObject.CompareTag ("Boss")){
 			// Destroy bolt on contact.
 			Destroy (gameObject);
-
 			// If bolt hits an enemy, deal damage to that enemy.
 			GenericGem genericGem = gemObject.GetComponent<GenericGem> ();
 			genericGem.onEnemyHit (other.gameObject);
+		}
+
+
+		if (other.gameObject.CompareTag ("Door") 
+			|| other.gameObject.CompareTag ("Wall") ) {
+			// Destroy bolt on contact.
+			Destroy (gameObject);
 		}
 	}
 	public void SetGemObject(GameObject gemObj) {

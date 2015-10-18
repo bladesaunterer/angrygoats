@@ -36,7 +36,7 @@ public class HealGemTest : MonoBehaviour {
 	void Update () {
 		if (Time.time > nextTime){
 			seconds++;
-			nextTime++;
+			nextTime = Time.time + 1;
 			check = true;
 		}
 
