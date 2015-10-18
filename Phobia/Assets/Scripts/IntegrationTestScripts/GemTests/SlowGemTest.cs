@@ -37,8 +37,8 @@ public class SlowGemTest : GemEffectTest {
 	}
 
 	public override void toggleOnHit(GameObject other){
-		prevSpeed = other.GetComponent<AIPath>().speed + slow;
-		newSpeed = prevSpeed - slow;
+		prevSpeed = other.GetComponent<AIPath>().speed ;
+		newSpeed = prevSpeed * slow;
 		base.toggleOnHit(other);
 	}
 }

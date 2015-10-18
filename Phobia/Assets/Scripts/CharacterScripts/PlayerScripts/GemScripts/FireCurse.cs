@@ -18,9 +18,10 @@ public class FireCurse : MonoBehaviour {
 	void Update () {
 		if (Time.time > nextTime){
 			nextTime = Time.time + 1;
-			health.TakeDamage(overTime);
 			if (Time.time > endTime){
 				Destroy(this);
+			} else {
+				health.TakeDamage(overTime);
 			}
 		}
 	}
@@ -28,5 +29,6 @@ public class FireCurse : MonoBehaviour {
 	public void updateStats(float time, int damage){
 		endTime = time;
 		overTime = damage;
+		nextTime = Time.time + 1;
 	}
 }
