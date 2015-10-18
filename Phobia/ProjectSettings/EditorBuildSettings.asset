@@ -39,5 +39,9 @@ EditorBuildSettings:
     path: Assets/Scenes/MasterCopy/Cutscenes/PostLevelDarknessCutscene.unity
   - enabled: 1
     path: Assets/Scenes/PersonalScenes/Karen/LevelSelectScene 1.unity
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/PersonalScenes/Karen/SpiderLevelScene 1.unity
+  - enabled: 1
+    path: Assets/Scenes/MasterCopy/AchievementsScene.unity
+  - enabled: 1
+    path: Assets/Scenes/MasterCopy/levels/SeedingLevelScene.unity

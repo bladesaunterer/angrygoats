@@ -413,7 +413,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Not Special
   lockeddescription: Beat a level with no gem usage
-  unlockeddescription: Ypu only used melee to bet a level!
+  unlockeddescription: You only used melee to bet a level!
   lockedimage: {fileID: 21300000, guid: 1020ce148d6039e49a5099e7eb92e457, type: 3}
   unlockedimage: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
   secret: 0

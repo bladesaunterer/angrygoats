@@ -89,6 +89,7 @@ public class Popups : MonoBehaviour
 		int temp4 = time.GetComponent<Timer> ().getSeconds ();
 		winScreen.GetComponent<WinUpdate> ().SetFinal (temp1, temp2, temp3, temp4);
 		winScreen.SetActive (popupDisplaying);
+		AchievementManager.Instance.OnLevelEnd();
 	}
 
 	// Display the death screen
@@ -97,5 +98,6 @@ public class Popups : MonoBehaviour
 		popupDisplaying = true;
 		Time.timeScale = 0.0f;
 		deadScreen.SetActive (popupDisplaying);
+		AchievementManager.Instance.OnLevelLoss();
 	}
 }

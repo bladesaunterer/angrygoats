@@ -12,17 +12,8 @@ public class MusicControlScript : MonoBehaviour
     public AudioClip cutsceneMusic;
     public string[] cutsceneScenes;
 
-    public AudioClip level1Music;
-    public string level1Scene;
-
-    //public AudioClip level2Music;
-    //public string level2Scene;
-
-    //public AudioClip level3Music;
-    //public string level3Scene;
-
-    //public AudioClip winMusic;
-    //public AudioClip loseMusic;
+    public AudioClip levelMusic;
+    public string[] levelScenes;
 
     // Component that plays the music
     private AudioSource playingMusic;
@@ -36,6 +27,7 @@ public class MusicControlScript : MonoBehaviour
         {
             instance = this;
             this.playingMusic = GetComponent<AudioSource>();
+            this.playingMusic.ignoreListenerVolume = true;
             DontDestroyOnLoad(this);
         }
         else
@@ -55,16 +47,21 @@ public class MusicControlScript : MonoBehaviour
     // Checks which level is loaded and plays the approriate music.
     void Update ()
     {
+        string loadedLevel = Application.loadedLevelName;
+
         // If in any of the menu scenes, play menu music if not playing already.
-        if (Array.IndexOf(menuScenes, Application.loadedLevelName) != -1)
+        if (Array.IndexOf(menuScenes, loadedLevel) != -1)
         {
             PlayMusic(menuMusic);
 
-        } else if (Application.loadedLevelName == level1Scene)
+        } else if (Array.IndexOf(levelScenes, loadedLevel) != -1)
         {
-            PlayMusic(level1Music);
+            PlayMusic(levelMusic);
+ 
+        } else if (Array.IndexOf(cutsceneScenes, loadedLevel) != -1)
+        {
+            PlayMusic(cutsceneMusic);
         }
-        // Add more background sounds here if needed.
     }
 
     // Plays the given audio clip if not playing already.

@@ -146,7 +146,7 @@ public class LevelGenerator : MonoBehaviour {
 			boss = (GameObject)Instantiate (boss, thisRoom.transform.position + new Vector3 (0, 2, 0), Quaternion.identity);
 		}
 		boss.GetComponent<AIPath>().target = GameObject.FindWithTag("Player").transform;
-		
+		thisRoom.AddBoss (boss);
 		
 		// link rooms
 		// ensures no infinite loops by incrementing i by nine when a door is already there.
@@ -202,7 +202,7 @@ public class LevelGenerator : MonoBehaviour {
 		}
 		// generate seed for recreate
 		seed = actseed.ToString() + "#" + roomsToSpawn.ToString() + "#" + totalEnemies.ToString()
-			+ "#" + maxEnemiesPerRoom.ToString() + "#" + minWebs.ToString() + "#" + maxWebs.ToString();
+			+ "#" + maxEnemiesPerRoom.ToString() + "#" + minWebs.ToString() + "#" + maxWebs.ToString() + "#" + Application.loadedLevelName;
 		aStarGrids.Scan();
     }
 	

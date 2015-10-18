@@ -60,15 +60,16 @@ public class WinUpdate : MonoBehaviour {
 		//Calculate total score.
 		final = bonus + score;
 
-		
-		// PlayerPrefs logic here.
-//		PlayerPrefs.SetInt(Application.loadedLevelName, 0);
-//		print (Application.loadedLevelName);
-		if (PlayerPrefs.GetInt (Application.loadedLevelName) == null) {
-			PlayerPrefs.SetInt (Application.loadedLevelName, final);
-		} else if(PlayerPrefs.GetInt (Application.loadedLevelName) < final) {
-			PlayerPrefs.SetInt (Application.loadedLevelName, final);
-			HighScoreNamePanel.SetActive(true);
+		if (HighScoreNamePanel != null) {
+			// PlayerPrefs logic here.
+			//		PlayerPrefs.SetInt(Application.loadedLevelName, 0);
+			//		print (Application.loadedLevelName);
+			if (PlayerPrefs.GetInt (Application.loadedLevelName) == null) {
+				PlayerPrefs.SetInt (Application.loadedLevelName, final);
+			} else if (PlayerPrefs.GetInt (Application.loadedLevelName) < final) {
+				PlayerPrefs.SetInt (Application.loadedLevelName, final);
+				HighScoreNamePanel.SetActive (true);
+			}
 		}
 
 		//Update text with their respective values.

@@ -1,37 +1,33 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class EnemySfxScript : MonoBehaviour {
+/// <summary>
+/// Script for playing SFX related to enemies.
+/// </summary>
+public class EnemySfxScript : MonoBehaviour
+{
+    private AudioSource sound;
 
-    private AudioSource attackSound;
+    static private EnemySfxScript instance;
 
-    public AudioClip walkingSound;
-    public AudioClip shortRangeAttackSound;
-    public AudioClip longRangeAttackSound;
-
-    private float volLowRange = .5f;
-    private float volHighRange = 1.0f;
-
-    // Use this for initialization
-    void Start () {
-        this.attackSound = GetComponentInChildren<AudioSource>();
-    }
-	
-	// Update is called once per frame
-	void Update () {
-
+    void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+            this.sound = GetComponentInChildren<AudioSource>();
+        }
+        else
+        {
+            // Self-destruct if another instance exists
+            Destroy(this);
+            return;
+        }
     }
 
     // Methods for calling in other classes at the appropriate time.
-    public void playShortRangeAttackSound()
+    static public void playSound(AudioClip soundEffect)
     {
-        float vol = Random.Range(volLowRange, volHighRange);
-        attackSound.PlayOneShot(shortRangeAttackSound, vol);
-    }
-
-    public void playLongRangeAttackSound()
-    {
-        float vol = Random.Range(volLowRange, volHighRange);
-        attackSound.PlayOneShot(longRangeAttackSound, vol);
+        instance.sound.PlayOneShot(soundEffect);
     }
 }

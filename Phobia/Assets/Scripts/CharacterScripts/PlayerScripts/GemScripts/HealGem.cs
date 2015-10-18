@@ -1,21 +1,23 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class HealGem : GenericGem {
+/// <summary>
+/// Purpose: The green/healing gem. Useful for healing the character when they are in danger and are close to dying.<para/>
+/// Authors:
+/// </summary>
+public class HealGem : GenericGem
+{
+    // The amount the gem will heal for
+    public int heal = 10;
 
-	public int heal = 10;				// How much heal this gem does
-	
-	// Update is called once per frame
-	void Update () {
-		//refund the cooldown
-		PlayerHealth playerHealth = player.GetComponent<PlayerHealth> ();
-
-		if (Input.GetKeyDown(KeyCode.K) && playerControl.cooldown >= cost && isCurrent)
-		{
-			if (playerHealth.currentHealth != 100){
-				playerControl.SubtractCooldown(cost);
-				player.GetComponent<PlayerHealth>().HealPlayer(heal);
-			}
-		}
-	}
+    protected override void doEffect()
+    {
+        PlayerHealth playerHealth = player.GetComponent<PlayerHealth>();
+        if (playerHealth.currentHealth != 100)
+        {
+            // Apply healing effect to player's health
+            playerControl.SubtractCooldown(cost);
+            player.GetComponent<PlayerHealth>().HealPlayer(heal);
+        }
+    }
 }
