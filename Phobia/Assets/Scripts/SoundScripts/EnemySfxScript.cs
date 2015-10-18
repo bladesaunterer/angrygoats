@@ -1,42 +1,57 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class EnemySfxScript : MonoBehaviour {
+/// <summary>
+/// Script for playing SFX related to enemies.
+/// </summary>
+public class EnemySfxScript : MonoBehaviour
+{
 
     private AudioSource sound;
-
-    public AudioClip hitSound;
+    public AudioClip meleeSound;
+    public AudioClip shotSound;
     public AudioClip deathSound;
-    public AudioClip attackSound;
-
+    public AudioClip hitSound;
     private float volLowRange = .5f;
     private float volHighRange = 1.0f;
 
-    // Use this for initialization
-    void Start () {
-        sound = GetComponentInChildren<AudioSource>();
-    }
-	
-	// Update is called once per frame
-	void Update () {
+    static private EnemySfxScript instance;
 
+    void Start()
+    {
+        if (instance == null)
+        {
+            instance = this;
+            this.sound = GetComponentInChildren<AudioSource>();
+        }
+        else
+        {
+            // Self-destruct if another instance exists
+            Destroy(this);
+            return;
+        }
     }
 
     // Methods for calling in other classes at the appropriate time.
-    public void playHitSound()
+    static public void playMeleeSound()
     {
-        float vol = Random.Range(volLowRange, volHighRange);
-        sound.PlayOneShot(hitSound, vol);
+        float vol = Random.Range(instance.volLowRange, instance.volHighRange);
+        instance.sound.PlayOneShot(instance.meleeSound, vol);
     }
 
-    public void playDeathSound()
+    static public void playShotSound()
     {
-        sound.PlayOneShot(deathSound);
+        float vol = Random.Range(instance.volLowRange, instance.volHighRange);
+        instance.sound.PlayOneShot(instance.shotSound, vol);
     }
 
-    public void playAttackSound()
+    static public void playDeathSound()
     {
-        float vol = Random.Range(volLowRange, volHighRange);
-        sound.PlayOneShot(attackSound, vol);
+        instance.sound.PlayOneShot(instance.deathSound);
+    }
+
+    static public void playHitSound()
+    {
+        instance.sound.PlayOneShot(instance.hitSound);
     }
 }

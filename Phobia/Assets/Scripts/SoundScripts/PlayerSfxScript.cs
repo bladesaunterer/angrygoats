@@ -62,10 +62,4 @@ public class PlayerSfxScript : MonoBehaviour {
     {
         instance.sound.PlayOneShot(instance.hitSound);
     }
-
-    // Method used by VolumeControlScript to change the volume of the player's SFX.
-    static public void ChangeSfxVolume(float newValue)
-	{
-		instance.sound.volume = newValue;
-	}
 }

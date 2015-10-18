@@ -64,7 +64,7 @@ public class EnemyAttack : MonoBehaviour
         timer += Time.deltaTime;
         if (timer >= timeBetweenAttacks && playerInRange && GetComponent<EnemyHealth>().currentHealth > 0)
         {
-            sfx.playAttackSound();
+            EnemySfxScript.playMeleeSound();
 
             if (anim != null)
             {
