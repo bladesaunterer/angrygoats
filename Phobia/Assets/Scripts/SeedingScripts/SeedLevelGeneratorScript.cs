@@ -9,7 +9,7 @@ public class SeedLevelGeneratorScript : MonoBehaviour {
 	public GameObject DarknessOverlay;
 
 	// Use this for initialization
-	void Start () {
+	void Awake () {
 		string seed = PlayerPrefs.GetString ("seed");
 		print (seed);
 		string[] parts = seed.ToString().Split('#');
