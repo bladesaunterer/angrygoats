@@ -368,6 +368,18 @@ Prefab:
       propertyPath: aStarGrids
       value: 
       objectReference: {fileID: 1742255551}
+    - target: {fileID: 11460894, guid: 642fdfba58bb97944b87ac4d99a266b2, type: 2}
+      propertyPath: boss
+      value: 
+      objectReference: {fileID: 177236, guid: d2c3918174fec974b8ac25e1c3a34542, type: 2}
+    - target: {fileID: 11460894, guid: 642fdfba58bb97944b87ac4d99a266b2, type: 2}
+      propertyPath: roomsToSpawn
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 11460894, guid: 642fdfba58bb97944b87ac4d99a266b2, type: 2}
+      propertyPath: totalEnemies
+      value: 70
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 642fdfba58bb97944b87ac4d99a266b2, type: 2}
   m_IsPrefabParent: 0
@@ -641,19 +653,19 @@ Prefab:
     m_Modifications:
     - target: {fileID: 22495568, guid: 3380099f88c9c9a4fa2591938a2c84bc, type: 2}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 22495568, guid: 3380099f88c9c9a4fa2591938a2c84bc, type: 2}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 22499716, guid: 3380099f88c9c9a4fa2591938a2c84bc, type: 2}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 22499716, guid: 3380099f88c9c9a4fa2591938a2c84bc, type: 2}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 22453662, guid: 3380099f88c9c9a4fa2591938a2c84bc, type: 2}
       propertyPath: m_LocalPosition.x
@@ -685,7 +697,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22453662, guid: 3380099f88c9c9a4fa2591938a2c84bc, type: 2}
       propertyPath: m_RootOrder
-      value: 7
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 22453662, guid: 3380099f88c9c9a4fa2591938a2c84bc, type: 2}
       propertyPath: m_AnchoredPosition.x

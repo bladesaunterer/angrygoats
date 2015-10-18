@@ -13,6 +13,9 @@ public class BossOne : MonoBehaviour {
 	Vector3 up = new Vector3 (0, 0, 2);
 	Vector3 down = new Vector3 (0, 0, -2);
 	EnemyHealth enemyHealth;
+
+    private int numEnemiesSpawned = 0;
+
 	// Use this for initialization
 	void Start () {
 		enemyHealth = this.gameObject.GetComponent<EnemyHealth>();
@@ -21,7 +24,17 @@ public class BossOne : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (enemyHealth.currentHealth < enemyHealth.startingHealth) {
-			if (Time.time > lastSpawnTime + spawnRate) {
+            float currentSpawnRate = spawnRate;
+            if (numEnemiesSpawned <= 3) {
+                currentSpawnRate = spawnRate - 2;
+            } else if (numEnemiesSpawned <= 7) {
+                currentSpawnRate = spawnRate;
+            } else {
+                currentSpawnRate = spawnRate + 2;
+            }
+            
+			if (Time.time > lastSpawnTime + currentSpawnRate) {
+                numEnemiesSpawned++;
 				lastSpawnTime = Time.time;
 				if (nextSpawnType == 0) {
 					GameObject make = (GameObject)GameObject.Instantiate (enemyTypeOne, this.gameObject.transform.position + left, this.gameObject.transform.rotation);

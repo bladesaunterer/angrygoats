@@ -2281,7 +2281,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deathSound: {fileID: 8300000, guid: c1658441e2b40a8469a89d86fa412a6a, type: 3}
   hurtSound: {fileID: 8300000, guid: 73da2d89cf83ca34bb8adb5b9c44bcd5, type: 3}
-  startingHealth: 50
+  startingHealth: 100
   currentHealth: 0
   lethalLow: -5
   scoreAwarded: 50
@@ -2521,7 +2521,7 @@ Prefab:
       objectReference: {fileID: 194068, guid: b2735f79fa3d8a0429baf0a01e85af48, type: 2}
     - target: {fileID: 0}
       propertyPath: startingHealth
-      value: 50
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_Constraints
