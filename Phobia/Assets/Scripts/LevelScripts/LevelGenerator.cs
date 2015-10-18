@@ -40,7 +40,7 @@ public class LevelGenerator : MonoBehaviour {
 	public AstarPath aStarGrids;
     
     
-    void Awake () {
+    void Start () {
 		
 		// These variables will change their meaning over the course of the method
 		RoomControl thisRoom;
