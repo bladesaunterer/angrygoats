@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using System;
 using System.Collections;
 using System.Text.RegularExpressions;
 
@@ -125,7 +126,12 @@ public class CutsceneTextScript : MonoBehaviour {
 	public void ImageProcessing() {
 		//Remove line ending.
 		string editedString = scriptLine [2];
-		editedString = editedString.Remove(editedString.Length - 1);
+		int i = editedString.Substring(editedString.Length - 1).ToCharArray()[0];
+
+		//Remove carriage return if necessary.
+		if (i == 13) {
+			editedString = editedString.Remove (editedString.Length - 1);
+		}
 
 		if (editedString == "DisableL") {
 			//Disable left image only.

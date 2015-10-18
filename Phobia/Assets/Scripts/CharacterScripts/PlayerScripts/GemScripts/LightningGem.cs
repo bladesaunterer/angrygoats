@@ -12,7 +12,6 @@ public class LightningGem : GenericGem {
 			GameObject shotSpawned = Instantiate(shot,shotSpawn.position,shotSpawn.rotation) as GameObject;
 			shotSpawned.GetComponent<BoltMover>().SetGemObject(gameObject);
 		}
-
 	}
 
 	public override void onEnemyHit(GameObject other){
