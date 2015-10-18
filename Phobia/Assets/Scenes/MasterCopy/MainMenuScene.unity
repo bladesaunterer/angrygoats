@@ -1598,10 +1598,21 @@ MonoBehaviour:
   - SettingsScene
   cutsceneMusic: {fileID: 8300000, guid: 7de93de5a21abad4e9f6996e5674a9a3, type: 3}
   cutsceneScenes:
-  - PreSpiderLevelCutscene
-  - LoadingScene
+  - LoadingDarknessScene
+  - LoadingHeightsScene
+  - LoadingSpiderScene
+  - PostLevelDarknessCutscene
+  - PostLevelHeightsCutscene
+  - PostLevelSpiderCutscene
+  - PreLevelDarknessCutscene
+  - PreLevelHeightsCutscene
+  - PreLevelSpiderCutscene
   levelMusic: {fileID: 8300000, guid: 7ece405773f6ba04f91aeacac568442d, type: 3}
-  levelScenes: []
+  levelScenes:
+  - SpiderLevelScene
+  - HeightsLevelScene
+  - DarknessLevelScene
+  - SeedingLevelScene
 --- !u!82 &1637139940
 AudioSource:
   m_ObjectHideFlags: 0
