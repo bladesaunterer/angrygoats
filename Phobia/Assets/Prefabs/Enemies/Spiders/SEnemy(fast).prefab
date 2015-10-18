@@ -2185,7 +2185,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 241b27616211bb2409907b5dd9dff189, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackSound: {fileID: 0}
+  attackSound: {fileID: 8300000, guid: 0f3c5d317dcac4346923f7849bb71658, type: 3}
   damage: 8
 --- !u!114 &11460704
 MonoBehaviour:
@@ -2356,6 +2356,10 @@ Prefab:
       objectReference: {fileID: 8300000, guid: 0f3c5d317dcac4346923f7849bb71658, type: 3}
     - target: {fileID: 0}
       propertyPath: hurtSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 0f3c5d317dcac4346923f7849bb71658, type: 3}
+    - target: {fileID: 0}
+      propertyPath: attackSound
       value: 
       objectReference: {fileID: 8300000, guid: 0f3c5d317dcac4346923f7849bb71658, type: 3}
     m_RemovedComponents: []
