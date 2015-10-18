@@ -88,7 +88,8 @@ public class RoomControl : MonoBehaviour {
 		}
 	}
 	
-	public void AddEnemy(GameObject enemy) {
+
+	public GameObject AddEnemy(GameObject enemy) {
 		
 		GameObject chosenCell = freeCells[Random.Range(0, freeCells.Count)];
 		freeCells.Remove(chosenCell);
@@ -99,6 +100,8 @@ public class RoomControl : MonoBehaviour {
 
 		thisEnemy.GetComponent<EnemyControl>().home = chosenCell.transform;
 		thisEnemy.GetComponent<AIPath>().target = chosenCell.transform;
+		return thisEnemy;
+
 
 	}
 	
