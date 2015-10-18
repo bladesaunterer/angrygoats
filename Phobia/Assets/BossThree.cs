@@ -34,6 +34,9 @@ public class BossThree : MonoBehaviour {
 			timer = 0f;
 			foreach (GameObject ghost in ghosts) {
 				if (ghost != null){
+					if (roomCont == null){
+						Debug.Log (";_;");
+					}
 				GameObject chosenCell = roomCont.freeCells [Random.Range (0, roomCont.freeCells.Count)];
 				ghost.GetComponent<AIPath>().target = chosenCell.transform;
 				Debug.Log("Swapping paths!");

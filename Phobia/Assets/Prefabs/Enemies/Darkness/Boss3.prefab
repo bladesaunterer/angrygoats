@@ -1828,7 +1828,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startingHealth: 100
   currentHealth: 0
-  lethalLow: 0
+  lethalLow: -5
   scoreAwarded: 10
   HealthBar: {fileID: 0}
 --- !u!136 &13630736
@@ -2004,6 +2004,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: startingHealth
       value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: lethalLow
+      value: -5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
