@@ -17,7 +17,7 @@ public class EnemySpinShot : MonoBehaviour
     float timer;
     private float counter = 0;
     public int shoot = 1;
-    private float timeBetweenAttacks = 0.3f;
+    private float timeBetweenAttacks = 0.7f;
 
     // Update is called once per frame
     void Update()
