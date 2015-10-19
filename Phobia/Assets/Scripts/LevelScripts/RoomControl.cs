@@ -145,14 +145,17 @@ public class RoomControl : MonoBehaviour {
 		
 		foreach (GameObject enemy in enemies) {
 			if (enemy != null) {
-				if (enemy.CompareTag ("Boss")) {
-					print ("LOTS OF RANDOMNESS <3");
-					enemy.GetComponent<EnemyHealth> ().currentHealth = enemy.GetComponent<EnemyHealth> ().startingHealth;
-				} else {
-					enemy.GetComponent<AIPath> ().target = enemy.GetComponent<EnemyControl> ().home;
-					if (enemy.GetComponent<EnemySingleShot> () != null) {
-						enemy.GetComponent<EnemySingleShot> ().shouldShoot = false;
-					}
+				if(enemy.GetComponent<AIPath>() != null) {	
+					enemy.GetComponent<AIPath>().target = enemy.GetComponent<EnemyControl> ().home;
+				}
+				if (enemy.GetComponent<EnemySingleShot>() != null) {
+					enemy.GetComponent<EnemySingleShot>().shouldShoot = false;
+				}
+				if (enemy.GetComponent<EnemyCharge>() != null) {
+					enemy.GetComponent<EnemyCharge>().enabled = false;
+				}
+				if (enemy.CompareTag("Boss")) {
+					enemy.GetComponent<EnemyHealth>().currentHealth = enemy.GetComponent<EnemyHealth> ().startingHealth;
 				}
 			}
 		}
@@ -162,9 +165,15 @@ public class RoomControl : MonoBehaviour {
 		
 		foreach (GameObject enemy in enemies) {
 			if (enemy != null) {
-				enemy.GetComponent<AIPath>().target = GameObject.FindWithTag("Player").transform;
+				if(enemy.GetComponent<AIPath>() != null) {	
+					enemy.GetComponent<AIPath>().target = GameObject.FindWithTag("Player").transform;
+				}
 				if (enemy.GetComponent<EnemySingleShot>() != null) {
 					enemy.GetComponent<EnemySingleShot>().shouldShoot = true;
+				}
+				if (enemy.GetComponent<EnemyCharge>() != null) {
+					enemy.GetComponent<EnemyCharge>().enabled = true;
+					enemy.GetComponent<EnemyCharge>().StartCharge();
 				}
 			}
 		}

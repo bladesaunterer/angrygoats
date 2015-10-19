@@ -142,6 +142,8 @@ public class LevelGenerator : MonoBehaviour {
 			bs3.roomCont = thisRoom.GetComponent<RoomControl> ();
 		} else if (boss.transform.name == "FlyBoss" || boss.transform.name == "FlyBossTest") {
 			boss = (GameObject)Instantiate (boss, thisRoom.transform.position + new Vector3 (0, 4, 0), Quaternion.identity);
+			boss.GetComponent<EnemyControl>().home = thisRoom.transform;
+			boss.GetComponent<AIPath>().enabled = false;
 		} else {
 			boss = (GameObject)Instantiate (boss, thisRoom.transform.position + new Vector3 (0, 2, 0), Quaternion.identity);
 		}
