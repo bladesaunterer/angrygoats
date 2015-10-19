@@ -67,7 +67,11 @@ public class SeedInputProcessor : MonoBehaviour {
 			if (minWebsInt<=maxWebsInt && totalEnemiesInt/roomsToSpawnInt<maxEnemiesPerRoomInt){
 				//set begin button to active
 				beginButton.gameObject.SetActive(true);
+			} else {
+				beginButton.gameObject.SetActive(false);
 			}
+		} else {
+				beginButton.gameObject.SetActive(false);
 		}
 	}
 }
