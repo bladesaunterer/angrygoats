@@ -37,7 +37,7 @@ public class AchievementManager : MonoBehaviour {
         if (disabled == true) {
             return;
         }
-		int enemiesCount = ScoreScript.Instance.enemyCounter;
+		int enemiesCount = TEMPScoreScript.Instance.enemyCounter;
 		int totalEnemies = generator.totalEnemies;
 		if (enemiesCount == 1){
 			PlayerPrefs.SetInt("Only The Boss",1);
@@ -60,7 +60,7 @@ public class AchievementManager : MonoBehaviour {
         if (disabled == true) {
             return;
         }
-        int enemiesCount = ScoreScript.Instance.enemyCounter;
+        int enemiesCount = TEMPScoreScript.Instance.enemyCounter;
 		if (enemiesCount == 0){
 			PlayerPrefs.SetInt("You Suck",1);
 		}

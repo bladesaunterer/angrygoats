@@ -7,24 +7,24 @@ using UnityEngine.UI;
  * Singleton class which handles scoring logic on UI.
  * 
  **/
-public class ScoreScript : MonoBehaviour
+public class TEMPScoreScript : MonoBehaviour
 {
 
-    private static ScoreScript instance;
+    private static TEMPScoreScript instance;
     public int pointsCounter;
 	public int enemyCounter;
     public Text currentScore;
 
 	// Singleton method for getting instance of ScoreScript.
-    public static ScoreScript Instance
+    public static TEMPScoreScript Instance
     {
         get
         {
             if (instance == null)
             {
-                instance = GameObject.FindObjectOfType<ScoreScript>();
+                instance = GameObject.FindObjectOfType<TEMPScoreScript>();
             }
-            return ScoreScript.instance;
+            return TEMPScoreScript.instance;
         }
 
     }
