@@ -19,7 +19,7 @@ public class SeedInputProcessor : MonoBehaviour {
 	public InputField maxEnemiesPerRoom;
 	public InputField minWebs;
 	public InputField maxWebs;
-	public Dropdown levelSelector;
+	// public Dropdown levelSelector;
 
 	int actSeedInputInt;
 	int roomsToSpawnInt;
@@ -34,7 +34,7 @@ public class SeedInputProcessor : MonoBehaviour {
 			int.TryParse (minWebs.text, out minWebsInt) && int.TryParse (maxWebs.text, out maxWebsInt)) {
 			if (minWebsInt <= maxWebsInt && totalEnemiesInt / roomsToSpawnInt < maxEnemiesPerRoomInt) {
 
-				if (levelSelector.value == 0) {
+				/*if (levelSelector.value == 0) {
 					print ("Arachnophobia");
 					PlayerPrefs.SetString ("seed", actSeedInput.text + "#" + roomsToSpawn.text + "#" + totalEnemies.text + "#" + maxEnemiesPerRoom.text + "#" + minWebs.text + "#" + maxWebs.text + "#" + "SpiderLevelScene");
 				} else if (levelSelector.value == 1) {
@@ -43,7 +43,7 @@ public class SeedInputProcessor : MonoBehaviour {
 				} else if (levelSelector.value == 2) {
 					print ("Nyctophobia");
 					PlayerPrefs.SetString ("seed", actSeedInput.text + "#" + roomsToSpawn.text + "#" + totalEnemies.text + "#" + maxEnemiesPerRoom.text + "#" + minWebs.text + "#" + maxWebs.text + "#" + "DarknessLevelScene");
-				} 
+				} */
 
 			}
 		}
