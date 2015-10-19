@@ -120,6 +120,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   generator: {fileID: 947234412}
+  disabled: 0
 --- !u!4 &105729173
 Transform:
   m_ObjectHideFlags: 0
@@ -179,14 +180,6 @@ Prefab:
       propertyPath: aStarGrids
       value: 
       objectReference: {fileID: 1742255551}
-    - target: {fileID: 11468682, guid: d0c4a9b69a301ad4886abc7ae87a96a9, type: 2}
-      propertyPath: roomsToSpawn
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 11468682, guid: d0c4a9b69a301ad4886abc7ae87a96a9, type: 2}
-      propertyPath: totalEnemies
-      value: 60
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d0c4a9b69a301ad4886abc7ae87a96a9, type: 2}
   m_IsPrefabParent: 0
@@ -346,6 +339,10 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: aa08d7ddb5e4c054eab287807a72436e, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1035759932 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 183194, guid: 3380099f88c9c9a4fa2591938a2c84bc, type: 2}
+  m_PrefabInternal: {fileID: 2068215307}
 --- !u!114 &1119367157 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 11467142, guid: 3380099f88c9c9a4fa2591938a2c84bc,
@@ -695,6 +692,14 @@ Prefab:
       propertyPath: healthSlider
       value: 
       objectReference: {fileID: 529085637}
+    - target: {fileID: 11435962, guid: d8212304f570bbe4d8d44419be85369b, type: 2}
+      propertyPath: healthRegen
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 11435962, guid: d8212304f570bbe4d8d44419be85369b, type: 2}
+      propertyPath: lethalLow
+      value: -5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d8212304f570bbe4d8d44419be85369b, type: 2}
   m_IsPrefabParent: 0
@@ -801,6 +806,10 @@ Prefab:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 11494654, guid: 3380099f88c9c9a4fa2591938a2c84bc, type: 2}
+      propertyPath: highScoreNamePanel
+      value: 
+      objectReference: {fileID: 1035759932}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3380099f88c9c9a4fa2591938a2c84bc, type: 2}
   m_IsPrefabParent: 0

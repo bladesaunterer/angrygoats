@@ -39,7 +39,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 573315f148d13db4ba3d9729ceb72f7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  roomsToSpawn: 20
+  roomsToSpawn: 12
   seed: 
   actseed: -1
   roomPrefab: {fileID: 104770, guid: d35c4f618bababb4a8c66065d625ad85, type: 2}
@@ -54,13 +54,8 @@ MonoBehaviour:
   - {fileID: 198754, guid: 8076a686518b4e74f99d848707da0709, type: 2}
   - {fileID: 129790, guid: cf8ca9f61f02b7b458c4b03045261572, type: 2}
   - {fileID: 172674, guid: eb171bf0b3f31e24a935b3e4f2f911f0, type: 2}
-  - {fileID: 142334, guid: 63da9138e2c6a064c889cba5ce48f15e, type: 2}
-  - {fileID: 173814, guid: 7e522d9350a5e7a4c95529e2ba33a861, type: 2}
-  - {fileID: 133532, guid: 2a4ec8c20f03fe04eba8866f8587aa7e, type: 2}
-  - {fileID: 147514, guid: c9841eb2427c30f41857e0da6b2df808, type: 2}
   - {fileID: 181020, guid: 76959b8f6c851f14ba3c877fa8314da2, type: 2}
-  - {fileID: 130200, guid: e1d468dbd0392d24eb7cba4a6a253d84, type: 2}
-  totalEnemies: 60
+  totalEnemies: 45
   maxEnemiesPerRoom: 5
   enemies:
   - {fileID: 139882, guid: 920b67a3fd9e07c4cafb8c907af0daef, type: 2}
@@ -82,7 +77,35 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: floorPrefabs.Array.size
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: floorPrefabs.Array.data[9]
+      value: 
+      objectReference: {fileID: 181020, guid: 76959b8f6c851f14ba3c877fa8314da2, type: 2}
+    - target: {fileID: 0}
+      propertyPath: floorPrefabs.Array.data[14]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: floorPrefabs.Array.data[10]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: floorPrefabs.Array.data[12]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: floorPrefabs.Array.data[11]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: floorPrefabs.Array.data[13]
+      value: 
+      objectReference: {fileID: 181020, guid: 76959b8f6c851f14ba3c877fa8314da2, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 128482}
