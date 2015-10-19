@@ -65,7 +65,7 @@ public class EnemyAttack : MonoBehaviour
         {
             if (attackSound != null)
             {
-                EnemySfxScript.playSound(attackSound);
+                SfxScript.playSound(attackSound);
             }
 
             if (anim != null)

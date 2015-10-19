@@ -6,7 +6,8 @@ using System.Collections;
 **/
 public class Popups : MonoBehaviour
 {
-
+    public AudioClip winSound;
+    public AudioClip loseSound;
 	public GameObject pauseScreen;
 	public GameObject winScreen;
 	public GameObject deadScreen;
@@ -83,7 +84,7 @@ public class Popups : MonoBehaviour
 	// Displays the win screen and updates the score on it
 	void displayWinScreen ()
 	{
-		popupDisplaying = true;
+        popupDisplaying = true;
 		Time.timeScale = 0.0f;
 		int temp1 = TEMPScoreScript.Instance.GetScore ();
 		int temp2 = TEMPScoreScript.Instance.GetEnemies ();
@@ -91,16 +92,24 @@ public class Popups : MonoBehaviour
 		int temp3 = time.GetComponent<Timer> ().getMinutes ();
 		int temp4 = time.GetComponent<Timer> ().getSeconds ();
 		winScreen.GetComponent<WinUpdate> ().SetFinal (temp1, temp2, temp3, temp4);
+        SfxScript.playSound(winSound);
 		winScreen.SetActive (popupDisplaying);
 		AchievementManager.Instance.OnLevelEnd ();
-	}
+        if (winSound != null)
+        {
+            Debug.Log("Playing win sound.");
+            this.GetComponentInChildren<AudioSource>().PlayOneShot(winSound);
+        }
+    }
 
 	// Display the death screen
 	void displayDeathScreen ()
 	{
-		popupDisplaying = true;
+        popupDisplaying = true;
 		Time.timeScale = 0.0f;
-		deadScreen.SetActive (popupDisplaying);
-		AchievementManager.Instance.OnLevelLoss ();
-	}
+        SfxScript.playSound(loseSound);
+        deadScreen.SetActive (popupDisplaying);
+        AchievementManager.Instance.OnLevelLoss ();
+        
+    }
 }

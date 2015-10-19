@@ -60,7 +60,7 @@ public class EnemyHealth : MonoBehaviour
 
         if (hurtSound != null)
         {
-            EnemySfxScript.playSound(hurtSound);
+            SfxScript.playSound(hurtSound);
         }
 
         if (anim != null)
@@ -86,7 +86,7 @@ public class EnemyHealth : MonoBehaviour
 
                 if (deathSound != null)
                 {
-                    EnemySfxScript.playSound(deathSound);
+                    SfxScript.playSound(deathSound);
                 }
                 if (anim != null)
                 {
