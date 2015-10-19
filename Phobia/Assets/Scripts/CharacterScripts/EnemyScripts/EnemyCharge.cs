@@ -1,10 +1,15 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class EnemyCharge : MonoBehaviour {
-
+/// <summary>
+/// Purpose: Applies a charge ability to certain enemies to give them super speed abilities.<para/>
+/// Authors:
+/// </summary>
+public class EnemyCharge : MonoBehaviour
+{
 	public int scale = 100;
 	public float initDelay = 0;
+	
 	private bool hasInit = false;
 	private float initTime;
 	// Use this for initialization

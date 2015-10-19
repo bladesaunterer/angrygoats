@@ -3,11 +3,8 @@ using System.Collections;
 using UnityEngine.UI;
 
 /// <summary>
-/// 
-/// 
-/// 
-/// 
-/// 
+/// Purpose: A health bar above bosses heads which changes from green to red as their health reduced.<para/>
+/// Author: Chester Booker <para/>
 /// Reference code: - See more at: http://unitydojo.blogspot.co.nz/2014/09/unity-46-simple-tutorial-health-bar-and.html#sthash.9xmPpLui.dpuf
 /// </summary>
 public class EnemyHealthBar : MonoBehaviour
@@ -76,18 +73,18 @@ public class EnemyHealthBar : MonoBehaviour
         }
     }
 
-
-    
-
     // Health between [0.0f,1.0f] == (currentHealth / totalHealth)
     public void SetHealthVisual(float healthNormalized)
     {
-
-        transform.localScale = new Vector3(healthNormalized,
+        if (healthNormalized > 0f)
+        {
+            transform.localScale = new Vector3(healthNormalized,
+                                                     transform.localScale.y,
+                                                     transform.localScale.z);
+        }
+        transform.localScale = new Vector3(0f,
                                                      transform.localScale.y,
                                                      transform.localScale.z);
     }
-
-
 }
 

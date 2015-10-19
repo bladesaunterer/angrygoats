@@ -6,16 +6,23 @@ using System.Collections;
 /// Purpose: Used for adjusting the darkness's transparency.<para/>
 /// Author: Chester Booker
 /// </summary>
-public class DarknessAdjustor : MonoBehaviour {
-
+public class DarknessAdjustor : MonoBehaviour
+{
     public RawImage darkness;
     public float transparencyLevel = 0;
 
-	void Update () {
+    private RawImage darkImg;
 
-        RawImage darkImg = darkness.GetComponent<RawImage>();
+    void Start()
+    {
+        // Fetch the dark overlay
+        darkImg = darkness.GetComponent<RawImage>();
+    }
+    void Update()
+    {
+
         Color c = darkImg.color;
-        
+
         // Updates the transparency level of the image based on the public input
         c.a = transparencyLevel;
         darkImg.color = c;
