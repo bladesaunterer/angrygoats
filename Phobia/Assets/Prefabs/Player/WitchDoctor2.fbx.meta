@@ -1,0 +1,639 @@
+fileFormatVersion: 2
+guid: d77105d526ccf0945abe4f159962a909
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: Head
+    100002: Head_end
+    100004: L-finger01
+    100006: L-finger02
+    100008: L-finger02_end
+    100010: L-foot
+    100012: L-foot_end
+    100014: L-hand
+    100016: L-HandControl.001
+    100018: L-knee
+    100020: L-LegControl.001
+    100022: L-lowerarm
+    100024: L-thigh
+    100026: L-thumb01
+    100028: L-thumb02
+    100030: L-thumb02_end
+    100032: L-upperarm
+    100034: LowPolyNecromancer.001
+    100036: LowPolyNecromancerWand.001
+    100038: Main.001
+    100040: Pelvis
+    100042: R-finger01
+    100044: R-finger02
+    100046: R-finger02_end
+    100048: R-foot
+    100050: R-foot_end
+    100052: R-hand
+    100054: R-HandControl.001
+    100056: R-knee
+    100058: R-LegControl.001
+    100060: R-lowerarm
+    100062: R-thigh
+    100064: R-thumb01
+    100066: R-thumb02
+    100068: R-thumb02_end
+    100070: R-upperarm
+    100072: Shoulder
+    100074: Spine
+    100076: //RootNode
+    400000: Head
+    400002: Head_end
+    400004: L-finger01
+    400006: L-finger02
+    400008: L-finger02_end
+    400010: L-foot
+    400012: L-foot_end
+    400014: L-hand
+    400016: L-HandControl.001
+    400018: L-knee
+    400020: L-LegControl.001
+    400022: L-lowerarm
+    400024: L-thigh
+    400026: L-thumb01
+    400028: L-thumb02
+    400030: L-thumb02_end
+    400032: L-upperarm
+    400034: LowPolyNecromancer.001
+    400036: LowPolyNecromancerWand.001
+    400038: Main.001
+    400040: Pelvis
+    400042: R-finger01
+    400044: R-finger02
+    400046: R-finger02_end
+    400048: R-foot
+    400050: R-foot_end
+    400052: R-hand
+    400054: R-HandControl.001
+    400056: R-knee
+    400058: R-LegControl.001
+    400060: R-lowerarm
+    400062: R-thigh
+    400064: R-thumb01
+    400066: R-thumb02
+    400068: R-thumb02_end
+    400070: R-upperarm
+    400072: Shoulder
+    400074: Spine
+    400076: //RootNode
+    2300000: LowPolyNecromancerWand.001
+    3300000: LowPolyNecromancerWand.001
+    4300000: LowPolyNecromancerWand.001
+    4300002: LowPolyNecromancer.001
+    7400000: T pose
+    7400002: Main.001|L-HandControl|Take 001|BaseLayer.001
+    7400004: Main.001|L-HandControl|Take 001|BaseLayer.002
+    7400006: Main.001|L-LegControl|Take 001|BaseLayer
+    7400008: Main.001|L-LegControl|Take 001|BaseLayer.001
+    7400010: Main.001|L-LegControl|Take 001|BaseLayer.002
+    7400012: Main.001|LowPolyNecromancerWand|Take 001|BaseLayer
+    7400014: Main.001|LowPolyNecromancerWand|Take 001|BaseLayer.001
+    7400016: Main.001|LowPolyNecromancerWand|Take 001|BaseLayer.002
+    7400018: Main.001|LowPolyNecromancer|Take 001|BaseLayer
+    7400020: Main.001|LowPolyNecromancer|Take 001|BaseLayer.001
+    7400022: Main.001|LowPolyNecromancer|Take 001|BaseLayer.002
+    7400024: Main.001|LowPolyNecromancer|Take 001|BaseLayer.003
+    7400026: Main.001|Main|Take 001|BaseLayer
+    7400028: Main.001|Main|Take 001|BaseLayer.001
+    7400030: Main.001|Main|Take 001|BaseLayer.002
+    7400032: idle to defent
+    7400034: Main.001|R-HandControl|Take 001|BaseLayer.001
+    7400036: Main.001|R-HandControl|Take 001|BaseLayer.002
+    7400038: Main.001|R-LegControl|Take 001|BaseLayer
+    7400040: Main.001|R-LegControl|Take 001|BaseLayer.001
+    7400042: Main.001|R-LegControl|Take 001|BaseLayer.002
+    7400044: cast magic spell 01, curse
+    7400046: LowPolyNecromancerWand.001|L-HandControl|Take 001|BaseLayer.001
+    7400048: LowPolyNecromancerWand.001|L-HandControl|Take 001|BaseLayer.002
+    7400050: LowPolyNecromancerWand.001|L-LegControl|Take 001|BaseLayer
+    7400052: LowPolyNecromancerWand.001|L-LegControl|Take 001|BaseLayer.001
+    7400054: LowPolyNecromancerWand.001|L-LegControl|Take 001|BaseLayer.002
+    7400056: LowPolyNecromancerWand.001|LowPolyNecromancerWand|Take 001|BaseLayer
+    7400058: LowPolyNecromancerWand.001|LowPolyNecromancerWand|Take 001|BaseLayer.001
+    7400060: LowPolyNecromancerWand.001|LowPolyNecromancerWand|Take 001|BaseLayer.002
+    7400062: LowPolyNecromancerWand.001|LowPolyNecromancer|Take 001|BaseLayer
+    7400064: LowPolyNecromancerWand.001|LowPolyNecromancer|Take 001|BaseLayer.001
+    7400066: LowPolyNecromancerWand.001|LowPolyNecromancer|Take 001|BaseLayer.002
+    7400068: LowPolyNecromancerWand.001|LowPolyNecromancer|Take 001|BaseLayer.003
+    7400070: LowPolyNecromancerWand.001|R-HandControl|Take 001|BaseLayer
+    7400072: LowPolyNecromancerWand.001|R-HandControl|Take 001|BaseLayer.001
+    7400074: LowPolyNecromancerWand.001|R-HandControl|Take 001|BaseLayer.002
+    7400076: LowPolyNecromancerWand.001|R-LegControl|Take 001|BaseLayer
+    7400078: LowPolyNecromancerWand.001|R-LegControl|Take 001|BaseLayer.001
+    7400080: LowPolyNecromancerWand.001|R-LegControl|Take 001|BaseLayer.002
+    7400082: LowPolyNecromancer.001|L-HandControl|Take 001|BaseLayer
+    7400084: LowPolyNecromancer.001|L-HandControl|Take 001|BaseLayer.001
+    7400086: LowPolyNecromancer.001|L-HandControl|Take 001|BaseLayer.002
+    7400088: LowPolyNecromancer.001|L-LegControl|Take 001|BaseLayer
+    7400090: LowPolyNecromancer.001|L-LegControl|Take 001|BaseLayer.001
+    7400092: LowPolyNecromancer.001|L-LegControl|Take 001|BaseLayer.002
+    7400094: LowPolyNecromancer.001|LowPolyNecromancerWand|Take 001|BaseLayer
+    7400096: LowPolyNecromancer.001|LowPolyNecromancerWand|Take 001|BaseLayer.001
+    7400098: LowPolyNecromancer.001|LowPolyNecromancerWand|Take 001|BaseLayer.002
+    7400100: LowPolyNecromancer.001|LowPolyNecromancer|Take 001|BaseLayer
+    7400102: LowPolyNecromancer.001|LowPolyNecromancer|Take 001|BaseLayer.001
+    7400104: LowPolyNecromancer.001|LowPolyNecromancer|Take 001|BaseLayer.002
+    7400106: LowPolyNecromancer.001|LowPolyNecromancer|Take 001|BaseLayer.003
+    7400108: LowPolyNecromancer.001|R-HandControl|Take 001|BaseLayer
+    7400110: LowPolyNecromancer.001|R-HandControl|Take 001|BaseLayer.001
+    7400112: LowPolyNecromancer.001|R-HandControl|Take 001|BaseLayer.002
+    7400114: LowPolyNecromancer.001|R-LegControl|Take 001|BaseLayer
+    7400116: LowPolyNecromancer.001|R-LegControl|Take 001|BaseLayer.001
+    7400118: LowPolyNecromancer.001|R-LegControl|Take 001|BaseLayer.002
+    7400120: R-HandControl.001|L-HandControl|Take 001|BaseLayer
+    7400122: R-HandControl.001|L-HandControl|Take 001|BaseLayer.001
+    7400124: R-HandControl.001|L-HandControl|Take 001|BaseLayer.002
+    7400126: R-HandControl.001|L-LegControl|Take 001|BaseLayer
+    7400128: R-HandControl.001|L-LegControl|Take 001|BaseLayer.001
+    7400130: R-HandControl.001|L-LegControl|Take 001|BaseLayer.002
+    7400132: R-HandControl.001|LowPolyNecromancerWand|Take 001|BaseLayer
+    7400134: R-HandControl.001|LowPolyNecromancerWand|Take 001|BaseLayer.001
+    7400136: R-HandControl.001|LowPolyNecromancerWand|Take 001|BaseLayer.002
+    7400138: R-HandControl.001|LowPolyNecromancer|Take 001|BaseLayer
+    7400140: R-HandControl.001|LowPolyNecromancer|Take 001|BaseLayer.001
+    7400142: R-HandControl.001|LowPolyNecromancer|Take 001|BaseLayer.002
+    7400144: R-HandControl.001|LowPolyNecromancer|Take 001|BaseLayer.003
+    7400146: R-HandControl.001|R-HandControl|Take 001|BaseLayer
+    7400148: R-HandControl.001|R-HandControl|Take 001|BaseLayer.001
+    7400150: R-HandControl.001|R-HandControl|Take 001|BaseLayer.002
+    7400152: R-HandControl.001|R-LegControl|Take 001|BaseLayer
+    7400154: R-HandControl.001|R-LegControl|Take 001|BaseLayer.001
+    7400156: R-HandControl.001|R-LegControl|Take 001|BaseLayer.002
+    7400158: L-HandControl.001|L-HandControl|Take 001|BaseLayer
+    7400160: L-HandControl.001|L-HandControl|Take 001|BaseLayer.001
+    7400162: L-HandControl.001|L-HandControl|Take 001|BaseLayer.002
+    7400164: L-HandControl.001|L-LegControl|Take 001|BaseLayer
+    7400166: L-HandControl.001|L-LegControl|Take 001|BaseLayer.001
+    7400168: L-HandControl.001|L-LegControl|Take 001|BaseLayer.002
+    7400170: L-HandControl.001|LowPolyNecromancerWand|Take 001|BaseLayer
+    7400172: L-HandControl.001|LowPolyNecromancerWand|Take 001|BaseLayer.001
+    7400174: L-HandControl.001|LowPolyNecromancerWand|Take 001|BaseLayer.002
+    7400176: L-HandControl.001|LowPolyNecromancer|Take 001|BaseLayer
+    7400178: L-HandControl.001|LowPolyNecromancer|Take 001|BaseLayer.001
+    7400180: L-HandControl.001|LowPolyNecromancer|Take 001|BaseLayer.002
+    7400182: L-HandControl.001|LowPolyNecromancer|Take 001|BaseLayer.003
+    7400184: L-HandControl.001|R-HandControl|Take 001|BaseLayer
+    7400186: L-HandControl.001|R-HandControl|Take 001|BaseLayer.001
+    7400188: L-HandControl.001|R-HandControl|Take 001|BaseLayer.002
+    7400190: L-HandControl.001|R-LegControl|Take 001|BaseLayer
+    7400192: L-HandControl.001|R-LegControl|Take 001|BaseLayer.001
+    7400194: L-HandControl.001|R-LegControl|Take 001|BaseLayer.002
+    7400196: R-LegControl.001|L-HandControl|Take 001|BaseLayer
+    7400198: R-LegControl.001|L-HandControl|Take 001|BaseLayer.001
+    7400200: R-LegControl.001|L-HandControl|Take 001|BaseLayer.002
+    7400202: R-LegControl.001|L-LegControl|Take 001|BaseLayer
+    7400204: R-LegControl.001|L-LegControl|Take 001|BaseLayer.001
+    7400206: R-LegControl.001|L-LegControl|Take 001|BaseLayer.002
+    7400208: R-LegControl.001|LowPolyNecromancerWand|Take 001|BaseLayer
+    7400210: R-LegControl.001|LowPolyNecromancerWand|Take 001|BaseLayer.001
+    7400212: R-LegControl.001|LowPolyNecromancerWand|Take 001|BaseLayer.002
+    7400214: R-LegControl.001|LowPolyNecromancer|Take 001|BaseLayer
+    7400216: R-LegControl.001|LowPolyNecromancer|Take 001|BaseLayer.001
+    7400218: R-LegControl.001|LowPolyNecromancer|Take 001|BaseLayer.002
+    7400220: R-LegControl.001|LowPolyNecromancer|Take 001|BaseLayer.003
+    7400222: R-LegControl.001|R-HandControl|Take 001|BaseLayer
+    7400224: R-LegControl.001|R-HandControl|Take 001|BaseLayer.001
+    7400226: R-LegControl.001|R-HandControl|Take 001|BaseLayer.002
+    7400228: R-LegControl.001|R-LegControl|Take 001|BaseLayer
+    7400230: R-LegControl.001|R-LegControl|Take 001|BaseLayer.001
+    7400232: R-LegControl.001|R-LegControl|Take 001|BaseLayer.002
+    7400234: L-LegControl.001|L-HandControl|Take 001|BaseLayer
+    7400236: L-LegControl.001|L-HandControl|Take 001|BaseLayer.001
+    7400238: L-LegControl.001|L-HandControl|Take 001|BaseLayer.002
+    7400240: L-LegControl.001|L-LegControl|Take 001|BaseLayer
+    7400242: L-LegControl.001|L-LegControl|Take 001|BaseLayer.001
+    7400244: L-LegControl.001|L-LegControl|Take 001|BaseLayer.002
+    7400246: L-LegControl.001|LowPolyNecromancerWand|Take 001|BaseLayer
+    7400248: L-LegControl.001|LowPolyNecromancerWand|Take 001|BaseLayer.001
+    7400250: L-LegControl.001|LowPolyNecromancerWand|Take 001|BaseLayer.002
+    7400252: L-LegControl.001|LowPolyNecromancer|Take 001|BaseLayer
+    7400254: L-LegControl.001|LowPolyNecromancer|Take 001|BaseLayer.001
+    7400256: L-LegControl.001|LowPolyNecromancer|Take 001|BaseLayer.002
+    7400258: L-LegControl.001|LowPolyNecromancer|Take 001|BaseLayer.003
+    7400260: L-LegControl.001|R-HandControl|Take 001|BaseLayer
+    7400262: L-LegControl.001|R-HandControl|Take 001|BaseLayer.001
+    7400264: L-LegControl.001|R-HandControl|Take 001|BaseLayer.002
+    7400266: L-LegControl.001|R-LegControl|Take 001|BaseLayer
+    7400268: L-LegControl.001|R-LegControl|Take 001|BaseLayer.001
+    7400270: L-LegControl.001|R-LegControl|Take 001|BaseLayer.002
+    7400272: run
+    7400274: idle
+    7400276: idle to defend
+    7400278: defend
+    7400280: Main.001|L-HandControl|Take 001|BaseLayer
+    7400282: defend to idle
+    7400284: hit
+    7400286: die
+    7400288: jump
+    7400290: walk
+    7400292: cast magic spell 02, projectile
+    7400294: cast magic spell 03, raise dead
+    9500000: //RootNode
+    13700000: LowPolyNecromancer.001
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: run
+      takeName: Main.001|Main|Take 001|BaseLayer
+      firstFrame: 241
+      lastFrame: 260
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: T pose
+      takeName: Main.001|Main|Take 001|BaseLayer
+      firstFrame: 0
+      lastFrame: 10
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: idle
+      takeName: Main.001|Main|Take 001|BaseLayer
+      firstFrame: 10
+      lastFrame: 50
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: idle to defend
+      takeName: Main.001|Main|Take 001|BaseLayer
+      firstFrame: 71
+      lastFrame: 80
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: defend
+      takeName: Main.001|Main|Take 001|BaseLayer
+      firstFrame: 81
+      lastFrame: 100
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: defend to idle
+      takeName: Main.001|Main|Take 001|BaseLayer
+      firstFrame: 101
+      lastFrame: 110
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: hit
+      takeName: Main.001|Main|Take 001|BaseLayer
+      firstFrame: 111
+      lastFrame: 125
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: die
+      takeName: Main.001|Main|Take 001|BaseLayer
+      firstFrame: 131
+      lastFrame: 165
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: jump
+      takeName: Main.001|Main|Take 001|BaseLayer
+      firstFrame: 171
+      lastFrame: 190
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: walk
+      takeName: Main.001|Main|Take 001|BaseLayer
+      firstFrame: 196
+      lastFrame: 235
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: cast magic spell 01, curse
+      takeName: Main.001|Main|Take 001|BaseLayer
+      firstFrame: 271
+      lastFrame: 310
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: cast magic spell 02, projectile
+      takeName: Main.001|Main|Take 001|BaseLayer
+      firstFrame: 311
+      lastFrame: 325
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: cast magic spell 03, raise dead
+      takeName: Main.001|Main|Take 001|BaseLayer
+      firstFrame: 331
+      lastFrame: 370
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
