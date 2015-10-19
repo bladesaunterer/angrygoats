@@ -6,7 +6,10 @@ using System.Collections;
  * This script should not be attached to any game object.
  */
 public class GemEffectTest : MonoBehaviour {
-	
+
+	public GameObject shot;
+	public Transform shotSpawn;
+
 	protected GameObject other;
 	protected float nextTime;
 	protected float maxTime;
