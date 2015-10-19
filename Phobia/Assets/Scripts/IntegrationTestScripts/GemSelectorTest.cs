@@ -11,8 +11,6 @@ public class GemSelectorTest : MonoBehaviour {
 	public bool lightning;
 	public bool ice;
 
-	public BoltMover bolt;
-
 	private GameObject spawn;
 	private GameObject gemOne;
 	private Gem currentGem;
@@ -40,7 +38,6 @@ public class GemSelectorTest : MonoBehaviour {
 		
 		//current selection starts with gemOne
 		GemSelection.SetCurrentGem (GemSelection.GetGemOne ());
-		bolt.SetGemObject(gemOne);
 	}
 	
 }

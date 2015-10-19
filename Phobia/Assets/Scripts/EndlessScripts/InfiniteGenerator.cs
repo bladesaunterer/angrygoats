@@ -5,9 +5,8 @@ using System.Linq;
 using System;
 
 /**
- * 
- * Class which handles random level generation.
- * 
+ * Class which handles infinite level generation. Refer to level gen script for specifics,
+ * only infinite changes are commented here.
  **/
 public class InfiniteGenerator : MonoBehaviour {
 	
@@ -29,6 +28,7 @@ public class InfiniteGenerator : MonoBehaviour {
 	public int maxWebs;
 	public GameObject web;
 
+	//Reference to the ramp object present in the scene, used for value extraction.
 	public GameObject r;
 	
 	public GameObject trash;
@@ -50,9 +50,9 @@ public class InfiniteGenerator : MonoBehaviour {
 		Vector2 roomVectorRel;
 		Ramp r2 = r.GetComponent<Ramp> (); 
 		double ramp = Math.Pow(r2.ramp, r2.times);
-		
-		// This is where we ramp.
-		// If you thought Wild Growth turn one was bad, check this.
+
+		// All level components are scaled based on the current required difficulty.
+		// Debugging added to aid testing.
 
 		Debug.Log ("We r ramp!");
 
@@ -64,7 +64,7 @@ public class InfiniteGenerator : MonoBehaviour {
 		temp = (double)maxEnemiesPerRoom * ramp;
 		maxEnemiesPerRoom = (int)temp;
 
-		Debug.Log ("Pls make me " + roomsToSpawn.ToString () + " rooms pls kthanx");
+		Debug.Log ("Pls make me " + roomsToSpawn.ToString () + " rooms kthanx");
 		Debug.Log ("Ramp was " + ramp.ToString () + ". Hopefully that's what you expected.");
 
 
@@ -153,11 +153,11 @@ public class InfiniteGenerator : MonoBehaviour {
 			boss = (GameObject)Instantiate (boss, thisRoom.transform.position + new Vector3 (0, 2, 0), Quaternion.identity);
 		}
 
+		// Buffs boss health and damage based on ramp params.
 		temp = (double)boss.GetComponent<EnemyHealth> ().currentHealth * ramp;
 		boss.GetComponent<EnemyHealth> ().currentHealth = (int)temp;
 		temp = (double)boss.GetComponent<EnemyHealth> ().startingHealth * ramp;
 		boss.GetComponent<EnemyHealth> ().startingHealth = (int)temp;
-
 		temp = (double)boss.GetComponent<EnemyAttack> ().damage * ramp;
 		boss.GetComponent<EnemyAttack> ().damage = (int)temp;
 
@@ -213,7 +213,7 @@ public class InfiniteGenerator : MonoBehaviour {
 				hopeful++;
 				sum += enemyCommonness[hopeful];
 			}
-			
+			// With ramp method used to ensure scaling is performed.
 			chosenRoom.AddEnemyWithRamp(enemies[hopeful],ramp);
 		}
 		aStarGrids.Scan();

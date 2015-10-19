@@ -4,6 +4,13 @@
 Welcome to our Repo! 
 All information about the project can be found on the corresponding GitHub wiki.
 
+<b>Playing PHOBIA</b>  
+If you just want to play phobia then do it online at the following link  
+https://monkeyman707.github.io/angrygoats
+
+<b>Final build</b>  
+The final version is available on the Final branch
+
 <b>How to Build:</b>
 
 - Clone this GitHub repository using the command in a git terminal (or equivalent terminal):

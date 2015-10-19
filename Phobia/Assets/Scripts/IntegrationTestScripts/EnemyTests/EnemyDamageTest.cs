@@ -25,7 +25,8 @@ public class EnemyDamageTest : MonoBehaviour
     {
         if (player != null && Time.time > nextTime)
         {
-            // Get players health and enemies damage
+			Debug.Log("Please");
+			// Get players health and enemies damage
             PlayerHealth health = player.GetComponent<PlayerHealth>();
             int damage = gameObject.GetComponent<EnemyAttack>().damage;
 

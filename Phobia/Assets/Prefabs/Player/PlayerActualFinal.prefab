@@ -1576,12 +1576,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   meleeSound: {fileID: 8300000, guid: 496cdf6ad8100b840bf72498df30d3e6, type: 3}
-  fireGemSound: {fileID: 0}
-  iceGemSound: {fileID: 0}
-  healGemSound: {fileID: 0}
-  stealthGemSound: {fileID: 0}
-  lightningGemSound: {fileID: 0}
-  aoeGemSound: {fileID: 0}
+  fireGemSound: {fileID: 8300000, guid: f33a737f03f5b88458dd02963c5abe45, type: 3}
+  iceGemSound: {fileID: 8300000, guid: c4ca92351d7fe934bb6cd3bdecdec67b, type: 3}
+  healGemSound: {fileID: 8300000, guid: 97aff7b2a18e4fe4b999d8ef958d5b48, type: 3}
+  stealthGemSound: {fileID: 8300000, guid: c36180e4de34ba24a94506460d6f7223, type: 3}
+  lightningGemSound: {fileID: 8300000, guid: 4c5b4df5d03f72e4e9cac8673c64d3c3, type: 3}
+  aoeGemSound: {fileID: 8300000, guid: 4aa1354d9004ae940a8ff7a9f8e75289, type: 3}
   deathSound: {fileID: 8300000, guid: f0c98d0d5c7ecd54391e3bd2fa4f9be2, type: 3}
   hitSound: {fileID: 8300000, guid: cc965859fee003041bf1e0154569e406, type: 3}
 --- !u!114 &11411696
@@ -2856,7 +2856,31 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: fireGemSound
+      value: 
+      objectReference: {fileID: 8300000, guid: f33a737f03f5b88458dd02963c5abe45, type: 3}
+    - target: {fileID: 0}
+      propertyPath: iceGemSound
+      value: 
+      objectReference: {fileID: 8300000, guid: c4ca92351d7fe934bb6cd3bdecdec67b, type: 3}
+    - target: {fileID: 0}
+      propertyPath: healGemSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 97aff7b2a18e4fe4b999d8ef958d5b48, type: 3}
+    - target: {fileID: 0}
+      propertyPath: stealthGemSound
+      value: 
+      objectReference: {fileID: 8300000, guid: c36180e4de34ba24a94506460d6f7223, type: 3}
+    - target: {fileID: 0}
+      propertyPath: lightningGemSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 4c5b4df5d03f72e4e9cac8673c64d3c3, type: 3}
+    - target: {fileID: 0}
+      propertyPath: aoeGemSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 4aa1354d9004ae940a8ff7a9f8e75289, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 103716}
