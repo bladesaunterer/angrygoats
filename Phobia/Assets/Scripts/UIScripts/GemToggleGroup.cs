@@ -166,7 +166,7 @@ namespace UnityEngine.UI
 				gm.UnlockGem (Gem.Yellow);
 			}
 
-			if (PlayerPrefs.GetInt ("SpiderLevelScene") > 600 && PlayerPrefs.GetInt ("HeightsLevelScene") > 600 && PlayerPrefs.GetInt ("DarknessLevelScene") > 600) {
+			if (PlayerPrefs.GetInt ("SpiderLevelScene") > 500 && PlayerPrefs.GetInt ("HeightsLevelScene") > 500 && PlayerPrefs.GetInt ("DarknessLevelScene") > 500) {
 				gm.UnlockGem (Gem.Purple);
 			}
 
