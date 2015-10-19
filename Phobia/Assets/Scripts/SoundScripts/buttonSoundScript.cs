@@ -6,9 +6,12 @@ public class buttonSoundScript : MonoBehaviour {
 	AudioSource audioSource;
 
 	public void playAudio (string audio){
-		audioSource = GameObject.Find (audio).GetComponent<AudioSource>();
-		if (audioSource != null){
-		audioSource.Play ();
+		GameObject audioSourceObject = GameObject.Find (audio);
+		if (audioSourceObject != null) {
+			audioSourceObject.GetComponent<AudioSource> ();
+			if (audioSource != null) {
+				audioSource.Play ();
+			}
 		}
 	}
 }
