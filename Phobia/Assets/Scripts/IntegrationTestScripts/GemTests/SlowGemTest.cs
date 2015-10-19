@@ -6,7 +6,6 @@ using System.Collections;
  * Attach this to the ice gem gameobject which is in Player/ShotSpawn/
  */
 public class SlowGemTest : GemEffectTest {
-
 	private float slow;
 
 	private float prevSpeed;
@@ -15,6 +14,12 @@ public class SlowGemTest : GemEffectTest {
 
 	void Awake(){
 		slow = gameObject.GetComponent<IceGem>().factor;
+	}
+
+	void Start(){
+		GameObject shotSpawned = Instantiate(shot,shotSpawn.position,shotSpawn.rotation) as GameObject;
+		shotSpawned.GetComponent<BoltMover>().SetGemObject(gameObject);
+		shotSpawned.AddComponent<InitialDamageTest>();
 	}
 
 	// Update is called once per frame

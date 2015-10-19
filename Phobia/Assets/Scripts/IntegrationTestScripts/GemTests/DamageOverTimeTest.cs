@@ -6,7 +6,6 @@ using System.Collections;
  * Attach this to the fire gem gameobject which is in Player/ShotSpawn/
  */
 public class DamageOverTimeTest : GemEffectTest {
-	
 	private int damageOverTime;
 
 	private int currentHealth;
@@ -14,6 +13,12 @@ public class DamageOverTimeTest : GemEffectTest {
 
 	void Awake(){
 		damageOverTime = gameObject.GetComponent<FireGem>().overTimeDamage;
+	}
+
+	void Start(){
+		GameObject shotSpawned = Instantiate(shot,shotSpawn.position,shotSpawn.rotation) as GameObject;
+		shotSpawned.GetComponent<BoltMover>().SetGemObject(gameObject);
+		shotSpawned.AddComponent<InitialDamageTest>();
 	}
 
 	void Update(){
