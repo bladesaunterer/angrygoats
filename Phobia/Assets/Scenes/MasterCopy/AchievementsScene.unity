@@ -2340,7 +2340,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2dd50258dcfc60b42a787e26d0b89720, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  achievementName: Impossilbe
+  achievementName: Impossible
   lockeddescription: Survive in the Arachnophobia boss room for 15 minutes and beat
     the level.
   unlockeddescription: 'You survived staying in the Arachnophobia boss room for 15

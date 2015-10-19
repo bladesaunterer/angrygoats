@@ -276,6 +276,10 @@ Prefab:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 11494932, guid: 08c54a5b7d7c5e84889688997dd4a72c, type: 2}
+      propertyPath: highScoreNamePanel
+      value: 
+      objectReference: {fileID: 314314329}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 08c54a5b7d7c5e84889688997dd4a72c, type: 2}
   m_IsPrefabParent: 0
@@ -291,6 +295,10 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 314314326}
   m_Script: {fileID: -113659843, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+--- !u!1 &314314329 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 153110, guid: 08c54a5b7d7c5e84889688997dd4a72c, type: 2}
+  m_PrefabInternal: {fileID: 314314326}
 --- !u!1001 &455193322
 Prefab:
   m_ObjectHideFlags: 0
