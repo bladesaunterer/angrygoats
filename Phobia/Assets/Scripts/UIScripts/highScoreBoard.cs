@@ -7,9 +7,11 @@ public class highScoreBoard : MonoBehaviour {
 	public Text levelOne;
 	public Text levelTwo;
 	public Text levelThree;
+	public Text levelFour;
 	public Text levelOneName;
 	public Text levelTwoName;
 	public Text levelThreeName;
+	public Text levelFourName;
 
 
 	// Use this for initialization
@@ -38,6 +40,13 @@ public class highScoreBoard : MonoBehaviour {
 			levelThree.text = PlayerPrefs.GetInt ("DarknessLevelScene").ToString();
 		}
 
+		if (PlayerPrefs.GetString ("EndlessLevelScene name") == "") {
+			levelFourName.text = "No one yet!";
+			levelFour.text = " - ";
+		} else {
+			levelFourName.text = PlayerPrefs.GetString ("EndlessLevelScene name");
+			levelFour.text = PlayerPrefs.GetInt ("EndlessLevelScene").ToString ();
+		}
 
 
 	}

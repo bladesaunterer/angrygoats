@@ -90,18 +90,38 @@ public class RoomControl : MonoBehaviour {
 	
 
 	public GameObject AddEnemy(GameObject enemy) {
-		
 		GameObject chosenCell = freeCells[Random.Range(0, freeCells.Count)];
 		freeCells.Remove(chosenCell);
 		
-
+		
 		GameObject thisEnemy = (GameObject)GameObject.Instantiate(enemy, (chosenCell.transform.position + new Vector3(0, 2, 0)), Quaternion.identity);
 		enemies.Add(thisEnemy);
-
+		
 		thisEnemy.GetComponent<EnemyControl>().home = chosenCell.transform;
 		thisEnemy.GetComponent<AIPath>().target = chosenCell.transform;
 		return thisEnemy;
+	}
 
+
+	public GameObject AddEnemyWithRamp(GameObject enemy, double ramp) {
+		double temp;
+		GameObject chosenCell = freeCells[Random.Range(0, freeCells.Count)];
+		freeCells.Remove(chosenCell);
+		
+		
+		GameObject thisEnemy = (GameObject)GameObject.Instantiate(enemy, (chosenCell.transform.position + new Vector3(0, 2, 0)), Quaternion.identity);
+		enemies.Add(thisEnemy);
+		
+		thisEnemy.GetComponent<EnemyControl>().home = chosenCell.transform;
+		thisEnemy.GetComponent<AIPath>().target = chosenCell.transform;
+		temp = (double)thisEnemy.GetComponent<EnemyHealth> ().currentHealth * ramp;
+		thisEnemy.GetComponent<EnemyHealth> ().currentHealth = (int)temp;
+		temp = (double)thisEnemy.GetComponent<EnemyHealth> ().startingHealth * ramp;
+		thisEnemy.GetComponent<EnemyHealth> ().startingHealth = (int)temp;
+		
+		temp = (double)thisEnemy.GetComponent<EnemyAttack> ().damage * ramp;
+		thisEnemy.GetComponent<EnemyAttack> ().damage = (int)temp;
+		return thisEnemy;
 
 	}
 
@@ -116,7 +136,7 @@ public class RoomControl : MonoBehaviour {
 			GameObject chosenCell = freeCells[Random.Range(0, freeCells.Count)];
 			freeCells.Remove(chosenCell);
 
-			GameObject thisWeb = (GameObject)GameObject.Instantiate(web, (chosenCell.transform.position + new Vector3(0, 1.1f, 0)), Quaternion.identity);
+			GameObject.Instantiate(web, (chosenCell.transform.position + new Vector3(0, 1.1f, 0)), Quaternion.identity);
 		}
 	}
 	

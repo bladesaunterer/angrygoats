@@ -15,14 +15,9 @@ public class BoltMover : MonoBehaviour
     private Gem currentGem;
     private GameObject gemObject;
 
-    private GemManager gemManager = GemManager.Instance;
-
     private PlayerHealth playerHealth;
 
-    void Start()
-    {
-        // Gets the currently active gem
-        currentGem = gemManager.GetCurrentGem();
+    void Start() {
 
         // Get rigidbody and set bolt's velocity.
         rb = GetComponent<Rigidbody>();
@@ -32,8 +27,7 @@ public class BoltMover : MonoBehaviour
         child.GetComponent<Renderer>().material = gemObject.GetComponent<GenericGem>().boltMaterial;
     }
 
-    void OnTriggerEnter(Collider other)
-    {
+    void OnTriggerEnter(Collider other) {
         // If the bolt hits an enemy or boss
         if (other.gameObject.CompareTag("Enemy")
             || other.gameObject.CompareTag("Boss"))
@@ -55,8 +49,7 @@ public class BoltMover : MonoBehaviour
         }
     }
 
-    public void SetGemObject(GameObject gemObj)
-    {
+    public void SetGemObject(GameObject gemObj) {
         gemObject = gemObj;
     }
 }

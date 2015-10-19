@@ -15,20 +15,22 @@ public class WinUpdate : MonoBehaviour {
 	public Text enemyBonusCalcText;
 	public Text timeBonusCalcText;
 	public Text totalCalcText;
+	public Text previousScoreValueText;
 
-	public GameObject HighScoreNamePanel;
+	public GameObject highScoreNamePanel;
 
 	/**
 	 * 
 	 * Method for updating win pop-up text.
 	 * 
 	 **/
-	public void SetFinal(int score, int enemies, int minutes, int seconds){
+	public void SetFinal(int score, int enemies, int minutes, int seconds) {
 
 		string second;
 		string minute;
 		int bonus;
 		int final;
+		int previousScore = 0;
 
 		//Add zeroes to minute or second strings if required.
 		if (seconds < 10) {
@@ -57,18 +59,27 @@ public class WinUpdate : MonoBehaviour {
 			bonus = 0;
 		}
 
-		//Calculate total score.
-		final = bonus + score;
+		if (previousScoreValueText != null) {
+			previousScore = PlayerPrefs.GetInt ("endlessPreviousScore");
+			if(this.gameObject.name=="DeathPopUpInEndless"){
+				final = previousScore;
+			} else{
+				final = bonus + score + previousScore;
+			}
+		} else {
+			//Calculate total score.
+			final = bonus + score;
+		}
 
-		if (HighScoreNamePanel != null) {
+		if (highScoreNamePanel != null) {
 			// PlayerPrefs logic here.
 			//		PlayerPrefs.SetInt(Application.loadedLevelName, 0);
 			//		print (Application.loadedLevelName);
-			if (PlayerPrefs.GetInt (Application.loadedLevelName) == null) {
+			if (PlayerPrefs.GetInt (Application.loadedLevelName, -1) == -1) {
 				PlayerPrefs.SetInt (Application.loadedLevelName, final);
 			} else if (PlayerPrefs.GetInt (Application.loadedLevelName) < final) {
 				PlayerPrefs.SetInt (Application.loadedLevelName, final);
-				HighScoreNamePanel.SetActive (true);
+				highScoreNamePanel.SetActive (true);
 			}
 		}
 
@@ -78,7 +89,14 @@ public class WinUpdate : MonoBehaviour {
 
 		enemyBonusCalcText.text = score.ToString();
 		timeBonusCalcText.text = bonus.ToString();
+		if (previousScoreValueText != null) {
+			previousScoreValueText.text = previousScore.ToString ();
+		}
 		totalCalcText.text = final.ToString();
+
+		if (previousScoreValueText != null) {
+			PlayerPrefs.SetInt ("endlessPreviousScore", final);
+		}
 	}
 
 }

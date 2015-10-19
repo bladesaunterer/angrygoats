@@ -24,11 +24,13 @@ public class Popups : MonoBehaviour
 		minimapObject = GameObject.Find ("Minimap");
 		//To ensure boss is loaded
 		if (Application.loadedLevelName.Equals ("SpiderLevelScene"))
+			levelToUnlock = Level.Height;
+		else if (Application.loadedLevelName.Equals ("HeightsLevelScene"))
 			levelToUnlock = Level.Dark;
 		else
-			levelToUnlock = Level.Height;
+			levelToUnlock = Level.Extra;
 
-
+		GemManager.Instance.UnlockAllGems ();
 
 
 	}
@@ -53,13 +55,18 @@ public class Popups : MonoBehaviour
 			}
 			// if player destroyed display death screen
 			if (GameObject.FindGameObjectWithTag ("Player") == null) {
-				displayDeathScreen ();
+				if(Application.loadedLevelName == "EndlessLevelScene"){
+					displayEndlessDeathScreen();
+				} else{
+					displayDeathScreen ();
+				}
 			}
 		}
 	}
 
 	// Displays the pause screen
-	public void togglePauseScreen() {
+	public void togglePauseScreen ()
+	{
 		// Toggle to false or true accordingly.
 		if (popupDisplaying == false) {
 			popupDisplaying = true;
@@ -89,7 +96,21 @@ public class Popups : MonoBehaviour
 		int temp4 = time.GetComponent<Timer> ().getSeconds ();
 		winScreen.GetComponent<WinUpdate> ().SetFinal (temp1, temp2, temp3, temp4);
 		winScreen.SetActive (popupDisplaying);
-		AchievementManager.Instance.OnLevelEnd();
+		AchievementManager.Instance.OnLevelEnd ();
+	}
+
+	void displayEndlessDeathScreen ()
+	{
+		popupDisplaying = true;
+		Time.timeScale = 0.0f;
+		int temp1 = TEMPScoreScript.Instance.GetScore ();
+		int temp2 = TEMPScoreScript.Instance.GetEnemies ();
+		GameObject time = GameObject.Find ("Timer");
+		int temp3 = time.GetComponent<Timer> ().getMinutes ();
+		int temp4 = time.GetComponent<Timer> ().getSeconds ();
+		deadScreen.GetComponent<WinUpdate> ().SetFinal (0, 0, temp3, temp4);
+		deadScreen.SetActive (popupDisplaying);
+		AchievementManager.Instance.OnLevelEnd ();
 	}
 
 	// Display the death screen
@@ -98,6 +119,6 @@ public class Popups : MonoBehaviour
 		popupDisplaying = true;
 		Time.timeScale = 0.0f;
 		deadScreen.SetActive (popupDisplaying);
-		AchievementManager.Instance.OnLevelLoss();
+		AchievementManager.Instance.OnLevelLoss ();
 	}
 }

@@ -8,6 +8,8 @@ using UnityEngine.UI;
 /// </summary>
 public class GenericGem : MonoBehaviour
 {
+    protected Animator anim;
+
     // Basic fields
     public int damage = 10;
     public int duration = 5;
@@ -32,10 +34,13 @@ public class GenericGem : MonoBehaviour
         playerControl = player.GetComponent<PlayerControl>();
         shot = playerControl.shot;
         shotSpawn = playerControl.shotSpawn;
+
+        // Enables animations
+        anim = player.GetComponent<Animator>();
+
     }
 
-    void Update()
-    {
+    protected virtual void Update() {
         // Cast ability when K is pressed then there is enough mana/energy
         if (Input.GetKeyDown(KeyCode.K) && playerControl.cooldown >= cost && isCurrent)
         {
@@ -43,6 +48,7 @@ public class GenericGem : MonoBehaviour
             AchievementManager.Instance.usedGem();
             PlayerSfxScript.playShotSound();
             doEffect();
+            castAnimation();
         }
     }
 
@@ -72,6 +78,6 @@ public class GenericGem : MonoBehaviour
     */
     public virtual void castAnimation()
     {
-        // TODO - implement all cast animations
+        anim.SetTrigger("ShootSpell");
     }
 }
