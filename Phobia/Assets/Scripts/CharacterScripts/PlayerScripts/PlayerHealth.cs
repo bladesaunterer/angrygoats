@@ -33,7 +33,7 @@ public class PlayerHealth : MonoBehaviour
 	{
 		timer += Time.deltaTime;
 		// Damage player if they fall below a y.axis value
-		if (gameObject.transform.position.y < lethalLow) {
+		if (gameObject.transform.position.y < lethalLow && currentHealth > 0) {
 			TakeDamage (startingHealth);
 		}
 

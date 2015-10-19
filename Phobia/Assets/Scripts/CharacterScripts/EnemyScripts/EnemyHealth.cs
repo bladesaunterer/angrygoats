@@ -48,9 +48,7 @@ public class EnemyHealth : MonoBehaviour
             HealthBar.GetComponent<EnemyHealthBar>().SetHealthVisual(healthRatio);
 
         }
-
-        // Cause enemies to take damage when they fall in a hole
-        if (gameObject.transform.position.y < lethalLow)
+        if (gameObject.transform.position.y < lethalLow && currentHealth > 0)
         {
             TakeDamage(startingHealth);
         }
