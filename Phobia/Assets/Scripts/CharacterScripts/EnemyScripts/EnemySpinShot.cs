@@ -11,7 +11,7 @@ public class EnemySpinShot : MonoBehaviour {
 	float timer;
 	private float counter = 0;
 	public int shoot = 1;
-	private float timeBetweenAttacks = 0.3f;
+	private float timeBetweenAttacks = 0.7f;
 	// Use this for initialization
 	void Start () {
 

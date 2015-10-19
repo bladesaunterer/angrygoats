@@ -49,7 +49,7 @@ MonoBehaviour:
   - {fileID: 135730, guid: ed13d2c4087e73f46961f4e69008ede7, type: 2}
   - {fileID: 198294, guid: bb16c5ef2b41a6c4eb4730bd2835af85, type: 2}
   - {fileID: 114772, guid: 9caad488b6a1a4242835427b1a0ef6bd, type: 2}
-  totalEnemies: 70
+  totalEnemies: 77
   maxEnemiesPerRoom: 7
   enemies:
   - {fileID: 139882, guid: 6558d27cdb76a804fbb0d7ff3440dacc, type: 2}
@@ -58,7 +58,7 @@ MonoBehaviour:
   - {fileID: 153314, guid: 4d788e1a2ebb5a34f8325fdb789f66c8, type: 2}
   enemyCommonness: 04000000040000000400000002000000
   bossFloor: {fileID: 151258, guid: db3c8919e4c5be44f8cc29d7df86c69e, type: 2}
-  boss: {fileID: 183420, guid: d1f7d67e55856fb4a835bbff6b3c85e0, type: 2}
+  boss: {fileID: 177236, guid: d2c3918174fec974b8ac25e1c3a34542, type: 2}
   minWebs: 0
   maxWebs: 0
   web: {fileID: 160458, guid: 705edc7941cc1d04f8ee34a247b4c2bc, type: 2}
