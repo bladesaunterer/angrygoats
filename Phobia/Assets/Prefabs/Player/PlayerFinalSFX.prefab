@@ -856,7 +856,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 134800}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 604.77063, y: 877.566589, z: -1382.37463}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 425812}
@@ -1255,7 +1255,6 @@ AudioSource:
   m_Pitch: 1
   Loop: 0
   Mute: 0
-  Spatialize: 0
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
@@ -1340,12 +1339,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 10
   duration: 5
-  cost: 25
+  cost: 60
   isCurrent: 1
   boltMaterial: {fileID: 2100000, guid: 34f9679f56d80d245912f2b779745a3c, type: 2}
   staffMaterial: {fileID: 2100000, guid: 4636556fe1fa5634d8193119f3511900, type: 2}
   staffParticles: {fileID: 2100000, guid: c7557fd96334d564989a89fbf8a3c436, type: 2}
-  heal: 20
+  heal: 30
 --- !u!114 &11435962
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1361,6 +1360,9 @@ MonoBehaviour:
   currentHealth: 0
   lethalLow: -5
   healthSlider: {fileID: 0}
+  healthRegen: 1
+  perSecond: 1
+  secDamage: 5
 --- !u!114 &11446474
 MonoBehaviour:
   m_ObjectHideFlags: 1
