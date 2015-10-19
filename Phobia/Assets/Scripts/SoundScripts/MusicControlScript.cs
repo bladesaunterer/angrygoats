@@ -3,7 +3,6 @@ using System;
 
 /// <summary>
 /// This is a singleton class in charge of controlling what music is played.
-/// Author: Karen Xie
 /// </summary>
 public class MusicControlScript : MonoBehaviour
 {

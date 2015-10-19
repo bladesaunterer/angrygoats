@@ -4,7 +4,6 @@ using System.Collections;
 
 /// <summary>
 /// Script used to adjust the background music and sfx volumes.
-/// Author: Karen Xie
 /// </summary>
 public class VolumeControlScript : MonoBehaviour {
 

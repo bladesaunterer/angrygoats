@@ -3,7 +3,6 @@ using System.Collections;
 
 /// <summary>
 /// Purpose: Any object using this will automatically cause it to face the camera.<para/>
-/// Author: Chester Booker<para/>
 /// Potential: Is useful for health bars and other 2D movable images/object.<para/>
 /// Issue: Currently not used.
 /// </summary>

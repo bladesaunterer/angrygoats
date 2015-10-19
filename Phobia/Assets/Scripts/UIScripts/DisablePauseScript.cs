@@ -1,6 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+/**
+ * Script to disable the popup pause screen
+ */
 public class DisablePauseScript : MonoBehaviour
 {
 

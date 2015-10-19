@@ -3,7 +3,6 @@ using System.Collections;
 
 /// <summary>
 /// Purpose: Used for the Darkness level to make the dark image follow the player.<para/>
-/// Author: Chester Booker<para/>
 /// Issue: The size of the "vision" does not scale well with the screen size.
 /// </summary>
 public class DarknessFollow : MonoBehaviour
