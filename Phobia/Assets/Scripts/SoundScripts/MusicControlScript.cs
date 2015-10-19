@@ -2,7 +2,7 @@
 using System;
 
 /// <summary>
-/// This is a singleton class in charge of controlling what music is played.
+/// Script for controlling background music for different scenes.
 /// Author: Karen Xie
 /// </summary>
 public class MusicControlScript : MonoBehaviour
@@ -72,8 +72,17 @@ public class MusicControlScript : MonoBehaviour
         {
             if (instance.playingMusic != null)
             {
+                // Set music to previously set music volume if any.
+                float previousVolume = PlayerPrefs.GetFloat("musicVolume", -1.0f);
+                if (previousVolume != -1.0f && instance.playingMusic.volume != previousVolume)
+                {
+                    instance.playingMusic.volume = previousVolume;
+                }
+
+                // Only switch the clip if it's not playing already.
                 if (instance.playingMusic.clip != music)
                 {
+                    // Switch the currently playing clip to the given one.
                     instance.playingMusic.Stop();
                     instance.playingMusic.clip = music;
                     instance.playingMusic.Play();
