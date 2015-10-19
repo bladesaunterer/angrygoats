@@ -2,7 +2,7 @@
 using System.Collections;
 
 /// <summary>
-/// Purpose: A helper class which you bind to the main prefab in order to find the Animator location.
+/// Purpose: A helper class which you bind to the main prefab in order to find the Animator location.<para/>
 /// Author: Chester Booker
 /// </summary>
 public class EnemyAnimatorFinding : MonoBehaviour 

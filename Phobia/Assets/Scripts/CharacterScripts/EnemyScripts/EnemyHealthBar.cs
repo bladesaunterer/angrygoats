@@ -77,13 +77,18 @@ public class EnemyHealthBar : MonoBehaviour
     }
 
 
-    
+
 
     // Health between [0.0f,1.0f] == (currentHealth / totalHealth)
     public void SetHealthVisual(float healthNormalized)
     {
-
-        transform.localScale = new Vector3(healthNormalized,
+        if (healthNormalized > 0f)
+        {
+            transform.localScale = new Vector3(healthNormalized,
+                                                     transform.localScale.y,
+                                                     transform.localScale.z);
+        }
+        transform.localScale = new Vector3(0f,
                                                      transform.localScale.y,
                                                      transform.localScale.z);
     }
