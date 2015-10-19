@@ -263,7 +263,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2dd50258dcfc60b42a787e26d0b89720, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: Only Boss
+  achievementName: Only The Boss
   lockeddescription: Kill the only the Boss in a level
   unlockeddescription: You've only killed the Boss in a level
   lockedimage: {fileID: 21300000, guid: 1020ce148d6039e49a5099e7eb92e457, type: 3}
@@ -411,7 +411,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2dd50258dcfc60b42a787e26d0b89720, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: Not Special
+  achievementName: You're Not Special
   lockeddescription: Beat a level with no gem usage
   unlockeddescription: You only used melee to bet a level!
   lockedimage: {fileID: 21300000, guid: 1020ce148d6039e49a5099e7eb92e457, type: 3}
@@ -879,7 +879,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e748e1b6c21cfb84ea6c297fa6847253, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: IceGem
+  achievementName: 
   lockeddescription: Unlock the Ice Gem by...
   unlockeddescription: You've unlocked the Ice Gem! :D
   lockedimage: {fileID: 21300000, guid: 1020ce148d6039e49a5099e7eb92e457, type: 3}
@@ -1028,7 +1028,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2dd50258dcfc60b42a787e26d0b89720, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: Level Clear
+  achievementName: Level Clear
   lockeddescription: Kill every enemy in a level
   unlockeddescription: You've killed every evemy in a level
   lockedimage: {fileID: 21300000, guid: 1020ce148d6039e49a5099e7eb92e457, type: 3}
@@ -1766,7 +1766,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2dd50258dcfc60b42a787e26d0b89720, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: Impossible
+  achievementName: Impossible
   lockeddescription: Survive in the Spider boss room for 15 minutes and Beat the level
   unlockeddescription: Well Done I have no idea how you did it
   lockedimage: {fileID: 21300000, guid: 1020ce148d6039e49a5099e7eb92e457, type: 3}
@@ -2090,7 +2090,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e748e1b6c21cfb84ea6c297fa6847253, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: Stealth Gem
+  achievementName: 
   lockeddescription: Unlock the Stealth Gem by...
   unlockeddescription: You've unlocked the Stealth Gem! :D
   lockedimage: {fileID: 21300000, guid: 1020ce148d6039e49a5099e7eb92e457, type: 3}
@@ -2540,7 +2540,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e748e1b6c21cfb84ea6c297fa6847253, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: StunGem
+  achievementName: 
   lockeddescription: Unlock the Stun Gem by...
   unlockeddescription: You've unlocked the Stun Gem! :D
   lockedimage: {fileID: 21300000, guid: 1020ce148d6039e49a5099e7eb92e457, type: 3}
@@ -3047,7 +3047,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2dd50258dcfc60b42a787e26d0b89720, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: You Suck
+  achievementName: You Suck
   lockeddescription: ???
   unlockeddescription: How did you die without killing anything???
   lockedimage: {fileID: 21300000, guid: 1020ce148d6039e49a5099e7eb92e457, type: 3}
@@ -3429,7 +3429,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e748e1b6c21cfb84ea6c297fa6847253, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: AoeGem
+  achievementName: 
   lockeddescription: Unlock the Aoe Gem by...
   unlockeddescription: You've unlocked the Aoe Gem! :D
   lockedimage: {fileID: 21300000, guid: 1020ce148d6039e49a5099e7eb92e457, type: 3}
