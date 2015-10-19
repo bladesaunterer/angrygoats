@@ -3,9 +3,14 @@ using System.Collections.Generic;
 using Pathfinding;
 using System.Linq;
 
-public class RoomControl : MonoBehaviour {
-
+/// <summary>
+/// Purpose: This controls each room and it's interactions.<para/>
+/// Author:
+/// </summary>
+public class RoomControl : MonoBehaviour
+{
     public GameObject minimapUI;
+
 
 	private const int HORIZ_TILING = 100;
 	private const int VERT_TILING = 80;
@@ -145,18 +150,21 @@ public class RoomControl : MonoBehaviour {
 		
 		foreach (GameObject enemy in enemies) {
 			if (enemy != null) {
-				if (enemy.CompareTag ("Boss")) {
-					print ("LOTS OF RANDOMNESS <3");
-					enemy.GetComponent<EnemyHealth> ().currentHealth = enemy.GetComponent<EnemyHealth> ().startingHealth;
-				} else {
-					enemy.GetComponent<AIPath> ().target = enemy.GetComponent<EnemyControl> ().home;
-					if (enemy.GetComponent<EnemySingleShot> () != null) {
-						enemy.GetComponent<EnemySingleShot> ().shouldShoot = false;
-					}
-                    if (enemy.GetComponent<EnemyPewPew>() != null) {
-                        enemy.GetComponent<EnemyPewPew>().shoot = 0;
-                    }
-                }
+				if(enemy.GetComponent<AIPath>() != null) {	
+					enemy.GetComponent<AIPath>().target = enemy.GetComponent<EnemyControl> ().home;
+				}
+				if (enemy.GetComponent<EnemySingleShot>() != null) {
+					enemy.GetComponent<EnemySingleShot>().shouldShoot = false;
+				}
+				if (enemy.GetComponent<EnemyPewPew>() != null) {
+					enemy.GetComponent<EnemyPewPew>().shoot = true;
+				}
+				if (enemy.GetComponent<EnemyCharge>() != null) {
+					enemy.GetComponent<EnemyCharge>().enabled = false;
+				}
+				if (enemy.CompareTag("Boss")) {
+					enemy.GetComponent<EnemyHealth>().currentHealth = enemy.GetComponent<EnemyHealth> ().startingHealth;
+				}
 			}
 		}
 	}
@@ -165,21 +173,27 @@ public class RoomControl : MonoBehaviour {
 		
 		foreach (GameObject enemy in enemies) {
 			if (enemy != null) {
-				enemy.GetComponent<AIPath>().target = GameObject.FindWithTag("Player").transform;
+				if(enemy.GetComponent<AIPath>() != null) {	
+					enemy.GetComponent<AIPath>().target = GameObject.FindWithTag("Player").transform;
+				}
 				if (enemy.GetComponent<EnemySingleShot>() != null) {
 					enemy.GetComponent<EnemySingleShot>().shouldShoot = true;
 				}
                 if (enemy.GetComponent<EnemyPewPew>() != null) {
-                    enemy.GetComponent<EnemyPewPew>().shoot = 1;
+                    enemy.GetComponent<EnemyPewPew>().shoot = true;
                 }
-            }
+				if (enemy.GetComponent<EnemyCharge>() != null) {
+					enemy.GetComponent<EnemyCharge>().enabled = true;
+					enemy.GetComponent<EnemyCharge>().StartCharge();
+				}
+			}
 		}
 
 	}
 
-    public void UpdateMinimap()
-    {
-        // Triggers minimap update
-        minimapUI.GetComponent<MinimapScript>().PlayerEntersRoom(Index, adjRoomsDict.Keys.ToList());
-    }
+	// Triggers minimap update
+	public void UpdateMinimap()
+	{
+		minimapUI.GetComponent<MinimapScript>().PlayerEntersRoom(Index, adjRoomsDict.Keys.ToList());
+	}
 }

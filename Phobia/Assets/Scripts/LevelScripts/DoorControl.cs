@@ -1,31 +1,28 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class DoorControl : MonoBehaviour {
-	
-	public GameObject goalDoor;
-	public GameObject ownRoom;
+/// <summary>
+/// Purpose: Turning on/off the lights, triggering enemy movements and updating the minimap as the player moves from room to room.<para/>
+/// Author: Dean Ulbrick. Chester Booker
+/// </summary>
+public class DoorControl : MonoBehaviour
+{
+    public GameObject goalDoor;
+    public GameObject ownRoom;
     public bool canSend = true;
-    
 
-    // Use this for initialization
-    void Start () {
-
-    }
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
-	
-	public void EnterRoom() {
-		ownRoom.transform.Find("Lights").gameObject.SetActive(true);
-		ownRoom.GetComponent<RoomControl>().EnemiesHuntPlayer();
+    // Turn lights in current room on, make the enemies hunt the player, update the minimap GUI
+    public void EnterRoom()
+    {
+        ownRoom.transform.Find("Lights").gameObject.SetActive(true);
+        ownRoom.GetComponent<RoomControl>().EnemiesHuntPlayer();
         ownRoom.GetComponent<RoomControl>().UpdateMinimap();
     }
-	
-	public void ExitRoom() {
+
+    // Turn the old rooms lights off, make the enemies return to their starting positions
+    public void ExitRoom()
+    {
         ownRoom.transform.Find("Lights").gameObject.SetActive(false);
-		ownRoom.GetComponent<RoomControl>().EnemiesGoHome();
-	}
+        ownRoom.GetComponent<RoomControl>().EnemiesGoHome();
+    }
 }
