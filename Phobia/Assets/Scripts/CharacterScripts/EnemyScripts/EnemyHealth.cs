@@ -91,7 +91,7 @@ public class EnemyHealth : MonoBehaviour
                     Debug.Log("INCREMEMNTING!");
 
                     // Increment the score
-                    TEMPScoreScript.Instance.IncrementScore(scoreAwarded);
+                    ScoreScript.Instance.IncrementScore(scoreAwarded);
                 }
 
                 // Play death sound if it exists

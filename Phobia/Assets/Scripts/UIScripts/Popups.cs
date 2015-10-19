@@ -90,8 +90,8 @@ public class Popups : MonoBehaviour
 	{
         popupDisplaying = true;
 		Time.timeScale = 0.0f;
-		int temp1 = TEMPScoreScript.Instance.GetScore ();
-		int temp2 = TEMPScoreScript.Instance.GetEnemies ();
+		int temp1 = ScoreScript.Instance.GetScore ();
+		int temp2 = ScoreScript.Instance.GetEnemies ();
 		GameObject time = GameObject.Find ("Timer");
 		int temp3 = time.GetComponent<Timer> ().getMinutes ();
 		int temp4 = time.GetComponent<Timer> ().getSeconds ();
@@ -105,8 +105,8 @@ public class Popups : MonoBehaviour
 	{
 		popupDisplaying = true;
 		Time.timeScale = 0.0f;
-		int temp1 = TEMPScoreScript.Instance.GetScore ();
-		int temp2 = TEMPScoreScript.Instance.GetEnemies ();
+		int temp1 = ScoreScript.Instance.GetScore ();
+		int temp2 = ScoreScript.Instance.GetEnemies ();
 		GameObject time = GameObject.Find ("Timer");
 		int temp3 = time.GetComponent<Timer> ().getMinutes ();
 		int temp4 = time.GetComponent<Timer> ().getSeconds ();

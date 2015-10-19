@@ -1,6 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+/**
+ * Attached to object in ui containing buttons for level select(UnlockedLevel) 
+ * and image for when the level is locked(LockedLevel). Will enable and disable 
+ * objects based on whether or not level in unlocked.
+ */
 public class LevelLockController : MonoBehaviour
 {
 	public GameObject UnlockedLevel;

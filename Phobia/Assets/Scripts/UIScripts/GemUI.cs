@@ -4,7 +4,6 @@ using System.Collections;
 
 /// <summary>
 /// Class for updating the UI based on gems equipped.
-/// Author: Karen
 /// </summary>
 public class GemUI : MonoBehaviour
 {

@@ -1,7 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
-
+/**
+ * Script attatched to name field to register name with player prefs
+ */
 public class EnterNameScript : MonoBehaviour
 {
 

@@ -1,7 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
-
+/**
+ * Script to set values in scoreboard
+ */
 public class HighScoreBoard : MonoBehaviour
 {
 
