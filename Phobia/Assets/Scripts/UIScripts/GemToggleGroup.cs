@@ -141,7 +141,7 @@ namespace UnityEngine.UI
 		public void RegisterToggle (GemToggle toggle)
 		{
 			//following line used for testing
-			//gm.LockAllGems ();
+			gm.LockAllGems ();
 
 
 			// Will set  up gem system if hasnt been used before
