@@ -616,19 +616,19 @@ Prefab:
     m_Modifications:
     - target: {fileID: 22495568, guid: 3380099f88c9c9a4fa2591938a2c84bc, type: 2}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22495568, guid: 3380099f88c9c9a4fa2591938a2c84bc, type: 2}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22499716, guid: 3380099f88c9c9a4fa2591938a2c84bc, type: 2}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22499716, guid: 3380099f88c9c9a4fa2591938a2c84bc, type: 2}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22453662, guid: 3380099f88c9c9a4fa2591938a2c84bc, type: 2}
       propertyPath: m_LocalPosition.x
@@ -726,6 +726,10 @@ Prefab:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
       value: PostLevelHeightsCutscene
       objectReference: {fileID: 0}
+    - target: {fileID: 11494654, guid: 3380099f88c9c9a4fa2591938a2c84bc, type: 2}
+      propertyPath: highScoreNamePanel
+      value: 
+      objectReference: {fileID: 1862057145}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3380099f88c9c9a4fa2591938a2c84bc, type: 2}
   m_IsPrefabParent: 0
@@ -741,6 +745,10 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 1862057142}
   m_Script: {fileID: -113659843, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+--- !u!1 &1862057145 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 183194, guid: 3380099f88c9c9a4fa2591938a2c84bc, type: 2}
+  m_PrefabInternal: {fileID: 1862057142}
 --- !u!1 &1961984127
 GameObject:
   m_ObjectHideFlags: 0

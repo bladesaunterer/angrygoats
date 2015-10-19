@@ -337,6 +337,10 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: aa08d7ddb5e4c054eab287807a72436e, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1035759932 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 183194, guid: 3380099f88c9c9a4fa2591938a2c84bc, type: 2}
+  m_PrefabInternal: {fileID: 2068215307}
 --- !u!114 &1119367157 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 11467142, guid: 3380099f88c9c9a4fa2591938a2c84bc,
@@ -792,6 +796,10 @@ Prefab:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 11494654, guid: 3380099f88c9c9a4fa2591938a2c84bc, type: 2}
+      propertyPath: highScoreNamePanel
+      value: 
+      objectReference: {fileID: 1035759932}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3380099f88c9c9a4fa2591938a2c84bc, type: 2}
   m_IsPrefabParent: 0

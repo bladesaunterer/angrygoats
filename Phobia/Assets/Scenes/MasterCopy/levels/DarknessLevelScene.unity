@@ -726,19 +726,19 @@ Prefab:
     m_Modifications:
     - target: {fileID: 22495568, guid: 3380099f88c9c9a4fa2591938a2c84bc, type: 2}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22495568, guid: 3380099f88c9c9a4fa2591938a2c84bc, type: 2}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22499716, guid: 3380099f88c9c9a4fa2591938a2c84bc, type: 2}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22499716, guid: 3380099f88c9c9a4fa2591938a2c84bc, type: 2}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22453662, guid: 3380099f88c9c9a4fa2591938a2c84bc, type: 2}
       propertyPath: m_LocalPosition.x
@@ -832,6 +832,10 @@ Prefab:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 11494654, guid: 3380099f88c9c9a4fa2591938a2c84bc, type: 2}
+      propertyPath: highScoreNamePanel
+      value: 
+      objectReference: {fileID: 1927858847}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3380099f88c9c9a4fa2591938a2c84bc, type: 2}
   m_IsPrefabParent: 0
@@ -847,6 +851,10 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 1927858844}
   m_Script: {fileID: -113659843, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+--- !u!1 &1927858847 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 183194, guid: 3380099f88c9c9a4fa2591938a2c84bc, type: 2}
+  m_PrefabInternal: {fileID: 1927858844}
 --- !u!1 &1961984127
 GameObject:
   m_ObjectHideFlags: 0
