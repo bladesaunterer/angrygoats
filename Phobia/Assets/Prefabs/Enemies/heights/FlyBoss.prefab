@@ -58,6 +58,7 @@ GameObject:
   - 114: {fileID: 11439154}
   - 54: {fileID: 5429270}
   - 65: {fileID: 6533332}
+  - 114: {fileID: 11489236}
   m_Layer: 0
   m_Name: FlyBoss
   m_TagString: Boss
@@ -335,6 +336,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b88f89961394c5d429c70aca2d8fd32c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &11489236
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 185364}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff5324341b916fa4ba39509d06c41d51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  home: {fileID: 0}
 --- !u!114 &11489706
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -382,6 +395,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scale: 50
+  initDelay: 2
 --- !u!222 &22270004
 CanvasRenderer:
   m_ObjectHideFlags: 1
@@ -458,6 +472,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: speed
       value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: initDelay
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
