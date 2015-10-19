@@ -2,7 +2,8 @@
 using System.Collections;
 
 /// <summary>
-/// Script for playing SFX related to enemies.
+/// Script used by other classes to play SFX.
+/// Author: Karen Xie.
 /// </summary>
 public class SfxScript : MonoBehaviour
 {
@@ -22,6 +23,16 @@ public class SfxScript : MonoBehaviour
             // Self-destruct if another instance exists
             Destroy(this);
             return;
+        }
+    }
+
+    // Check for previously set player sfx prefs.
+    void Update()
+    {
+        float previousVolume = PlayerPrefs.GetFloat("sfxVolume", -1.0f);
+        if (previousVolume != -1.0f && AudioListener.volume != previousVolume)
+        {
+            AudioListener.volume = previousVolume;
         }
     }
 
