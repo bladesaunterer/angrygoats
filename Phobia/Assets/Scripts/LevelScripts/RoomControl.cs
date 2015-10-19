@@ -153,7 +153,10 @@ public class RoomControl : MonoBehaviour {
 					if (enemy.GetComponent<EnemySingleShot> () != null) {
 						enemy.GetComponent<EnemySingleShot> ().shouldShoot = false;
 					}
-				}
+                    if (enemy.GetComponent<EnemyPewPew>() != null) {
+                        enemy.GetComponent<EnemyPewPew>().shoot = 0;
+                    }
+                }
 			}
 		}
 	}
@@ -166,7 +169,10 @@ public class RoomControl : MonoBehaviour {
 				if (enemy.GetComponent<EnemySingleShot>() != null) {
 					enemy.GetComponent<EnemySingleShot>().shouldShoot = true;
 				}
-			}
+                if (enemy.GetComponent<EnemyPewPew>() != null) {
+                    enemy.GetComponent<EnemyPewPew>().shoot = 1;
+                }
+            }
 		}
 
 	}
