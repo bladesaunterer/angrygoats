@@ -78,7 +78,7 @@ public class PlayerSfxScript : MonoBehaviour {
                 instance.sound.PlayOneShot(instance.stealthGemSound, vol);
                 break;
             case Gem.Yellow:
-                instance.sound.PlayOneShot(instance.stealthGemSound, vol);
+                instance.sound.PlayOneShot(instance.lightningGemSound, vol);
                 break;
             default:
                 instance.sound.PlayOneShot(instance.aoeGemSound, vol);
