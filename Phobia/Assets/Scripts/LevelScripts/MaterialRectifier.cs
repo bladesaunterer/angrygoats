@@ -3,7 +3,6 @@ using System.Collections;
 
 /// <summary>
 /// Purpose: Mapping the platform with the associated material.<para/>
-/// Author: DeanUlbrick
 /// </summary>
 public class MaterialRectifier : MonoBehaviour
 {

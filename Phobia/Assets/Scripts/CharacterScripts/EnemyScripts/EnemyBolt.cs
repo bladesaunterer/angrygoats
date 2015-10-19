@@ -3,7 +3,6 @@ using System.Collections;
 
 /// <summary>
 /// Purpose: Creates a bolt attack which can be instantiated by enemies with casting abilities.<para/>
-/// Authors:
 /// </summary>
 public class EnemyBolt : MonoBehaviour
 {

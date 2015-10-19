@@ -15,7 +15,7 @@ public class TEMPScoreScript : MonoBehaviour
 	public int enemyCounter;
     public Text currentScore;
 
-	// Singleton method for getting instance of TEMPScoreScript.
+	// Singleton method for getting instance of ScoreScript.
     public static TEMPScoreScript Instance
     {
         get

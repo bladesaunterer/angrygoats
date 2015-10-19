@@ -1,9 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-/**
- * Audio script attached to button
- */
 public class ButtonSoundScript : MonoBehaviour {
 
 	AudioSource audioSource;

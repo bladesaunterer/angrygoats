@@ -3,8 +3,6 @@ using System.Collections;
 
 /// <summary>
 /// Purpose: This handles the special attack(bolt) logic.<para/>
-/// Authors:
-/// 
 /// </summary>
 public class BoltMover : MonoBehaviour
 {

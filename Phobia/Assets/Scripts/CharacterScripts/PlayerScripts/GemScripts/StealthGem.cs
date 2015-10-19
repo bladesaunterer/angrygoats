@@ -3,7 +3,6 @@ using System.Collections;
 
 /// <summary>
 /// Purpose: The stealth/purple gem. This is useful for speed runners as it causes you to be undetectable by enemies for a period of time.<para/>
-/// Authors:
 /// </summary>
 public class StealthGem : GenericGem
 {
@@ -52,7 +51,7 @@ public class StealthGem : GenericGem
 
             // Reduce transparency so only the staff is visible
 			// Staff is a different material, so we don't explicitly set its visibility
-            material = player.transform.Find("LowPolyNecromancer").gameObject.GetComponent<Renderer>().material;
+            material = player.transform.Find("LowPolyNecromancer.001").gameObject.GetComponent<Renderer>().material;
             Color temp = material.color;
             temp.a = 0;
             material.color = temp;

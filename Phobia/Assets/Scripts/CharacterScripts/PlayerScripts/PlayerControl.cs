@@ -6,7 +6,6 @@ using System.Collections.Generic;
 
 /// <summary>
 /// Purpose: The main controlling class for the player.<para/>
-/// Authors: Chester Booker, Dean Ulbrick       <para/>
 /// This class handles the players melee attacks, movements, animations and allows the camera to always be over the current room of the player.
 /// </summary>
 public class PlayerControl : MonoBehaviour

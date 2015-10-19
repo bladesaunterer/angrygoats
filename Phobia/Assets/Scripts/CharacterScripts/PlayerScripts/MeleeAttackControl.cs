@@ -3,7 +3,6 @@ using System.Collections;
 
 /// <summary>
 /// Purpose: Class which handles player melee attack logic.<para/>
-/// Authors:
 /// </summary>
 public class MeleeAttackControl : MonoBehaviour
 {

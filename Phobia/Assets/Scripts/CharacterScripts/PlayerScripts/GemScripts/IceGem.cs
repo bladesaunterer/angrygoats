@@ -3,7 +3,6 @@ using System.Collections;
 
 /// <summary>
 /// Purpose: The ice/blue gem. Useful for slowing enemies for a prolonged period of time so that you can make your get away.<para/>
-/// Authors:
 /// </summary>
 public class IceGem : GenericGem
 {

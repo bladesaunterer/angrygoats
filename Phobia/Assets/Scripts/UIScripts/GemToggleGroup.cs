@@ -8,6 +8,7 @@ namespace UnityEngine.UI
 	/**
 	 * Custom Toggle grouping script for gem selection. Will restrict selection to any two 
 	 * active toggles in group. Uses gem manager to restrict selection to unlocked gems
+	 * Author: Carson, Zoe
 	 * 
 	 * based on scripts from:
 	 * http://answers.unity3d.com/questions/908591/is-there-a-multiple-selection-ugui-toggle-group.html
@@ -104,6 +105,11 @@ namespace UnityEngine.UI
 				m_Toggles.Remove (toggle);
 		}
         
+
+		/**
+		 * Cheat Mode, unlocks everything on Key press C, resets to normal
+		 * on key press B
+		 */
 		public void Update ()
 		{
 			if (Input.GetKeyDown (KeyCode.B)) {
@@ -141,16 +147,7 @@ namespace UnityEngine.UI
 			// Will set  up gem system if hasnt been used before
 			gm.CheckFirstGame ();
 
-//			PlayerPrefs.SetInt ("SpiderLevelScene", 0);
-//			PlayerPrefs.SetString ("SpiderLevelScene name", "");
-//			PlayerPrefs.SetInt ("HeightsLevelScene", 0);
-//			PlayerPrefs.SetString ("HeightsLevelScene name", "");
-//			PlayerPrefs.SetInt ("DarknessLevelScene", 0);
-//			PlayerPrefs.SetString ("DarknessLevelScene name", "");
-
-
 			//will unlock the default gems
-			gm.LockAllGems ();
 			gm.UnlockGem (GemOneDefault);
 			gm.UnlockGem (GemTwoDefault);
 
@@ -166,15 +163,12 @@ namespace UnityEngine.UI
 				gm.UnlockGem (Gem.Yellow);
 			}
 
-			if (PlayerPrefs.GetInt ("SpiderLevelScene") > 500 && PlayerPrefs.GetInt ("HeightsLevelScene") > 500 && PlayerPrefs.GetInt ("DarknessLevelScene") > 500) {
+			if (PlayerPrefs.GetInt ("SpiderLevelScene") > 500 && 
+				PlayerPrefs.GetInt ("HeightsLevelScene") > 500 && 
+				PlayerPrefs.GetInt ("DarknessLevelScene") > 500) {
 				gm.UnlockGem (Gem.Purple);
 			}
 
-//			gm.UnlockAllGems ();
-
-
-			//Use below line to unlock additional gems 
-			//gm.UnlockGem (Gem.Green);
 
 			//will register the default selection to gem manager
 			gm.SetDefaultSelection (GemOneDefault, GemTwoDefault);

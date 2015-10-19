@@ -3,7 +3,6 @@ using System.Collections;
 
 /// <summary>
 /// Purpose: Execute the spiders attack animation.<para/>
-/// Authors:
 /// </summary>
 public class SpiderAttack : EnemyAttack
 {

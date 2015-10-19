@@ -2,6 +2,9 @@
 using System.Collections;
 using UnityEngine.UI;
 
+/**
+ * Generic class for managing achievements
+ */
 public class GenericAchievement : MonoBehaviour {
 
 	public string achievementName;

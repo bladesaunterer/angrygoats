@@ -3,7 +3,6 @@ using System.Collections;
 
 /// <summary>
 /// Purpose: Applies a charge ability to certain enemies to give them super speed abilities.<para/>
-/// Authors:
 /// </summary>
 public class EnemyCharge : MonoBehaviour
 {

@@ -1,13 +1,14 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-/// <summary>
-/// Purpose: Handles damaging logic between player to enemies(and vice-versa).<para/>
-/// Authors:
-/// </summary>
+/** 
+ * Purpose: Handles damaging logic between player to enemies(and vice-versa).<para/>
+ */
 public static class HealthControl
 {
-
+	/**
+	 * Called to deal damage to gameobject containing EnemyHealth script
+	 */
     public static void dealDamageToEnemy(GameObject other, int damage)
     {
 
@@ -30,6 +31,9 @@ public static class HealthControl
         }
     }
 
+	/**
+	 * Called to deal damage player containing PlayerHealth scripts
+	 */
     public static void dealDamageToPlayer(GameObject other, int damage)
     {
 

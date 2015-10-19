@@ -3,7 +3,6 @@ using System.Collections;
 
 /// <summary>
 /// Purpose: Applies a curse to enemies which causes them to take damage over time. <para/>
-/// Authors:
 /// </summary>
 public class FireCurse : MonoBehaviour
 {

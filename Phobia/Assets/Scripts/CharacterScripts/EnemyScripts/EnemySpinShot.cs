@@ -3,7 +3,6 @@ using System.Collections;
 
 /// <summary>
 /// Purpose: A more advance shooting mechanism given to a boss to produce several bullets.<para/>
-/// Author: FranoPlz
 /// </summary>
 public class EnemySpinShot : MonoBehaviour
 {

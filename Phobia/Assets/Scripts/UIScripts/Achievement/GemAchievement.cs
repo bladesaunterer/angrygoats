@@ -2,10 +2,12 @@
 using System.Collections;
 using UnityEngine.UI;
 
+/**
+ * Script for managing achievements based on gems unlocked
+ */
 public class GemAchievement : GenericAchievement {
 	
-	private GemManager gemManager = new GemManager();
-
+	private GemManager gemManager = GemManager.Instance;
 	public Gem achievement;
 
 	// Loads what gems have been locked or unlocked
