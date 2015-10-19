@@ -48,9 +48,7 @@ public class EnemyHealth : MonoBehaviour
             HealthBar.GetComponent<EnemyHealthBar>().SetHealthVisual(healthRatio);
 
         }
-
-        // Cause enemies to take damage when they fall in a hole
-        if (gameObject.transform.position.y < lethalLow)
+        if (gameObject.transform.position.y < lethalLow && currentHealth > 0)
         {
             TakeDamage(startingHealth);
         }
@@ -64,7 +62,7 @@ public class EnemyHealth : MonoBehaviour
         // Trigger hurt sound if it exists
         if (hurtSound != null)
         {
-            EnemySfxScript.playSound(hurtSound);
+            SfxScript.playSound(hurtSound);
         }
 
         // Trigger hurt animation if it exists
@@ -99,7 +97,7 @@ public class EnemyHealth : MonoBehaviour
                 // Play death sound if it exists
                 if (deathSound != null)
                 {
-                    EnemySfxScript.playSound(deathSound);
+                    SfxScript.playSound(deathSound);
                 }
 
                 // Play death animation if it exists

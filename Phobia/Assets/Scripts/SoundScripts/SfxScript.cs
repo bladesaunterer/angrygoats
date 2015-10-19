@@ -4,11 +4,11 @@ using System.Collections;
 /// <summary>
 /// Script for playing SFX related to enemies.
 /// </summary>
-public class EnemySfxScript : MonoBehaviour
+public class SfxScript : MonoBehaviour
 {
     private AudioSource sound;
 
-    static private EnemySfxScript instance;
+    static private SfxScript instance;
 
     void Awake()
     {

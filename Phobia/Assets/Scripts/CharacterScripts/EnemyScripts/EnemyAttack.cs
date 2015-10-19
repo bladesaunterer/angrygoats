@@ -73,7 +73,7 @@ public class EnemyAttack : MonoBehaviour
             // If there is a sound associated, play it
             if (attackSound != null)
             {
-                EnemySfxScript.playSound(attackSound);
+                SfxScript.playSound(attackSound);
             }
 
             // If there is an animation associated, play it

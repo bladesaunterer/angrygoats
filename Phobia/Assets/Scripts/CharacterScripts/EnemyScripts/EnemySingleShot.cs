@@ -16,7 +16,11 @@ public class EnemySingleShot : MonoBehaviour
 
     void Start()
     {
-        anim = GetComponent<EnemyAnimatorFinding>().getEnemyAnimator();
+        try
+        {
+            anim = GetComponent<EnemyAnimatorFinding>().getEnemyAnimator();
+        }
+        catch { } // if anim = null (for spider models)
     }
 
     // Update is called once per frame
