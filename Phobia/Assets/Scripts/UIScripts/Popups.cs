@@ -95,11 +95,6 @@ public class Popups : MonoBehaviour
         SfxScript.playSound(winSound);
 		winScreen.SetActive (popupDisplaying);
 		AchievementManager.Instance.OnLevelEnd ();
-        if (winSound != null)
-        {
-            Debug.Log("Playing win sound.");
-            this.GetComponentInChildren<AudioSource>().PlayOneShot(winSound);
-        }
     }
 
 	// Display the death screen
