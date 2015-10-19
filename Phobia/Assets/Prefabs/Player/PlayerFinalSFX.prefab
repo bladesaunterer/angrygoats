@@ -856,7 +856,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 134800}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 604.77063, y: 877.566589, z: -1382.37463}
+  m_LocalPosition: {x: 140.904297, y: 162.903671, z: -392.166931}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 425812}
@@ -1410,7 +1410,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 6
   webSlowFactor: .5
-  shot: {fileID: 139214, guid: 2f4379f31458a494db71c773a3c0d4be, type: 2}
+  shot: {fileID: 195302, guid: e92957b1e52013e44888fcebc9d5a04e, type: 2}
   shotSpawn: {fileID: 499426}
   cooldownSlider: {fileID: 0}
   cooldown: 100
@@ -1434,7 +1434,7 @@ MonoBehaviour:
   duration: 5
   cost: 25
   isCurrent: 1
-  boltMaterial: {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  boltMaterial: {fileID: 2100000, guid: 45c4ddaaf24f7c74781721210542312b, type: 2}
   staffMaterial: {fileID: 2100000, guid: c57e606c0e1c4d344b98f9783342f64a, type: 2}
   staffParticles: {fileID: 2100000, guid: 202e7dec98cdc65408f3b033e58edcaa, type: 2}
 --- !u!114 &11474726
@@ -2654,7 +2654,11 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: shot
+      value: 
+      objectReference: {fileID: 195302, guid: e92957b1e52013e44888fcebc9d5a04e, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 134800}
