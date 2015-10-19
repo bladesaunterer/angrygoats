@@ -40,7 +40,7 @@ public class LevelGenerator : MonoBehaviour {
 	public AstarPath aStarGrids;
     
     
-    void Awake () {
+    void Start () {
 		
 		// These variables will change their meaning over the course of the method
 		RoomControl thisRoom;
@@ -146,7 +146,7 @@ public class LevelGenerator : MonoBehaviour {
 			boss = (GameObject)Instantiate (boss, thisRoom.transform.position + new Vector3 (0, 2, 0), Quaternion.identity);
 		}
 		boss.GetComponent<AIPath>().target = GameObject.FindWithTag("Player").transform;
-		
+		thisRoom.AddBoss (boss);
 		
 		// link rooms
 		// ensures no infinite loops by incrementing i by nine when a door is already there.

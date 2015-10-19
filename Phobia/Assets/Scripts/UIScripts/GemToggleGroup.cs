@@ -104,14 +104,17 @@ namespace UnityEngine.UI
 				m_Toggles.Remove (toggle);
 		}
         
-		public void Update(){
-			if (Input.GetKeyDown(KeyCode.B)){
+		public void Update ()
+		{
+			if (Input.GetKeyDown (KeyCode.B)) {
 				PlayerPrefs.SetInt ("SpiderLevelScene", 0);
 				PlayerPrefs.SetString ("SpiderLevelScene name", "");
 				PlayerPrefs.SetInt ("HeightsLevelScene", 0);
 				PlayerPrefs.SetString ("HeightsLevelScene name", "");
 				PlayerPrefs.SetInt ("DarknessLevelScene", 0);
 				PlayerPrefs.SetString ("DarknessLevelScene name", "");
+				LevelManager.Instance.resetLevels ();
+				LevelManager.Instance.firstGameSetup (Level.Spider);
 			}
 			if (Input.GetKeyDown (KeyCode.C)) {
 				PlayerPrefs.SetInt ("SpiderLevelScene", 700);
@@ -119,8 +122,10 @@ namespace UnityEngine.UI
 				PlayerPrefs.SetInt ("HeightsLevelScene", 700);
 				PlayerPrefs.SetString ("HeightsLevelScene name", "zoe");
 				PlayerPrefs.SetInt ("DarknessLevelScene", 700);
-				PlayerPrefs.SetString ("DarknessLevelScene name", "zoe");
+				PlayerPrefs.SetString ("DarknessLevelScene name", "zoe");	
+				LevelManager.Instance.unlockAllLevels ();
 			}
+
 		}
 
 
@@ -149,7 +154,7 @@ namespace UnityEngine.UI
 			gm.UnlockGem (GemOneDefault);
 			gm.UnlockGem (GemTwoDefault);
 
-			if(PlayerPrefs.GetInt ("SpiderLevelScene")>0){
+			if (PlayerPrefs.GetInt ("SpiderLevelScene") > 0) {
 				gm.UnlockGem (Gem.Blue);
 			}
 
@@ -162,7 +167,7 @@ namespace UnityEngine.UI
 			}
 
 			if (PlayerPrefs.GetInt ("SpiderLevelScene") > 600 && PlayerPrefs.GetInt ("HeightsLevelScene") > 600 && PlayerPrefs.GetInt ("DarknessLevelScene") > 600) {
-				gm.UnlockGem(Gem.Purple);
+				gm.UnlockGem (Gem.Purple);
 			}
 
 //			gm.UnlockAllGems ();

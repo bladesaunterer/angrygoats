@@ -10,7 +10,7 @@ public class EnemySfxScript : MonoBehaviour
 
     static private EnemySfxScript instance;
 
-    void Start()
+    void Awake()
     {
         if (instance == null)
         {
@@ -26,8 +26,8 @@ public class EnemySfxScript : MonoBehaviour
     }
 
     // Methods for calling in other classes at the appropriate time.
-    static public void playSound(AudioClip sound)
+    static public void playSound(AudioClip soundEffect)
     {
-        instance.sound.PlayOneShot(sound);
+        instance.sound.PlayOneShot(soundEffect);
     }
 }

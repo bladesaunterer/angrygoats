@@ -5,5 +5,6 @@ public enum Level
 {
 	Spider,
 	Height,
-	Dark
+	Dark,
+	Extra
 }
