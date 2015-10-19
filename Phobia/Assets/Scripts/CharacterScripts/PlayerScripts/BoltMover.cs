@@ -25,6 +25,7 @@ public class BoltMover : MonoBehaviour
 
         GameObject child = this.transform.GetChild(0).gameObject;
         child.GetComponent<Renderer>().material = gemObject.GetComponent<GenericGem>().boltMaterial;
+        gameObject.transform.Find("smoke").GetComponent<Renderer>().material = gemObject.GetComponent<GenericGem>().staffParticles;
     }
 
     void OnTriggerEnter(Collider other) {

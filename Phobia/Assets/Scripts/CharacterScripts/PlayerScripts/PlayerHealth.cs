@@ -30,8 +30,14 @@ public class PlayerHealth : MonoBehaviour
 			TakeDamage (startingHealth);
 		}
 
-		if (Input.GetKeyDown (KeyCode.G))
-			godMode = true;
+		if (Input.GetKeyDown (KeyCode.G)) {
+            godMode = true;
+            if (gameObject.GetComponent<PlayerControl>() != null) {
+                gameObject.GetComponent<PlayerControl>().speed = 12;
+            }
+        }
+			
+
 
 		if (godMode) {
 			currentHealth = 100;
