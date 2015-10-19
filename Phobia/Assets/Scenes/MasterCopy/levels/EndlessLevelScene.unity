@@ -429,6 +429,26 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 11494932, guid: 08c54a5b7d7c5e84889688997dd4a72c, type: 2}
+      propertyPath: highScoreNamePanel
+      value: 
+      objectReference: {fileID: 642189226}
+    - target: {fileID: 11402570, guid: 08c54a5b7d7c5e84889688997dd4a72c, type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: EndlessLevelScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 11484760, guid: 08c54a5b7d7c5e84889688997dd4a72c, type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: EndlessLevelScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 11473386, guid: 08c54a5b7d7c5e84889688997dd4a72c, type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: LevelSelectScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 11441432, guid: 08c54a5b7d7c5e84889688997dd4a72c, type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: EndlessLevelScene
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 08c54a5b7d7c5e84889688997dd4a72c, type: 2}
   m_IsPrefabParent: 0
@@ -444,6 +464,10 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 642189223}
   m_Script: {fileID: -113659843, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+--- !u!1 &642189226 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 153110, guid: 08c54a5b7d7c5e84889688997dd4a72c, type: 2}
+  m_PrefabInternal: {fileID: 642189223}
 --- !u!1 &1067354249
 GameObject:
   m_ObjectHideFlags: 0
