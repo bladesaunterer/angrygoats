@@ -55,7 +55,11 @@ public class Popups : MonoBehaviour
 			}
 			// if player destroyed display death screen
 			if (GameObject.FindGameObjectWithTag ("Player") == null) {
-				displayDeathScreen ();
+				if(Application.loadedLevelName == "RAMPwithUI"){
+					displayEndlessDeathScreen();
+				} else{
+					displayDeathScreen ();
+				}
 			}
 		}
 	}
@@ -92,6 +96,20 @@ public class Popups : MonoBehaviour
 		int temp4 = time.GetComponent<Timer> ().getSeconds ();
 		winScreen.GetComponent<WinUpdate> ().SetFinal (temp1, temp2, temp3, temp4);
 		winScreen.SetActive (popupDisplaying);
+		AchievementManager.Instance.OnLevelEnd ();
+	}
+
+	void displayEndlessDeathScreen ()
+	{
+		popupDisplaying = true;
+		Time.timeScale = 0.0f;
+		int temp1 = TEMPScoreScript.Instance.GetScore ();
+		int temp2 = TEMPScoreScript.Instance.GetEnemies ();
+		GameObject time = GameObject.Find ("Timer");
+		int temp3 = time.GetComponent<Timer> ().getMinutes ();
+		int temp4 = time.GetComponent<Timer> ().getSeconds ();
+		deadScreen.GetComponent<WinUpdate> ().SetFinal (0, 0, temp3, temp4);
+		deadScreen.SetActive (popupDisplaying);
 		AchievementManager.Instance.OnLevelEnd ();
 	}
 
