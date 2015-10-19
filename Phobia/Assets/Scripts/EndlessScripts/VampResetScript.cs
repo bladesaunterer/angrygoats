@@ -4,10 +4,11 @@ using System.Collections;
 public class VampResetScript : MonoBehaviour {
 
 	// AHHHH VAMPIRES! D;
-	public GameObject ramp;
+	GameObject ramp;
 	// Use this for initialization
-	void Start () {
+	public void reset () {
 		ramp = GameObject.Find ("Ramp");
 		ramp.GetComponent<Ramp> ().times = 0;
+		PlayerPrefs.SetInt ("endlessPreviousScore", 0);
 	}
 }
