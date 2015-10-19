@@ -45,3 +45,7 @@ EditorBuildSettings:
     path: Assets/Scenes/MasterCopy/AchievementsScene.unity
   - enabled: 1
     path: Assets/Scenes/MasterCopy/levels/SeedingLevelScene.unity
+  - enabled: 1
+    path: Assets/Scenes/PersonalScenes/Zoe/RAMPwithUI.unity
+  - enabled: 1
+    path: Assets/Scenes/PersonalScenes/Zoe/LevelSelectSceneforEndless.unity
