@@ -1792,6 +1792,7 @@ GameObject:
   - 222: {fileID: 701989438}
   - 114: {fileID: 701989437}
   - 114: {fileID: 701989436}
+  - 114: {fileID: 701989439}
   m_Layer: 5
   m_Name: BackButton
   m_TagString: Untagged
@@ -1908,6 +1909,36 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 701989434}
+--- !u!114 &701989439
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 701989434}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1862395651, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 855101688}
+          m_MethodName: playAudio
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: meleeSound
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  delegates: []
 --- !u!1 &707568064
 GameObject:
   m_ObjectHideFlags: 0
@@ -5319,6 +5350,40 @@ Prefab:
     - {fileID: 11430128, guid: 95c252b12390e6149bc6a64a36d17555, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 95c252b12390e6149bc6a64a36d17555, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1457815144 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 138134, guid: 95c252b12390e6149bc6a64a36d17555, type: 2}
+  m_PrefabInternal: {fileID: 1457815143}
+--- !u!114 &1457815145
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1457815144}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1862395651, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 855101688}
+          m_MethodName: playAudio
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: meleeSound
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  delegates: []
 --- !u!1 &1473574146
 GameObject:
   m_ObjectHideFlags: 0
