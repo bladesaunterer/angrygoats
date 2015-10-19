@@ -53,6 +53,8 @@ MonoBehaviour:
   - {fileID: 132938, guid: aa911a0b2765716478c69306817cb4e2, type: 2}
   - {fileID: 178504, guid: 80d13a2453886114e9ba2fac38f456d6, type: 2}
   - {fileID: 126066, guid: 20c48a892db98ca46b113934bf230e90, type: 2}
+  - {fileID: 126076, guid: cc2da425803705d4f87b3da006c0b624, type: 2}
+  - {fileID: 0}
   totalEnemies: 65
   maxEnemiesPerRoom: 6
   enemies:
@@ -78,7 +80,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 0}
       propertyPath: floorPrefabs.Array.size
-      value: 8
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: floorPrefabs.Array.data[0]
@@ -112,6 +114,14 @@ Prefab:
       propertyPath: floorPrefabs.Array.data[7]
       value: 
       objectReference: {fileID: 126066, guid: 20c48a892db98ca46b113934bf230e90, type: 2}
+    - target: {fileID: 0}
+      propertyPath: floorPrefabs.Array.data[8]
+      value: 
+      objectReference: {fileID: 126076, guid: cc2da425803705d4f87b3da006c0b624, type: 2}
+    - target: {fileID: 0}
+      propertyPath: floorPrefabs.Array.data[9]
+      value: 
+      objectReference: {fileID: 113332, guid: 928ea050b66ba214b94b27209df1d444, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 101118}
