@@ -4,7 +4,7 @@ using System.Collections;
 /**
  * Audio script attached to button
  */
-public class ButtonSoundScript : MonoBehaviour {
+public class buttonSoundScript : MonoBehaviour {
 
 	AudioSource audioSource;
 
