@@ -3,9 +3,14 @@ using System.Collections.Generic;
 using Pathfinding;
 using System.Linq;
 
-public class RoomControl : MonoBehaviour {
-
+/// <summary>
+/// Purpose: This controls each room and it's interactions.<para/>
+/// Author:
+/// </summary>
+public class RoomControl : MonoBehaviour
+{
     public GameObject minimapUI;
+
 
 	private const int HORIZ_TILING = 100;
 	private const int VERT_TILING = 80;
@@ -177,9 +182,9 @@ public class RoomControl : MonoBehaviour {
 
 	}
 
+    // Triggers minimap update
     public void UpdateMinimap()
     {
-        // Triggers minimap update
         minimapUI.GetComponent<MinimapScript>().PlayerEntersRoom(Index, adjRoomsDict.Keys.ToList());
     }
 }
