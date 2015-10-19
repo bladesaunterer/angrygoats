@@ -542,7 +542,7 @@ Prefab:
     - target: {fileID: 11411986, guid: d4fc3a939c2c1b743990468eea57381e, type: 2}
       propertyPath: objectToFollow
       value: 
-      objectReference: {fileID: 1667781723}
+      objectReference: {fileID: 0}
     - target: {fileID: 22380698, guid: d4fc3a939c2c1b743990468eea57381e, type: 2}
       propertyPath: m_PlaneDistance
       value: 1
@@ -646,6 +646,56 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 7
+--- !u!1001 &1130478603
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 435924, guid: 24e19a7d726b8e04e848b6ae45c686f9, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 435924, guid: 24e19a7d726b8e04e848b6ae45c686f9, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 435924, guid: 24e19a7d726b8e04e848b6ae45c686f9, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 435924, guid: 24e19a7d726b8e04e848b6ae45c686f9, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 435924, guid: 24e19a7d726b8e04e848b6ae45c686f9, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 435924, guid: 24e19a7d726b8e04e848b6ae45c686f9, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 435924, guid: 24e19a7d726b8e04e848b6ae45c686f9, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 435924, guid: 24e19a7d726b8e04e848b6ae45c686f9, type: 2}
+      propertyPath: m_RootOrder
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 11411696, guid: 24e19a7d726b8e04e848b6ae45c686f9, type: 2}
+      propertyPath: healthSlider
+      value: 
+      objectReference: {fileID: 375357144}
+    - target: {fileID: 11401326, guid: 24e19a7d726b8e04e848b6ae45c686f9, type: 2}
+      propertyPath: cooldownSlider
+      value: 
+      objectReference: {fileID: 375357143}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 24e19a7d726b8e04e848b6ae45c686f9, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &1622551926
 GameObject:
   m_ObjectHideFlags: 0
@@ -706,60 +756,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 5
---- !u!1001 &1667781722
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 433008, guid: d8212304f570bbe4d8d44419be85369b, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 433008, guid: d8212304f570bbe4d8d44419be85369b, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 433008, guid: d8212304f570bbe4d8d44419be85369b, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 433008, guid: d8212304f570bbe4d8d44419be85369b, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 433008, guid: d8212304f570bbe4d8d44419be85369b, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 433008, guid: d8212304f570bbe4d8d44419be85369b, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 433008, guid: d8212304f570bbe4d8d44419be85369b, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 433008, guid: d8212304f570bbe4d8d44419be85369b, type: 2}
-      propertyPath: m_RootOrder
-      value: 14
-      objectReference: {fileID: 0}
-    - target: {fileID: 11435962, guid: d8212304f570bbe4d8d44419be85369b, type: 2}
-      propertyPath: healthSlider
-      value: 
-      objectReference: {fileID: 375357144}
-    - target: {fileID: 11462258, guid: d8212304f570bbe4d8d44419be85369b, type: 2}
-      propertyPath: cooldownSlider
-      value: 
-      objectReference: {fileID: 375357143}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: d8212304f570bbe4d8d44419be85369b, type: 2}
-  m_IsPrefabParent: 0
---- !u!4 &1667781723 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 433008, guid: d8212304f570bbe4d8d44419be85369b, type: 2}
-  m_PrefabInternal: {fileID: 1667781722}
 --- !u!1 &1742255550
 GameObject:
   m_ObjectHideFlags: 0
