@@ -3,7 +3,6 @@ using System.Collections;
 
 /// <summary>
 /// Purpose: Handles all logic behind each gem in the game.<para/>
-/// Authors:                <para/>
 /// Additionally, Notifies gem manager of changes in gem selections
 /// </summary>
 public class GemSwitching : MonoBehaviour
@@ -23,10 +22,6 @@ public class GemSwitching : MonoBehaviour
         Debug.Log(gemManager.GetGemTwo().ToString() + " successfully persisted");
 
         spawn = GameObject.FindGameObjectWithTag("SpecialAttack");
-
-        // This way broke when people added the gem switching in the hud
-        // gemOne = GameObject.FindGameObjectsWithTag (gemManager.GetGemOne ().ToString ());
-        // gemTwo = GameObject.FindGameObjectsWithTag (gemManager.GetGemTwo ().ToString ());
 
         foreach (Transform childTransform in gameObject.transform.Find("Shot Spawn"))
         {
@@ -66,6 +61,9 @@ public class GemSwitching : MonoBehaviour
         }
     }
 
+	/**
+	 * Called when Player switches gems
+	 */
     void ChangeGem()
     {
         gemOne.GetComponent<GenericGem>().isCurrent = !gemOne.GetComponent<GenericGem>().isCurrent;
@@ -77,7 +75,7 @@ public class GemSwitching : MonoBehaviour
         updateStaff(currentGem);
     }
 
-    /*
+    /**
     * Update the staff the player holds to match the equipped gem, also update the smoke/particles to match.
     */
     void updateStaff(GameObject gem)

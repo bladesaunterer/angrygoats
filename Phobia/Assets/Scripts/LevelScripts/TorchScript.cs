@@ -3,7 +3,6 @@ using System.Collections;
 
 /// <summary>
 /// Purpose: Handles torch lighting in level rooms.<para/>
-/// Author: Dean Ulbrick
 /// </summary>
 public class TorchScript : MonoBehaviour
 {

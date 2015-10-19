@@ -4,7 +4,6 @@ using System.Collections.Generic;
 
 /// <summary>
 /// Purpose: The yellow/lightning gem. Useful for stunning the enemy in their tracks.<para/>
-/// Authors:      <para/>
 /// This completely stops the enemy but is applied for a shorter time than the freeze gem
 /// </summary>
 public class LightningGem : GenericGem {

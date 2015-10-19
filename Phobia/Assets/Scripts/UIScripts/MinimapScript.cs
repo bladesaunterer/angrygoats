@@ -6,7 +6,6 @@ using System;
 
 /// <summary>
 /// Purpose: Minimap generation and keyboard control.
-/// Authors: Chester Booker, Dean Ulbrick
 /// 
 /// Generates a hidden minimap based on the world which was randomly generated.
 /// Reveals the minimaps sections more and more as the player explores different rooms.

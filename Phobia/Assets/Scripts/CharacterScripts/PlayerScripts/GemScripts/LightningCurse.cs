@@ -3,7 +3,6 @@ using System.Collections;
 
 /// <summary>
 /// Purpose: The lightning curse applied to the enemy/boss.<para/>
-/// Authors:
 /// </summary>
 public class LightningCurse : MonoBehaviour
 {

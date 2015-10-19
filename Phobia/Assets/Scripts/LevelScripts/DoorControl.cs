@@ -3,7 +3,6 @@ using System.Collections;
 
 /// <summary>
 /// Purpose: Turning on/off the lights, triggering enemy movements and updating the minimap as the player moves from room to room.<para/>
-/// Author: Dean Ulbrick. Chester Booker
 /// </summary>
 public class DoorControl : MonoBehaviour
 {

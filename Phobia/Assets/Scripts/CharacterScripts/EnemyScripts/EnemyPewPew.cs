@@ -3,7 +3,6 @@ using System.Collections;
 
 /// <summary>
 /// Purpose: Creates shots spawning in four different directions from the enemy.<para/>
-/// Author:
 /// </summary>
 public class EnemyPewPew : MonoBehaviour {
 	public GameObject shot;

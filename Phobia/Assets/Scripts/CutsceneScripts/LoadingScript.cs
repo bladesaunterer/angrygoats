@@ -1,6 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+/**
+ *  Runs While scene is loading
+ */
 public class LoadingScript : MonoBehaviour {
 
 	public string levelToTransitionTo;

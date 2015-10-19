@@ -3,7 +3,6 @@ using System.Collections;
 
 /// <summary>
 /// Purpose: The curse which makes sure the enemies which have it are slowed in movement speed for a period of time.<para/>
-/// Authors:
 /// </summary>
 public class IceCurse : MonoBehaviour
 {

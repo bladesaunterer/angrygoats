@@ -3,7 +3,6 @@ using System;
 
 /// <summary>
 /// Script for controlling background music for different scenes.
-/// Author: Karen Xie
 /// </summary>
 public class MusicControlScript : MonoBehaviour
 {

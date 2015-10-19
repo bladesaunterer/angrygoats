@@ -3,7 +3,6 @@ using UnityEngine.UI;
 
 /// <summary>
 /// Purpose: Handles player health logic; including death.<para/>
-/// Authors: Chester Booker, Karen Xie, Dean Ulbrick
 /// </summary>
 public class PlayerHealth : MonoBehaviour
 {

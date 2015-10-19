@@ -3,7 +3,6 @@ using System.Collections;
 
 /// <summary>
 /// Script for playing SFX sounds related to the player.
-/// Author: Karen Xie
 /// </summary>
 public class PlayerSfxScript : MonoBehaviour {
 

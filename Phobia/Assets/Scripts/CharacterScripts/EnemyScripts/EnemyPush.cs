@@ -3,7 +3,6 @@ using System.Collections;
 
 /// <summary>
 /// Purpose: Allows certain enemies to push the player and deal damage to them on contact.<para/>
-/// Author:
 /// </summary>
 public class EnemyPush : MonoBehaviour
 {
