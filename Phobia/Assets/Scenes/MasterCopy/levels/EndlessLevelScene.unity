@@ -1104,7 +1104,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: LevelSelectSceneforEndless
+          m_StringArgument: LevelSelectScene
           m_BoolArgument: 0
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
@@ -3211,7 +3211,7 @@ Prefab:
       objectReference: {fileID: 1474384615}
     - target: {fileID: 11462908, guid: 3380099f88c9c9a4fa2591938a2c84bc, type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
-      value: RAMPwithUI
+      value: EndlessLevelScene
       objectReference: {fileID: 0}
     - target: {fileID: 22475370, guid: 3380099f88c9c9a4fa2591938a2c84bc, type: 2}
       propertyPath: m_RootOrder
@@ -3241,6 +3241,14 @@ Prefab:
       propertyPath: highScoreNamePanel
       value: 
       objectReference: {fileID: 2068215310}
+    - target: {fileID: 193200, guid: 3380099f88c9c9a4fa2591938a2c84bc, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11408178, guid: 3380099f88c9c9a4fa2591938a2c84bc, type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: EndlessLevelScene
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3380099f88c9c9a4fa2591938a2c84bc, type: 2}
   m_IsPrefabParent: 0
