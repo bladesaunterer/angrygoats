@@ -3,7 +3,6 @@ using System.Collections;
 
 /// <summary>
 /// Purpose: The stealth/purple gem. This is useful for speed runners as it causes you to be undetectable by enemies for a period of time.<para/>
-/// Authors:
 /// </summary>
 public class StealthGem : GenericGem
 {

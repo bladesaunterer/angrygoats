@@ -3,7 +3,6 @@ using System.Collections;
 
 /// <summary>
 /// Purpose: A script to attact to enemies to visually signify that they have taken damage.<para/>
-/// Authors:
 /// </summary>
 public class EnemyFlash : MonoBehaviour
 {

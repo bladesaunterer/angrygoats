@@ -4,7 +4,6 @@ using UnityEngine.UI;
 
 /// <summary>
 /// Purpose: A class to control the generic behaviour of all gems and their interations<para/>
-/// Authors:
 /// </summary>
 public class GenericGem : MonoBehaviour
 {

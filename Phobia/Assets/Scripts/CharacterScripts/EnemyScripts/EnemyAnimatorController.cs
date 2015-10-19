@@ -3,7 +3,6 @@ using System.Collections;
 
 /// <summary>
 /// Purpose: A class which executes animations for any enemy based on their Animator and Animation<para/>
-/// Author: Chester Booker<para/>
 /// Details: Must have a functioning Animator FSM with triggers for Hit, Attack, Cast, DieTrig<para/>
 /// Issues: Running animations must be done in the actual class based on the v & h inputs or speed.
 /// </summary>

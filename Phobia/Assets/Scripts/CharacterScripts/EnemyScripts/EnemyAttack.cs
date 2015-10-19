@@ -3,7 +3,6 @@ using System.Collections;
 
 /// <summary>
 /// Purpose: Handles the enemy attack logic, triggering sounds and animations.<para/>
-/// Authors:
 /// </summary>
 public class EnemyAttack : MonoBehaviour
 {

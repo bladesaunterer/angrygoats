@@ -5,7 +5,6 @@ using System.Linq;
 
 /// <summary>
 /// Purpose: This controls each room and it's interactions.<para/>
-/// Author:
 /// </summary>
 public class RoomControl : MonoBehaviour
 {

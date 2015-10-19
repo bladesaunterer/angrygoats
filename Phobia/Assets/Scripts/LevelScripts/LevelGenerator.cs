@@ -6,7 +6,6 @@ using System;
 
 /// <summary>
 /// Purpose: The main class of each level. This class generates a random room based on prefab and integer inputs.<para/>
-/// Authors: Dean Ulbrick. Chester Booker
 /// </summary>
 public class LevelGenerator : MonoBehaviour {
 	

@@ -3,7 +3,6 @@ using System.Collections;
 
 /// <summary>
 /// Purpose: The basic single shot abilty an enemy can have attached to it.<para/>
-/// Author:
 /// </summary>
 public class EnemySingleShot : MonoBehaviour
 {

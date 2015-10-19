@@ -3,7 +3,6 @@ using System.Collections;
 
 /// <summary>
 /// Purpose: The green/healing gem. Useful for healing the character when they are in danger and are close to dying.<para/>
-/// Authors:
 /// </summary>
 public class HealGem : GenericGem
 {

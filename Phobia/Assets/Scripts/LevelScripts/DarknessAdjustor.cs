@@ -4,7 +4,6 @@ using System.Collections;
 
 /// <summary>
 /// Purpose: Used for adjusting the darkness's transparency.<para/>
-/// Author: Chester Booker
 /// </summary>
 public class DarknessAdjustor : MonoBehaviour
 {

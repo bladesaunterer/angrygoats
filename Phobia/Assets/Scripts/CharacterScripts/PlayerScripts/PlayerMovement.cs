@@ -3,7 +3,6 @@ using System.Collections;
 
 /// <summary>
 /// Purpose: Handles players movement logic through the character controller.<para/>
-/// Authors:
 /// </summary>
 public class PlayerMovement : MonoBehaviour
 {

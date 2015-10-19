@@ -3,7 +3,6 @@ using System.Collections;
 
 /// <summary>
 /// Purpose: The red/fire gem. Creates a single bolt which applies a damage over time curse to whatever it hits. <para/>
-/// Authors:
 /// </summary>
 public class FireGem : GenericGem
 {

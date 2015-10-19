@@ -3,14 +3,6 @@ using UnityEngine.Events;
 using UnityEngine.EventSystems;
 using UnityEngine.Serialization;
 
-/**
- * Custom toggle elements for gems. State of toggle is controlled here and is set based 
- * on whether or not its associated gem is unlocked. If gem is locked, the toggle
- * will be set to be non interactable
- * 
- * http://answers.unity3d.com/questions/908591/is-there-a-multiple-selection-ugui-toggle-group.html
- */
-
 
 namespace UnityEngine.UI
 {
@@ -19,6 +11,7 @@ namespace UnityEngine.UI
  	* on whether or not its associated gem is unlocked. If gem is locked, the toggle
  	* will be set to be non interactable
  	*
+ 	* Author: Carson
  	* based on code from:
  	* http://answers.unity3d.com/questions/908591/is-there-a-multiple-selection-ugui-toggle-group.html
  	*/
@@ -84,7 +77,7 @@ namespace UnityEngine.UI
 				m_Group = value;
 				#if UNITY_EDITOR
 				if (Application.isPlaying) 
-				#endif
+				#endif 
 				{
 					SetToggleGroup (m_Group, true);
 					PlayEffect (true);

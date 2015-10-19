@@ -1,7 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
-
+/**
+ * Control Script for Darkness Level Boss
+ */
 public class BossThree : MonoBehaviour {
 
 	public RoomControl roomCont;

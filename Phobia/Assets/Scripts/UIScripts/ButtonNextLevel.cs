@@ -4,6 +4,7 @@ using System.Collections;
 /**
  * 
  * Class which handles button logic which moves to different scenes.
+ * Author: Carson
  * 
  **/
 public class ButtonNextLevel : MonoBehaviour

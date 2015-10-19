@@ -1,6 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+/**
+ * Singleton class which handles logic for managing and persisting achievements
+ */
 public class AchievementManager : MonoBehaviour {
 
 	private static AchievementManager instance;
