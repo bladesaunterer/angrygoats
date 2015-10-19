@@ -85,6 +85,10 @@ NavMeshSettings:
     cellSize: .166666672
     manualCellSize: 0
   m_NavMeshData: {fileID: 23800000, guid: ab81f9db15727a04d85e04fa3d57ace4, type: 2}
+--- !u!4 &147365984 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 435924, guid: 24e19a7d726b8e04e848b6ae45c686f9, type: 2}
+  m_PrefabInternal: {fileID: 1071142060}
 --- !u!1001 &275450480
 Prefab:
   m_ObjectHideFlags: 0
@@ -166,19 +170,19 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22475182, guid: 08c54a5b7d7c5e84889688997dd4a72c, type: 2}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 22475182, guid: 08c54a5b7d7c5e84889688997dd4a72c, type: 2}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 22465500, guid: 08c54a5b7d7c5e84889688997dd4a72c, type: 2}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 22465500, guid: 08c54a5b7d7c5e84889688997dd4a72c, type: 2}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 11494932, guid: 08c54a5b7d7c5e84889688997dd4a72c, type: 2}
       propertyPath: highScoreNamePanel
@@ -839,7 +843,7 @@ Prefab:
     - target: {fileID: 11411986, guid: d4fc3a939c2c1b743990468eea57381e, type: 2}
       propertyPath: objectToFollow
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 147365984}
     - target: {fileID: 22380698, guid: d4fc3a939c2c1b743990468eea57381e, type: 2}
       propertyPath: m_Camera
       value: 
