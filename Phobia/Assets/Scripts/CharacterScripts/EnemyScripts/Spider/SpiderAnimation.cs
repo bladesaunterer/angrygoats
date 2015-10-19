@@ -1,8 +1,15 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class SpiderAnimation : MonoBehaviour {
+/// <summary>
+/// Purpose: A spider exclusive class for controlling the animations.<para/>
+/// Authors:            <para/>
+/// Issues: Always moves no matter what.
+/// </summary>
+public class SpiderAnimation : MonoBehaviour
+{
 
+    // Defining the different animations
     public Animation animations;
     public string attack = "attack1";
     public string move = "walk";
@@ -23,16 +30,18 @@ public class SpiderAnimation : MonoBehaviour {
     }
 
     // Update is called once per frame
-    void Update () {
-        // TODO if moving (otherwise no animation)
+    void Update()
+    {
         animations.CrossFade(move);
     }
 
-    public void attackAnim ()
+    // Execute attack animation
+    public void attackAnim()
     {
         animations.CrossFade(attack);
     }
 
+    // Kill the spider
     public void spiderKilled()
     {
         animations.Play(death);
