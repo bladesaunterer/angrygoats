@@ -4,7 +4,7 @@ using UnityEngine.UI;
 /**
  * Script to set values in scoreboard
  */
-public class HighScoreBoard : MonoBehaviour
+public class highScoreBoard : MonoBehaviour
 {
 
 	public Text levelOne;
