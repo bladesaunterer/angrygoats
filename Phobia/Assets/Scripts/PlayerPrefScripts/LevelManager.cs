@@ -63,5 +63,27 @@ public class LevelManager
 		}
 	}
 
+	/**
+	 * Will delete all info about levels. Intended for testing purposes only
+	 */
+	public void resetLevels ()
+	{
+		foreach (Level l in Level.GetValues(typeof(Level))) {
+			PlayerPrefs.DeleteKey (l.ToString ());
+		}
+	
+	}
+
+	/**
+	 * Will unlock all levels
+	 */
+	public void unlockAllLevels ()
+	{
+		foreach (Level l in Level.GetValues(typeof(Level))) {
+			unlockLevel (l);
+		}
+
+	}
+
 
 }

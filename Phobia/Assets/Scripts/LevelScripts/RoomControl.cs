@@ -136,7 +136,7 @@ public class RoomControl : MonoBehaviour {
 			GameObject chosenCell = freeCells[Random.Range(0, freeCells.Count)];
 			freeCells.Remove(chosenCell);
 
-			GameObject thisWeb = (GameObject)GameObject.Instantiate(web, (chosenCell.transform.position + new Vector3(0, 1.1f, 0)), Quaternion.identity);
+			GameObject.Instantiate(web, (chosenCell.transform.position + new Vector3(0, 1.1f, 0)), Quaternion.identity);
 		}
 	}
 	

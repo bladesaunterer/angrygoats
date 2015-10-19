@@ -30,4 +30,10 @@ public class IceGem : GenericGem
         }
         curse.updateEndTime(endTime);
     }
+
+    // Uses the basic cast animation
+    public override void castAnimation()
+    {
+        base.castAnimation();
+    }
 }

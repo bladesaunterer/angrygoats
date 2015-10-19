@@ -15,7 +15,6 @@ public class GemSelectorTest : MonoBehaviour {
 
 	private GameObject spawn;
 	private GameObject gemOne;
-	private GameObject gemTwo;
 	private Gem currentGem;
 	private GemManager GemSelection = new GemManager ();
 	
@@ -33,7 +32,6 @@ public class GemSelectorTest : MonoBehaviour {
 	
 		spawn = GameObject.FindGameObjectWithTag ("SpecialAttack");
 		gemOne = GameObject.FindGameObjectWithTag (GemSelection.GetGemOne ().ToString ());
-		gemTwo = GameObject.FindGameObjectWithTag (GemSelection.GetGemTwo ().ToString ());
 		
 		foreach (Transform child in spawn.transform) {
 			child.gameObject.SetActive (false);

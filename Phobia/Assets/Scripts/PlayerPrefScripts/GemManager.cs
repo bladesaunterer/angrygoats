@@ -20,10 +20,6 @@ public class GemManager
 		}
 	}
 
-	//will set the default gems to blue. For when the values dont get overidden
-	private Gem defaultGemOne = Gem.Blue;
-	private Gem defaultGemTwo = Gem.Blue;
-
 	/**
 	 * Will register default gem one
 	 */

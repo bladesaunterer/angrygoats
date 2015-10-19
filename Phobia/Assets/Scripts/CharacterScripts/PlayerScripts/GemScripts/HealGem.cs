@@ -20,4 +20,10 @@ public class HealGem : GenericGem
             player.GetComponent<PlayerHealth>().HealPlayer(heal);
         }
     }
+
+    // Overrides with a heal animation
+    public override void castAnimation()
+    {
+        anim.SetTrigger("HealSpell");
+    }
 }

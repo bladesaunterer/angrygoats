@@ -17,7 +17,11 @@ public class AchievementManager : MonoBehaviour {
 
 	public LevelGenerator generator;
 
+    public bool disabled = false;
+
 	private bool gemUsage;
+
+	private float enterTime;
 
 	void Start(){
 		gemUsage = false;
@@ -27,6 +31,9 @@ public class AchievementManager : MonoBehaviour {
 	 * Checks for achievements that are earned when you beat a level
 	 */
 	public void OnLevelEnd(){
+        if (disabled == true) {
+            return;
+        }
 		int enemiesCount = TEMPScoreScript.Instance.enemyCounter;
 		int totalEnemies = generator.totalEnemies;
 		if (enemiesCount == 1){
@@ -38,13 +45,19 @@ public class AchievementManager : MonoBehaviour {
 		if (!gemUsage){
 			PlayerPrefs.SetInt("You're Not Special",1);
 		}
+		if (Time.time >= enterTime + 15f && generator.gameObject.name == "SpiderLevelGenerator"){
+			PlayerPrefs.SetInt("Impossible",1);
+		}
 	}
 
 	/**
 	 * Checks for achievements when the player dies
 	 */
-	public void OnLevelLoss(){
-		int enemiesCount = TEMPScoreScript.Instance.enemyCounter;
+	public void OnLevelLoss() {
+        if (disabled == true) {
+            return;
+        }
+        int enemiesCount = TEMPScoreScript.Instance.enemyCounter;
 		if (enemiesCount == 0){
 			PlayerPrefs.SetInt("You Suck",1);
 		}
@@ -53,7 +66,19 @@ public class AchievementManager : MonoBehaviour {
 	/**
 	 * When the user uses a gem
 	 */
-	public void usedGem(){
-		gemUsage = true;
+	public void usedGem() {
+        if (disabled == true) {
+            return;
+        }
+        gemUsage = true;
+	}
+
+	/**
+	 * When the player enters a room 
+	 */
+	public void enterRoom(GameObject obj){
+		if (obj.name == "boss room"){
+			enterTime = Time.time;
+		} 
 	}
 }
