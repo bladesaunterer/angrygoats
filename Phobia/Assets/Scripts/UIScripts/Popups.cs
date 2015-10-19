@@ -55,7 +55,7 @@ public class Popups : MonoBehaviour
 			}
 			// if player destroyed display death screen
 			if (GameObject.FindGameObjectWithTag ("Player") == null) {
-				if(Application.loadedLevelName == "RAMPwithUI"){
+				if(Application.loadedLevelName == "EndlessLevelScene"){
 					displayEndlessDeathScreen();
 				} else{
 					displayDeathScreen ();
