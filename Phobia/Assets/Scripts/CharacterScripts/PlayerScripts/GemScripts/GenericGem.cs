@@ -46,7 +46,7 @@ public class GenericGem : MonoBehaviour
         {
             // Update achievement log, play sound and execute associated gem ability
             AchievementManager.Instance.usedGem();
-            PlayerSfxScript.playShotSound();
+            PlayerSfxScript.playShotSound(GemManager.Instance.GetCurrentGem());
             doEffect();
             castAnimation();
         }

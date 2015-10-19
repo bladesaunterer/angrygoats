@@ -838,6 +838,10 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 11494526, guid: 160e07d602f223440a2a2419191377f3, type: 2}
+      propertyPath: levelScenes.Array.size
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 429050, guid: 160e07d602f223440a2a2419191377f3, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -869,6 +873,10 @@ Prefab:
     - target: {fileID: 429050, guid: 160e07d602f223440a2a2419191377f3, type: 2}
       propertyPath: m_RootOrder
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 11494526, guid: 160e07d602f223440a2a2419191377f3, type: 2}
+      propertyPath: levelScenes.Array.data[4]
+      value: EndlessLevelScene
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 160e07d602f223440a2a2419191377f3, type: 2}

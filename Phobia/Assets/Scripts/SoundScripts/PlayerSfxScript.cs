@@ -3,14 +3,25 @@ using System.Collections;
 
 /// <summary>
 /// Script for playing SFX sounds related to the player.
+/// Author: Karen Xie
 /// </summary>
 public class PlayerSfxScript : MonoBehaviour {
 
     private AudioSource sound;
+
     public AudioClip meleeSound;
-    public AudioClip shotSound;
+    // Sounds for each type of gem
+    public AudioClip fireGemSound;
+    public AudioClip iceGemSound;
+    public AudioClip healGemSound;
+    public AudioClip stealthGemSound;
+    public AudioClip lightningGemSound;
+    public AudioClip aoeGemSound;
+
+    // Sound for character
     public AudioClip deathSound;
     public AudioClip hitSound;
+
     private float volLowRange = .5f;
     private float volHighRange = 1.0f;
 
@@ -47,10 +58,32 @@ public class PlayerSfxScript : MonoBehaviour {
         instance.sound.PlayOneShot(instance.meleeSound, vol);
     }
 
-    static public void playShotSound()
+    static public void playShotSound(Gem gem)
     {
         float vol = Random.Range(instance.volLowRange, instance.volHighRange);
-        instance.sound.PlayOneShot(instance.shotSound, vol);
+        
+        // Play the corresponding sound
+        switch (gem)
+        {
+            case Gem.Red:
+                instance.sound.PlayOneShot(instance.fireGemSound, vol);
+                break;
+            case Gem.Green:
+                instance.sound.PlayOneShot(instance.healGemSound, vol);
+                break;
+            case Gem.Blue:
+                instance.sound.PlayOneShot(instance.iceGemSound, vol);
+                break;
+            case Gem.Purple:
+                instance.sound.PlayOneShot(instance.stealthGemSound, vol);
+                break;
+            case Gem.Yellow:
+                instance.sound.PlayOneShot(instance.lightningGemSound, vol);
+                break;
+            default:
+                instance.sound.PlayOneShot(instance.aoeGemSound, vol);
+                break;
+        }
     }
     
     static public void playDeathSound()
