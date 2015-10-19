@@ -40,8 +40,7 @@ public class GenericGem : MonoBehaviour
 
     }
 
-    void Update()
-    {
+    protected virtual void Update() {
         // Cast ability when K is pressed then there is enough mana/energy
         if (Input.GetKeyDown(KeyCode.K) && playerControl.cooldown >= cost && isCurrent)
         {

@@ -37,8 +37,10 @@ public class PlayerControl : MonoBehaviour
     private Vector3 movement;                   // The vector to store the direction of the player's movement.
     private Vector3 cameraPosition = new Vector3(0, 30, -17);
 
-    private int floorMask;                      // A layer mask so that a ray can be cast just at gameobjects on the floor layer.
-    private float camRayLength = 100f;          // The length of the ray from the camera into the scene.
+	// CURRENTLY NOT USED BY IS KEEP FOR FUTURE USE
+    // These fields help rotate the player based on mouse position
+    //private int floorMask;                      // A layer mask so that a ray can be cast just at gameobjects on the floor layer.
+    //private float camRayLength = 100f;          // The length of the ray from the camera into the scene.
 
     private Transform mainCameraTransform;
     public GameObject currentRoom;
@@ -92,7 +94,9 @@ public class PlayerControl : MonoBehaviour
         float h = Input.GetAxisRaw("Horizontal");
         float v = Input.GetAxisRaw("Vertical");
 
-        floorMask = LayerMask.GetMask("Floor");
+		// CURRENTLY NOT USED BY IS KEEP FOR FUTURE USE
+		// This field help rotate the player based on mouse position
+        //floorMask = LayerMask.GetMask("Floor");
 
         // Move the player around the scene.
         Move(h, v);
@@ -212,7 +216,7 @@ public class PlayerControl : MonoBehaviour
 
     /*
     // CURRENTLY NOT USED BY IS KEEP FOR FUTURE USE
-    // This method rotates the player based on 
+    // This method rotates the player based on mouse position
     void Turning()
     {
         // Create a ray from the mouse cursor on screen in the direction of the camera.
