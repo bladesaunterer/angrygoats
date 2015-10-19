@@ -12,6 +12,12 @@ public class PlayerHealth : MonoBehaviour
 	public int lethalLow;                       // The y co-ordinate of the world which causes the character to die.
 	public Slider healthSlider;                 // Slider for player's health.
 	private bool godMode;
+	public int healthRegen = 5;
+	public float perSecond = 1f;
+	public float secDamage = 5f;
+	bool hasTakenDamage = false;
+	float dmgTimer;
+	float timer;
 
 	private PlayerControl playerControlScript;
 
@@ -25,17 +31,38 @@ public class PlayerHealth : MonoBehaviour
 
 	void Update ()
 	{
+		timer += Time.deltaTime;
 		// Damage player if they fall below a y.axis value
 		if (gameObject.transform.position.y < lethalLow) {
 			TakeDamage (startingHealth);
 		}
 
-		if (Input.GetKeyDown (KeyCode.G))
-			godMode = true;
+		if (Input.GetKeyDown (KeyCode.G)) {
+            godMode = true;
+            if (gameObject.GetComponent<PlayerControl>() != null) {
+                gameObject.GetComponent<PlayerControl>().speed = 12;
+            }
+        }
+			
+
 
 		if (godMode) {
 			currentHealth = 100;
 			healthSlider.value = 100;
+		}
+
+		if (hasTakenDamage) {
+			if (dmgTimer <= 0){
+				hasTakenDamage = false;
+			}else{
+				dmgTimer -= Time.deltaTime;
+			}
+			
+		} else {
+			if (timer > perSecond) {
+				timer = 0f;
+				HealPlayer (healthRegen);
+			}
 		}
 
 	}
@@ -44,6 +71,11 @@ public class PlayerHealth : MonoBehaviour
 	{
 		// Reduce the current health by the amount of damage sustained.
 		currentHealth -= amount;
+
+		if (amount != 0) {
+			hasTakenDamage = true;
+			dmgTimer = secDamage;
+		}
 
 		// Update health on slider to new value.
 		healthSlider.value = currentHealth;

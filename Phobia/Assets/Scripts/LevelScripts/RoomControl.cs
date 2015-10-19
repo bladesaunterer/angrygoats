@@ -151,6 +151,9 @@ public class RoomControl : MonoBehaviour {
 				if (enemy.GetComponent<EnemySingleShot>() != null) {
 					enemy.GetComponent<EnemySingleShot>().shouldShoot = false;
 				}
+				if (enemy.GetComponent<EnemyPewPew>() != null) {
+					enemy.GetComponent<EnemyPewPew>().shoot = true;
+				}
 				if (enemy.GetComponent<EnemyCharge>() != null) {
 					enemy.GetComponent<EnemyCharge>().enabled = false;
 				}
@@ -171,6 +174,9 @@ public class RoomControl : MonoBehaviour {
 				if (enemy.GetComponent<EnemySingleShot>() != null) {
 					enemy.GetComponent<EnemySingleShot>().shouldShoot = true;
 				}
+                if (enemy.GetComponent<EnemyPewPew>() != null) {
+                    enemy.GetComponent<EnemyPewPew>().shoot = true;
+                }
 				if (enemy.GetComponent<EnemyCharge>() != null) {
 					enemy.GetComponent<EnemyCharge>().enabled = true;
 					enemy.GetComponent<EnemyCharge>().StartCharge();

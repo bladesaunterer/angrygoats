@@ -3,7 +3,7 @@ using System.Collections;
 
 public class EnemyPewPew : MonoBehaviour {
 	public GameObject shot;
-	public int shoot = 1;
+	public bool shoot = true;
 	public Transform shotSpawn;
 	public Transform shotSpawn1;
 	public Transform shotSpawn2;
@@ -19,7 +19,7 @@ public class EnemyPewPew : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		timer += Time.deltaTime;
-		if (timer >= timeBetweenAttacks && shoot == 1) {
+		if (timer >= timeBetweenAttacks && shoot) {
 			timer = 0f;
             if (anim != null)
             {

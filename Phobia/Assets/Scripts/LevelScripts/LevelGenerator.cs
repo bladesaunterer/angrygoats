@@ -11,9 +11,10 @@ using System;
  **/
 public class LevelGenerator : MonoBehaviour {
     
-    public int roomsToSpawn = 20;
 	public string seed = "";
 	public int actseed = -1;
+	
+    public int roomsToSpawn = 20;
     public GameObject roomPrefab;
 	public GameObject startPrefab;
 	public List<GameObject> floorPrefabs;
@@ -61,6 +62,8 @@ public class LevelGenerator : MonoBehaviour {
 			maxWebs = Int32.Parse(parts[5]);
 		}
 		UnityEngine.Random.seed = actseed;
+		
+		
         // Reference the minimap, so it can be generated in unison with the actual floor
         MinimapScript minimapScript = minimapUI.GetComponent<MinimapScript>();
 
@@ -129,6 +132,7 @@ public class LevelGenerator : MonoBehaviour {
 		thisRoom.Index = roomVector;
         minimapScript.GenerateMapBlock(thisRoom.Index);
         thisRoom.gameObject.name = "Boss Room";
+		thisRoom.spawnEnemies = false;
 		
 		SetAdj(adjRoom, roomVectorRel, thisRoom);
 
@@ -174,6 +178,16 @@ public class LevelGenerator : MonoBehaviour {
         }
 
         AstarPath.active.Scan();
+		
+		// modify total enemies so that infinite loops do not occur
+		int maxLegalEnemies = (roomsToSpawn-2) * maxEnemiesPerRoom;
+		if (totalEnemies > maxLegalEnemies) {
+			totalEnemies = maxLegalEnemies;
+		}
+		if (totalEnemies < 0) {
+			totalEnemies = 0;
+		}
+		
 		
 		// populate rooms
 		
