@@ -411,6 +411,18 @@ Prefab:
       propertyPath: highScoreNamePanel
       value: 
       objectReference: {fileID: 1210533884}
+    - target: {fileID: 11484760, guid: 08c54a5b7d7c5e84889688997dd4a72c, type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: HeightsLevelScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 11473386, guid: 08c54a5b7d7c5e84889688997dd4a72c, type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: PostLevelHeightsCutscene
+      objectReference: {fileID: 0}
+    - target: {fileID: 11441432, guid: 08c54a5b7d7c5e84889688997dd4a72c, type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: HeightsLevelScene
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 08c54a5b7d7c5e84889688997dd4a72c, type: 2}
   m_IsPrefabParent: 0

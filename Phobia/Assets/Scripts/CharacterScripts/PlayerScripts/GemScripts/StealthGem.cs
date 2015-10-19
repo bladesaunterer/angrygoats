@@ -13,62 +13,55 @@ public class StealthGem : GenericGem
     private Material material;
 
     protected override void Update() {
-        // Check if invisible
-        if (isInvis)
-        {
-            // If the time runs out or the player conducted an attack, stop the invisible ability
-            if (Time.time > endTime || Input.GetKeyDown(KeyCode.J) || (!isCurrent && Input.GetKeyDown(KeyCode.K)))
-            {
-                if (playerControl.currentRoom != null)
-                {
+        
+        if (isInvis) {
+            // If the invis time runs out or the player execute an attack, or casted another spell, stop the invisibility ability
+            if (Time.time > endTime || Input.GetKeyDown(KeyCode.J) || (!isCurrent && Input.GetKeyDown(KeyCode.K))) {
+                if (playerControl.currentRoom != null) {
                     playerControl.currentRoom.GetComponent<RoomControl>().EnemiesHuntPlayer();
                 }
 
-                // Reveal the players full model			
+                // Make the player visible			
                 Color temp = material.color;
                 temp.a = 1;
                 material.color = temp;
 
-                // Turn off invisable
+                // Turn off invisible
                 isInvis = false;
             }
-            else if (oldRoom != playerControl.currentRoom)
-            {
+            else if (oldRoom != playerControl.currentRoom) { // When the player enters a new room, tell the enemies not to attack
                 playerControl.currentRoom.GetComponent<RoomControl>().EnemiesGoHome();
                 oldRoom = playerControl.currentRoom;
             }
         }
-		else {
+		else { // superclass handles the casting of the spell
 			base.Update();
 		}
     }
 
     protected override void doEffect() {
-        if (!isInvis)
-        {
+        if (!isInvis) {
 
             // Cause the player to go invisible for a period of time
             playerControl.SubtractCooldown(cost);
-            if (playerControl.currentRoom != null)
-            {
+            if (playerControl.currentRoom != null) {
                 playerControl.currentRoom.GetComponent<RoomControl>().EnemiesGoHome();
             }
             endTime = Time.time + duration;
 
-            // Reduce transparancy so just the staff is left over
+            // Reduce transparency so only the staff is visible
+			// Staff is a different material, so we don't explicitly set its visibility
             material = player.transform.Find("LowPolyNecromancer").gameObject.GetComponent<Renderer>().material;
             Color temp = material.color;
             temp.a = 0;
             material.color = temp;
 
-            // Turn of invisable
             isInvis = true;
         }
     }
 
     // Overrides with a heal animation
-    public override void castAnimation()
-    {
+    public override void castAnimation() {
         anim.SetTrigger("AOESpell");
     }
 }
